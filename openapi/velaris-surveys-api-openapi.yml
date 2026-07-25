@@ -1,0 +1,39 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Surveys API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Surveys
+paths:
+  /survey-management/surveys/:surveyId/responses:
+    post:
+      operationId: postResponses
+      summary: Post Responses
+      tags:
+      - Surveys
+      requestBody:
+        content:
+          application/json: {}
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

@@ -1,0 +1,555 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Ticketing API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Ticketing
+paths:
+  /ticketing/tickets:
+    get:
+      operationId: getAllTickets
+      summary: Get All Tickets
+      tags:
+      - Ticketing
+      description: '<p>Allowed optional parameters for filtering.</p>
+
+        <ul>
+
+        <li><p>entityId: linked entity</p>
+
+        </li>
+
+        <li><p>level: linked entity level</p>
+
+        </li>
+
+        <li><p>includeArchived: boolean</p>
+
+        </li>
+
+        <li><p>query:string</p>
+
+        </li>
+
+        <li><p>pageSize</p>
+
+        </li>
+
+        <li><p>page</p>
+
+        </li>
+
+        </ul>
+
+        <p>Example</p>
+
+        <p><code>/ticketing/tickets?level=account&amp;entityId=2</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - id: 1
+                  ticketId: '66'
+                  externalId: null
+                  created: '2021-09-07T14:42:25.000Z'
+                  modified: '2021-09-07T14:42:25.000Z'
+                  customData:
+                    key1: value1
+                    key2: value2
+                  archived: 0
+                  channel: api
+                  origin: zendesk
+                  companies:
+                  - type: organization
+                    data: '2'
+                  - type: account
+                    data: '1'
+                  assigners:
+                  - ashan@staysafe.com
+                  requester: '1'
+                  description: Ticketing endpoint
+                  subject: Ticket subject
+                  type: ticket
+                  status: new
+                  priority: low
+                - id: 4
+                  ticketId: '67'
+                  externalId: null
+                  created: '2021-09-07T14:42:25.000Z'
+                  modified: '2021-09-07T14:42:25.000Z'
+                  customData:
+                    key1: value1 changed
+                    key2: value2
+                  archived: 0
+                  channel: api
+                  origin: zendesk
+                  companies:
+                  - type: organization
+                    data: '2'
+                  - type: account
+                    data: '4'
+                  - type: account
+                    data: '2'
+                  - type: organization
+                    data: '3'
+                  assigners:
+                  - ashan@staysafe.com
+                  - '2'
+                  description: Ticketing endpoint
+                  priority: low
+                  type: ticket
+                  status: open
+                  requester: '20'
+                  subject: Ticket subject changed
+    post:
+      operationId: createTicket
+      summary: Create Ticket
+      tags:
+      - Ticketing
+      description: '<p>Allowed values</p>
+
+        <ul>
+
+        <li>requester - requester should be a contact. Email, id or external id should be presented. If requester’s email is</li>
+
+        <li>provided and the requester is not found in Velaris, new contact will be created with email.</li>
+
+        </ul>
+
+        <p><code>"requester": {"email": "</code><a href="mailto:johndoe@gmail.com"><code>johndoe@gmail.com</code></a><code>"} or {"id": 10} or {"externalId": "isosjw-ssda-123-ssd"}</code></p>
+
+        <ul>
+
+        <li>assigners - assigners should be users of velaris. Users'' email, id or externalId will be accepted.</li>
+
+        </ul>
+
+        <p><code>"assigners": [{"email": "</code><a href="mailto:john@gmail.com"><code>john@gmail.com</code></a><code>"}, {"id": 10}, {"externalId": "1231-3123"}]</code></p>
+
+        <ul>
+
+        <li>companies - company type is required, and id or external id should be presented.</li>
+
+        </ul>
+
+        <p><code>"companies": [{"type": "organization", "id": 10}, {"type": "account", "externalId": "kjl-232l-323k"}]</code></p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              ticketId: '589'
+              subject: Ticket subject
+              description: Ticketing endpoint
+              status: 10
+              type: 600
+              priority: 100
+              channel: 200
+              requester:
+                email: joe.root@gmail.com
+              assigners:
+              - email: matt.dameon@velaris.io
+              externalId: sdfw7we-497sdee-ajuw52k-uhi23
+              createdAt: '2021-09-07T14:42:25Z'
+              modifiedAt: '2021-09-07T14:42:25Z'
+              origin: 300
+              companies:
+              - type: organization
+                id: 6
+              - type: account
+                id: 2
+              customData:
+                key1: value1
+                key2: value2
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  ticketId: '589'
+                  subject: Ticket subject
+                  description: Ticketing endpoint
+                  status: 10
+                  type: 600
+                  priority: 100
+                  channel: 200
+                  externalId: sdfw7we-497sdee-ajuw52k-uhi23
+                  createdAt: '2021-09-07T14:42:25Z'
+                  modifiedAt: '2021-09-07T14:42:25Z'
+                  origin: 300
+                  customData:
+                    key1: value1
+                    key2: value2
+                  companies:
+                  - type: 400
+                    data: 2
+                  - type: 410
+                    data: 6
+                  requester: 81
+                  assigners:
+                  - joe.white@velaris.io
+                  activityType: zendesk
+                  id: 621
+  /ticketing/tickets/:ticketId:
+    get:
+      operationId: getTicketById
+      summary: Get Ticket By Id
+      tags:
+      - Ticketing
+      description: '<p>Example</p>
+
+        <p><code>/ticketing/tickets/10?origin=zendesk</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  id: 1
+                  ticketId: '66'
+                  externalId: null
+                  createdAt: '2021-09-07T14:42:25.000Z'
+                  modifiedAt: '2021-09-07T14:42:25.000Z'
+                  customData:
+                    key1: value1
+                    key2: value2
+                  archived: 0
+                  channel: 240
+                  origin: 300
+                  attachments: []
+                  type: 600
+                  status: 10
+                  priority: 100
+                  subject: Ticket subject
+                  description: Ticketing endpoint
+                  requester: '1'
+                  assigners:
+                  - ashan@staysafe.com
+                  companies:
+                  - type: 400
+                    data: '1'
+                  - type: 410
+                    data: '2'
+    put:
+      operationId: updateTicket
+      summary: Update Ticket
+      tags:
+      - Ticketing
+      description: '<ul>
+
+        <li>Allowed values are same as in create ticket request body.</li>
+
+        </ul>
+
+        <p>Example</p>
+
+        <p><code>/ticketing/tickets/10?origin=zendesk</code></p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              status: 20
+              priority: 120
+              companies:
+              - type: organization
+                id: 7
+              - type: account
+                id: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  status: 20
+                  priority: 120
+                  companies:
+                  - type: 400
+                    data: 1
+                  - type: 410
+                    data: 7
+                  id: 621
+    delete:
+      operationId: deleteTicket
+      summary: Delete Ticket
+      tags:
+      - Ticketing
+      description: '<p>Example</p>
+
+        <p><code>/ticketing/tickets/10?origin=zendesk</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data: {}
+  /ticketing/tickets/:ticketId/restore:
+    put:
+      operationId: restoreTicket
+      summary: Restore Ticket
+      tags:
+      - Ticketing
+      description: '<p>Example<br /><code>/ticketing/tickets/10/restore?origin=zendesk</code></p>
+
+        '
+      responses:
+        '200':
+          description: Restore Ticket
+          content:
+            application/json:
+              example:
+                status: success
+                message: Ticket with ticketId 123 with origin 'zendesk' successfully restored
+  /ticketing/tickets/:ticketId/comments:
+    get:
+      operationId: getAllComments
+      summary: Get All Comments
+      tags:
+      - Ticketing
+      description: '<p>Example</p>
+
+        <p><code>/ticketing/tickets/10/comments?origin=zendesk</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - commentId: 9
+                  ticketTableId: 32
+                  body: A reply for the ticket
+                  channel: email
+                  type: reply
+                  customData:
+                    key1: value
+                    key2: value
+                  createdBy: 12
+                  modifiedBy: 12
+                  created: '2021-09-07T14:42:25.000Z'
+                  modified: '2022-02-21T10:28:29.995Z'
+                  author:
+                    type: contact
+                    data: '31'
+                  attachments: []
+                - commentId: 10
+                  ticketTableId: 32
+                  body: A reply for the ticket
+                  channel: email
+                  type: reply
+                  customData:
+                    key1: value
+                    key2: value
+                  createdBy: 12
+                  modifiedBy: 12
+                  created: '2021-09-07T14:42:25.000Z'
+                  modified: '2022-02-21T10:31:34.120Z'
+                  author:
+                    type: contact
+                    data: '31'
+                  attachments: []
+    post:
+      operationId: createComment
+      summary: Create Comment
+      tags:
+      - Ticketing
+      description: "<p>Allowed values</p>\n<ul>\n<li>author - author type can be contact, visitor, admin, bot. Following values will be accepted for each author type.<ul>\n<li>contact: id, externalId, email</li>\n<li>admin: id, externalId, email</li>\n<li>visitor: email</li>\n<li>bot: no ids</li>\n</ul>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"author\": {\n  \"type\": \"contact\",\n  \"externalId\": \"gsdj-j232kj-jk312\"\n}\n\n</code></pre>"
+      requestBody:
+        content:
+          application/json:
+            example:
+              body: A reply for the ticket
+              author:
+                externalId: 32fd45-22fr4-yh23g-fg34-b5h6j34gd
+                type: contact
+              createdAt: '2021-09-07T14:42:25Z'
+              channel: 200
+              type: 800
+              customData:
+                key1: value
+                key2: value
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  body: A reply for the ticket
+                  author:
+                    type: 21
+                    data: 261
+                  createdAt: '2021-09-07T14:42:25Z'
+                  channel: 11
+                  type: 34
+                  customData:
+                    key1: value
+                    key2: value
+                  ticketTableId: 118
+                  origin: 300
+                  id: 317
+  /ticketing/tickets/:ticketId/comments/:commentId:
+    get:
+      operationId: getCommentById
+      summary: Get Comment By Id
+      tags:
+      - Ticketing
+      description: '<p>Example</p>
+
+        <p><code>/ticketing/tickets/10/comments/11?origin=zendesk</code></p>
+
+        '
+      responses:
+        '200':
+          description: Get Comment By Id
+          content:
+            application/json:
+              example:
+                data:
+                  status: success
+                  comment:
+                    commentId: 11
+                    ticketTableId: 123
+                    body: A reply for the ticket
+                    channel: web
+                    type: reply
+                    authorType: admin
+                    data: '101'
+                    customData: null
+                    externalId: null
+                    createdBy: 99
+                    modifiedBy: 99
+                    created: '2024-01-01T10:00:00.000Z'
+                    modified: '2024-01-01T10:05:00.000Z'
+    put:
+      operationId: updateComment
+      summary: Update Comment
+      tags:
+      - Ticketing
+      description: '<ul>
+
+        <li>Allowed values are same as in create comment request body.</li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              body: Body has changed
+              channel: 200
+              type: 800
+              author:
+                externalId: 32fd45-22fr4-yh23g-fg34-b5h6j34gd
+                type: contact
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  ticket_comment_id: 317
+                  ticket_table_id: 118
+                  body: Body has changed
+                  channel: email
+                  type: reply
+                  custom_data:
+                    key1: value
+                    key2: value
+                  created_by: 30
+                  modified_by: 30
+                  created: '2021-09-07T14:42:25.000Z'
+                  modified: '2022-07-25T12:03:53.314Z'
+                  archived: 0
+                  author:
+                    type: contact
+                    data: '261'
+    delete:
+      operationId: deleteComment
+      summary: Delete Comment
+      tags:
+      - Ticketing
+      description: '<p>Example</p>
+
+        <p><code>/ticketing/tickets/10/comments/1?origin=zendesk</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data: {}
+  /ticketing/tickets/:ticketId/comments/external/:externalId:
+    get:
+      operationId: getCommentByExternalId
+      summary: Get Comment by External ID
+      tags:
+      - Ticketing
+      description: '<p>Example<br /><code>/ticketing/tickets/10/comments/external/abc123-def456-ghi789?origin=zendesk</code></p>
+
+        '
+      responses:
+        '200':
+          description: Get Comment by External ID
+          content:
+            application/json:
+              example:
+                data:
+                  status: success
+                  comment:
+                    commentId: 11
+                    ticketTableId: 10
+                    body: A reply for the ticket
+                    channel: web
+                    type: reply
+                    authorType: admin
+                    data: '101'
+                    customData: null
+                    externalId: abc123-def456-ghi789
+                    createdBy: 99
+                    modifiedBy: 99
+                    created: '2024-01-01T10:00:00.000Z'
+                    modified: '2024-01-01T10:05:00.000Z'
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

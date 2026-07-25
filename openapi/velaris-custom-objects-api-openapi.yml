@@ -1,0 +1,1598 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Custom Objects API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Custom Objects
+paths:
+  /core/:level/:id/links:
+    get:
+      operationId: getEntityCustomLinksById
+      summary: Get Entity Custom Links By ID
+      tags:
+      - Custom Objects
+      description: '<p>This endpoint retrieves the links associated with a specific entity at the given level and ID.</p>
+
+        <h3 id="request">Request</h3>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Path Parameters</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>level</code></td>
+
+        <td>(string): Entity Level  <br />- Organization: ''organizations''  <br />- Account: ''accounts''  <br />- Contact: ''contacts''  <br />- Opportunity: ''opportunities''  <br />- Risk: ''risks''</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>id</code></td>
+
+        <td>(string): Entity ID  <br />Should be in the format "srcid-{velarisId}" when passing internal ID or "extid-{externalId} when passing external ID.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Example:</p>
+
+        <ul>
+
+        <li><p>With external id: <code>/organizations/extid-id/links</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/organizations/srcid-id/links</code></p>
+
+        </li>
+
+        </ul>
+
+        <h3 id="response">Response</h3>
+
+        <p>The response will include the list of links associated with the specified entity.</p>
+
+        '
+      responses:
+        '200':
+          description: Get Entity Custom Links By ID
+          content:
+            application/json:
+              example:
+                data:
+                  custom_link_api1: []
+                  custom_link_api2:
+                  - 2470
+                  custom_link_api3: []
+                  custom_link_api4:
+                  - 2984
+                  custom_link_api5: []
+    post:
+      operationId: addCustomLinksForSystemEntities
+      summary: Add Custom Links for System Entities
+      tags:
+      - Custom Objects
+      description: '<p>This endpoint creates links for a specific system entity by passing its level and ID.</p>
+
+        <h3 id="request">Request</h3>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Path Parameters</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>apiName</code></td>
+
+        <td>(string): Custom Link API Name</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>id</code></td>
+
+        <td>(string): Entity ID  <br />Should be in the format "srcid-{velarisId}" when passing internal ID or "extid-{externalId} when passing external ID.</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>level</code></td>
+
+        <td>(string): Entity Level  <br />- Organization: ''organizations''  <br />- Account: ''accounts''  <br />- Contact: ''contacts''  <br />- Opportunity: ''opportunities''  <br />- Risk: ''risks''</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Request Body</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>identifier_key</code></td>
+
+        <td>External IDs - "ext_id"  <br />Internal IDs - "int_id"</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Example:</p>
+
+        <ul>
+
+        <li><p>With external id: <code>/core/contacts/extid-id/links</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/core/contacts/srcid-id/links</code></p>
+
+        </li>
+
+        </ul>
+
+        <h3 id="response">Response</h3>
+
+        <p>The response will include the list of links successfully created for the specified system entity.</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              links:
+                invoice_contacts:
+                  identifier_key: ext_id
+                  ids:
+                  - inv_343
+                  - inv_5342
+      responses:
+        '200':
+          description: Add Custom Links for System Entities
+          content:
+            application/json:
+              example:
+                data:
+                  invoice_contacts:
+                  - 243
+                  - 543
+  /custom-objects/:coApiName/:id/links:
+    get:
+      operationId: getCustomObjectInstanceCustomLinksById
+      summary: Get Custom Object Instance Custom Links by ID
+      tags:
+      - Custom Objects
+      description: '<p>This endpoint retrieves the links associated with a specific custom object by its API name and ID.</p>
+
+        <h3 id="request">Request</h3>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Path Parameters</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>coApiName</code></td>
+
+        <td>(string): Custom Object API Name</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>id</code></td>
+
+        <td>(string): Custom Object Instance ID  <br />Should be in the format "srcid-{velarisId}" when passing internal ID or "extid-{externalId} when passing external ID.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Example:</p>
+
+        <ul>
+
+        <li><p>With external id: <code>/custom-objects/invoices/extid-id/links</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/custom-objects/invoices/srcid-id/links</code></p>
+
+        </li>
+
+        </ul>
+
+        <h3 id="response">Response</h3>
+
+        <p>The response will include the list of links associated with the specified custom object instance.</p>
+
+        '
+      responses:
+        '200':
+          description: Get Custom Object Instance Custom Links by ID
+          content:
+            application/json:
+              example:
+                data:
+                  custom_link_api1:
+                  - 343
+                  custom_link_api2:
+                  - 6324
+                  custom_link_api3: []
+                  custom_link_api4:
+                  - 845
+                  custom_link_api5: []
+    post:
+      operationId: addCustomLinksForCustomObjectInstances
+      summary: Add Custom Links for Custom Object Instances
+      tags:
+      - Custom Objects
+      description: '<p>This endpoint creates links for a specific custom object instance by its API name and ID.</p>
+
+        <h3 id="request">Request</h3>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Path Parameters</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>coApiName</code></td>
+
+        <td>(string): Custom Object API Name.</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>id</code></td>
+
+        <td>(string): Custom Object Instance ID  <br />Should be in the format "srcid-{velarisId}" when passing internal ID or "extid-{externalId} when passing external ID.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Request Body</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>identifier_key</code></td>
+
+        <td>External IDs - "ext_id"  <br />Internal IDs - "int_id"  <br />Emails (For Contacts) - "email"</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Example:</p>
+
+        <ul>
+
+        <li><p>With external id: <code>/custom-object/invoice/extid-id/links</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/custom-object/invoice/srcid-id/links</code></p>
+
+        </li>
+
+        </ul>
+
+        <h3 id="response">Response</h3>
+
+        <p>The response will include the list of links successfully created for the specified custom object instance.</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              links:
+                invoice_contacts:
+                  identifier_key: email
+                  ids:
+                  - mehani@gmail.com
+      responses:
+        '200':
+          description: Add Custom Links for Custom Object Instances
+          content:
+            application/json:
+              example:
+                data:
+                  invoice_contacts:
+                  - 343
+                  invoice_accounts:
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                  - 5
+  /core/:level/:id/links/:apiName:
+    get:
+      operationId: getEntityCustomLinksByLinkApiName
+      summary: Get Entity Custom Links By Link Api Name
+      tags:
+      - Custom Objects
+      description: '<p>This endpoint retrieves the links associated with a specific entity by its level, ID, and custom link API name.</p>
+
+        <h3 id="request">Request</h3>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Path Parameters</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>apiName</code></td>
+
+        <td>(string): Custom Link API Name</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>id</code></td>
+
+        <td>(string): Entity ID  <br />Should be in the format "srcid-{velarisId}" when passing internal ID or "extid-{externalId} when passing external ID.</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>level</code></td>
+
+        <td>(string): Entity Level  <br />- Organization: ''organizations''  <br />- Account: ''accounts''  <br />- Contact: ''contacts''  <br />- Opportunity: ''opportunities''  <br />- Risk: ''risks''</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Example:</p>
+
+        <ul>
+
+        <li><p>With external id: <code>/core/opportunities/extid-id/links/custom_link__api3534</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/core/opportunities/srcid-id/links/custom_link__api3534</code></p>
+
+        </li>
+
+        </ul>
+
+        <h3 id="response">Response</h3>
+
+        <p>The response will include the list of links associated with the specified system entity.</p>
+
+        '
+      responses:
+        '200':
+          description: Get Entity Custom Links By Link Api Name
+          content:
+            application/json:
+              example:
+                data:
+                  custom_link_4563:
+                  - 343
+                  - 453
+  /custom-objects/:coApiName/:id/links/:apiName:
+    get:
+      operationId: getCustomLinksForCustomObjectsByLinkApiName
+      summary: Get Custom Links for Custom Objects By Link Api Name
+      tags:
+      - Custom Objects
+      description: '<p>This endpoint retrieves the links associated with a specific custom object by its API name, ID, and custom link API name.</p>
+
+        <h3 id="request">Request</h3>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Path Parameters</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>coApiName</code></td>
+
+        <td>(string): Custom Object API Name</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>id</code></td>
+
+        <td>(string): Custom Object Instance ID  <br />Should be in the format "srcid-{velarisId}" when passing internal ID or "extid-{externalId} when passing external ID.</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>apiName</code></td>
+
+        <td>(string): Custom Link Api Name</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Example:</p>
+
+        <ul>
+
+        <li><p>With external id: <code>/custom-object/invoice/extid-id/links/custom_link_api3534</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/custom-object/invoice/srcid-id/links/custom_link_api3534</code></p>
+
+        </li>
+
+        </ul>
+
+        <h3 id="response">Response</h3>
+
+        <p>The response will include the list of links associated with the specified custom object instance.</p>
+
+        '
+      responses:
+        '200':
+          description: Get Custom Links for Custom Objects By Link Api Name
+          content:
+            application/json:
+              example:
+                data:
+                  custom_link_api5:
+                  - 745
+                  - 345
+                  - 243
+                  - 14
+  /core/:level/:id/links/archive:
+    put:
+      operationId: archiveCustomLinksForSystemEntity
+      summary: Archive Custom Links for System Entity
+      tags:
+      - Custom Objects
+      description: '<p>This endpoint archives existing links of a specific system entity by passing its level and ID.</p>
+
+        <h3 id="request">Request</h3>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Path Parameters</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>id</code></td>
+
+        <td>(string): Entity ID  <br />Should be in the format "srcid-{velarisId}" when passing internal ID or "extid-{externalId} when passing external ID.</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>level</code></td>
+
+        <td>(string): Entity Level  <br />- Organization: ''organizations''  <br />- Account: ''accounts''  <br />- Contact: ''contacts''  <br />- Opportunity: ''opportunities''  <br />- Risk: ''risks''</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Request Body</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>identifier_key</code></td>
+
+        <td>External IDs - "ext_id"  <br />Internal IDs - "int_id"</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Example:</p>
+
+        <ul>
+
+        <li><p>With external id: <code>/core/contacts/extid-id/archive</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/core/contacts/srcid-id/archive</code></p>
+
+        </li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              links:
+                invoice_accounts:
+                  identifier_key: int_id
+                  ids:
+                  - 4654
+      responses:
+        '200':
+          description: Archive Custom Links for System Entity
+          content:
+            application/json:
+              example:
+                data:
+                  invoice_accounts: []
+  /custom-objects/:coApiName/:id/links/archive:
+    put:
+      operationId: archiveCustomLinksForCustomObjectInstance
+      summary: Archive Custom Links for Custom Object Instance
+      tags:
+      - Custom Objects
+      description: '<p>This endpoint archives existing links of a specific custom object instance by passing its API name and instance ID.</p>
+
+        <h3 id="request">Request</h3>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Path Parameters</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>coApiName</code></td>
+
+        <td>(string): Custom Object API Name.</td>
+
+        </tr>
+
+        <tr>
+
+        <td><code>id</code></td>
+
+        <td>(string): Custom Object Instance ID  <br />Should be in the format "srcid-{velarisId}" when passing internal ID or "extid-{externalId} when passing external ID.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Request Body</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td><code>identifier_key</code></td>
+
+        <td>External IDs - "ext_id"  <br />Internal IDs - "int_id"  <br />Emails (For Contacts) - "email"</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p>Example:</p>
+
+        <ul>
+
+        <li><p>With external id: <code>/custom-objects/invoice/extid-id/archive</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/custom-objects/invoice/srcid-id/archive</code></p>
+
+        </li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              links:
+                invoice_accounts:
+                  identifier_key: int_id
+                  ids:
+                  - 876
+                  - 453
+                invoice_opportuniy:
+                  identifier_key: ext_id
+                  ids:
+                  - opp434
+                  - opp435
+      responses:
+        '200':
+          description: Archive Custom Links for Custom Object Instance
+          content:
+            application/json:
+              example:
+                data:
+                  invoice_accounts: []
+                  invoice_opportuniy: []
+  /custom-object-schemas:
+    get:
+      operationId: getCustomObjectDefinitions
+      summary: Get Custom Object Definitions
+      tags:
+      - Custom Objects
+      description: '<p>Returns list of custom object schemas. This includes information like custom object names, API names, and more.</p>
+
+        '
+      responses:
+        '200':
+          description: Sucess - 200
+          content:
+            application/json:
+              example:
+                status: success
+                data:
+                - customObjectId: 1
+                  singularObjectName: invoice
+                  pluralObjectName: invoices
+                  icon: invoice-icon
+                  apiName: invoice
+                  externalId: invoice-object
+                  primaryColor: '#9575FF'
+                  isSystem: false
+                  description: invoice object
+                  pinnedUserId: null
+                  isPinned: false
+  /custom-objects/:co_api_name:
+    get:
+      operationId: getCoInstances
+      summary: Get CO instances
+      tags:
+      - Custom Objects
+      description: '<p>Returns list of custom object instances. This includes information like custom object id, system attributes, and custom attributes</p>
+
+        '
+      responses:
+        '200':
+          description: Success - 200
+          content:
+            application/json:
+              example:
+                status: success
+                data:
+                - customObjectInstanceId: 1
+                  imageId: 1
+                  about: about
+                  externalId: invoice-1001
+                  lifecycleStageId: null
+                  entityArchived: 1
+                  globalFields:
+                    name: Invoice 1001
+                  created: '2024-03-12T11:33:45.000Z'
+                  modified: '2024-03-13T13:28:44.000Z'
+                  createdBy: 13
+                  modifiedBy: 1
+                  properties:
+                    name: Invoice 1001
+                    subscription_id: subscription-002
+        '404':
+          description: Not Found - 404
+    post:
+      operationId: createCoInstance
+      summary: Create CO instance
+      tags:
+      - Custom Objects
+      description: '<p>Creates a custom object instance. External id, and custom attributes of the instance should be provided</p>
+
+        '
+      requestBody:
+        content:
+          application/json: {}
+      responses:
+        '200':
+          description: Success - 200
+  /v2/custom-objects/:co_api_name:
+    get:
+      operationId: getCoInstancesV2
+      summary: Get CO instances V2
+      tags:
+      - Custom Objects
+      description: '<p>Returns list of custom object instances. This includes information like custom object id, system attributes, and custom attributes.</p>
+
+        '
+      responses:
+        '200':
+          description: Success - 200
+          content:
+            application/json:
+              example:
+                status: success
+                data:
+                - customObjectInstanceId: 11
+                  imageId: 1
+                  about: about
+                  externalId: invoice-1001
+                  lifecycleStageId: null
+                  entityArchived: 1
+                  globalFields:
+                    name: Invoice 1001
+                  created: '2024-03-12T11:33:45.000Z'
+                  modified: '2024-03-13T13:28:44.000Z'
+                  createdBy: 13
+                  modifiedBy: 1
+                  properties:
+                    name: Invoice 1001
+                    subscription_id: subscription-002
+                - customObjectInstanceId: 12
+                  imageId: 2
+                  about: about
+                  externalId: invoice-1002
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Invoice 1002
+                  created: '2024-04-01T09:20:00.000Z'
+                  modified: '2024-04-01T10:00:00.000Z'
+                  createdBy: 14
+                  modifiedBy: 2
+                  properties:
+                    name: Invoice 1002
+                    subscription_id: subscription-003
+                - customObjectInstanceId: 13
+                  imageId: 3
+                  about: about
+                  externalId: invoice-1003
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Invoice 1003
+                  created: '2024-04-05T15:30:00.000Z'
+                  modified: '2024-04-05T16:00:00.000Z'
+                  createdBy: 15
+                  modifiedBy: 3
+                  properties:
+                    name: Invoice 1003
+                    subscription_id: subscription-004
+                - customObjectInstanceId: 14
+                  imageId: 4
+                  about: about
+                  externalId: invoice-1004
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Invoice 1004
+                  created: '2024-04-10T12:45:00.000Z'
+                  modified: '2024-04-10T13:15:00.000Z'
+                  createdBy: 16
+                  modifiedBy: 4
+                  properties:
+                    name: Invoice 1004
+                    subscription_id: subscription-005
+                - customObjectInstanceId: 15
+                  imageId: 5
+                  about: about
+                  externalId: invoice-1005
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Invoice 1005
+                  created: '2024-04-15T14:00:00.000Z'
+                  modified: '2024-04-15T14:30:00.000Z'
+                  createdBy: 17
+                  modifiedBy: 5
+                  properties:
+                    name: Invoice 1005
+                    subscription_id: subscription-006
+                - customObjectInstanceId: 16
+                  imageId: 6
+                  about: about
+                  externalId: invoice-1006
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Invoice 1006
+                  created: '2024-04-20T10:30:00.000Z'
+                  modified: '2024-04-20T11:00:00.000Z'
+                  createdBy: 18
+                  modifiedBy: 6
+                  properties:
+                    name: Invoice 1006
+                    subscription_id: subscription-007
+                - customObjectInstanceId: 17
+                  imageId: 7
+                  about: about
+                  externalId: invoice-1007
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Invoice 1007
+                  created: '2024-04-25T08:15:00.000Z'
+                  modified: '2024-04-25T08:45:00.000Z'
+                  createdBy: 19
+                  modifiedBy: 7
+                  properties:
+                    name: Invoice 1007
+                    subscription_id: subscription-008
+                - customObjectInstanceId: 18
+                  imageId: 8
+                  about: about
+                  externalId: invoice-1008
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Invoice 1008
+                  created: '2024-04-30T09:45:00.000Z'
+                  modified: '2024-04-30T10:15:00.000Z'
+                  createdBy: 20
+                  modifiedBy: 8
+                  properties:
+                    name: Invoice 1008
+                    subscription_id: subscription-009
+                - customObjectInstanceId: 19
+                  imageId: 9
+                  about: about
+                  externalId: invoice-1009
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Invoice 1009
+                  created: '2024-05-05T11:30:00.000Z'
+                  modified: '2024-05-05T12:00:00.000Z'
+                  createdBy: 21
+                  modifiedBy: 9
+                  properties:
+                    name: Invoice 1009
+                    subscription_id: subscription-010
+                - customObjectInstanceId: 20
+                  imageId: 10
+                  about: about
+                  externalId: invoice-1010
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Invoice 1010
+                  created: '2024-05-10T07:50:00.000Z'
+                  modified: '2024-05-10T08:20:00.000Z'
+                  createdBy: 22
+                  modifiedBy: 10
+                  properties:
+                    name: Invoice 1010
+                    subscription_id: subscription-011
+        '404':
+          description: Not Found - 404
+  /custom-objects/:co_api_name/:instanceId:
+    get:
+      operationId: getCoInstanceById
+      summary: Get CO Instance by Id
+      tags:
+      - Custom Objects
+      description: '<p>Returns the custom object instance with the given instance id. This includes the system attributes and the custom attributes of the instance.</p>
+
+        <p>Custom object instance id should be in the following format.</p>
+
+        <ul>
+
+        <li><p>internal id → <code>srcid-(internal id)</code></p>
+
+        </li>
+
+        <li><p>external id → <code>extid-(external id)</code></p>
+
+        </li>
+
+        </ul>
+
+        <p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>
+
+        '
+      responses:
+        '200':
+          description: Success - 200
+        '404':
+          description: Not Found 404
+  /custom-objects/:co_api_name/:instanceId/archive:
+    put:
+      operationId: archiveCoInstance
+      summary: Archive CO instance
+      tags:
+      - Custom Objects
+      description: '<p>Archives the custom object instance with the given instance id.  </p>
+
+        <p>Custom object instance id should be in the following format.</p>
+
+        <ul>
+
+        <li><p>internal id → <code>srcid-(internal id)</code></p>
+
+        </li>
+
+        <li><p>external id → <code>extid-(external id)</code></p>
+
+        </li>
+
+        </ul>
+
+        <p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>
+
+        '
+      responses:
+        '200':
+          description: Success - 200
+  /custom-objects/:co_api_name/:instanceId/restore:
+    put:
+      operationId: restoreCoInstance
+      summary: Restore CO Instance
+      tags:
+      - Custom Objects
+      description: '<p>Restore the custom object instance with the given instance id.</p>
+
+        <p>Custom object instance id should be in the following format.</p>
+
+        <ul>
+
+        <li>internal id → <code>srcid-(internal id)</code></li>
+
+        <li>external id → <code>extid-(external id)</code></li>
+
+        </ul>
+
+        <p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>
+
+        '
+      responses:
+        '200':
+          description: Success - 200
+        '406':
+          description: Not Acceptable - 406
+  /custom-objects/:apiName/:instanceId:
+    put:
+      operationId: updateCoInstance
+      summary: Update CO instance
+      tags:
+      - Custom Objects
+      description: '<p>Updates custom object instance with the given instance id. External id, and custom attributes of the instance should be provided.</p>
+
+        <p>Custom object instance id should be in the following format.</p>
+
+        <ul>
+
+        <li><p>internal id → <code>srcid-(internal id)</code></p>
+
+        </li>
+
+        <li><p>external id → <code>extid-(external id)</code></p>
+
+        </li>
+
+        </ul>
+
+        <p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>
+
+        '
+      requestBody:
+        content:
+          application/json: {}
+      responses:
+        '200':
+          description: Success 200
+          content:
+            application/json:
+              example:
+                status: success
+                data:
+                  externalId: invoice-0001
+                  properties:
+                    name: Invoice 0001
+                  links:
+                    custom_link_relation6:
+                    - 76
+        '404':
+          description: Not Found - 404
+  /custom-objects/:coApiName/search:
+    post:
+      operationId: searchCustomObjects
+      summary: Search Custom Objects
+      tags:
+      - Custom Objects
+      description: '<p>Search custom object instances using custom attributes</p>
+
+        <p>The request body should contain a list of filters up to 3 filters</p>
+
+        <ul>
+
+        <li><p>filters - list of filters</p>
+
+        <ul>
+
+        <li><p>filter - object</p>
+
+        <ul>
+
+        <li><p>fieldName: API name of the custom attribute</p>
+
+        </li>
+
+        <li><p>operator: operator which should be used in the filter</p>
+
+        </li>
+
+        <li><p>value: filtered value</p>
+
+        </li>
+
+        </ul>
+
+        </li>
+
+        </ul>
+
+        </li>
+
+        </ul>
+
+        <p><strong>Supported Operators</strong></p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th><strong>Data type</strong></th>
+
+        <th><strong>Operators</strong></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>String</td>
+
+        <td>equals, contains</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Number</td>
+
+        <td>equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Date</td>
+
+        <td>equals, after, before, onOrAfter, onOrBefore</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Boolean</td>
+
+        <td>equals</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Single Picklist</td>
+
+        <td>equals</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Multi Picklist</td>
+
+        <td>includes</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Organization / Account / Contact / User</td>
+
+        <td>equals</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Organization / Account / Contact / User Picklist</td>
+
+        <td>includes</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p><strong>Valid Format of the value</strong></p>
+
+        <ul>
+
+        <li><p>String: Value must be a non-empty string.</p>
+
+        </li>
+
+        <li><p>Number: Value must be a valid number (can be provided as a string).</p>
+
+        </li>
+
+        <li><p>Date: Value must be a date string in the format "YYYY-MM-DD".</p>
+
+        </li>
+
+        <li><p>Boolean: Value must be a boolean string (''true'' or ''false'').</p>
+
+        </li>
+
+        <li><p>Single Picklist, Organization, Account, Contact, User: Value must be a number.</p>
+
+        </li>
+
+        <li><p>Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.</p>
+
+        </li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json: {}
+      responses:
+        '200':
+          description: Success - 200
+          content:
+            application/json:
+              example:
+                status: success
+                data:
+                - customObjectInstanceId: 179
+                  imageId: null
+                  about: null
+                  externalId: test-externalid-2024-4
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Hat 9
+                  created: '2024-03-13T13:29:59.000Z'
+                  modified: '2024-03-13T13:29:59.000Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                  properties:
+                    name: Hat 9
+                    about: this is about 2
+  /v2/custom-objects/:coApiName/search:
+    post:
+      operationId: searchCustomObjectsV2
+      summary: Search Custom Objects V2
+      tags:
+      - Custom Objects
+      description: '<p>Search custom object instances using custom attributes</p>
+
+        <p>The request body should contain a list of filters up to 3 filters</p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Query Params</th>
+
+        <th></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>limit</td>
+
+        <td>Number of records to fetch</td>
+
+        </tr>
+
+        <tr>
+
+        <td>after</td>
+
+        <td>Last fetched instanceId</td>
+
+        </tr>
+
+        <tr>
+
+        <td>archived</td>
+
+        <td>Archived state(true/false)</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><h4 id="request-body">Request Body</h4>
+
+        <ul>
+
+        <li><p>filters - list of filters</p>
+
+        <ul>
+
+        <li><p>filter - object</p>
+
+        <ul>
+
+        <li><p>fieldName: API name of the custom attribute</p>
+
+        </li>
+
+        <li><p>operator: operator which should be used in the filter</p>
+
+        </li>
+
+        <li><p>value: filtered value</p>
+
+        </li>
+
+        </ul>
+
+        </li>
+
+        </ul>
+
+        </li>
+
+        </ul>
+
+        <p><strong>Supported Operators</strong></p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th><strong>Data type</strong></th>
+
+        <th><strong>Operators</strong></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>String</td>
+
+        <td>equals, contains</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Number</td>
+
+        <td>equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Date</td>
+
+        <td>equals, after, before, onOrAfter, onOrBefore</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Boolean</td>
+
+        <td>equals</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Single Picklist</td>
+
+        <td>equals</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Multi Picklist</td>
+
+        <td>includes</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Organization / Account / Contact / User</td>
+
+        <td>equals</td>
+
+        </tr>
+
+        <tr>
+
+        <td>Organization / Account / Contact / User Picklist</td>
+
+        <td>includes</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><p><strong>Valid Format of the value</strong></p>
+
+        <ul>
+
+        <li><p>String: Value must be a non-empty string.</p>
+
+        </li>
+
+        <li><p>Number: Value must be a valid number (can be provided as a string).</p>
+
+        </li>
+
+        <li><p>Date: Value must be a date string in the format "YYYY-MM-DD".</p>
+
+        </li>
+
+        <li><p>Boolean: Value must be a boolean string (''true'' or ''false'').</p>
+
+        </li>
+
+        <li><p>Single Picklist, Organization, Account, Contact, User: Value must be a number.</p>
+
+        </li>
+
+        <li><p>Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.</p>
+
+        </li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json: {}
+      responses:
+        '200':
+          description: Success - 200
+          content:
+            application/json:
+              example:
+                status: success
+                data:
+                - customObjectInstanceId: 179
+                  imageId: null
+                  about: null
+                  externalId: test-externalid-2024-4
+                  lifecycleStageId: null
+                  entityArchived: 0
+                  globalFields:
+                    name: Hat 9
+                  created: '2024-03-13T13:29:59.000Z'
+                  modified: '2024-03-13T13:29:59.000Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                  properties:
+                    name: Hat 9
+                    about: this is about 2
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

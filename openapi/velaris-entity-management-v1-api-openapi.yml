@@ -1,0 +1,1733 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Entity Management V1 API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Entity Management V1
+paths:
+  /core/organizations:
+    get:
+      operationId: getAllOrganizationsV1
+      summary: Get All Organizations V1
+      tags:
+      - Entity Management V1
+      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+
+        <p>To filter organizations by custom fields</p>
+
+        <p><code>/organizations?{custom_field_name}={value}</code></p>
+
+        <p>Example</p>
+
+        <p><code>/organizations?zapier=true</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - organizationId: 4
+                  imageId: cd9467ce-aa16-4c5c-a9e3-81dd96131886.jpg
+                  about: null
+                  externalId: null
+                  lastTouch: '2022-03-15T04:59:59.431Z'
+                  lifecycleStageId: 1
+                  churned: 0
+                  entityArchived: 1
+                  pulse: 5
+                  globalFields:
+                    name: Optimum Nutrition
+                  created: '2021-11-17T04:30:21.698Z'
+                  modified: '2022-06-08T00:10:16.022Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                  contacts:
+                  - 34
+                  - 36
+                  - 37
+                  - 52
+                  - 54
+                  health: 7.3
+                  healthStatus: Green
+                  properties:
+                    name: Optimum Nutrition
+                    total_saas_mrr:
+                      value: 1110
+                      currencyDefinitionId: 5
+                    total_service_mrr:
+                      value: 2220
+                      currencyDefinitionId: 5
+                    total_mrr:
+                      value: 333
+                      currencyDefinitionId: 5
+                  owners:
+                  - id: 13
+                    ownerType: primary
+                - organizationId: 5
+                  imageId: d66afdba-9285-434f-8762-483593b72b14.jpg
+                  about: null
+                  externalId: d0c90641-5df6-43ad-b91d-44aeae90d359
+                  lastTouch: '2022-09-07T14:42:25.000Z'
+                  lifecycleStageId: 2
+                  churned: 0
+                  entityArchived: 0
+                  pulse: null
+                  globalFields:
+                    name: Crossrope
+                  created: '2021-11-17T04:30:30.170Z'
+                  modified: '2022-07-10T07:53:20.829Z'
+                  createdBy: 1
+                  modifiedBy: 9
+                  contacts:
+                  - 38
+                  - 39
+                  - 40
+                  health: 7
+                  healthStatus: Green
+                  properties:
+                    name: Crossrope
+                    total_saas_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    total_service_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    total_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    multiop: []
+                    testusertype: 14
+                    multi: []
+                  owners:
+                  - id: 115
+                    ownerType: primary
+                  - id: 10
+                    ownerType: secondary
+                  - id: 30
+                    ownerType: tertiary
+    post:
+      operationId: createOrganization
+      summary: Create Organization
+      tags:
+      - Entity Management V1
+      description: '<p>Create New Organization.</p>
+
+        <h5 id="request-body-guide">Request body guide</h5>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th><strong>Field</strong></th>
+
+        <th><strong>Description</strong></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>externalId</td>
+
+        <td>Use <code>externalId</code> to add the external id of the organization.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>properties</td>
+
+        <td>Use <code>properties</code> to add all the custom fields.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>contacts</td>
+
+        <td>Use <code>contacts</code> to link contacts to an organization. Only accepts emails. Link existing contacts. Otherwise creates a contact with the given email and link it.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>owners</td>
+
+        <td>User <code>owners</code> to add organization owners. Accepts object array with user id and the owner type.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>links</td>
+
+        <td>Use <code>links</code> to link custom objects with organizations.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div><h5 id="account-linking">Account Linking</h5>
+
+        <p><strong>Cannot link accounts</strong> to an organization when <strong>creating</strong> an organization. There is a separate API (<strong>Change Parent Entity</strong>) in the Account section to assign accounts to an organization.</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              properties:
+                name: Optimum Nutritions
+                date_joined: '2021-12-13'
+                deal_stage: closed won
+              contacts:
+              - joe.root@velaris.io
+              owners:
+              - id: 12
+                ownerType: primary
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  organizationId: 309
+                  date_joined: '2021-12-13'
+                  deal_stage: 2
+                  health:
+                    score: 6.4
+                    ragStatus: Green
+                  contacts:
+                  - 21
+                  properties:
+                    name: Optimum Nutritions
+                  links:
+                    custom_link_relation1:
+                    - 564
+                    - 3453
+                    - 2342
+                    custom_link_relation2:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+  /core/organizations/:organizationId:
+    get:
+      operationId: getOrganizationsById
+      summary: Get Organizations By ID
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/organizations/extid-id</code></li>
+
+        <li>With internal id: <code>/organizations/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  organizationId: 5
+                  imageId: e1841040ed95fac5c803dd8af03470ff32fe956f/organizations/d66afdba-9285-434f-8762-483593b72b14.jpg
+                  about: null
+                  externalId: d0c90641-5df6-43ad-b91d-44aeae90d359
+                  lastTouch: '2022-09-07T14:42:25.000Z'
+                  lifecycleStageId: 2
+                  churned: 0
+                  entityArchived: 0
+                  pulse: null
+                  globalFields:
+                    name: Crossrope
+                  created: '2021-11-17T04:30:30.170Z'
+                  modified: '2022-07-10T07:53:20.829Z'
+                  createdBy: 1
+                  modifiedBy: 9
+                  contacts:
+                  - 38
+                  - 39
+                  - 40
+                  - 41
+                  pipelines: []
+                  accounts: []
+                  health: 7
+                  healthStatus: Green
+                  properties:
+                    name: Crossrope
+                    total_saas_mrr:
+                      value: 1000
+                      currencyDefinitionId: 5
+                    total_service_mrr:
+                      value: 2000
+                      currencyDefinitionId: 5
+                    total_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    multiop: []
+                    testusertype: 14
+                    multi: []
+                  owners:
+                  - id: 115
+                    ownerType: primary
+                  - id: 10
+                    ownerType: secondary
+                  - id: 30
+                    ownerType: tertiary
+                  links:
+                    custom_link_relation1:
+                    - 564
+                    - 3453
+                    custom_link_relation2:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+    put:
+      operationId: updateOrganization
+      summary: Update Organization
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li><p>With external id: <code>/oganizations/extid-id</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/organizations/srcid-id</code></p>
+
+        </li>
+
+        </ul>
+
+        <h5 id="reqeust-body-guide">Reqeust body guide</h5>
+
+        <p>Follow the organization create guide.</p>
+
+        <p><strong>Archived Organizations</strong> cannot be updated.</p>
+
+        <h5 id="account-linking">Account Linking</h5>
+
+        <p><strong>Cannot link accounts</strong> to organization when <strong>updating</strong> organization. There is seperate API (<strong>Change Parent Entity</strong>) to in Account section to assign accounts to an organization.</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              properties:
+                name: Crossrope Huston
+              externalId: 56dbf464-3f31-48c3-bd77-0a29e46dc124
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  externalId: 56dbf464-3f31-48c3-bd77-0a29e46dc124
+                  health:
+                    score: 0
+                    ragStatus: Red
+                  properties:
+                    name: Crossrope NewYork
+                  links:
+                    custom_link_relation3:
+                    - 57
+  /core/organizations/:organizationId/churn-status:
+    put:
+      operationId: churnOrganization
+      summary: Churn organization
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/organizations/extid-id/churn-status</code></li>
+
+        <li>With internal id: <code>/organizations/srcid-id/churn-status</code></li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/organizations/:organizationId/archive:
+    put:
+      operationId: archiveOrganization
+      summary: Archive Organization
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id:<code>/organizations/extid-id/archive</code></li>
+
+        <li>With internal id: <code>/organizations/srcid-id/archive</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/organizations/:organizationId/restore:
+    put:
+      operationId: restoreOrganization
+      summary: Restore Organization
+      tags:
+      - Entity Management V1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/accounts:
+    get:
+      operationId: getAllAccountsV1
+      summary: Get All Accounts V1
+      tags:
+      - Entity Management V1
+      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+
+        <p>To filter accounts by custom fields</p>
+
+        <p><code>/accounts?{custom_field_name}={value}</code></p>
+
+        <p>Example</p>
+
+        <p><code>/accounts?zapier=true</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - accountId: 1
+                  imageId: 4ee7e7aa-9e36-483f-841b-977f365ca489.jpg
+                  externalId: rakuten-ext-id
+                  lifecycleStageId: 9
+                  about: rakuten-ext-id
+                  lastTouch: '2022-06-22T14:38:00.157Z'
+                  churned: 0
+                  entityArchived: 0
+                  organization: null
+                  pulse: null
+                  globalFields:
+                    name: Rakuten
+                    mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                  created: '2021-11-08T05:04:28.085Z'
+                  modified: '2022-06-22T14:38:00.300Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                  organizations: []
+                  contacts:
+                  - 28
+                  - 34
+                  - 36
+                  - 162
+                  health: 5.3
+                  healthStatus: Amber
+                  properties:
+                    name: Rakuten
+                    total_saas_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    total_service_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    total_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    numc: 0
+                    numd: 0
+                    sample_picklist: []
+                  owners:
+                  - id: 2
+                    ownerType: primary
+                - accountId: 3
+                  imageId: 18a18fec-4e9a-4d45-842a-be2ec872911f.jpg
+                  externalId: bad_monkey
+                  lifecycleStageId: 9
+                  about: ''
+                  lastTouch: '2022-06-09T07:49:02.257Z'
+                  churned: 0
+                  entityArchived: 0
+                  organization: null
+                  pulse: 5
+                  globalFields:
+                    name: Bad Monkey
+                    mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                  created: '2021-11-30T06:33:52.839Z'
+                  modified: '2022-06-09T07:49:02.363Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                  organizations: []
+                  contacts:
+                  - 27
+                  - 38
+                  - 39
+                  health: 10
+                  healthStatus: Green
+                  properties:
+                    name: Bad Monkey
+                    total_saas_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    total_service_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    total_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    numa: 250
+                    numb: 100
+                    numc: 350
+                    numd: 350
+                    sample_picklist: []
+                  owners:
+                  - id: 2
+                    ownerType: primary
+                  - id: 30
+                    ownerType: secondary
+                  - id: 6
+                    ownerType: tertiary
+    post:
+      operationId: createAccount
+      summary: Create Account
+      tags:
+      - Entity Management V1
+      description: '<p>Create New Account.</p>
+
+        <h5 id="request-body-guide">Request body guide</h5>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th><strong>Field</strong></th>
+
+        <th><strong>Description</strong></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>externalId</td>
+
+        <td>Use <code>externalId</code> to add the external id of the organization.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>organizationExternalId</td>
+
+        <td>Use <code>organizationExternalId</code> to link an organization to the current account.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>properties</td>
+
+        <td>Use <code>properties</code> to add all the custom fields.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>contacts</td>
+
+        <td>Use <code>contacts</code> to link contacts to an organization. Only accepts emails. Link existing contacts. Otherwise creates a contact with the given email and link it.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>owners</td>
+
+        <td>User <code>owners</code> to add organization owners. Accepts object array with user id and the owner type</td>
+
+        </tr>
+
+        <tr>
+
+        <td>links</td>
+
+        <td>Use <code>links</code> to link custom objects with accounts.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      requestBody:
+        content:
+          application/json:
+            example:
+              organizationExternalId: d0c90641-5df6-43ad-b91d-44aeae90d359
+              properties:
+                name: Vision Care
+              externalId: jdi623-45s234-cv234-df23-ht223
+              contacts:
+              - joe.root@velaris.io
+              about: Opticians
+              links:
+                custom_link_relation12:
+                  identifier_key: ext_id
+                  ids:
+                  - custom_object_instance_1
+                  - custom_object_instance_2
+                  - custom_object_instance_3
+                custom_link_relation13:
+                  identifier_key: int_id
+                  ids:
+                  - 1
+                  - 2
+                  - 3
+                  - 4
+                  - 5
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  contacts:
+                  - sample.contact@somedomain.com
+                  health:
+                    score: 6.2
+                    ragStatus: Green
+                  properties:
+                    name: Vision Care
+                  links:
+                    custom_link_relation1:
+                    - 564
+                    - 3453
+                    - 2342
+                    custom_link_relation2:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+  /core/accounts/:accountId:
+    get:
+      operationId: getAccountById
+      summary: Get Account By ID
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/accounts/extid-id</code></li>
+
+        <li>With internal id: <code>/accounts/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: Get Account By ID
+          content:
+            application/json:
+              example:
+                data:
+                  accountId: 1
+                  imageId: 4ee7e7aa-9e36-483f-841b-977f365ca489.jpg
+                  externalId: rakuten-ext-id
+                  lifecycleStageId: 9
+                  about: rakuten-ext-id
+                  lastTouch: '2022-06-22T14:38:00.157Z'
+                  churned: 0
+                  entityArchived: 0
+                  organization: null
+                  pulse: null
+                  globalFields:
+                    name: Rakuten
+                    mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                  created: '2021-11-08T05:04:28.085Z'
+                  modified: '2022-06-22T14:38:00.300Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                  organizations: []
+                  contacts:
+                  - 28
+                  - 34
+                  - 36
+                  - 162
+                  health: 5.3
+                  healthStatus: Amber
+                  properties:
+                    name: Rakuten
+                    total_saas_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    total_service_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    total_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                    numc: 0
+                    numd: 0
+                    sample_picklist: []
+                  links:
+                    custom_link_relation1:
+                    - 564
+                    - 3453
+                    custom_link_relation2:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+                  owners:
+                  - id: 2
+                    ownerType: primary
+    put:
+      operationId: updateAccount
+      summary: Update Account
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/accounts/extid-id</code></li>
+
+        <li>With internal id: <code>/accounts/srcid-id</code></li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              properties:
+                name: Vision Care London
+                date_joined: '2022-01-31'
+              about: Leading Sunglass provider
+              contacts:
+              - trent.boult@velaris.io
+              - tim.southee@velaris.io
+              links:
+                custom_link_relation1:
+                  identifier_key: ext_id
+                  ids:
+                  - custom_object_instance_11
+                  - custom_object_instance_21
+                custom_link_relation2:
+                  identifier_key: int_id
+                  ids:
+                  - 6
+                  - 4
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  about: Leading Sunglass provider
+                  contacts:
+                  - 21
+                  - 47
+                  - 48
+                  health:
+                    score: 6.2
+                    ragStatus: Green
+                  properties:
+                    name: Vision Care London
+                    date_joined: '2022-01-31'
+                  links:
+                    custom_link_relation1:
+                    - 57
+                    - 53
+  /core/accounts/:accountId/churn-status:
+    put:
+      operationId: churnAccount
+      summary: Churn Account
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/accounts/extid-id</code></li>
+
+        <li>With internal id: <code>/accounts/srcid-id</code></li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/accounts/:accountId/archive:
+    put:
+      operationId: archiveAccount
+      summary: Archive Account
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/accounts/extid-id</code></li>
+
+        <li>With internal id: <code>/accounts/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/accounts/:organizationId/restore:
+    put:
+      operationId: restoreAccount
+      summary: Restore Account
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/accounts/extid-id</code></li>
+
+        <li>With internal id: <code>/accounts/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/accounts/:accountId/parent-entity:
+    put:
+      operationId: changeParentEntity
+      summary: Change Parent Entity
+      tags:
+      - Entity Management V1
+      description: '<p>Change or assign parent organization.</p>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              organizationId: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/contacts:
+    get:
+      operationId: getAllContactsV1
+      summary: Get All Contacts V1
+      tags:
+      - Entity Management V1
+      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+
+        <p>To filter contacts by custom fields</p>
+
+        <p><code>/contacts?{custom_field_name}={value}</code></p>
+
+        <p>Example</p>
+
+        <p><code>/contacts?zapier=true</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: createContacts
+      summary: Create Contacts
+      tags:
+      - Entity Management V1
+      description: '<p>Create new contact</p>
+
+        <p>Create New Organiztion.</p>
+
+        <h5 id="request-body-guide">Request body guide</h5>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th><strong>Field</strong></th>
+
+        <th><strong>Description</strong></th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>externalId</td>
+
+        <td>Use <code>externalId</code> to add external id of the contact</td>
+
+        </tr>
+
+        <tr>
+
+        <td>email</td>
+
+        <td>Use <code>email</code> to add email id of the contact</td>
+
+        </tr>
+
+        <tr>
+
+        <td>properties</td>
+
+        <td>Use <code>properties</code> to add all the custom fields.</td>
+
+        </tr>
+
+        <tr>
+
+        <td>organizationIds</td>
+
+        <td>Use <code>organizationIds</code> to link contacts to an organization. Accepts Velaris internal Id. User either <code>organizationIds</code> or <code>organizationExternalIds</code> Example: [1, 2]</td>
+
+        </tr>
+
+        <tr>
+
+        <td>organizationExternalIds</td>
+
+        <td>Use <code>organizationExternalIds</code> to link contacts to an organization. Accepts external Id of the organization. User either <code>organizationIds</code> or <code>organizationExternalIds</code> Example: <code>["ajislk-1asdas-1231fg", "tcsd-gogk-asdm"]</code></td>
+
+        </tr>
+
+        <tr>
+
+        <td>accountIds</td>
+
+        <td>Use <code>accountIds</code> to link contacts to an acount. Accepts Velaris internal Id. User either <code>accountIds</code> or <code>accountExternalIds</code> Example: [1, 2]</td>
+
+        </tr>
+
+        <tr>
+
+        <td>accountExternalIds</td>
+
+        <td>Use <code>accountExternalIds</code> to link contacts to an acount. Accepts external Id of the account. User either <code>accountIds</code> or <code>accountExternalIds</code> Example: <code>["ajislk-1asdas-1231fg", "tcsd-gogk-asdm"]</code></td>
+
+        </tr>
+
+        <tr>
+
+        <td>links</td>
+
+        <td>Use <code>links</code> to link custom objects with contacts.</td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      requestBody:
+        content:
+          application/json:
+            example:
+              email: mattDamen@gmail.com
+              externalId: 32fd45-22fr4-yh23g-fg34-b5h6j34gd
+              about: This is a test contact
+              organizationIds:
+              - 6
+              - 7
+              accountIds:
+              - 1
+              - 2
+              properties:
+                name: Matt Damen
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  contactId: 261
+                  name: Matt Damen
+                  email: mattDamen@gmail.com
+                  accounts:
+                  - 1
+                  - 2
+                  organizations:
+                  - 6
+                  - 7
+                  links:
+                    custom_link_relation1:
+                    - 564
+                    - 3453
+                    custom_link_relation2:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+                  properties: {}
+  /core/contacts/:contactId:
+    get:
+      operationId: getContactsById
+      summary: Get Contacts By Id
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/contacts/extid-id</code></li>
+
+        <li>With internal id: <code>/contacts/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  globalFields:
+                    name: Joe Root
+                    date_joined: '2022-07-08'
+                  pulse: 3
+                  lifecycleStageId: 44
+                  imageId: null
+                  about: null
+                  lastTouch: '2022-07-07T09:51:14.000Z'
+                  externalId: null
+                  entityArchived: 0
+                  contactId: 1
+                  created: '2021-11-17T07:48:34.649Z'
+                  modified: '2022-07-10T07:37:26.463Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                  email: joe.root@gmail.com
+                  accounts:
+                  - 2
+                  organizations:
+                  - 30
+                  - 38
+                  - 118
+                  pipelines:
+                  - 2
+                  properties:
+                    name: Joe Root
+                    contact_number: +1-617-755-2327
+                    date_joined: '2022-07-08'
+                    contact_owner: 74
+                    job_title: Tester
+                    contact_multipicklist: []
+                  links:
+                    custom_link_relation1:
+                    - 564
+                    - 3453
+                    custom_link_relation2:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+    put:
+      operationId: updateContact
+      summary: Update Contact
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/contacts/extid-id</code></li>
+
+        <li>With internal id: <code>/contacts/srcid-id</code></li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              about: This is an updated contact
+              properties:
+                name: Joe Root
+              links:
+                custom_link_relation1:
+                  identifier_key: ext_id
+                  ids:
+                  - custom_object_instance_54
+                  - custom_object_instance_345
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  about: This is an updated contact
+                  health:
+                    score: 0
+                    ragStatus: Red
+                  properties:
+                    name: Joe Root
+                  links:
+                    custom_link_relation1:
+                    - 54
+                    - 345
+  /core/contacts/:contactId/archive:
+    put:
+      operationId: archiveContact
+      summary: Archive Contact
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/contacts/extid-id</code></li>
+
+        <li>With internal id: <code>/contacts/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/contacts/:contactId/restore:
+    put:
+      operationId: restoreContact
+      summary: Restore Contact
+      tags:
+      - Entity Management V1
+      description: '<p>Example:</p>
+
+        <ul>
+
+        <li>With external id: <code>/contacts/extid-id</code></li>
+
+        <li>With internal id: <code>/contacts/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/opportunities:
+    get:
+      operationId: getAllOpportunitiesV1
+      summary: Get All Opportunities V1
+      tags:
+      - Entity Management V1
+      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+
+        <p>To filter opportunities by custom fields</p>
+
+        <p><code>/opportunities?{custom_field_name}={value}</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - pipelineId: 1
+                  externalId: null
+                  entityArchived: 0
+                  data:
+                    title: Package upgrade to Silver
+                    saas_mrr:
+                      currencyDefinitionId: 5
+                      value: 2500
+                    total_mrr:
+                      value: 2500
+                      currencyDefinitionId: 5
+                  pipelineType: 1
+                  pipelineStatus: 2
+                  pulse: null
+                  globalFields:
+                    name: Package upgrade to Silver
+                    mrr:
+                      value: 2500
+                      currencyDefinitionId: 5
+                  created: '2021-12-02T02:53:11.469Z'
+                  modified: '2022-06-08T00:09:59.937Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                  organization:
+                    id: 1
+                    name: Successfully 10
+                  contacts: []
+                - pipelineId: 2
+                  externalId: 56dbf464-3f31-48c3-bd77-0a29e46dc124
+                  entityArchived: 0
+                  data:
+                    title: 'Package Upgrade: Watford FC'
+                    total_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                  pipelineType: 1
+                  pipelineStatus: 3
+                  pulse: null
+                  globalFields:
+                    name: 'Package Upgrade: Watford FC'
+                    mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                  created: '2021-12-10T13:34:10.995Z'
+                  modified: '2022-06-08T00:09:59.877Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                  organization:
+                    id: 3
+                    name: Successfully 10
+                  contacts:
+                  - 1
+    post:
+      operationId: createOpportunity
+      summary: Create Opportunity
+      tags:
+      - Entity Management V1
+      description: "<ul>\n<li><p>parentEntity types - organization, account</p>\n</li>\n<li><p>parent entity id or external id can be used</p>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"parentEntity\": {\n  \"type\": \"account\",\n  \"externalId\": \"account-external-id\"\n}\n\n</code></pre><ul>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n<li><p>links: Use <code>links</code> to link custom objects with opportunities.</p>\n</li>\n</ul>\n"
+      requestBody:
+        content:
+          application/json:
+            example:
+              contacts:
+              - joe.root@gmail.com
+              externalId: 46jiyt-64jhgi-52gew-26aw-987amlk
+              status: 1
+              parentEntity:
+                type: organization
+                id: 6
+              properties:
+                title: Sales Pipeline
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  _pipelineName: Sales Pipeline
+                  pipelineId: 235
+                  pipelineType: 1
+                  pipelineStatus: 1
+                  title: Sales Pipeline
+                  contacts:
+                  - 86
+                  organization:
+                    organizationId: 6
+                    name: LIGA MX-2
+                  links:
+                    custom_link_relation1:
+                    - 43
+                    custom_link_relation2:
+                    - 764
+                    - 345
+  /core/opportunities/:pipelineId:
+    get:
+      operationId: getOpportunitiesById
+      summary: Get Opportunities By Id
+      tags:
+      - Entity Management V1
+      description: '<p>Example</p>
+
+        <ul>
+
+        <li>With external id: <code>/opportunities/extid-id</code></li>
+
+        <li>With internal id: <code>/opportunities/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  pipelineId: 1
+                  externalId: 48efw78-46de-19wr-bd77-0a29e46dc
+                  entityArchived: 0
+                  data:
+                    title: Package upgrade to Silver
+                    saas_mrr:
+                      currencyDefinitionId: 5
+                      value: 2500
+                    total_mrr:
+                      value: 2500
+                      currencyDefinitionId: 5
+                    original_source_type: []
+                  pipelineType: 1
+                  pipelineStatus: 2
+                  pulse: null
+                  globalFields:
+                    name: Package upgrade to Silver
+                    mrr:
+                      value: 2500
+                      currencyDefinitionId: 5
+                  created: '2021-12-02T02:53:11.469Z'
+                  modified: '2022-07-25T11:14:31.539Z'
+                  createdBy: 1
+                  modifiedBy: 30
+                  organization:
+                    id: 1
+                    name: Successfully 10
+                  contacts: []
+                  links:
+                    custom_link_relation1:
+                    - 456
+                    custom_link_relation2:
+                    - 764
+                    - 345
+  /core/opportunities/:opportunityId:
+    put:
+      operationId: updateOpportunity
+      summary: Update Opportunity
+      tags:
+      - Entity Management V1
+      description: '<ul>
+
+        <li><p>With external id: <code>/opportunities/extid-id</code></p>
+
+        </li>
+
+        <li><p>With internal id: <code>/opportunities/srcid-id</code></p>
+
+        </li>
+
+        <li><p>parent entity cannot be changed after creation.</p>
+
+        </li>
+
+        <li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>
+
+        </li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              contacts:
+              - joe.root@gmail.com
+              status: 2
+              properties:
+                title: Expansion Pipeline
+              links:
+                custom_link_relation4:
+                  identifier_key: ext_id
+                  ids:
+                  - custom_object_instance_43
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - contacts:
+                  - 86
+                  pipelineStatus: 2
+                  data:
+                    title: Expansion Pipeline
+                - - fieldId: 26
+                    field: title
+                    value: Expansion Pipeline
+                    dataType: string
+  /core/opportunities/:id/archive:
+    put:
+      operationId: archiveOpportunity
+      summary: Archive Opportunity
+      tags:
+      - Entity Management V1
+      description: '<p>Example</p>
+
+        <ul>
+
+        <li>With external id: <code>/opportunities/extid-id</code></li>
+
+        <li>With internal id: <code>/opportunities/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '204':
+          description: No Content
+  /core/opportunities/:opportunityId/restore:
+    put:
+      operationId: restoreOpportunity
+      summary: Restore Opportunity
+      tags:
+      - Entity Management V1
+      description: '<p>Example</p>
+
+        <ul>
+
+        <li>With external id: <code>/opportunities/extid-id</code></li>
+
+        <li>With internal id: <code>/opportunities/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '204':
+          description: No Content
+  /core/risks:
+    get:
+      operationId: getAllRisksV1
+      summary: Get All Risks V1
+      tags:
+      - Entity Management V1
+      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+
+        <p>To filter risks by custom fields</p>
+
+        <p><code>/risks?{custom_field_name}={value}</code></p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - pipelineId: 69
+                  externalId: 123123-dsads-34542323344
+                  entityArchived: 0
+                  data:
+                    title: Test Pipeline Title
+                    total_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                  pipelineType: 2
+                  pipelineStatus: 5
+                  pulse: null
+                  globalFields:
+                    name: Test Pipeline Title
+                    mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                  created: '2022-06-08T05:41:05.169Z'
+                  modified: '2022-06-08T05:47:50.924Z'
+                  createdBy: 12
+                  modifiedBy: 12
+                  account:
+                    id: 9
+                    name: Amy's Account
+                  contacts:
+                  - 81
+                  - 86
+    post:
+      operationId: createRisk
+      summary: Create Risk
+      tags:
+      - Entity Management V1
+      description: "<ul>\n<li><p>parentEntity types - organization, account</p>\n</li>\n<li><p>parent entity id or external id can be used</p>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"parentEntity\": {\n  \"type\": \"account\",\n  \"externalId\": \"account-external-id\"\n}\n\n</code></pre><ul>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n<li><p>links: Use <code>links</code> to link custom objects with risks.</p>\n</li>\n</ul>\n"
+      requestBody:
+        content:
+          application/json:
+            example:
+              contacts:
+              - joe.root@gmail.com
+              externalId: 446ew3-sf45wy-34sdg23
+              status: 4
+              parentEntity:
+                type: account
+                id: 7
+              properties:
+                title: Risk Pipeline
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  _pipelineName: Test Risk Pipeline
+                  pipelineId: 236
+                  pipelineType: 2
+                  pipelineStatus: 4
+                  title: Test Risk Pipeline
+                  contacts:
+                  - 86
+                  account:
+                    accountId: 7
+                    name: Amy's Account
+                  links:
+                    custom_link_relation1:
+                    - 47
+                    custom_link_relation2:
+                    - 465
+                    - 344
+  /core/risks/:riskId:
+    get:
+      operationId: getRiskById
+      summary: Get Risk By Id
+      tags:
+      - Entity Management V1
+      description: '<p>Example</p>
+
+        <ul>
+
+        <li>With external id: <code>/risks/extid-id</code></li>
+
+        <li>With internal id: <code>/risks/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  pipelineId: 69
+                  externalId: 123123-dsads-34542323344
+                  entityArchived: 0
+                  data:
+                    title: Test Pipeline Title
+                    total_mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                  pipelineType: 2
+                  pipelineStatus: 5
+                  pulse: null
+                  globalFields:
+                    name: Test Pipeline Title
+                    mrr:
+                      value: 0
+                      currencyDefinitionId: 5
+                  created: '2022-06-08T05:41:05.169Z'
+                  modified: '2022-06-08T05:47:50.924Z'
+                  createdBy: 12
+                  modifiedBy: 12
+                  account:
+                    id: 9
+                    name: Amy's Account
+                  contacts:
+                  - 81
+                  - 86
+                  links:
+                    custom_link_relation1:
+                    - 54
+                    custom_link_relation2:
+                    - 35
+                    - 24
+    put:
+      operationId: updateRisk
+      summary: Update Risk
+      tags:
+      - Entity Management V1
+      description: '<ul>
+
+        <li>With external id:<code>/risks/extid-id</code></li>
+
+        <li>With internal id: <code>/risks/srcid-id</code></li>
+
+        <li>parent entity cannot be changed after creation.</li>
+
+        <li>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              contacts:
+              - joe.root@gmail.com
+              status: 5
+              properties:
+                title: Pipeline Title v2
+              links:
+                custom_link_relation5:
+                  identifier_key: ext_id
+                  ids:
+                  - custom_object_instance_453
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - contacts:
+                  - 86
+                  - 81
+                  pipelineStatus: 5
+                  data:
+                    title: Test Pipeline Title Updated
+                - - fieldId: 26
+                    field: title
+                    value: Test Pipeline Title Updated
+                    dataType: string
+  /core/risks/:riskId/archive:
+    put:
+      operationId: archiveRisk
+      summary: Archive Risk
+      tags:
+      - Entity Management V1
+      description: '<ul>
+
+        <li>With external id:<code>/risks/extid-id</code></li>
+
+        <li>With internal id: <code>/risks/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+  /core/risks/:riskId/restore:
+    put:
+      operationId: restoreRisks
+      summary: Restore Risks
+      tags:
+      - Entity Management V1
+      description: '<ul>
+
+        <li>With external id:<code>/risks/extid-id</code></li>
+
+        <li>With internal id: <code>/risks/srcid-id</code></li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example: {}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

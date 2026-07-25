@@ -1,0 +1,222 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Activity
+paths:
+  /entity-action/activity:
+    get:
+      operationId: getAllActivities
+      summary: Get All Activities
+      tags:
+      - Activity
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - activityId: 13542
+                  title: customer <> Velaris (Commercial discussion)
+                  note: 'null'
+                  type: 3
+                  activityDateTime: '2025-07-29T17:00:00.000Z'
+                  created: '2025-07-31T20:19:35.576Z'
+                  source: hubspot
+                  sourceId: '563276311791'
+                  sourceCreated: '2025-07-29T15:57:34.000Z'
+                  sourceCreatedByData: '809'
+                  sourceCreatedBy: 1
+                  sourceModified: '2025-07-29T18:30:58.336Z'
+                  sourceModifiedByData: null
+                  sourceModifiedBy: null
+                  endTime: null
+                  outcome: null
+                  duration: 30
+                  aiDataId: null
+                  userIds: []
+                  contactIds: []
+                  accountIds:
+                  - 906
+                  organizationIds: []
+                  pipelineIds: []
+                - activityId: 13540
+                  title: Velaris Demo
+                  note: '"<p></p>"'
+                  type: 3
+                  activityDateTime: '2025-06-02T15:30:00.000Z'
+                  created: '2025-07-31T20:19:34.305Z'
+                  source: hubspot
+                  sourceId: '245078864100'
+                  sourceCreated: '2025-05-29T20:02:10.800Z'
+                  sourceCreatedByData: '809'
+                  sourceCreatedBy: 1
+                  sourceModified: '2025-06-09T17:02:44.320Z'
+                  sourceModifiedByData: null
+                  sourceModifiedBy: null
+                  endTime: null
+                  outcome: 1
+                  duration: 30
+                  aiDataId: null
+                  userIds: []
+                  contactIds: []
+                  accountIds:
+                  - 906
+                  organizationIds: []
+                  pipelineIds: []
+    post:
+      operationId: createActivity
+      summary: Create Activity
+      tags:
+      - Activity
+      requestBody:
+        content:
+          application/json:
+            example:
+              title: Q4 Strategy Review
+              activityType: Meeting
+              source: SALESFORCE
+              sourceId: 00T8d00000abc12EAA
+              activityDateTime: '2025-10-23T15:00:00Z'
+              linkedEntities:
+              - type: ACCOUNT
+                id: 12345
+              - type: CONTACT
+                email: jane.doe@example.com
+              note: <h3>Discussion Points</h3><p>Review sales performance and plan for the next quarter.</p>
+              users:
+              - email: john.smith@yourcompany.com
+              duration: 3600
+              sourceCreated: '2025-10-21T10:00:00Z'
+              sourceCreatedBy:
+                type: 1
+                data: 987
+      responses:
+        '200':
+          description: OK
+    put:
+      operationId: updateActivity
+      summary: Update Activity
+      tags:
+      - Activity
+      requestBody:
+        content:
+          application/json:
+            example:
+              title: Q4 Strategy Review (Rescheduled)
+              activityDateTime: '2025-10-24T11:00:00Z'
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: deleteActivityById
+      summary: Delete Activity by ID
+      tags:
+      - Activity
+      responses:
+        '200':
+          description: OK
+  '/activity-type ':
+    get:
+      operationId: getActivityTypes
+      summary: Get Activity Types
+      tags:
+      - Activity
+      responses:
+        '200':
+          description: Get Activity Types
+  /entity-action/activity/srcid-13542:
+    get:
+      operationId: getActivityBySourceId
+      summary: Get Activity by source ID
+      tags:
+      - Activity
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  activityId: 13542
+                  title: customer <> Velaris (Commercial discussion)
+                  note: 'null'
+                  type: 3
+                  activityDateTime: '2025-07-29T17:00:00.000Z'
+                  created: '2025-07-31T20:19:35.576Z'
+                  source: hubspot
+                  sourceId: '287276311791'
+                  sourceCreated: '2025-07-29T15:57:34.000Z'
+                  sourceCreatedByData: '809'
+                  sourceCreatedBy: 1
+                  sourceModified: '2025-07-29T18:30:58.336Z'
+                  sourceModifiedByData: null
+                  sourceModifiedBy: null
+                  endTime: null
+                  outcome: null
+                  duration: 30
+                  linkCount: 1
+                  aiDataId: null
+                  userIds: []
+                  contactIds: []
+                  accountIds:
+                  - 906
+                  organizationIds: []
+                  pipelineIds: []
+  /entity-action/activity/extid-253276311791:
+    get:
+      operationId: getActivityByExternalId
+      summary: Get Activity by external Id
+      tags:
+      - Activity
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                  activityId: 13542
+                  title: Customer <> Velaris (Commercial discussion)
+                  note: 'null'
+                  type: 3
+                  activityDateTime: '2025-07-29T17:00:00.000Z'
+                  created: '2025-07-31T20:19:35.576Z'
+                  source: hubspot
+                  sourceId: '253276311791'
+                  sourceCreated: '2025-07-29T15:57:34.000Z'
+                  sourceCreatedByData: '809'
+                  sourceCreatedBy: 1
+                  sourceModified: '2025-07-29T18:30:58.336Z'
+                  sourceModifiedByData: null
+                  sourceModifiedBy: null
+                  endTime: null
+                  outcome: null
+                  duration: 30
+                  userIds: []
+                  contactIds: []
+                  accountIds:
+                  - 906
+                  organizationIds: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

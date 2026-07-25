@@ -1,0 +1,131 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Attribute Change Log API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Attribute Change Log
+paths:
+  /attribute-change-log:
+    post:
+      operationId: getAttributeChangelog
+      summary: Get Attribute Changelog
+      tags:
+      - Attribute Change Log
+      description: '<p><strong>Pagination</strong></p>
+
+        <p>Attribute changelog response is paginated using the attribute changed date. To fetch the next page last received changelog chaged date should be passed as the cursor in the next request.</p>
+
+        <p><code>Page size : 50</code></p>
+
+        <p><strong>Request Body</strong></p>
+
+        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+
+        <thead>
+
+        <tr>
+
+        <th>Attribute</th>
+
+        <th>Description</th>
+
+        <th>Example</th>
+
+        </tr>
+
+        </thead>
+
+        <tbody>
+
+        <tr>
+
+        <td>entity <em>(required)</em></td>
+
+        <td>One of internal id or external id should be provided.  <br />  <br />Accepted values:  <br /><code>level</code>: <code>orgnization, account, contact</code>  <br /><code>internalId</code> : velaris entity id <em>(number)</em>  <br /><code>externalId</code> : velaris entity external id (<em>string)</em></td>
+
+        <td><code>{</code>  <br /><code>"level": "organization",</code>  <br /><code>"externalId": "23487-df3242",</code>  <br /><code>"internalId": 1</code>  <br /><code>}</code></td>
+
+        </tr>
+
+        <tr>
+
+        <td>filters <em>(optional)</em></td>
+
+        <td>Alteast one filter should be provided. Multiple filters from the same category cannot be provided in the same request.  <br />  <br /><strong>Attribute filter</strong> (map) <em>- filter the changelog by the attribute required</em>  <br /><code>{"name": "attribute", "operator": "isSetTo", "value": []}</code>  <br />  <br />Accepted values:  <br /><code>name</code> : <code>attribute</code>  <br /><code>operator</code> : <code>isSetTo</code>  <br /><code>value</code>: array of custom or system attributes.  <br />system attributes: <code>lifecycle_stage, owner, email, about, churn_date, churn_reason, external_id</code>  <br />custom attributes: API name of the custom attribute should be provided</td>
+
+        <td><code>[ { "name": "attribute", "operator": "isSetTo", "value": ["lifecycle_stage", "about"] } ]</code></td>
+
+        </tr>
+
+        <tr>
+
+        <td>cursor <em>(optional)</em></td>
+
+        <td>To filter the attribute changes happened before the given date time. Cursor should be in <code>yyyy-MM-dd''T''HH:mm:ss.SSSZ</code> format</td>
+
+        <td><code>"2023-04-27T05:43:55.000Z"</code></td>
+
+        </tr>
+
+        </tbody>
+
+        </table>
+
+        </div>'
+      requestBody:
+        content:
+          application/json:
+            example:
+              entity:
+                level: organization
+                internalId: 10000
+              filters:
+              - name: attribute
+                operator: isSetTo
+                value:
+                - name
+                - lifecycle_stage
+      responses:
+        '200':
+          description: 200 - Success
+          content:
+            application/json:
+              example:
+                status: success
+                data:
+                - source: entity_custom_data
+                  organizationId: '1'
+                  customColumnId: 1
+                  fieldName: name
+                  changedBy: 81
+                  changedAt: '2024-02-05T11:37:37.000Z'
+                  previousValue: Acme Inc
+                  newValue: Acme Inc - Updated
+                - source: entity_custom_data
+                  organizationId: '1'
+                  customColumnId: 1
+                  fieldName: name
+                  changedBy: 81
+                  changedAt: '2024-02-05T11:36:34.000Z'
+                  previousValue: null
+                  newValue: Acme Inc
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

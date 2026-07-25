@@ -1,0 +1,336 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Tasks API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Tasks
+paths:
+  /project-mgt/tasks:
+    get:
+      operationId: tasks
+      summary: Tasks
+      tags:
+      - Tasks
+      description: '<p>This endpoint sends an HTTP GET request to retrieve a list of tasks from the project management system. The request can include query parameters to paginate the response.</p>
+
+        <h4 id="request-parameters">Request Parameters</h4>
+
+        <ul>
+
+        <li><p><code>page</code> (integer) - The page number for the task list. This parameter is used to navigate through the paginated results.</p>
+
+        </li>
+
+        <li><p><code>pageSize</code> (integer) - The number of tasks to return per page. This helps in controlling the volume of data returned in a single request.</p>
+
+        </li>
+
+        <li><p><code>myTasksOnly</code> (boolean) - FIlters the tasks that are assigned to the current user only if set to true.</p>
+
+        </li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: Tasks
+          content:
+            application/json:
+              example:
+                data:
+                  tasks:
+                  - taskId: 0
+                    activityTypeId: 0
+                    name: ''
+                    status: null
+                    priority: ''
+                    type: ''
+                    description: ''
+                    dueDate: ''
+                    entity: ''
+                    bookmarked: 0
+                    organizationId: null
+                    accountId: 0
+                    assigneeId: 0
+                    assigneeType: ''
+                    source: ''
+                    sourceId: null
+                    playbookTaskTemplateId: null
+                    scenarioId: null
+                    nodeId: null
+                    isRepeatable: true
+                    repeatConfigId: null
+                    occurrenceCount: null
+                    skipCount: null
+                    taskOrder: ''
+                    creatorId: 0
+                    modified: ''
+                    created: ''
+                    startDate: null
+                    completeDate: null
+                    originalEstimate: 0
+                    parentId: null
+                    taskLevel: 0
+                    originalDueDate: ''
+                    uncompletedChecklist: []
+                  page: 0
+                  pageSize: 0
+                  totalItemCount: 0
+                  dateBreakDown:
+                    all: 0
+                    today: 0
+                    overDue: 0
+                    thisWeek: 0
+                    unscheduled: 0
+    post:
+      operationId: archiveTask
+      summary: Archive Task
+      tags:
+      - Tasks
+      description: '<p>This endpoint allows the client to archive an existing task identified by its unique ID. Archiving a task is useful for managing the task lifecycle and keeping the task list organized without permanently deleting tasks.</p>
+
+        <h4 id="request-body">Request Body</h4>
+
+        <p>The request must be sent as a JSON object with the following parameter:</p>
+
+        <ul>
+
+        <li><code>taskId</code> (number): The ID of the task to be archived.</li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              taskId: 123
+      responses:
+        '200':
+          description: Archive Task
+          content:
+            application/json:
+              example:
+                status: success
+                message: Tasks successfully archived
+  /project-mgt/tasks/srcid-1:
+    get:
+      operationId: getTaskById
+      summary: Get Task By ID
+      tags:
+      - Tasks
+      description: '<p>This endpoint retrieves a specific task by its ID, allowing users to access detailed information about the task''s attributes and status.</p>
+
+        <h4 id="expected-input-parameters">Expected Input Parameters</h4>
+
+        <ul>
+
+        <li><p><strong>Path Parameter:</strong></p>
+
+        <ul>
+
+        <li><code>srcid-1</code>: The unique identifier for the task you want to retrieve.</li>
+
+        </ul>
+
+        </li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: Get Task By ID
+          content:
+            application/json:
+              example:
+                data:
+                  status: success
+                  data:
+                    taskId: 1
+                    activityTypeId: 1
+                    name: Updated Task Name
+                    status: null
+                    priority: HIGH
+                    type: NORMAL
+                    description: '"<p>Updated description</p>"'
+                    dueDate: '2025-12-31'
+                    entity: ACCOUNT
+                    bookmarked: 0
+                    organizationId: null
+                    accountId: 4
+                    assigneeType: USER
+                    assigneeId: 5
+                    parentId: null
+                    taskLevel: 1
+                    source: VELARIS
+                    sourceId: 'null'
+                    playbookName: null
+                    playbookInstanceId: null
+                    playbookTaskTemplateId: null
+                    scenarioId: null
+                    nodeId: null
+                    creatorId: 4
+                    modified: '2025-06-26T12:28:46.715Z'
+                    created: '2022-11-25T14:05:28.565Z'
+                    isRepeatable: false
+                    repeatConfigId: null
+                    occurrenceCount: null
+                    skipCount: null
+                    taskOrder: 0|lcm00011
+                    originalDueDate: '2025-12-31'
+                    completeDate: null
+                    startDate: null
+                    originalEstimate: 0
+                    totalEffort: 0
+                    contacts: []
+                    checkList: []
+                    watchers: []
+                    attachments: []
+                    uncompletedChecklist: []
+                    workLog: []
+                    links: []
+                    subTasks: []
+    put:
+      operationId: updateTaskByTaskId
+      summary: Update Task by Task Id
+      tags:
+      - Tasks
+      description: '<p>This endpoint allows you to update an existing task in the project management system. By sending a PUT request to the specified URL, you can modify the details of a task identified by its source ID.</p>
+
+        <h2 id="possible-status-codes">Possible Status Codes</h2>
+
+        <ul>
+
+        <li><p><strong>200 OK</strong>: The task was successfully updated.</p>
+
+        </li>
+
+        <li><p><strong>400 Bad Request</strong>: The request body is malformed or missing required fields.</p>
+
+        </li>
+
+        <li><p><strong>404 Not Found</strong>: The task with the specified source ID does not exist.</p>
+
+        </li>
+
+        <li><p><strong>500 Internal Server Error</strong>: An unexpected error occurred on the server.</p>
+
+        </li>
+
+        </ul>
+
+        '
+      requestBody:
+        content:
+          application/json:
+            example:
+              data:
+                taskId: 1
+                name: Updated Task Name
+                activityTypeId: 1
+                priority: HIGH
+                description: '"<p>Updated description</p>"'
+                dueDate: '2025-12-31'
+                assignee:
+                  id: 5
+                  type: USER
+      responses:
+        '200':
+          description: Update Task by Task Id
+          content:
+            application/json:
+              example:
+                data:
+                  taskId: 1
+                  name: Updated Task Name
+                  activityTypeId: 1
+                  priority: HIGH
+                  description: '"<p>Updated description</p>"'
+                  dueDate: '2025-12-31'
+                  assignee:
+                    id: 5
+                    type: USER
+  /project-mgt/tasks/extid-srcid-5:
+    get:
+      operationId: getTaskBySourceAndSourceId
+      summary: Get Task by Source and Source ID
+      tags:
+      - Tasks
+      description: '<p>This endpoint retrieves a specific task by its external ID and source. It is designed to provide detailed information about the task, including its status, priority, and associated metadata.</p>
+
+        <h4 id="expected-input-parameters">Expected Input Parameters</h4>
+
+        <ul>
+
+        <li><p><strong>Path Parameter:</strong></p>
+
+        <ul>
+
+        <li><code>extid-srcid-5</code>: The unique identifier for the task you want to retrieve.</li>
+
+        </ul>
+
+        </li>
+
+        </ul>
+
+        '
+      responses:
+        '200':
+          description: Get Task by Source and Source ID
+          content:
+            application/json:
+              example:
+                data:
+                  status: success
+                  data:
+                    taskId: 5
+                    activityTypeId: 1
+                    name: Updated Task Name
+                    status: ARCHIVED
+                    priority: HIGH
+                    type: NORMAL
+                    description: '"<p>Updated description</p>"'
+                    dueDate: '2025-12-31'
+                    entity: ACCOUNT
+                    organizationId: null
+                    accountId: 4
+                    assigneeType: USER
+                    assigneeId: 5
+                    source: HUBSPOT
+                    sourceId: srcid-5
+                    playbookName: null
+                    playbookInstanceId: null
+                    playbookTaskTemplateId: null
+                    scenarioId: null
+                    nodeId: null
+                    creatorId: 4
+                    modified: '2025-06-13T08:56:51.170Z'
+                    created: '2022-11-25T14:16:02.616Z'
+                    isRepeatable: false
+                    repeatConfigId: null
+                    occurrenceCount: null
+                    skipCount: null
+                    taskOrder: 0|lcm00051
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

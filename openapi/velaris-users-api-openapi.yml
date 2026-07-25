@@ -1,0 +1,197 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Users API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Users
+paths:
+  /users:
+    get:
+      operationId: getAllUsers
+      summary: Get all users
+      tags:
+      - Users
+      description: '<p>This endpoint retrieves the details of active, invited, and deactivated users.</p>
+
+        '
+      responses:
+        '200':
+          description: Get all users
+          content:
+            application/json:
+              example:
+                status: success
+                data:
+                  activeUsers:
+                  - userId: 101
+                    username: user1@example.com
+                    firstName: null
+                    lastName: null
+                    email: user1@example.com
+                    jobTitle: null
+                    mobileNumber: null
+                    createdBy: 100
+                    modifiedBy: 0
+                    archived: 0
+                    isProfileComplete: 0
+                    displayCurrency: 64
+                    imageId: null
+                    externalId: null
+                    userType: WORKSPACE
+                    enabled: true
+                    isSystemUser: 0
+                    userStatus: CONFIRMED
+                    preferredMfaSetting: Main tenant
+                    emailVerified: true
+                    createDate: '2024-02-29T05:22:33.392Z'
+                    modifiedDate: '2024-02-29T05:22:33.392Z'
+                    roleName: Administrator
+                    roleId: 3
+                    permissions: []
+                  deactivatedUsers:
+                  - userId: 102
+                    username: user2@example.com
+                    firstName: null
+                    lastName: null
+                    email: user2@example.com
+                    jobTitle: null
+                    mobileNumber: null
+                    createdBy: 100
+                    modifiedBy: 0
+                    archived: 0
+                    isProfileComplete: 0
+                    displayCurrency: 64
+                    imageId: null
+                    externalId: null
+                    userType: WORKSPACE
+                    enabled: false
+                    isSystemUser: 0
+                    userStatus: CONFIRMED
+                    preferredMfaSetting: Main tenant
+                    emailVerified: true
+                    createDate: '2024-04-03T11:09:54.113Z'
+                    modifiedDate: '2024-04-08T08:09:55.899Z'
+                    roleName: Normal User
+                    roleId: 1
+                    permissions: []
+                  invitedUsers:
+                  - userId: 103
+                    username: invited.user@example.com
+                    firstName: null
+                    lastName: null
+                    email: invited.user@example.com
+                    jobTitle: null
+                    mobileNumber: null
+                    createdBy: 100
+                    modifiedBy: 0
+                    archived: 0
+                    isProfileComplete: 0
+                    displayCurrency: 2
+                    imageId: null
+                    externalId: null
+                    userType: TENANT
+                    enabled: true
+                    isSystemUser: 0
+                    userStatus: FORCE_CHANGE_PASSWORD
+                    preferredMfaSetting: NOMFA
+                    emailVerified: true
+                    createDate: '2022-12-13T15:08:29.203Z'
+                    modifiedDate: '2022-12-13T15:08:29.203Z'
+                    sub: uuid-string-here
+                    custom:createdBy: '100'
+                    custom:userId: '103'
+                    roleName: Administrator
+                    roleId: 3
+                    permissions: []
+    post:
+      operationId: getUsersByEmails
+      summary: Get users by emails
+      tags:
+      - Users
+      requestBody:
+        content:
+          application/json:
+            example:
+              emails:
+              - user1@example.com
+      responses:
+        '200':
+          description: Get users by emails
+          content:
+            application/json:
+              example:
+                data:
+                - userId: 101
+                  firstName: User
+                  lastName: '1'
+                  email: user1@example.com
+                  jobTitle: ''
+                  mobileNumber: ''
+                  isProfileComplete: 1
+                  displayCurrency: 2
+                  imageId: ''
+                  externalId: null
+                  userType: TENANT
+                  createDate: '2025-05-30T10:17:41.599Z'
+                  modifiedDate: '2025-05-30T10:19:24.646Z'
+                  roleName: Normal User
+                  roleId: 1
+  /users/:userId:
+    get:
+      operationId: getUserById
+      summary: Get user by id
+      tags:
+      - Users
+      description: '<p>This endpoint retrieves the details of a specific user by their ID.</p>
+
+        '
+      responses:
+        '200':
+          description: Get user by id
+          content:
+            application/json:
+              example:
+                data:
+                  userId: 1
+                  username: DEFAULT_USER
+                  firstName: ''
+                  lastName: ''
+                  email: ''
+                  jobTitle: null
+                  mobileNumber: null
+                  createdBy: 0
+                  modifiedBy: 0
+                  archived: 0
+                  isProfileComplete: 0
+                  displayCurrency: 0
+                  imageId: ''
+                  externalId: null
+                  userType: TENANT
+                  enabled: true
+                  isSystemUser: 0
+                  userStatus: CREATING
+                  createDate: '2022-11-25T03:54:21.247Z'
+                  modifiedDate: '2022-11-25T03:54:21.247Z'
+                  roleName: Administrator
+                  roleId: 3
+                  permissions: []
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

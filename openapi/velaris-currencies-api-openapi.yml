@@ -1,0 +1,739 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Currencies API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Currencies
+paths:
+  /v2/currencies/base-currency:
+    get:
+      operationId: getBaseCurrency
+      summary: Get Base Currency
+      tags:
+      - Currencies
+      responses:
+        '200':
+          description: Get Base Currency
+          content:
+            application/json:
+              example:
+                data:
+                  currencyTypeId: 1
+                  currencyDefinitionId: 5
+                  isBase: true
+                  isDefault: false
+                  archived: 0
+                  createdBy: 1
+                  modifiedBy: 4
+                  createdOn: '2022-11-25T03:54:21.000Z'
+                  modifiedOn: '2023-03-06T12:15:25.000Z'
+  /v2/currencies/exchange-rates:
+    get:
+      operationId: getExchangeRates
+      summary: Get Exchange Rates
+      tags:
+      - Currencies
+      responses:
+        '200':
+          description: Get Exchange Rates
+          content:
+            application/json:
+              example:
+                data:
+                  '2023-04-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-04-01'
+                    effectiveTo: '2023-04-30'
+                    conversionRate: '0.948700000000000'
+                    createdOn: '2023-03-31T23:55:30.000Z'
+                    modifiedOn: '2023-03-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-04-01'
+                    effectiveTo: '2023-04-30'
+                    conversionRate: '0.837500000000000'
+                    createdOn: '2023-03-31T23:55:30.000Z'
+                    modifiedOn: '2023-03-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2022-12-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2022-12-01'
+                    effectiveTo: '2022-12-31'
+                    conversionRate: '0.960000000000000'
+                    createdOn: '2022-11-30T23:55:30.000Z'
+                    modifiedOn: '2022-11-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2022-12-01'
+                    effectiveTo: '2022-12-31'
+                    conversionRate: '0.830000000000000'
+                    createdOn: '2022-11-30T23:55:30.000Z'
+                    modifiedOn: '2022-11-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2023-05-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-05-01'
+                    effectiveTo: '2023-05-31'
+                    conversionRate: '0.927600000000000'
+                    createdOn: '2023-05-24T18:00:00.000Z'
+                    modifiedOn: '2023-05-24T18:00:00.000Z'
+                    createdBy: 106
+                    modifiedBy: 106
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-05-01'
+                    effectiveTo: '2023-05-31'
+                    conversionRate: '0.803500000000000'
+                    createdOn: '2023-05-24T18:00:00.000Z'
+                    modifiedOn: '2023-05-24T18:00:00.000Z'
+                    createdBy: 106
+                    modifiedBy: 106
+                  '2023-09-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-09-01'
+                    effectiveTo: '2023-09-30'
+                    conversionRate: '0.915500000000000'
+                    createdOn: '2023-08-31T23:55:30.000Z'
+                    modifiedOn: '2023-08-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-09-01'
+                    effectiveTo: '2023-09-30'
+                    conversionRate: '0.786300000000000'
+                    createdOn: '2023-08-31T23:55:30.000Z'
+                    modifiedOn: '2023-08-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2023-06-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-06-01'
+                    effectiveTo: '2023-06-30'
+                    conversionRate: '0.915500000000000'
+                    createdOn: '2023-06-30T14:15:50.000Z'
+                    modifiedOn: '2023-06-30T14:15:50.000Z'
+                    createdBy: 106
+                    modifiedBy: 106
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-06-01'
+                    effectiveTo: '2023-06-30'
+                    conversionRate: '0.786300000000000'
+                    createdOn: '2023-06-30T14:15:50.000Z'
+                    modifiedOn: '2023-06-30T14:15:50.000Z'
+                    createdBy: 106
+                    modifiedBy: 106
+                  '2023-01-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-01-01'
+                    effectiveTo: '2023-01-31'
+                    conversionRate: '0.928100000000000'
+                    createdOn: '2023-02-27T21:01:46.000Z'
+                    modifiedOn: '2023-02-27T21:01:46.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-01-01'
+                    effectiveTo: '2023-01-31'
+                    conversionRate: '0.817600000000000'
+                    createdOn: '2023-02-27T21:01:46.000Z'
+                    modifiedOn: '2023-02-27T21:01:46.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  '2023-02-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-02-01'
+                    effectiveTo: '2023-02-28'
+                    conversionRate: '0.948700000000000'
+                    createdOn: '2023-02-27T21:02:32.000Z'
+                    modifiedOn: '2023-02-27T21:02:32.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-02-01'
+                    effectiveTo: '2023-02-28'
+                    conversionRate: '0.837500000000000'
+                    createdOn: '2023-02-27T21:02:32.000Z'
+                    modifiedOn: '2023-02-27T21:02:32.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  '2023-03-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-03-01'
+                    effectiveTo: '2023-03-31'
+                    conversionRate: '0.948700000000000'
+                    createdOn: '2023-02-28T23:55:30.000Z'
+                    modifiedOn: '2023-02-28T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-03-01'
+                    effectiveTo: '2023-03-31'
+                    conversionRate: '0.837500000000000'
+                    createdOn: '2023-02-28T23:55:30.000Z'
+                    modifiedOn: '2023-02-28T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2022-11-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2022-11-01'
+                    effectiveTo: '2022-11-30'
+                    conversionRate: '0.960000000000000'
+                    createdOn: '2022-11-29T13:28:06.000Z'
+                    modifiedOn: '2022-11-29T13:28:06.000Z'
+                    createdBy: 5
+                    modifiedBy: 5
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2022-11-01'
+                    effectiveTo: '2022-11-30'
+                    conversionRate: '0.830000000000000'
+                    createdOn: '2022-11-29T13:28:06.000Z'
+                    modifiedOn: '2022-11-29T13:28:06.000Z'
+                    createdBy: 5
+                    modifiedBy: 5
+                  '2023-10-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-10-01'
+                    effectiveTo: '2023-10-31'
+                    conversionRate: '0.915500000000000'
+                    createdOn: '2023-09-30T23:55:30.000Z'
+                    modifiedOn: '2023-09-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-10-01'
+                    effectiveTo: '2023-10-31'
+                    conversionRate: '0.786300000000000'
+                    createdOn: '2023-09-30T23:55:30.000Z'
+                    modifiedOn: '2023-09-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2023-07-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-07-01'
+                    effectiveTo: '2023-07-31'
+                    conversionRate: '0.915500000000000'
+                    createdOn: '2023-06-30T23:55:30.000Z'
+                    modifiedOn: '2023-06-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-07-01'
+                    effectiveTo: '2023-07-31'
+                    conversionRate: '0.786300000000000'
+                    createdOn: '2023-06-30T23:55:30.000Z'
+                    modifiedOn: '2023-06-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2023-08-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-08-01'
+                    effectiveTo: '2023-08-31'
+                    conversionRate: '0.915500000000000'
+                    createdOn: '2023-07-31T23:55:30.000Z'
+                    modifiedOn: '2023-07-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-08-01'
+                    effectiveTo: '2023-08-31'
+                    conversionRate: '0.786300000000000'
+                    createdOn: '2023-07-31T23:55:30.000Z'
+                    modifiedOn: '2023-07-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2023-11-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-11-01'
+                    effectiveTo: '2023-11-30'
+                    conversionRate: '0.915500000000000'
+                    createdOn: '2023-10-31T23:55:30.000Z'
+                    modifiedOn: '2023-10-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-11-01'
+                    effectiveTo: '2023-11-30'
+                    conversionRate: '0.786300000000000'
+                    createdOn: '2023-10-31T23:55:30.000Z'
+                    modifiedOn: '2023-10-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2023-12-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2023-12-01'
+                    effectiveTo: '2023-12-31'
+                    conversionRate: '0.915500000000000'
+                    createdOn: '2023-12-01T05:26:34.000Z'
+                    modifiedOn: '2023-12-01T05:26:34.000Z'
+                    createdBy: 142
+                    modifiedBy: 142
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2023-12-01'
+                    effectiveTo: '2023-12-31'
+                    conversionRate: '0.786300000000000'
+                    createdOn: '2023-12-01T05:26:34.000Z'
+                    modifiedOn: '2023-12-01T05:26:34.000Z'
+                    createdBy: 142
+                    modifiedBy: 142
+                  '2024-03-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-03-01'
+                    effectiveTo: '2024-03-31'
+                    conversionRate: '0.916186000000000'
+                    createdOn: '2024-02-29T23:55:30.000Z'
+                    modifiedOn: '2024-02-29T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-03-01'
+                    effectiveTo: '2024-03-31'
+                    conversionRate: '0.793941000000000'
+                    createdOn: '2024-02-29T23:55:30.000Z'
+                    modifiedOn: '2024-02-29T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2024-01-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-01-01'
+                    effectiveTo: '2024-01-31'
+                    conversionRate: '0.915500000000000'
+                    createdOn: '2024-01-01T05:19:01.000Z'
+                    modifiedOn: '2024-01-01T05:19:01.000Z'
+                    createdBy: 142
+                    modifiedBy: 142
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-01-01'
+                    effectiveTo: '2024-01-31'
+                    conversionRate: '0.786300000000000'
+                    createdOn: '2024-01-01T05:19:01.000Z'
+                    modifiedOn: '2024-01-01T05:19:01.000Z'
+                    createdBy: 142
+                    modifiedBy: 142
+                  '2024-05-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-05-01'
+                    effectiveTo: '2024-05-31'
+                    conversionRate: '0.919976000000000'
+                    createdOn: '2024-04-30T23:55:29.000Z'
+                    modifiedOn: '2024-04-30T23:55:29.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-05-01'
+                    effectiveTo: '2024-05-31'
+                    conversionRate: '0.797180000000000'
+                    createdOn: '2024-04-30T23:55:29.000Z'
+                    modifiedOn: '2024-04-30T23:55:29.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2024-02-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-02-01'
+                    effectiveTo: '2024-02-29'
+                    conversionRate: '0.916186000000000'
+                    createdOn: '2024-02-01T08:18:09.000Z'
+                    modifiedOn: '2024-02-01T08:18:09.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-02-01'
+                    effectiveTo: '2024-02-29'
+                    conversionRate: '0.793941000000000'
+                    createdOn: '2024-02-01T08:17:32.000Z'
+                    modifiedOn: '2024-02-01T08:17:32.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  '2024-04-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-04-01'
+                    effectiveTo: '2024-04-30'
+                    conversionRate: '0.919976000000000'
+                    createdOn: '2024-04-02T11:37:28.000Z'
+                    modifiedOn: '2024-04-02T11:37:28.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-04-01'
+                    effectiveTo: '2024-04-30'
+                    conversionRate: '0.797180000000000'
+                    createdOn: '2024-04-02T11:37:00.000Z'
+                    modifiedOn: '2024-04-02T11:37:00.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  '2024-06-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-06-01'
+                    effectiveTo: '2024-06-30'
+                    conversionRate: '0.919976000000000'
+                    createdOn: '2024-06-01T06:44:59.000Z'
+                    modifiedOn: '2024-06-01T06:44:59.000Z'
+                    createdBy: 73
+                    modifiedBy: 73
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-06-01'
+                    effectiveTo: '2024-06-30'
+                    conversionRate: '0.797180000000000'
+                    createdOn: '2024-06-01T06:44:59.000Z'
+                    modifiedOn: '2024-06-01T06:44:59.000Z'
+                    createdBy: 73
+                    modifiedBy: 73
+                  '2024-09-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-09-01'
+                    effectiveTo: '2024-09-30'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2024-08-31T23:55:30.000Z'
+                    modifiedOn: '2024-08-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-09-01'
+                    effectiveTo: '2024-09-30'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2024-08-31T23:55:30.000Z'
+                    modifiedOn: '2024-08-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2024-07-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-07-01'
+                    effectiveTo: '2024-07-31'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2024-07-08T14:50:07.000Z'
+                    modifiedOn: '2024-07-08T14:50:07.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-07-01'
+                    effectiveTo: '2024-07-31'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2024-07-08T14:50:07.000Z'
+                    modifiedOn: '2024-07-08T14:50:07.000Z'
+                    createdBy: 4
+                    modifiedBy: 4
+                  '2024-08-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-08-01'
+                    effectiveTo: '2024-08-31'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2024-07-31T23:55:30.000Z'
+                    modifiedOn: '2024-07-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-08-01'
+                    effectiveTo: '2024-08-31'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2024-07-31T23:55:30.000Z'
+                    modifiedOn: '2024-07-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2024-10-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-10-01'
+                    effectiveTo: '2024-10-31'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2024-09-30T23:55:30.000Z'
+                    modifiedOn: '2024-09-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-10-01'
+                    effectiveTo: '2024-10-31'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2024-09-30T23:55:30.000Z'
+                    modifiedOn: '2024-09-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2024-11-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-11-01'
+                    effectiveTo: '2024-11-30'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2024-10-31T23:55:31.000Z'
+                    modifiedOn: '2024-10-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-11-01'
+                    effectiveTo: '2024-11-30'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2024-10-31T23:55:31.000Z'
+                    modifiedOn: '2024-10-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2024-12-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2024-12-01'
+                    effectiveTo: '2024-12-31'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2024-11-30T23:55:31.000Z'
+                    modifiedOn: '2024-11-30T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2024-12-01'
+                    effectiveTo: '2024-12-31'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2024-11-30T23:55:31.000Z'
+                    modifiedOn: '2024-11-30T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2025-01-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2025-01-01'
+                    effectiveTo: '2025-01-31'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2024-12-31T23:55:30.000Z'
+                    modifiedOn: '2024-12-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2025-01-01'
+                    effectiveTo: '2025-01-31'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2024-12-31T23:55:30.000Z'
+                    modifiedOn: '2024-12-31T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2025-02-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2025-02-01'
+                    effectiveTo: '2025-02-28'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2025-01-31T23:55:31.000Z'
+                    modifiedOn: '2025-01-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2025-02-01'
+                    effectiveTo: '2025-02-28'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2025-01-31T23:55:31.000Z'
+                    modifiedOn: '2025-01-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2025-03-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2025-03-01'
+                    effectiveTo: '2025-03-31'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2025-02-28T23:55:31.000Z'
+                    modifiedOn: '2025-02-28T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2025-03-01'
+                    effectiveTo: '2025-03-31'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2025-02-28T23:55:31.000Z'
+                    modifiedOn: '2025-02-28T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2025-04-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2025-04-01'
+                    effectiveTo: '2025-04-30'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2025-03-31T23:55:31.000Z'
+                    modifiedOn: '2025-03-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2025-04-01'
+                    effectiveTo: '2025-04-30'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2025-03-31T23:55:31.000Z'
+                    modifiedOn: '2025-03-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2025-05-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2025-05-01'
+                    effectiveTo: '2025-05-31'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2025-04-30T23:55:30.000Z'
+                    modifiedOn: '2025-04-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2025-05-01'
+                    effectiveTo: '2025-05-31'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2025-04-30T23:55:30.000Z'
+                    modifiedOn: '2025-04-30T23:55:30.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2025-06-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2025-06-01'
+                    effectiveTo: '2025-06-30'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2025-05-31T23:55:31.000Z'
+                    modifiedOn: '2025-05-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2025-06-01'
+                    effectiveTo: '2025-06-30'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2025-05-31T23:55:31.000Z'
+                    modifiedOn: '2025-05-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2025-07-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2025-07-01'
+                    effectiveTo: '2025-07-31'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2025-06-30T23:55:31.000Z'
+                    modifiedOn: '2025-06-30T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2025-07-01'
+                    effectiveTo: '2025-07-31'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2025-06-30T23:55:31.000Z'
+                    modifiedOn: '2025-06-30T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  '2025-08-01':
+                  - currencyDefinitionId: 2
+                    currencyCode: EUR
+                    effectiveFrom: '2025-08-01'
+                    effectiveTo: '2025-08-31'
+                    conversionRate: '0.929190000000000'
+                    createdOn: '2025-07-31T23:55:31.000Z'
+                    modifiedOn: '2025-07-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+                  - currencyDefinitionId: 64
+                    currencyCode: GBP
+                    effectiveFrom: '2025-08-01'
+                    effectiveTo: '2025-08-31'
+                    conversionRate: '0.787213000000000'
+                    createdOn: '2025-07-31T23:55:31.000Z'
+                    modifiedOn: '2025-07-31T23:55:31.000Z'
+                    createdBy: 1
+                    modifiedBy: 1
+  /v2/currencies/exchange-rates/2025-01:
+    get:
+      operationId: getExchangeRateByMonth
+      summary: Get Exchange Rate by Month
+      tags:
+      - Currencies
+      responses:
+        '200':
+          description: Get Exchange Rate by Month
+          content:
+            application/json:
+              example:
+                data:
+                - currencyDefinitionId: 2
+                  currencyCode: EUR
+                  effectiveFrom: '2025-01-01'
+                  effectiveTo: '2025-01-31'
+                  conversionRate: '0.929190000000000'
+                  createdOn: '2024-12-31T23:55:30.000Z'
+                  modifiedOn: '2024-12-31T23:55:30.000Z'
+                  createdBy: 1
+                  modifiedBy: 1
+                - currencyDefinitionId: 64
+                  currencyCode: GBP
+                  effectiveFrom: '2025-01-01'
+                  effectiveTo: '2025-01-31'
+                  conversionRate: '0.787213000000000'
+                  createdOn: '2024-12-31T23:55:30.000Z'
+                  modifiedOn: '2024-12-31T23:55:30.000Z'
+                  createdBy: 1
+                  modifiedBy: 1
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

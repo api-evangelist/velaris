@@ -1,0 +1,266 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Field Definitions API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Field Definitions
+paths:
+  /fields:
+    get:
+      operationId: getPicklistDefinitions
+      summary: Get Picklist Definitions
+      tags:
+      - Field Definitions
+      responses:
+        '200':
+          description: Get Picklist Definitions
+          content:
+            application/json:
+              example:
+                data:
+                - customColumnId: 547
+                  name: type
+                  displayName: Type
+                  description: null
+                  dataType: singlePicklist
+                  columnLevel: 4
+                  created: '2024-04-04T07:42:06.549Z'
+                  isDefault: false
+                  required: false
+                  isVisible: true
+                  isEditable: true
+                  vertical: false
+                  horizontal: false
+                  horizontalCustom: false
+                  fieldOptions:
+                    orderType: 1
+                  isUnique: false
+                  calculationDefinitionError: false
+                  picklistDefinition:
+                  - value: Ticketing
+                    id: 476
+                    rank: 0|lcm1
+                  - value: Expansion
+                    id: 477
+                    rank: 0|lcm2
+                  - value: Connect
+                    id: 478
+                    rank: 0|lcm3
+                  - value: Renewal
+                    id: 541
+                    rank: 0|lcm4
+                  - value: Topics
+                    id: 583
+                    rank: 0|lcm5
+                  - value: Sandbox
+                    id: 607
+                    rank: 0|lcm6
+  /fields/system:
+    get:
+      operationId: getSystemFieldDefinitions
+      summary: Get System Field Definitions
+      tags:
+      - Field Definitions
+      responses:
+        '200':
+          description: Get System Field Definitions
+          content:
+            application/json:
+              example:
+                data:
+                - systemFieldId: 1
+                  displayName: Owner
+                  name: owners
+                  level: 1
+                  dataType: User List
+                  required: false
+                  isEditable: true
+                  created: '2022-11-25T03:54:21.247Z'
+                  modified: '2022-11-25T03:54:21.247Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+                - systemFieldId: 2
+                  displayName: Contact
+                  name: contacts
+                  level: 1
+                  dataType: Contact List
+                  required: false
+                  isEditable: true
+                  created: '2022-11-25T03:54:21.247Z'
+                  modified: '2022-11-25T03:54:21.247Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+                - systemFieldId: 41
+                  displayName: Churn Reason
+                  name: churnReason
+                  level: 1
+                  dataType: singlePicklist
+                  required: false
+                  isEditable: false
+                  created: '2023-09-15T08:22:37.401Z'
+                  modified: '2023-09-15T08:22:37.401Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+                  picklistDefinition:
+                  - id: 8
+                    rank: 0|lcm8
+                    value: Buy over
+                  - id: 1
+                    rank: 0|lcm1
+                    value: Failed to Achieve Outcome
+                  - id: 2
+                    rank: 0|lcm2
+                    value: Lost Champion
+                  - id: 3
+                    rank: 0|lcm3
+                    value: Low Adoption
+                  - id: 6
+                    rank: 0|lcm6
+                    value: Not the ideal customer
+                  - id: 999
+                    rank: 0|lcm9
+                    value: Other
+                  - id: 4
+                    rank: 0|lcm4
+                    value: Poor Service
+                  - id: 5
+                    rank: 0|lcm5
+                    value: Product Issue
+                  - id: 7
+                    rank: 0|lcm7
+                    value: Switch to Competitor
+                - systemFieldId: 3
+                  displayName: Organization
+                  name: organizationId
+                  level: 2
+                  dataType: Organization
+                  required: false
+                  isEditable: true
+                  created: '2022-11-25T03:54:21.247Z'
+                  modified: '2022-11-25T03:54:21.247Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+                - systemFieldId: 4
+                  displayName: Owners
+                  name: owners
+                  level: 2
+                  dataType: User List
+                  required: false
+                  isEditable: true
+                  created: '2022-11-25T03:54:21.247Z'
+                  modified: '2022-11-25T03:54:21.247Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+                - systemFieldId: 5
+                  displayName: Contacts
+                  name: contacts
+                  level: 2
+                  dataType: Contact List
+                  required: false
+                  isEditable: true
+                  created: '2022-11-25T03:54:21.247Z'
+                  modified: '2022-11-25T03:54:21.247Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+                - systemFieldId: 42
+                  displayName: Churn Reason
+                  name: churnReason
+                  level: 2
+                  dataType: singlePicklist
+                  required: false
+                  isEditable: false
+                  created: '2023-09-15T08:22:37.401Z'
+                  modified: '2023-09-15T08:22:37.401Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+                  picklistDefinition:
+                  - id: 8
+                    rank: 0|lcm8
+                    value: Buy over
+                  - id: 1
+                    rank: 0|lcm1
+                    value: Failed to Achieve Outcome
+                  - id: 2
+                    rank: 0|lcm2
+                    value: Lost Champion
+                  - id: 3
+                    rank: 0|lcm3
+                    value: Low Adoption
+                  - id: 6
+                    rank: 0|lcm6
+                    value: Not the ideal customer
+                  - id: 999
+                    rank: 0|lcm9
+                    value: Other
+                  - id: 4
+                    rank: 0|lcm4
+                    value: Poor Service
+                  - id: 5
+                    rank: 0|lcm5
+                    value: Product Issue
+                  - id: 7
+                    rank: 0|lcm7
+                    value: Switch to Competitor
+                - systemFieldId: 6
+                  displayName: Organizations
+                  name: organizations
+                  level: 3
+                  dataType: Organization List
+                  required: false
+                  isEditable: true
+                  created: '2022-11-25T03:54:21.247Z'
+                  modified: '2022-11-25T03:54:21.247Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+                - systemFieldId: 7
+                  displayName: Accounts
+                  name: accounts
+                  level: 3
+                  dataType: Account List
+                  required: false
+                  isEditable: true
+                  created: '2022-11-25T03:54:21.247Z'
+                  modified: '2022-11-25T03:54:21.247Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+                - systemFieldId: 8
+                  displayName: Contacts
+                  name: contacts
+                  level: 4
+                  dataType: Contact List
+                  required: false
+                  isEditable: true
+                  created: '2022-11-25T03:54:21.247Z'
+                  modified: '2022-11-25T03:54:21.247Z'
+                  fieldOptions: null
+                  createdBy: 1
+                  modifiedBy: 1
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.

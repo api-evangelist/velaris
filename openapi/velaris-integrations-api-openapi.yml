@@ -1,0 +1,127 @@
+openapi: 3.0.3
+info:
+  title: Velaris Public Activity Integrations API
+  version: 1.0.0
+  description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
+  contact:
+    name: Velaris
+    url: https://www.velaris.io/
+servers:
+- url: https://api.euw1.velaris.io
+  description: EU-West-1 production
+security:
+- bearerAuth: []
+- basicAuth: []
+tags:
+- name: Integrations
+paths:
+  /integration/users:
+    get:
+      operationId: getUserIntegrations
+      summary: Get User Integrations
+      tags:
+      - Integrations
+      description: '<p>Get user level integrations</p>
+
+        '
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              example:
+                data:
+                - integrationId: 110
+                  type: communication
+                  vendor: gmail-v3
+                  status: REVOKED
+                  communicationIdentifier: calendar_test@velarissbox.com
+                  userId: 382
+                  created: '2023-06-15T16:53:28.908Z'
+                  modified: '2024-03-04T11:22:41.882Z'
+                - integrationId: 302
+                  type: scheduling
+                  vendor: google-calendar
+                  status: REVOKED
+                  communicationIdentifier: shayne.darren@velaris.io
+                  userId: 73
+                  created: '2024-03-15T06:00:09.263Z'
+                  modified: '2024-03-15T06:12:38.389Z'
+                - integrationId: 842
+                  type: communication
+                  vendor: gmail-v3
+                  status: REVOKED
+                  communicationIdentifier: accounts@velaris.io
+                  userId: 1193
+                  created: '2025-09-24T14:53:16.464Z'
+                  modified: '2025-10-31T09:20:53.675Z'
+                - integrationId: 1158
+                  type: scheduling
+                  vendor: google-calendar
+                  status: CONNECTED
+                  communicationIdentifier: sahas.gunasekara@velaris.io
+                  userId: 347
+                  created: '2026-06-11T07:51:18.767Z'
+                  modified: '2026-06-23T06:45:27.094Z'
+                - integrationId: 1014
+                  type: communication
+                  vendor: gmail-v3
+                  status: CONNECTED
+                  communicationIdentifier: michal.fornadel@velaris.io
+                  userId: 1016
+                  created: '2026-01-30T13:17:06.398Z'
+                  modified: '2026-06-23T06:45:49.705Z'
+                - integrationId: 1157
+                  type: communication
+                  vendor: gmail-v3
+                  status: CONNECTED
+                  communicationIdentifier: sahas.gunasekara@velaris.io
+                  userId: 347
+                  created: '2026-06-11T07:51:00.005Z'
+                  modified: '2026-06-23T06:45:49.930Z'
+                - integrationId: 1160
+                  type: communication
+                  vendor: gmail-v3
+                  status: CONNECTED
+                  communicationIdentifier: lakshan.hewage@velaris.io
+                  userId: 876
+                  created: '2026-06-11T07:51:44.827Z'
+                  modified: '2026-06-23T06:45:50.239Z'
+                - integrationId: 1010
+                  type: scheduling
+                  vendor: google-calendar
+                  status: CONNECTED
+                  communicationIdentifier: aswin.subramaniam@velaris.io
+                  userId: 646
+                  created: '2026-01-22T18:43:16.964Z'
+                  modified: '2026-06-23T06:45:27.098Z'
+                - integrationId: 135
+                  type: scheduling
+                  vendor: google-calendar
+                  status: REVOKED
+                  communicationIdentifier: aidan.hickman@velaris.io
+                  userId: 388
+                  created: '2023-08-18T09:21:36.063Z'
+                  modified: '2025-01-28T08:41:13.150Z'
+                - integrationId: 607
+                  type: scheduling
+                  vendor: google-calendar
+                  status: REVOKED
+                  communicationIdentifier: nathan.yorke@velaris.io
+                  userId: 1010
+                  created: '2025-04-23T17:45:23.220Z'
+                  modified: '2025-07-09T11:19:21.218Z'
+                pagination:
+                  page: '1'
+                  pageSize: '10'
+                  totalCount: 41
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security > Access token.'
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.
