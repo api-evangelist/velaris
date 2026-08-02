@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.velaris.io/ (auth section) + openapi/velaris-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: 'User-scoped access token. Header: Authorization: Bearer {access_token}. Create under Profile > Security
+    > Access token.'
+  sources:
+  - openapi/velaris-openapi.yml
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: Legacy. Base64(username:password). Not available for SSO/MFA tenants.
+  sources:
+  - openapi/velaris-openapi.yml
+docs: https://developers.velaris.io/
+detail: 'Two options: (1) Token-based - any user creates a user-scoped API token in-app under Profile > Security
+  > Access token, sent as Authorization: Bearer {access_token}; works for SSO and non-SSO tenants. (2) Basic authentication
+  (legacy) - Base64(username:password) of an administrator-privileged user, sent as Authorization: Basic {token};
+  not available for SSO-enabled tenants.'

@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+probe: false
+source: https://www.velaris.io/velaris-security-portal
+url: https://www.velaris.io/velaris-security-portal
+certifications:
+- ISO 27001:2022
+- SOC 2 Type II
+- GDPR
+auditors:
+  iso_27001: Proks GmbH
+penetration_testing:
+  vendor: 7ASecurity
+  type: white-box
+  report_published: true
+  detail: All identified issues fixed by Velaris and verified by the 7ASecurity team; report PDF available on the
+    portal.
+encryption:
+  at_rest: AWS KMS
+  in_transit: TLS (AWS Certificate Manager)
+infrastructure: AWS (United Kingdom); CloudWatch + CloudTrail logging; automated backups
+subprocessors:
+- AWS
+dpa: https://www.velaris.io/data-processing-addendum
+evidence:
+- source: https://www.velaris.io/velaris-security-portal
+  keywords:
+  - iso 27001:2022
+  - soc 2 type ii
+  - gdpr
+  - penetration test
+  - aws kms

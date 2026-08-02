@@ -1,0 +1,66 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/velaris-openapi.yml
+entities:
+- Organization
+- Account
+- Contact
+- Opportunity
+- Risk
+- CustomObjectDefinition
+- CustomObjectInstance
+- CustomLink
+- Activity
+- ActivityType
+- Note
+- LifecycleStage
+- Ticket
+- TicketComment
+- User
+- Task
+- ExchangeRate
+- FieldDefinition
+- SurveyResponse
+relationships:
+- from: Account
+  to: Organization
+  kind: belongs_to
+  via: parent entity
+  evidence: PUT /core/accounts/:accountId/parent-entity (changeParentEntity)
+- from: Organization
+  to: LifecycleStage
+  kind: belongs_to
+  via: lifecycleStageId
+  evidence: lifecycleStageId in getAllOrganizationsV1 response example; GET /lifecycles (getLifecycleStages)
+- from: Ticket
+  to: TicketComment
+  kind: has_many
+  via: ticketId
+  evidence: GET/POST /ticketing/tickets/:ticketId/comments
+- from: CustomObjectInstance
+  to: CustomObjectDefinition
+  kind: belongs_to
+  via: co_api_name
+  evidence: /custom-objects/:co_api_name instances are typed by /custom-object-schemas definitions
+- from: CustomLink
+  to: CustomObjectInstance
+  kind: links
+  via: link apiName
+  evidence: /custom-objects/:coApiName/:id/links custom-link operations
+- from: CustomLink
+  to: Organization
+  kind: links
+  via: entity level + id
+  evidence: /core/:level/:id/links links system entities (organizations/accounts) to custom object instances
+- from: Activity
+  to: ActivityType
+  kind: belongs_to
+  via: activity type
+  evidence: GET /activity-type (getActivityTypes) enumerates types used by /entity-action/activity
+- from: SurveyResponse
+  to: Survey
+  kind: belongs_to
+  via: surveyId
+  evidence: POST /survey-management/surveys/:surveyId/responses (postResponses)
+note: 'Sparse Postman-converted spec: no components.schemas, so the graph is grounded in path structure, operation
+  semantics, and response examples only.'

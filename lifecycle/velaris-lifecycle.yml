@@ -1,0 +1,18 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.velaris.io/ + https://www.velaris.io/resources/product-updates
+versioning:
+  scheme: uri-path
+  current: v2
+  detail: 'Legacy V1 entity endpoints under /core/*; V2 read/search endpoints under /v2/*. Docs: "Please use the
+    V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses."'
+deprecation:
+  policy_url: null
+  sunset_header: false
+  detail: No formal deprecation policy or Sunset/Deprecation header support published. V1 read endpoints carry an
+    in-doc advisory steering consumers to V2.
+sla: null
+status_page: null
+status_page_note: No public status page found (status.velaris.io does not resolve; none linked from site or docs).
+changelog: https://www.velaris.io/resources/product-updates
+deprecated_operations: []

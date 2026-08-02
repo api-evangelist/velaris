@@ -1,22 +1,302 @@
 aid: velaris
 name: Velaris
-description: Velaris is a company surfaced as a portfolio company of battery-ventures and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Velaris is an AI-native Customer Success platform for mid-market and enterprise B2B SaaS
+  teams, centralizing customer data, health scoring, churn and expansion signals, and lifecycle automation
+  with AI agents and a Copilot workspace assistant. Its Public API (developers.velaris.io) exposes organizations,
+  accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users,
+  surveys, currencies, and lifecycle stages over REST with user-scoped bearer tokens. Velaris is a Battery
+  Ventures portfolio company.
 url: https://raw.githubusercontent.com/api-evangelist/velaris/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.prod.website-files.com/6082c882cae3781954fcc067/68907364a5c043be5750b3ea_velaris-favicon.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - battery-ventures
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: enriched
+x-tier-reason: public-api-profiled
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
+- Customer Success
+- AI
+- SaaS
+- Customer Data
+- CRM
+- Analytics
+- Automation
 - Company
-apis: []
+apis:
+- aid: velaris:velaris-activity-api
+  name: Velaris Activity API
+  description: The Activity API from Velaris — 4 operation(s) for activity.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Activity
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-activity-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-attribute-change-log-api
+  name: Velaris Attribute Change Log API
+  description: The Attribute Change Log API from Velaris — 1 operation(s) for attribute change log.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Attribute Change Log
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-attribute-change-log-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-currencies-api
+  name: Velaris Currencies API
+  description: The Currencies API from Velaris — 3 operation(s) for currencies.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Currencies
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-currencies-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-custom-objects-api
+  name: Velaris Custom Objects API
+  description: The Custom Objects API from Velaris — 15 operation(s) for custom objects.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Custom Objects
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-custom-objects-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-entity-management-v1-api
+  name: Velaris Entity Management V1 API
+  description: The Entity Management V1 API from Velaris — 24 operation(s) for entity management v1.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Entity Management V1
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-entity-management-v1-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-entity-management-v2-api
+  name: Velaris Entity Management V2 API
+  description: The Entity Management V2 API from Velaris — 11 operation(s) for entity management v2.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Entity Management V2
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-entity-management-v2-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-field-definitions-api
+  name: Velaris Field Definitions API
+  description: The Field Definitions API from Velaris — 2 operation(s) for field definitions.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Field Definitions
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-field-definitions-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-integrations-api
+  name: Velaris Integrations API
+  description: The Integrations API from Velaris — 1 operation(s) for integrations.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Integrations
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-integrations-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-lifecycles-api
+  name: Velaris Lifecycles API
+  description: The Lifecycles API from Velaris — 1 operation(s) for lifecycles.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Lifecycles
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-lifecycles-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-notes-api
+  name: Velaris Notes API
+  description: The Notes API from Velaris — 2 operation(s) for notes.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-notes-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-surveys-api
+  name: Velaris Surveys API
+  description: The Surveys API from Velaris — 1 operation(s) for surveys.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Surveys
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-surveys-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-tasks-api
+  name: Velaris Tasks API
+  description: The Tasks API from Velaris — 3 operation(s) for tasks.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-ticketing-api
+  name: Velaris Ticketing API
+  description: The Ticketing API from Velaris — 6 operation(s) for ticketing.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Ticketing
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-ticketing-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
+- aid: velaris:velaris-users-api
+  name: Velaris Users API
+  description: The Users API from Velaris — 2 operation(s) for users.
+  humanURL: https://developers.velaris.io/
+  baseURL: https://api.euw1.velaris.io
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/velaris-users-api-openapi.yml
+  - type: Documentation
+    url: https://developers.velaris.io/
+  - type: Postman
+    url: postman/velaris-postman-collection.json
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: Website
+  url: https://www.velaris.io/
+- type: DeveloperPortal
+  url: https://developers.velaris.io/
+- type: Documentation
+  url: https://developers.velaris.io/
+- type: APIReference
+  url: https://developers.velaris.io/
+- type: Support
+  url: https://www.velaris.io/resources/help-center
+- type: Blog
+  url: https://www.velaris.io/resources/articles
+- type: Pricing
+  url: https://www.velaris.io/pricing
+- type: Login
+  url: https://app.euw1.velaris.io/
+- type: TermsOfService
+  url: https://www.velaris.io/terms-of-service
+- type: PrivacyPolicy
+  url: https://www.velaris.io/privacy-policy
+- type: ChangeLog
+  url: https://www.velaris.io/resources/product-updates
+- type: ChangeLog
+  url: changelog/velaris-changelog.yml
+- type: DomainSecurity
+  url: security/velaris-domain-security.yml
+- type: Authentication
+  url: authentication/velaris-authentication.yml
+- type: LLMsTxt
+  url: llms/velaris-llms.txt
+- type: MCPServer
+  url: mcp/velaris-mcp.yml
+- type: Overlay
+  url: overlays/velaris-openapi-overlay.yaml
+- type: Conformance
+  url: conformance/velaris-conformance.yml
+- type: Compliance
+  url: https://www.velaris.io/velaris-security-portal
+- type: ErrorCatalog
+  url: errors/velaris-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/velaris-lifecycle.yml
+- type: Conventions
+  url: conventions/velaris-conventions.yml
+- type: DataModel
+  url: data-model/velaris-data-model.yml
+- type: TrustCenter
+  url: security/velaris-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/velaris-vulnerability-disclosure.yml
+- type: Security
+  url: https://www.velaris.io/velaris-security-portal
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 19
+  pass: local-v1

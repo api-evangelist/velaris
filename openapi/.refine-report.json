@@ -1,0 +1,40 @@
+{
+  "provider": "velaris",
+  "sources": [
+    "velaris-activity-api-openapi.yml",
+    "velaris-attribute-change-log-api-openapi.yml",
+    "velaris-currencies-api-openapi.yml",
+    "velaris-custom-objects-api-openapi.yml",
+    "velaris-entity-management-v1-api-openapi.yml",
+    "velaris-entity-management-v2-api-openapi.yml",
+    "velaris-field-definitions-api-openapi.yml",
+    "velaris-integrations-api-openapi.yml",
+    "velaris-lifecycles-api-openapi.yml",
+    "velaris-notes-api-openapi.yml",
+    "velaris-surveys-api-openapi.yml",
+    "velaris-tasks-api-openapi.yml",
+    "velaris-ticketing-api-openapi.yml",
+    "velaris-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "velaris-activity-api-openapi.yml",
+    "velaris-attribute-change-log-api-openapi.yml",
+    "velaris-currencies-api-openapi.yml",
+    "velaris-custom-objects-api-openapi.yml",
+    "velaris-entity-management-v1-api-openapi.yml",
+    "velaris-entity-management-v2-api-openapi.yml",
+    "velaris-field-definitions-api-openapi.yml",
+    "velaris-integrations-api-openapi.yml",
+    "velaris-lifecycles-api-openapi.yml",
+    "velaris-notes-api-openapi.yml",
+    "velaris-surveys-api-openapi.yml",
+    "velaris-tasks-api-openapi.yml",
+    "velaris-ticketing-api-openapi.yml",
+    "velaris-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

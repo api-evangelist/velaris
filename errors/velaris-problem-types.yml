@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: derived
+source: openapi/velaris-openapi.yml
+format: provider-specific
+note: The public docs do not publish an error-code reference. Documented non-2xx responses in the spec are limited
+  to Custom Objects operations; no application/problem+json.
+problems:
+- status: 404
+  title: Not Found
+  source_operation: openapi/velaris-openapi.yml#getCoInstances
+- status: 404
+  title: Not Found
+  source_operation: openapi/velaris-openapi.yml#getCoInstancesV2
+- status: 404
+  title: Not Found
+  source_operation: openapi/velaris-openapi.yml#getCoInstanceById
+- status: 404
+  title: Not Found
+  source_operation: openapi/velaris-openapi.yml#updateCoInstance
+- status: 406
+  title: Not Acceptable
+  source_operation: openapi/velaris-openapi.yml#restoreCoInstance
+- status: 401
+  title: Unauthorized
+  source_operation: 'probed: api.euw1.velaris.io returns 401 for unauthenticated requests'

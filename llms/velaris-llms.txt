@@ -1,0 +1,56 @@
+# Velaris
+
+> Velaris is an AI-native Customer Success platform for mid-market and enterprise B2B SaaS teams. It centralizes customer data, turns interaction data into intelligence, predicts churn and expansion, and automates lifecycle execution so post-sales teams can operate at scale with AI agents and a Copilot workspace assistant.
+
+## Product
+
+- [Overview](https://www.velaris.io/): What Velaris is and how the platform works end to end.
+- [AI Copilot](https://www.velaris.io/product/ai-copilot): Conversational AI assistant that answers account questions, drafts success plans, and analyzes portfolios in natural language.
+- [AI Agents](https://www.velaris.io/product/ai-agents): Context-aware agents that monitor accounts for risk, handle meeting follow-ups, and manage sales-to-CS handovers autonomously.
+- [View](https://www.velaris.io/product/view): Unified Customer 360 view, account hierarchies, and activity timelines that replace scattered notes and tools.
+- [Analyze](https://www.velaris.io/product/analyze): AI-enriched health scoring, sentiment analysis, and churn/expansion signal detection.
+- [Orchestrate](https://www.velaris.io/product/orchestrate): Automated, personalized customer journeys for scaling low-touch accounts without adding headcount.
+- [Execute](https://www.velaris.io/product/execute): Success plans, playbooks, QBRs, and collaborative workspaces for standardizing CS execution.
+- [Integrations](https://www.velaris.io/integrations): 70+ integrations across CRM, support, communication, product analytics, and financial systems; supports MCP for AI agent access to Velaris data.
+- [Pricing](https://www.velaris.io/pricing): Plans and pricing information.
+
+## Solutions
+
+- [Executive](https://www.velaris.io/solutions/executive): Cross-functional visibility into the customer base for leadership.
+- [CS Leader](https://www.velaris.io/solutions/cs-leader): Full visibility and control over CS operations for Heads/Directors of CS.
+- [CS Manager](https://www.velaris.io/solutions/csm): Proactive portfolio management tools for CSMs.
+- [Onboarding](https://www.velaris.io/solutions/onboarding): Faster, smoother onboarding workflows.
+- [Sales](https://www.velaris.io/solutions/sales): Using customer data to accelerate sales handoffs and expansion.
+- [Product](https://www.velaris.io/solutions/product): Customer insights for product strategy teams.
+- [Customer Marketing](https://www.velaris.io/solutions/customer-marketing): Personalized customer marketing and advocacy campaigns.
+- [High Touch](https://www.velaris.io/solutions/high-touch): Enterprise-grade service delivery for high-touch accounts.
+- [Low Touch](https://www.velaris.io/solutions/low-touch): Scaling digital CS strategy for low-touch/longtail accounts.
+
+## Resources
+
+- [Resource Hub](https://www.velaris.io/resources): Central index of CS best practices, articles, and insights.
+- [Articles](https://www.velaris.io/resources/articles): Deep dives and how-tos on trending Customer Success topics.
+- [CS Library](https://www.velaris.io/resources/library): In-depth guides on Customer Success in the AI era.
+- [Case Studies](https://www.velaris.io/resources/case-studies): Customer results and success stories.
+- [Glossary](https://www.velaris.io/resources/glossary): Definitions and formulas for core SaaS and CS concepts.
+- [Product Updates](https://www.velaris.io/resources/product-updates): Latest platform releases and changes.
+- [Help Center](https://www.velaris.io/resources/help-center): Product documentation and how-to guides.
+- [State of AI in Customer Success 2026](https://www.velaris.io/report/the-state-of-ai-in-customer-success-2026): Annual industry report on AI adoption in post-sales.
+
+## Company
+
+- [About](https://www.velaris.io/about): Company background, founders, and mission.
+- [Contact](https://www.velaris.io/contact): How to get in touch.
+- [Careers](https://www.velaris.io/careers): Open roles.
+- [AI Info Page](https://www.velaris.io/ai-info-page): How Velaris uses AI across the platform.
+- [Security Portal](https://www.velaris.io/velaris-security-portal): Security, ISO, SOC 2, and GDPR compliance information.
+
+## Optional
+
+- [Velaris vs Salesforce](https://www.velaris.io/velaris-vs-salesforce): Comparison page.
+- [Velaris vs Claude](https://www.velaris.io/velaris-vs-claude): Comparison page.
+- [Beyond the Close Podcast](https://www.velaris.io/resources/podcasts): Podcast on AI and innovation in post-sales.
+- [Mini-MBA: Applied AI for Customer Success](https://www.velaris.io/l/mba-ai-in-cs): AI-focused course for CS teams.
+- [Terms of Service](https://www.velaris.io/terms-of-service)
+- [Privacy Policy](https://www.velaris.io/privacy-policy)
+- [Data Processing Addendum](https://www.velaris.io/data-processing-addendum)

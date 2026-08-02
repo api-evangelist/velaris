@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: searched
+source: https://developers.velaris.io/ + derived from openapi/velaris-openapi.yml
+description: Cross-cutting request/response semantics of the Velaris Public API (AI Customer Success Platform).
+base_url: https://api.euw1.velaris.io
+api_style: REST over HTTPS, JSON requests and responses
+authentication:
+  scheme: Bearer token (user-scoped access token) or legacy HTTP Basic
+  detail: 'Tokens are created in-app under Profile > Security > Access token and sent as Authorization: Bearer {access_token}.
+    Basic auth (Base64 username:password) is legacy and unavailable for SSO tenants.'
+  docs: https://developers.velaris.io/
+  detail_artifact: authentication/velaris-authentication.yml
+idempotency:
+  supported: false
+  detail: No idempotency-key header or replay semantics documented.
+pagination:
+  style: mixed
+  detail: V1 list endpoints return a restricted number of records (docs direct reads to V2). pageSize parameters
+    on tasks and custom-object instance listings; /attribute-change-log pages with a date-time cursor (last changed
+    date passed as cursor in the next request).
+  request_params:
+    pageSize: records per page (tasks, custom objects)
+    cursor: yyyy-MM-dd'T'HH:mm:ss.SSSZ date-time (attribute change log)
+field_expansion:
+  supported: false
+  detail: Not documented. Custom-field filtering on V1 lists via /organizations?{custom_field_name}={value}.
+request_tracing:
+  supported: null
+  detail: No request-id header documented.
+versioning:
+  scheme: uri-path
+  detail: Legacy V1 under /core/*, V2 under /v2/*.
+  detail_artifact: lifecycle/velaris-lifecycle.yml
+error_envelope:
+  format: provider-specific
+  detail: No published error-code reference; unauthenticated requests get 401.
+  detail_artifact: errors/velaris-problem-types.yml
+rate_limits:
+  documented: false
+  detail: No rate-limit policy or headers documented.

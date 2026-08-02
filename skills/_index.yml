@@ -1,0 +1,40 @@
+generated: '2026-07-21'
+method: generated
+source: openapi/velaris-openapi.yml + conventions/velaris-conventions.yml
+skills:
+- file: velaris-read-customer-portfolio.md
+  name: Read and search the customer portfolio (V2)
+  api: openapi/velaris-openapi.yml
+  operations:
+  - getAllOrganizations
+  - searchOrganization
+  - getAllAccounts
+  - searchAccounts
+  - getAllContacts
+  - searchContacts
+- file: velaris-log-engagement.md
+  name: Log customer engagement (activities and notes)
+  api: openapi/velaris-openapi.yml
+  operations:
+  - getActivityTypes
+  - createActivity
+  - updateActivity
+  - createNote
+- file: velaris-manage-risks.md
+  name: Track and manage customer risks
+  api: openapi/velaris-openapi.yml
+  operations:
+  - getAllRisks
+  - searchRisks
+  - createRisk
+  - updateRisk
+  - archiveRisk
+- file: velaris-manage-tickets.md
+  name: Create and work customer tickets
+  api: openapi/velaris-openapi.yml
+  operations:
+  - getAllTickets
+  - createTicket
+  - getTicketById
+  - updateTicket
+  - createComment

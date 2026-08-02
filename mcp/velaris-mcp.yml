@@ -1,0 +1,322 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: openapi/velaris-openapi.yml
+note: No published/hosted Velaris MCP server was found (docs, npm, MCP registries searched 2026-07-21). Velaris'
+  own llms.txt states the platform "supports MCP for AI agent access to Velaris data", but no public server URL
+  or install doc is published — access appears to be in-product. This is a candidate tool surface derived from the
+  public OpenAPI, one tool per operation.
+server:
+  name: velaris
+  transport: http
+  url: null
+tools:
+- name: get_all_organizations_v1
+  description: Get All Organizations V1
+  source_operation: openapi/velaris-openapi.yml#getAllOrganizationsV1
+- name: create_organization
+  description: Create Organization
+  source_operation: openapi/velaris-openapi.yml#createOrganization
+- name: get_organizations_by_id
+  description: Get Organizations By ID
+  source_operation: openapi/velaris-openapi.yml#getOrganizationsById
+- name: update_organization
+  description: Update Organization
+  source_operation: openapi/velaris-openapi.yml#updateOrganization
+- name: churn_organization
+  description: Churn organization
+  source_operation: openapi/velaris-openapi.yml#churnOrganization
+- name: archive_organization
+  description: Archive Organization
+  source_operation: openapi/velaris-openapi.yml#archiveOrganization
+- name: restore_organization
+  description: Restore Organization
+  source_operation: openapi/velaris-openapi.yml#restoreOrganization
+- name: get_all_accounts_v1
+  description: Get All Accounts V1
+  source_operation: openapi/velaris-openapi.yml#getAllAccountsV1
+- name: create_account
+  description: Create Account
+  source_operation: openapi/velaris-openapi.yml#createAccount
+- name: get_account_by_id
+  description: Get Account By ID
+  source_operation: openapi/velaris-openapi.yml#getAccountById
+- name: update_account
+  description: Update Account
+  source_operation: openapi/velaris-openapi.yml#updateAccount
+- name: churn_account
+  description: Churn Account
+  source_operation: openapi/velaris-openapi.yml#churnAccount
+- name: archive_account
+  description: Archive Account
+  source_operation: openapi/velaris-openapi.yml#archiveAccount
+- name: restore_account
+  description: Restore Account
+  source_operation: openapi/velaris-openapi.yml#restoreAccount
+- name: change_parent_entity
+  description: Change Parent Entity
+  source_operation: openapi/velaris-openapi.yml#changeParentEntity
+- name: get_all_contacts_v1
+  description: Get All Contacts V1
+  source_operation: openapi/velaris-openapi.yml#getAllContactsV1
+- name: create_contacts
+  description: Create Contacts
+  source_operation: openapi/velaris-openapi.yml#createContacts
+- name: get_contacts_by_id
+  description: Get Contacts By Id
+  source_operation: openapi/velaris-openapi.yml#getContactsById
+- name: update_contact
+  description: Update Contact
+  source_operation: openapi/velaris-openapi.yml#updateContact
+- name: archive_contact
+  description: Archive Contact
+  source_operation: openapi/velaris-openapi.yml#archiveContact
+- name: restore_contact
+  description: Restore Contact
+  source_operation: openapi/velaris-openapi.yml#restoreContact
+- name: get_all_opportunities_v1
+  description: Get All Opportunities V1
+  source_operation: openapi/velaris-openapi.yml#getAllOpportunitiesV1
+- name: create_opportunity
+  description: Create Opportunity
+  source_operation: openapi/velaris-openapi.yml#createOpportunity
+- name: get_opportunities_by_id
+  description: Get Opportunities By Id
+  source_operation: openapi/velaris-openapi.yml#getOpportunitiesById
+- name: update_opportunity
+  description: Update Opportunity
+  source_operation: openapi/velaris-openapi.yml#updateOpportunity
+- name: archive_opportunity
+  description: Archive Opportunity
+  source_operation: openapi/velaris-openapi.yml#archiveOpportunity
+- name: restore_opportunity
+  description: Restore Opportunity
+  source_operation: openapi/velaris-openapi.yml#restoreOpportunity
+- name: get_all_risks_v1
+  description: Get All Risks V1
+  source_operation: openapi/velaris-openapi.yml#getAllRisksV1
+- name: create_risk
+  description: Create Risk
+  source_operation: openapi/velaris-openapi.yml#createRisk
+- name: get_risk_by_id
+  description: Get Risk By Id
+  source_operation: openapi/velaris-openapi.yml#getRiskById
+- name: update_risk
+  description: Update Risk
+  source_operation: openapi/velaris-openapi.yml#updateRisk
+- name: archive_risk
+  description: Archive Risk
+  source_operation: openapi/velaris-openapi.yml#archiveRisk
+- name: restore_risks
+  description: Restore Risks
+  source_operation: openapi/velaris-openapi.yml#restoreRisks
+- name: get_all_organizations
+  description: Get All Organizations
+  source_operation: openapi/velaris-openapi.yml#getAllOrganizations
+- name: search_organization
+  description: Search Organization
+  source_operation: openapi/velaris-openapi.yml#searchOrganization
+- name: get_all_accounts
+  description: Get All Accounts
+  source_operation: openapi/velaris-openapi.yml#getAllAccounts
+- name: search_accounts
+  description: Search Accounts
+  source_operation: openapi/velaris-openapi.yml#searchAccounts
+- name: get_all_contacts
+  description: Get All Contacts
+  source_operation: openapi/velaris-openapi.yml#getAllContacts
+- name: get_contacts_by_emails
+  description: Get Contacts by Emails
+  source_operation: openapi/velaris-openapi.yml#getContactsByEmails
+- name: search_contacts
+  description: Search Contacts
+  source_operation: openapi/velaris-openapi.yml#searchContacts
+- name: get_all_opportunities
+  description: Get All Opportunities
+  source_operation: openapi/velaris-openapi.yml#getAllOpportunities
+- name: search_opportunities
+  description: Search Opportunities
+  source_operation: openapi/velaris-openapi.yml#searchOpportunities
+- name: get_all_risks
+  description: Get All Risks
+  source_operation: openapi/velaris-openapi.yml#getAllRisks
+- name: search_risks
+  description: Search Risks
+  source_operation: openapi/velaris-openapi.yml#searchRisks
+- name: get_entity_custom_links_by_id
+  description: Get Entity Custom Links By ID
+  source_operation: openapi/velaris-openapi.yml#getEntityCustomLinksById
+- name: add_custom_links_for_system_entities
+  description: Add Custom Links for System Entities
+  source_operation: openapi/velaris-openapi.yml#addCustomLinksForSystemEntities
+- name: get_custom_object_instance_custom_links_by_id
+  description: Get Custom Object Instance Custom Links by ID
+  source_operation: openapi/velaris-openapi.yml#getCustomObjectInstanceCustomLinksById
+- name: add_custom_links_for_custom_object_instances
+  description: Add Custom Links for Custom Object Instances
+  source_operation: openapi/velaris-openapi.yml#addCustomLinksForCustomObjectInstances
+- name: get_entity_custom_links_by_link_api_name
+  description: Get Entity Custom Links By Link Api Name
+  source_operation: openapi/velaris-openapi.yml#getEntityCustomLinksByLinkApiName
+- name: get_custom_links_for_custom_objects_by_link_api_name
+  description: Get Custom Links for Custom Objects By Link Api Name
+  source_operation: openapi/velaris-openapi.yml#getCustomLinksForCustomObjectsByLinkApiName
+- name: archive_custom_links_for_system_entity
+  description: Archive Custom Links for System Entity
+  source_operation: openapi/velaris-openapi.yml#archiveCustomLinksForSystemEntity
+- name: archive_custom_links_for_custom_object_instance
+  description: Archive Custom Links for Custom Object Instance
+  source_operation: openapi/velaris-openapi.yml#archiveCustomLinksForCustomObjectInstance
+- name: get_custom_object_definitions
+  description: Get Custom Object Definitions
+  source_operation: openapi/velaris-openapi.yml#getCustomObjectDefinitions
+- name: get_co_instances
+  description: Get CO instances
+  source_operation: openapi/velaris-openapi.yml#getCoInstances
+- name: create_co_instance
+  description: Create CO instance
+  source_operation: openapi/velaris-openapi.yml#createCoInstance
+- name: get_co_instances_v2
+  description: Get CO instances V2
+  source_operation: openapi/velaris-openapi.yml#getCoInstancesV2
+- name: get_co_instance_by_id
+  description: Get CO Instance by Id
+  source_operation: openapi/velaris-openapi.yml#getCoInstanceById
+- name: archive_co_instance
+  description: Archive CO instance
+  source_operation: openapi/velaris-openapi.yml#archiveCoInstance
+- name: restore_co_instance
+  description: Restore CO Instance
+  source_operation: openapi/velaris-openapi.yml#restoreCoInstance
+- name: update_co_instance
+  description: Update CO instance
+  source_operation: openapi/velaris-openapi.yml#updateCoInstance
+- name: search_custom_objects
+  description: Search Custom Objects
+  source_operation: openapi/velaris-openapi.yml#searchCustomObjects
+- name: search_custom_objects_v2
+  description: Search Custom Objects V2
+  source_operation: openapi/velaris-openapi.yml#searchCustomObjectsV2
+- name: get_attribute_changelog
+  description: Get Attribute Changelog
+  source_operation: openapi/velaris-openapi.yml#getAttributeChangelog
+- name: get_all_activities
+  description: Get All Activities
+  source_operation: openapi/velaris-openapi.yml#getAllActivities
+- name: create_activity
+  description: Create Activity
+  source_operation: openapi/velaris-openapi.yml#createActivity
+- name: update_activity
+  description: Update Activity
+  source_operation: openapi/velaris-openapi.yml#updateActivity
+- name: delete_activity_by_id
+  description: Delete Activity by ID
+  source_operation: openapi/velaris-openapi.yml#deleteActivityById
+- name: get_activity_types
+  description: Get Activity Types
+  source_operation: openapi/velaris-openapi.yml#getActivityTypes
+- name: get_activity_by_source_id
+  description: Get Activity by source ID
+  source_operation: openapi/velaris-openapi.yml#getActivityBySourceId
+- name: get_activity_by_external_id
+  description: Get Activity by external Id
+  source_operation: openapi/velaris-openapi.yml#getActivityByExternalId
+- name: get_notes
+  description: Get Notes
+  source_operation: openapi/velaris-openapi.yml#getNotes
+- name: create_note
+  description: Create Note
+  source_operation: openapi/velaris-openapi.yml#createNote
+- name: get_note_by_external_id
+  description: Get Note by External ID
+  source_operation: openapi/velaris-openapi.yml#getNoteByExternalId
+- name: update_note_with_external_id
+  description: Update Note with External ID
+  source_operation: openapi/velaris-openapi.yml#updateNoteWithExternalId
+- name: delete_note_with_source_id
+  description: Delete Note with Source ID
+  source_operation: openapi/velaris-openapi.yml#deleteNoteWithSourceId
+- name: get_lifecycle_stages
+  description: Get Lifecycle Stages
+  source_operation: openapi/velaris-openapi.yml#getLifecycleStages
+- name: get_all_tickets
+  description: Get All Tickets
+  source_operation: openapi/velaris-openapi.yml#getAllTickets
+- name: create_ticket
+  description: Create Ticket
+  source_operation: openapi/velaris-openapi.yml#createTicket
+- name: get_ticket_by_id
+  description: Get Ticket By Id
+  source_operation: openapi/velaris-openapi.yml#getTicketById
+- name: update_ticket
+  description: Update Ticket
+  source_operation: openapi/velaris-openapi.yml#updateTicket
+- name: delete_ticket
+  description: Delete Ticket
+  source_operation: openapi/velaris-openapi.yml#deleteTicket
+- name: restore_ticket
+  description: Restore Ticket
+  source_operation: openapi/velaris-openapi.yml#restoreTicket
+- name: get_all_comments
+  description: Get All Comments
+  source_operation: openapi/velaris-openapi.yml#getAllComments
+- name: create_comment
+  description: Create Comment
+  source_operation: openapi/velaris-openapi.yml#createComment
+- name: get_comment_by_id
+  description: Get Comment By Id
+  source_operation: openapi/velaris-openapi.yml#getCommentById
+- name: update_comment
+  description: Update Comment
+  source_operation: openapi/velaris-openapi.yml#updateComment
+- name: delete_comment
+  description: Delete Comment
+  source_operation: openapi/velaris-openapi.yml#deleteComment
+- name: get_comment_by_external_id
+  description: Get Comment by External ID
+  source_operation: openapi/velaris-openapi.yml#getCommentByExternalId
+- name: get_all_users
+  description: Get all users
+  source_operation: openapi/velaris-openapi.yml#getAllUsers
+- name: get_users_by_emails
+  description: Get users by emails
+  source_operation: openapi/velaris-openapi.yml#getUsersByEmails
+- name: get_user_by_id
+  description: Get user by id
+  source_operation: openapi/velaris-openapi.yml#getUserById
+- name: tasks
+  description: Tasks
+  source_operation: openapi/velaris-openapi.yml#tasks
+- name: archive_task
+  description: Archive Task
+  source_operation: openapi/velaris-openapi.yml#archiveTask
+- name: get_task_by_id
+  description: Get Task By ID
+  source_operation: openapi/velaris-openapi.yml#getTaskById
+- name: update_task_by_task_id
+  description: Update Task by Task Id
+  source_operation: openapi/velaris-openapi.yml#updateTaskByTaskId
+- name: get_task_by_source_and_source_id
+  description: Get Task by Source and Source ID
+  source_operation: openapi/velaris-openapi.yml#getTaskBySourceAndSourceId
+- name: get_base_currency
+  description: Get Base Currency
+  source_operation: openapi/velaris-openapi.yml#getBaseCurrency
+- name: get_exchange_rates
+  description: Get Exchange Rates
+  source_operation: openapi/velaris-openapi.yml#getExchangeRates
+- name: get_exchange_rate_by_month
+  description: Get Exchange Rate by Month
+  source_operation: openapi/velaris-openapi.yml#getExchangeRateByMonth
+- name: get_picklist_definitions
+  description: Get Picklist Definitions
+  source_operation: openapi/velaris-openapi.yml#getPicklistDefinitions
+- name: get_system_field_definitions
+  description: Get System Field Definitions
+  source_operation: openapi/velaris-openapi.yml#getSystemFieldDefinitions
+- name: post_responses
+  description: Post Responses
+  source_operation: openapi/velaris-openapi.yml#postResponses
+- name: get_user_integrations
+  description: Get User Integrations
+  source_operation: openapi/velaris-openapi.yml#getUserIntegrations

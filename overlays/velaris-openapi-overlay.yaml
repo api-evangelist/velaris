@@ -1,0 +1,31 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Velaris Public API
+  version: 1.0.0
+extends: openapi/velaris-openapi.yml
+x-provenance:
+  generated: '2026-07-21'
+  method: generated
+  source: API Evangelist enrichment pipeline
+actions:
+- target: $.info
+  update:
+    x-apievangelist:
+      provider: velaris
+      reviewed: '2026-07-21'
+      portal: https://developers.velaris.io/
+      security-portal: https://www.velaris.io/velaris-security-portal
+      artifacts:
+      - authentication/velaris-authentication.yml
+      - conventions/velaris-conventions.yml
+      - errors/velaris-problem-types.yml
+      - lifecycle/velaris-lifecycle.yml
+      - data-model/velaris-data-model.yml
+- target: $.info
+  update:
+    x-apievangelist-notes: 'Spec converted from the provider-published Postman collection: path parameters use Postman
+      :param syntax, no components.schemas, and only Custom Objects operations document non-2xx responses. V1 (/core/*)
+      reads are truncated by the provider - use V2 (/v2/*) list/search operations.'
+- target: $.tags[?(@.name=='Entity Management V2')]
+  update:
+    description: Preferred read/search surface - V1 list endpoints are restricted to a limited number of records.

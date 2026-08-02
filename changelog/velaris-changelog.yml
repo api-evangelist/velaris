@@ -1,0 +1,18 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.velaris.io/resources/product-updates
+scheme: dated product-update posts (platform-level, no API version numbers)
+note: Curated product-updates page, not a dated engineering changelog; most recent visible entries captured below.
+entries:
+- date: '2024-09-20'
+  title: Unlock effortless collaboration when servicing customers with Velaris Support
+  highlights:
+  - Consistent customer experiences across CS and Support interactions
+- date: '2024-09-13'
+  title: Bring any unique customer data point into your CSP with Custom Objects
+  highlights:
+  - Custom relational databases for customer information (Custom Objects, also exposed in the Public API)
+- date: '2024-07-16'
+  title: 'Connect by Velaris: A New Era of Customer Collaboration'
+  highlights:
+  - Customer portal + widget extension for collaboration, transparency, and efficiency

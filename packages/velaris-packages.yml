@@ -1,0 +1,7 @@
+generated: '2026-07-21'
+method: none
+source: searched npm, PyPI, RubyGems, NuGet, Maven Central, pkg.go.dev, Packagist, crates.io and developers.velaris.io
+note: No first-party client libraries published. npm "velaris-richtext-editor" is a generic tiptap editor published
+  by a Velaris employee (placeholder repo URL, not an API client); npm "velaris-button" is unrelated. Integration
+  is via the raw REST API (developers.velaris.io) or the in-product integration catalog/Zapier.
+packages: []

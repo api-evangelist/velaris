@@ -1,0 +1,29 @@
+generated: '2026-07-21'
+method: searched
+source: https://www.velaris.io/velaris-security-portal + derived from openapi/velaris-openapi.yml
+standards:
+- id: iso-27001
+  conforms: true
+  evidence: ISO 27001:2022 certified, audited by Proks GmbH (velaris-security-portal)
+- id: soc2-type2
+  conforms: true
+  evidence: SOC 2 Type II compliant (velaris-security-portal)
+- id: gdpr
+  conforms: true
+  evidence: GDPR compliance stated on velaris-security-portal; DPA published at /data-processing-addendum
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 securitySchemes — auth is user-scoped bearer tokens and legacy HTTP basic
+- id: oidc
+  conforms: false
+  evidence: No openIdConnect scheme; /.well-known/openid-configuration returns 401/404
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error responses are plain JSON/no application/problem+json in openapi/velaris-openapi.yml
+- id: pagination
+  conforms: partial
+  evidence: pageSize on tasks/custom-object list endpoints; date-cursor on /attribute-change-log; V1 list endpoints
+    truncated (docs direct reads to V2)
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism documented in docs or spec
