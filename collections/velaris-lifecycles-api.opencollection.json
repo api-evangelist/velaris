@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Lifecycles API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Lifecycles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Lifecycle Stages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/lifecycles"
+          },
+          "docs": "<p>Get active lifecycle stages in each level</p>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

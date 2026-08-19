@@ -1,0 +1,121 @@
+{
+  "item": [
+    {
+      "id": "e265140e-def2-4831-a166-9860dade8a87",
+      "name": "Integrations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "53051d37-bbd9-4163-b44b-7d1c9043706d",
+          "name": "Get User Integrations",
+          "request": {
+            "name": "Get User Integrations",
+            "description": {
+              "content": "<p>Get user level integrations</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "integration",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c43b0e13-8cd0-4c60-aee8-8103666efc41",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "integration",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"integrationId\": 110,\n      \"type\": \"communication\",\n      \"vendor\": \"gmail-v3\",\n      \"status\": \"REVOKED\",\n      \"communicationIdentifier\": \"calendar_test@velarissbox.com\",\n      \"userId\": 382,\n      \"created\": \"2023-06-15T16:53:28.908Z\",\n      \"modified\": \"2024-03-04T11:22:41.882Z\"\n    },\n    {\n      \"integrationId\": 302,\n      \"type\": \"scheduling\",\n      \"vendor\": \"google-calendar\",\n      \"status\": \"REVOKED\",\n      \"communicationIdentifier\": \"shayne.darren@velaris.io\",\n      \"userId\": 73,\n      \"created\": \"2024-03-15T06:00:09.263Z\",\n      \"modified\": \"2024-03-15T06:12:38.389Z\"\n    },\n    {\n      \"integrationId\": 842,\n      \"type\": \"communication\",\n      \"vendor\": \"gmail-v3\",\n      \"status\": \"REVOKED\",\n      \"communicationIdentifier\": \"accounts@velaris.io\",\n      \"userId\": 1193,\n      \"created\": \"2025-09-24T14:53:16.464Z\",\n      \"modified\": \"2025-10-31T09:20:53.675Z\"\n    },\n    {\n      \"integrationId\": 1158,\n      \"type\": \"scheduling\",\n      \"vendor\": \"google-calendar\",\n      \"status\": \"CONNECTED\",\n      \"communicationIdentifier\": \"sahas.gunasekara@velaris.io\",\n      \"userId\": 347,\n      \"created\": \"2026-06-11T07:51:18.767Z\",\n      \"modified\": \"2026-06-23T06:45:27.094Z\"\n    },\n    {\n      \"integrationId\": 1014,\n      \"type\": \"communication\",\n      \"vendor\": \"gmail-v3\",\n      \"status\": \"CONNECTED\",\n      \"communicationIdentifier\": \"michal.fornadel@velaris.io\",\n      \"userId\": 1016,\n      \"created\": \"2026-01-30T13:17:06.398Z\",\n      \"modified\": \"2026-06-23T06:45:49.705Z\"\n    },\n    {\n      \"integrationId\": 1157,\n      \"type\": \"communication\",\n      \"vendor\": \"gmail-v3\",\n      \"status\": \"CONNECTED\",\n      \"communicationIdentifier\": \"sahas.gunasekara@velaris.io\",\n      \"userId\": 347,\n      \"created\": \"2026-06-11T07:51:00.005Z\",\n      \"modified\": \"2026-06-23T06:45:49.930Z\"\n    },\n    {\n      \"integrationId\": 1160,\n      \"type\": \"communication\",\n      \"vendor\": \"gmail-v3\",\n      \"status\": \"CONNECTED\",\n      \"communicationIdentifier\": \"lakshan.hewage@velaris.io\",\n      \"userId\": 876,\n      \"created\": \"2026-06-11T07:51:44.827Z\",\n      \"modified\": \"2026-06-23T06:45:50.239Z\"\n    },\n    {\n      \"integrationId\": 1010,\n      \"type\": \"scheduling\",\n      \"vendor\": \"google-calendar\",\n      \"status\": \"CONNECTED\",\n      \"communicationIdentifier\": \"aswin.subramaniam@velaris.io\",\n      \"userId\": 646,\n      \"created\": \"2026-01-22T18:43:16.964Z\",\n      \"modified\": \"2026-06-23T06:45:27.098Z\"\n    },\n    {\n      \"integrationId\": 135,\n      \"type\": \"scheduling\",\n      \"vendor\": \"google-calendar\",\n      \"status\": \"REVOKED\",\n      \"communicationIdentifier\": \"aidan.hickman@velaris.io\",\n      \"userId\": 388,\n      \"created\": \"2023-08-18T09:21:36.063Z\",\n      \"modified\": \"2025-01-28T08:41:13.150Z\"\n    },\n    {\n      \"integrationId\": 607,\n      \"type\": \"scheduling\",\n      \"vendor\": \"google-calendar\",\n      \"status\": \"REVOKED\",\n      \"communicationIdentifier\": \"nathan.yorke@velaris.io\",\n      \"userId\": 1010,\n      \"created\": \"2025-04-23T17:45:23.220Z\",\n      \"modified\": \"2025-07-09T11:19:21.218Z\"\n    }\n  ],\n  \"pagination\": {\n    \"page\": \"1\",\n    \"pageSize\": \"10\",\n    \"totalCount\": 41\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "fdeae28d-666b-4b60-b858-a46a5f68072e",
+    "name": "Velaris Public Activity Integrations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

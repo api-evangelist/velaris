@@ -1,0 +1,172 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Ticketing API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Ticketing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All Tickets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets"
+          },
+          "docs": "<p>Allowed optional parameters for filtering.</p>\n<ul>\n<li><p>entityId: linked entity</p>\n</li>\n<li><p>level: linked entity level</p>\n</li>\n<li><p>includeArchived: boolean</p>\n</li>\n<li><p>query:string</p>\n</li>\n<li><p>pageSize</p>\n</li>\n<li><p>page</p>\n</li>\n</ul>\n<p>Example</p>\n<p><code>/ticketing/tickets?level=account&amp;entityId=2</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Create Ticket",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Allowed values</p>\n<ul>\n<li>requester - requester should be a contact. Email, id or external id should be presented. If requester’s email is</li>\n<li>provided and the requester is not found in Velaris, new contact will be created with email.</li>\n</ul>\n<p><code>\"requester\": {\"email\": \"</code><a href=\"mailto:johndoe@gmail.com\"><code>johndoe@gmail.com</code></a><code>\"} or {\"id\": 10} or {\"externalId\": \"isosjw-ssda-123-ssd\"}</code></p>\n<ul>\n<li>assigners - assigners should be users of velaris. U"
+        },
+        {
+          "info": {
+            "name": "Get Ticket By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId"
+          },
+          "docs": "<p>Example</p>\n<p><code>/ticketing/tickets/10?origin=zendesk</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Update Ticket",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<ul>\n<li>Allowed values are same as in create ticket request body.</li>\n</ul>\n<p>Example</p>\n<p><code>/ticketing/tickets/10?origin=zendesk</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Delete Ticket",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId"
+          },
+          "docs": "<p>Example</p>\n<p><code>/ticketing/tickets/10?origin=zendesk</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Restore Ticket",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId/restore"
+          },
+          "docs": "<p>Example<br /><code>/ticketing/tickets/10/restore?origin=zendesk</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Get All Comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId/comments"
+          },
+          "docs": "<p>Example</p>\n<p><code>/ticketing/tickets/10/comments?origin=zendesk</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Create Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId/comments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Allowed values</p>\n<ul>\n<li>author - author type can be contact, visitor, admin, bot. Following values will be accepted for each author type.<ul>\n<li>contact: id, externalId, email</li>\n<li>admin: id, externalId, email</li>\n<li>visitor: email</li>\n<li>bot: no ids</li>\n</ul>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"author\": {\n  \"type\": \"contact\",\n  \"externalId\": \"gsdj-j232kj-jk312\"\n}\n\n</code></pre>"
+        },
+        {
+          "info": {
+            "name": "Get Comment By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId/comments/:commentId"
+          },
+          "docs": "<p>Example</p>\n<p><code>/ticketing/tickets/10/comments/11?origin=zendesk</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Update Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId/comments/:commentId",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<ul>\n<li>Allowed values are same as in create comment request body.</li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Delete Comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId/comments/:commentId"
+          },
+          "docs": "<p>Example</p>\n<p><code>/ticketing/tickets/10/comments/1?origin=zendesk</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Get Comment by External ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/ticketing/tickets/:ticketId/comments/external/:externalId"
+          },
+          "docs": "<p>Example<br /><code>/ticketing/tickets/10/comments/external/abc123-def456-ghi789?origin=zendesk</code></p>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,439 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Entity Management V1 API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entity Management V1",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All Organizations V1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/organizations"
+          },
+          "docs": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter organizations by custom fields</p>\n<p><code>/organizations?{custom_field_name}={value}</code></p>\n<p>Example</p>\n<p><code>/organizations?zapier=true</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Create Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/core/organizations",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Create New Organization.</p>\n<h5 id=\"request-body-guide\">Request body guide</h5>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>externalId</td>\n<td>Use <code>externalId</code> to add the external id of the organization.</td>\n</tr>\n<tr>\n<td>properties</td>\n<td>Use <code>properties</code> to add all the custom fields.</td>\n</tr>\n<tr>\n<td>contacts</td>\n<td>Use <code>c"
+        },
+        {
+          "info": {
+            "name": "Get Organizations By ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/organizations/:organizationId"
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/organizations/extid-id</code></li>\n<li>With internal id: <code>/organizations/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Update Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/organizations/:organizationId",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li><p>With external id: <code>/oganizations/extid-id</code></p>\n</li>\n<li><p>With internal id: <code>/organizations/srcid-id</code></p>\n</li>\n</ul>\n<h5 id=\"reqeust-body-guide\">Reqeust body guide</h5>\n<p>Follow the organization create guide.</p>\n<p><strong>Archived Organizations</strong> cannot be updated.</p>\n<h5 id=\"account-linking\">Account Linking</h5>\n<p><strong>Cannot link accounts</strong> to organization when <strong>updating</strong> organization. There is seperate A"
+        },
+        {
+          "info": {
+            "name": "Churn organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/organizations/:organizationId/churn-status",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/organizations/extid-id/churn-status</code></li>\n<li>With internal id: <code>/organizations/srcid-id/churn-status</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Archive Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/organizations/:organizationId/archive"
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id:<code>/organizations/extid-id/archive</code></li>\n<li>With internal id: <code>/organizations/srcid-id/archive</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Restore Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/organizations/:organizationId/restore"
+          },
+          "docs": "Restore Organization"
+        },
+        {
+          "info": {
+            "name": "Get All Accounts V1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/accounts"
+          },
+          "docs": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter accounts by custom fields</p>\n<p><code>/accounts?{custom_field_name}={value}</code></p>\n<p>Example</p>\n<p><code>/accounts?zapier=true</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Create Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/core/accounts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Create New Account.</p>\n<h5 id=\"request-body-guide\">Request body guide</h5>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>externalId</td>\n<td>Use <code>externalId</code> to add the external id of the organization.</td>\n</tr>\n<tr>\n<td>organizationExternalId</td>\n<td>Use <code>organizationExternalId</code> to link an organization to the current account.</td>\n</tr>\n<"
+        },
+        {
+          "info": {
+            "name": "Get Account By ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/accounts/:accountId"
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Update Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/accounts/:accountId",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Churn Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/accounts/:accountId/churn-status",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Archive Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/accounts/:accountId/archive"
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Restore Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/accounts/:organizationId/restore"
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Change Parent Entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/accounts/:accountId/parent-entity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Change or assign parent organization.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get All Contacts V1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/contacts"
+          },
+          "docs": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter contacts by custom fields</p>\n<p><code>/contacts?{custom_field_name}={value}</code></p>\n<p>Example</p>\n<p><code>/contacts?zapier=true</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Create Contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/core/contacts",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Create new contact</p>\n<p>Create New Organiztion.</p>\n<h5 id=\"request-body-guide\">Request body guide</h5>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>externalId</td>\n<td>Use <code>externalId</code> to add external id of the contact</td>\n</tr>\n<tr>\n<td>email</td>\n<td>Use <code>email</code> to add email id of the contact</td>\n</tr>\n<tr>\n<td>properties</td>\n<td>Use"
+        },
+        {
+          "info": {
+            "name": "Get Contacts By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/contacts/:contactId"
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/contacts/extid-id</code></li>\n<li>With internal id: <code>/contacts/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Update Contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/contacts/:contactId",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/contacts/extid-id</code></li>\n<li>With internal id: <code>/contacts/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Archive Contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/contacts/:contactId/archive"
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/contacts/extid-id</code></li>\n<li>With internal id: <code>/contacts/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Restore Contact",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/contacts/:contactId/restore"
+          },
+          "docs": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/contacts/extid-id</code></li>\n<li>With internal id: <code>/contacts/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Get All Opportunities V1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/opportunities"
+          },
+          "docs": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter opportunities by custom fields</p>\n<p><code>/opportunities?{custom_field_name}={value}</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Create Opportunity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/core/opportunities",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<ul>\n<li><p>parentEntity types - organization, account</p>\n</li>\n<li><p>parent entity id or external id can be used</p>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"parentEntity\": {\n  \"type\": \"account\",\n  \"externalId\": \"account-external-id\"\n}\n\n</code></pre><ul>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n<li><p>links: Use <code>links</code> to link custom objects with opp"
+        },
+        {
+          "info": {
+            "name": "Get Opportunities By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/opportunities/:pipelineId"
+          },
+          "docs": "<p>Example</p>\n<ul>\n<li>With external id: <code>/opportunities/extid-id</code></li>\n<li>With internal id: <code>/opportunities/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Update Opportunity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/opportunities/:opportunityId",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<ul>\n<li><p>With external id: <code>/opportunities/extid-id</code></p>\n</li>\n<li><p>With internal id: <code>/opportunities/srcid-id</code></p>\n</li>\n<li><p>parent entity cannot be changed after creation.</p>\n</li>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Archive Opportunity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/opportunities/:id/archive"
+          },
+          "docs": "<p>Example</p>\n<ul>\n<li>With external id: <code>/opportunities/extid-id</code></li>\n<li>With internal id: <code>/opportunities/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Restore Opportunity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/opportunities/:opportunityId/restore"
+          },
+          "docs": "<p>Example</p>\n<ul>\n<li>With external id: <code>/opportunities/extid-id</code></li>\n<li>With internal id: <code>/opportunities/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Get All Risks V1",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/risks"
+          },
+          "docs": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter risks by custom fields</p>\n<p><code>/risks?{custom_field_name}={value}</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Create Risk",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/core/risks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<ul>\n<li><p>parentEntity types - organization, account</p>\n</li>\n<li><p>parent entity id or external id can be used</p>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"parentEntity\": {\n  \"type\": \"account\",\n  \"externalId\": \"account-external-id\"\n}\n\n</code></pre><ul>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n<li><p>links: Use <code>links</code> to link custom objects with ris"
+        },
+        {
+          "info": {
+            "name": "Get Risk By Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/risks/:riskId"
+          },
+          "docs": "<p>Example</p>\n<ul>\n<li>With external id: <code>/risks/extid-id</code></li>\n<li>With internal id: <code>/risks/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Update Risk",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/risks/:riskId",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<ul>\n<li>With external id:<code>/risks/extid-id</code></li>\n<li>With internal id: <code>/risks/srcid-id</code></li>\n<li>parent entity cannot be changed after creation.</li>\n<li>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Archive Risk",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/risks/:riskId/archive"
+          },
+          "docs": "<ul>\n<li>With external id:<code>/risks/extid-id</code></li>\n<li>With internal id: <code>/risks/srcid-id</code></li>\n</ul>\n"
+        },
+        {
+          "info": {
+            "name": "Restore Risks",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/risks/:riskId/restore"
+          },
+          "docs": "<ul>\n<li>With external id:<code>/risks/extid-id</code></li>\n<li>With internal id: <code>/risks/srcid-id</code></li>\n</ul>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

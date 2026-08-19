@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Surveys API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Surveys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Post Responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/survey-management/surveys/:surveyId/responses",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Post Responses"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

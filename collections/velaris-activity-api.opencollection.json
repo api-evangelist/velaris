@@ -1,0 +1,109 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Activity",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All Activities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/entity-action/activity"
+          },
+          "docs": "Get All Activities"
+        },
+        {
+          "info": {
+            "name": "Create Activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/entity-action/activity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Activity"
+        },
+        {
+          "info": {
+            "name": "Update Activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/entity-action/activity",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Activity"
+        },
+        {
+          "info": {
+            "name": "Delete Activity by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.euw1.velaris.io/entity-action/activity"
+          },
+          "docs": "Delete Activity by ID"
+        },
+        {
+          "info": {
+            "name": "Get Activity Types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/activity-type "
+          },
+          "docs": "Get Activity Types"
+        },
+        {
+          "info": {
+            "name": "Get Activity by source ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/entity-action/activity/srcid-13542"
+          },
+          "docs": "Get Activity by source ID"
+        },
+        {
+          "info": {
+            "name": "Get Activity by external Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/entity-action/activity/extid-253276311791"
+          },
+          "docs": "Get Activity by external Id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

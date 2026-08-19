@@ -1,0 +1,87 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Notes API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Notes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/notes"
+          },
+          "docs": "Get Notes"
+        },
+        {
+          "info": {
+            "name": "Create Note",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/notes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Note"
+        },
+        {
+          "info": {
+            "name": "Get Note by External ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/notes/:id"
+          },
+          "docs": "Get Note by External ID"
+        },
+        {
+          "info": {
+            "name": "Update Note with External ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/notes/:id",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Note with External ID"
+        },
+        {
+          "info": {
+            "name": "Delete Note with Source ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.euw1.velaris.io/notes/:id"
+          },
+          "docs": "Delete Note with Source ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

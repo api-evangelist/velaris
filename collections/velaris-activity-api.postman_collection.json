@@ -1,0 +1,588 @@
+{
+  "item": [
+    {
+      "id": "760a683a-b5eb-4ec9-8278-d043469b7e52",
+      "name": "Activity",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0bd0a1f7-5bb6-40bf-9aea-23552dcca387",
+          "name": "Get All Activities",
+          "request": {
+            "name": "Get All Activities",
+            "description": {},
+            "url": {
+              "path": [
+                "entity-action",
+                "activity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "432706cb-fc2c-44a3-b548-f63a3f9aefc8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entity-action",
+                    "activity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"activityId\": 13542,\n      \"title\": \"customer <> Velaris (Commercial discussion)\",\n      \"note\": \"null\",\n      \"type\": 3,\n      \"activityDateTime\": \"2025-07-29T17:00:00.000Z\",\n      \"created\": \"2025-07-31T20:19:35.576Z\",\n      \"source\": \"hubspot\",\n      \"sourceId\": \"563276311791\",\n      \"sourceCreated\": \"2025-07-29T15:57:34.000Z\",\n      \"sourceCreatedByData\": \"809\",\n      \"sourceCreatedBy\": 1,\n      \"sourceModified\": \"2025-07-29T18:30:58.336Z\",\n      \"sourceModifiedByData\": null,\n      \"sourceModifiedBy\": null,\n      \"endTime\": null,\n      \"outcome\": null,\n      \"duration\": 30,\n      \"aiDataId\": null,\n      \"userIds\": [],\n      \"contactIds\": [],\n      \"accountIds\": [\n        906\n      ],\n      \"organizationIds\": [],\n      \"pipelineIds\": []\n    },\n    {\n      \"activityId\": 13540,\n      \"title\": \"Velaris Demo\",\n      \"note\": \"\\\"<p></p>\\\"\",\n      \"type\": 3,\n      \"activityDateTime\": \"2025-06-02T15:30:00.000Z\",\n      \"created\": \"2025-07-31T20:19:34.305Z\",\n      \"source\": \"hubspot\",\n      \"sourceId\": \"245078864100\",\n      \"sourceCreated\": \"2025-05-29T20:02:10.800Z\",\n      \"sourceCreatedByData\": \"809\",\n      \"sourceCreatedBy\": 1,\n      \"sourceModified\": \"2025-06-09T17:02:44.320Z\",\n      \"sourceModifiedByData\": null,\n      \"sourceModifiedBy\": null,\n      \"endTime\": null,\n      \"outcome\": 1,\n      \"duration\": 30,\n      \"aiDataId\": null,\n      \"userIds\": [],\n      \"contactIds\": [],\n      \"accountIds\": [\n        906\n      ],\n      \"organizationIds\": [],\n      \"pipelineIds\": []\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5480201-b540-44f1-a088-d8e3e46bff18",
+          "name": "Create Activity",
+          "request": {
+            "name": "Create Activity",
+            "description": {},
+            "url": {
+              "path": [
+                "entity-action",
+                "activity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Q4 Strategy Review\",\n  \"activityType\": \"Meeting\",\n  \"source\": \"SALESFORCE\",\n  \"sourceId\": \"00T8d00000abc12EAA\",\n  \"activityDateTime\": \"2025-10-23T15:00:00Z\",\n  \"linkedEntities\": [\n    {\n      \"type\": \"ACCOUNT\",\n      \"id\": 12345\n    },\n    {\n      \"type\": \"CONTACT\",\n      \"email\": \"jane.doe@example.com\"\n    }\n  ],\n  \"note\": \"<h3>Discussion Points</h3><p>Review sales performance and plan for the next quarter.</p>\",\n  \"users\": [\n    {\n      \"email\": \"john.smith@yourcompany.com\"\n    }\n  ],\n  \"duration\": 3600,\n  \"sourceCreated\": \"2025-10-21T10:00:00Z\",\n  \"sourceCreatedBy\": {\n    \"type\": 1,\n    \"data\": 987\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9645f4d2-14ad-429b-ac78-3f4769b76a91",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entity-action",
+                    "activity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Q4 Strategy Review\",\n  \"activityType\": \"Meeting\",\n  \"source\": \"SALESFORCE\",\n  \"sourceId\": \"00T8d00000abc12EAA\",\n  \"activityDateTime\": \"2025-10-23T15:00:00Z\",\n  \"linkedEntities\": [\n    {\n      \"type\": \"ACCOUNT\",\n      \"id\": 12345\n    },\n    {\n      \"type\": \"CONTACT\",\n      \"email\": \"jane.doe@example.com\"\n    }\n  ],\n  \"note\": \"<h3>Discussion Points</h3><p>Review sales performance and plan for the next quarter.</p>\",\n  \"users\": [\n    {\n      \"email\": \"john.smith@yourcompany.com\"\n    }\n  ],\n  \"duration\": 3600,\n  \"sourceCreated\": \"2025-10-21T10:00:00Z\",\n  \"sourceCreatedBy\": {\n    \"type\": 1,\n    \"data\": 987\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3909189e-dfab-4465-8c9e-d85d2aec733e",
+          "name": "Update Activity",
+          "request": {
+            "name": "Update Activity",
+            "description": {},
+            "url": {
+              "path": [
+                "entity-action",
+                "activity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Q4 Strategy Review (Rescheduled)\",\n  \"activityDateTime\": \"2025-10-24T11:00:00Z\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a814372c-f36e-4ffc-866a-c853f1b68bcb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entity-action",
+                    "activity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"Q4 Strategy Review (Rescheduled)\",\n  \"activityDateTime\": \"2025-10-24T11:00:00Z\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8f6a8774-aa01-4b4a-9be2-abb7a9111863",
+          "name": "Delete Activity by ID",
+          "request": {
+            "name": "Delete Activity by ID",
+            "description": {},
+            "url": {
+              "path": [
+                "entity-action",
+                "activity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fec0de74-66a2-400d-b1b3-ee640bd5825f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entity-action",
+                    "activity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8eed88d-a075-41bc-8ab8-d235bb761063",
+          "name": "Get Activity Types",
+          "request": {
+            "name": "Get Activity Types",
+            "description": {},
+            "url": {
+              "path": [
+                "activity-type "
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b720cacc-0037-402f-b011-28fbacc7c608",
+              "name": "Get Activity Types",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "activity-type "
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "306c429e-5dc1-41e9-afa5-7f6335bbd37e",
+          "name": "Get Activity by source ID",
+          "request": {
+            "name": "Get Activity by source ID",
+            "description": {},
+            "url": {
+              "path": [
+                "entity-action",
+                "activity",
+                "srcid-13542"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a0a3f47a-ddd5-4b0f-b064-1736ae75ac0e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entity-action",
+                    "activity",
+                    "srcid-13542"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"activityId\": 13542,\n    \"title\": \"customer <> Velaris (Commercial discussion)\",\n    \"note\": \"null\",\n    \"type\": 3,\n    \"activityDateTime\": \"2025-07-29T17:00:00.000Z\",\n    \"created\": \"2025-07-31T20:19:35.576Z\",\n    \"source\": \"hubspot\",\n    \"sourceId\": \"287276311791\",\n    \"sourceCreated\": \"2025-07-29T15:57:34.000Z\",\n    \"sourceCreatedByData\": \"809\",\n    \"sourceCreatedBy\": 1,\n    \"sourceModified\": \"2025-07-29T18:30:58.336Z\",\n    \"sourceModifiedByData\": null,\n    \"sourceModifiedBy\": null,\n    \"endTime\": null,\n    \"outcome\": null,\n    \"duration\": 30,\n    \"linkCount\": 1,\n    \"aiDataId\": null,\n    \"userIds\": [],\n    \"contactIds\": [],\n    \"accountIds\": [\n      906\n    ],\n    \"organizationIds\": [],\n    \"pipelineIds\": []\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5d3f29ae-69cb-432f-9c3e-8d7adccdc433",
+          "name": "Get Activity by external Id",
+          "request": {
+            "name": "Get Activity by external Id",
+            "description": {},
+            "url": {
+              "path": [
+                "entity-action",
+                "activity",
+                "extid-253276311791"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "33240c59-c8ce-49c2-9ef4-87e6364ff2a7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "entity-action",
+                    "activity",
+                    "extid-253276311791"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"activityId\": 13542,\n    \"title\": \"Customer <> Velaris (Commercial discussion)\",\n    \"note\": \"null\",\n    \"type\": 3,\n    \"activityDateTime\": \"2025-07-29T17:00:00.000Z\",\n    \"created\": \"2025-07-31T20:19:35.576Z\",\n    \"source\": \"hubspot\",\n    \"sourceId\": \"253276311791\",\n    \"sourceCreated\": \"2025-07-29T15:57:34.000Z\",\n    \"sourceCreatedByData\": \"809\",\n    \"sourceCreatedBy\": 1,\n    \"sourceModified\": \"2025-07-29T18:30:58.336Z\",\n    \"sourceModifiedByData\": null,\n    \"sourceModifiedBy\": null,\n    \"endTime\": null,\n    \"outcome\": null,\n    \"duration\": 30,\n    \"userIds\": [],\n    \"contactIds\": [],\n    \"accountIds\": [\n      906\n    ],\n    \"organizationIds\": []\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "27481785-ebe5-489c-89dc-84021a994f1e",
+    "name": "Velaris Public Activity API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

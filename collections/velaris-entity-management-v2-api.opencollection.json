@@ -1,0 +1,169 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Entity Management V2 API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Entity Management V2",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All Organizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/v2/organizations"
+          },
+          "docs": "<p>Supported query params</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Max Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>after</td>\n<td>integer</td>\n<td>Use an integer to specify the starting point for pagination.</td>\n<td>N/A</td>\n<td>N/A</td>\n</tr>\n<tr>\n<td>limit</td>\n<td>integer</td>\n<td>The number of records to return. Default is 10, and the maximum is 100.</td>\n<td>10</td>\n<td>100</td>\n"
+        },
+        {
+          "info": {
+            "name": "Search Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/v2/organizations/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Search organizations using custom attributes</p>\n<p>The request body should contain a list of filters up to 5 filters</p>\n<ul>\n<li><p>filters - list of filters</p>\n<ul>\n<li><p>filter - object</p>\n<ul>\n<li><p>fieldName: API name of the custom attribute</p>\n</li>\n<li><p>operator: operator which should be used in the filter</p>\n</li>\n<li><p>value: filtered value</p>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Supported Operators</strong></p>\n<div class=\"click-to-expand-wrapper is-table-wrappe"
+        },
+        {
+          "info": {
+            "name": "Get All Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/v2/accounts"
+          },
+          "docs": "<p>Supported query params</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Max Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>after</td>\n<td>integer</td>\n<td>Use an integer to specify the starting point for pagination.</td>\n<td>N/A</td>\n<td>N/A</td>\n</tr>\n<tr>\n<td>limit</td>\n<td>integer</td>\n<td>The number of records to return. Default is 10, and the maximum is 100.</td>\n<td>10</td>\n<td>100</td>\n"
+        },
+        {
+          "info": {
+            "name": "Search Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/v2/accounts/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Search accounts using custom attributes</p>\n<p>The request body should contain a list of filters up to 5 filters</p>\n<ul>\n<li><p>filters - list of filters</p>\n<ul>\n<li><p>filter - object</p>\n<ul>\n<li><p>fieldName: API name of the custom attribute</p>\n</li>\n<li><p>operator: operator which should be used in the filter</p>\n</li>\n<li><p>value: filtered value</p>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Supported Operators</strong></p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><t"
+        },
+        {
+          "info": {
+            "name": "Get All Contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/v2/contacts"
+          },
+          "docs": "<p>Supported query params</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Max Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>after</td>\n<td>integer</td>\n<td>Use an integer to specify the starting point for pagination.</td>\n<td>N/A</td>\n<td>N/A</td>\n</tr>\n<tr>\n<td>limit</td>\n<td>integer</td>\n<td>The number of records to return. Default is 10, and the maximum is 100.</td>\n<td>10</td>\n<td>100</td>\n"
+        },
+        {
+          "info": {
+            "name": "Get Contacts by Emails",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/v2/contacts/batch/read",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Contacts can be retrieved using an array of emails using this endpoint</p>\n"
+        },
+        {
+          "info": {
+            "name": "Search Contacts",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/v2/contacts/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Search contacts using custom attributes</p>\n<p>The request body should contain a list of filters up to 5 filters</p>\n<ul>\n<li><p>filters - list of filters</p>\n<ul>\n<li><p>filter - object</p>\n<ul>\n<li><p>fieldName: API name of the custom attribute</p>\n</li>\n<li><p>operator: operator which should be used in the filter</p>\n</li>\n<li><p>value: filtered value</p>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Supported Operators</strong></p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><t"
+        },
+        {
+          "info": {
+            "name": "Get All Opportunities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/v2/opportunities"
+          },
+          "docs": "<p>Supported query params</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Max Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>after</td>\n<td>integer</td>\n<td>Use an integer to specify the starting point for pagination.</td>\n<td>N/A</td>\n<td>N/A</td>\n</tr>\n<tr>\n<td>limit</td>\n<td>integer</td>\n<td>The number of records to return. Default is 10, and the maximum is 100.</td>\n<td>10</td>\n<td>100</td>\n"
+        },
+        {
+          "info": {
+            "name": "Search Opportunities",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/v2/opportunities/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Search organizations using custom attributes</p>\n<p>The request body should contain a list of filters up to 5 filters</p>\n<ul>\n<li><p>filters - list of filters</p>\n<ul>\n<li><p>filter - object</p>\n<ul>\n<li><p>fieldName: API name of the custom attribute</p>\n</li>\n<li><p>operator: operator which should be used in the filter</p>\n</li>\n<li><p>value: filtered value</p>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Supported Operators</strong></p>\n<div class=\"click-to-expand-wrapper is-table-wrappe"
+        },
+        {
+          "info": {
+            "name": "Get All Risks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/v2/risks"
+          },
+          "docs": "<p>Supported query params</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Type</th>\n<th>Description</th>\n<th>Default</th>\n<th>Max Value</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>after</td>\n<td>integer</td>\n<td>Use an integer to specify the starting point for pagination.</td>\n<td>N/A</td>\n<td>N/A</td>\n</tr>\n<tr>\n<td>limit</td>\n<td>integer</td>\n<td>The number of records to return. Default is 10, and the maximum is 100.</td>\n<td>10</td>\n<td>100</td>\n"
+        },
+        {
+          "info": {
+            "name": "Search Risks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/v2/risks/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Search organizations using custom attributes</p>\n<p>The request body should contain a list of filters up to 5 filters</p>\n<ul>\n<li><p>filters - list of filters</p>\n<ul>\n<li><p>filter - object</p>\n<ul>\n<li><p>fieldName: API name of the custom attribute</p>\n</li>\n<li><p>operator: operator which should be used in the filter</p>\n</li>\n<li><p>value: filtered value</p>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Supported Operators</strong></p>\n<div class=\"click-to-expand-wrapper is-table-wrappe"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

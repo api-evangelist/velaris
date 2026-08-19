@@ -1,0 +1,193 @@
+{
+  "item": [
+    {
+      "id": "4ac88222-de64-4aaa-8533-8e6a83d82762",
+      "name": "Field Definitions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "0600fd27-8e82-42a7-beea-80d24f46c302",
+          "name": "Get Picklist Definitions",
+          "request": {
+            "name": "Get Picklist Definitions",
+            "description": {},
+            "url": {
+              "path": [
+                "fields"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "23877fd1-af6d-4393-817b-6a19ca22d523",
+              "name": "Get Picklist Definitions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fields"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"customColumnId\": 547,\n      \"name\": \"type\",\n      \"displayName\": \"Type\",\n      \"description\": null,\n      \"dataType\": \"singlePicklist\",\n      \"columnLevel\": 4,\n      \"created\": \"2024-04-04T07:42:06.549Z\",\n      \"isDefault\": false,\n      \"required\": false,\n      \"isVisible\": true,\n      \"isEditable\": true,\n      \"vertical\": false,\n      \"horizontal\": false,\n      \"horizontalCustom\": false,\n      \"fieldOptions\": {\n        \"orderType\": 1\n      },\n      \"isUnique\": false,\n      \"calculationDefinitionError\": false,\n      \"picklistDefinition\": [\n        {\n          \"value\": \"Ticketing\",\n          \"id\": 476,\n          \"rank\": \"0|lcm1\"\n        },\n        {\n          \"value\": \"Expansion\",\n          \"id\": 477,\n          \"rank\": \"0|lcm2\"\n        },\n        {\n          \"value\": \"Connect\",\n          \"id\": 478,\n          \"rank\": \"0|lcm3\"\n        },\n        {\n          \"value\": \"Renewal\",\n          \"id\": 541,\n          \"rank\": \"0|lcm4\"\n        },\n        {\n          \"value\": \"Topics\",\n          \"id\": 583,\n          \"rank\": \"0|lcm5\"\n        },\n        {\n          \"value\": \"Sandbox\",\n          \"id\": 607,\n          \"rank\": \"0|lcm6\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "51ca28f4-6dc8-47dc-839b-9b28c0a11198",
+          "name": "Get System Field Definitions",
+          "request": {
+            "name": "Get System Field Definitions",
+            "description": {},
+            "url": {
+              "path": [
+                "fields",
+                "system"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "22192d0a-ae5e-4c47-86c8-1a3af35893b1",
+              "name": "Get System Field Definitions",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "fields",
+                    "system"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"systemFieldId\": 1,\n      \"displayName\": \"Owner\",\n      \"name\": \"owners\",\n      \"level\": 1,\n      \"dataType\": \"User List\",\n      \"required\": false,\n      \"isEditable\": true,\n      \"created\": \"2022-11-25T03:54:21.247Z\",\n      \"modified\": \"2022-11-25T03:54:21.247Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    },\n    {\n      \"systemFieldId\": 2,\n      \"displayName\": \"Contact\",\n      \"name\": \"contacts\",\n      \"level\": 1,\n      \"dataType\": \"Contact List\",\n      \"required\": false,\n      \"isEditable\": true,\n      \"created\": \"2022-11-25T03:54:21.247Z\",\n      \"modified\": \"2022-11-25T03:54:21.247Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    },\n    {\n      \"systemFieldId\": 41,\n      \"displayName\": \"Churn Reason\",\n      \"name\": \"churnReason\",\n      \"level\": 1,\n      \"dataType\": \"singlePicklist\",\n      \"required\": false,\n      \"isEditable\": false,\n      \"created\": \"2023-09-15T08:22:37.401Z\",\n      \"modified\": \"2023-09-15T08:22:37.401Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1,\n      \"picklistDefinition\": [\n        {\n          \"id\": 8,\n          \"rank\": \"0|lcm8\",\n          \"value\": \"Buy over\"\n        },\n        {\n          \"id\": 1,\n          \"rank\": \"0|lcm1\",\n          \"value\": \"Failed to Achieve Outcome\"\n        },\n        {\n          \"id\": 2,\n          \"rank\": \"0|lcm2\",\n          \"value\": \"Lost Champion\"\n        },\n        {\n          \"id\": 3,\n          \"rank\": \"0|lcm3\",\n          \"value\": \"Low Adoption\"\n        },\n        {\n          \"id\": 6,\n          \"rank\": \"0|lcm6\",\n          \"value\": \"Not the ideal customer\"\n        },\n        {\n          \"id\": 999,\n          \"rank\": \"0|lcm9\",\n          \"value\": \"Other\"\n        },\n        {\n          \"id\": 4,\n          \"rank\": \"0|lcm4\",\n          \"value\": \"Poor Service\"\n        },\n        {\n          \"id\": 5,\n          \"rank\": \"0|lcm5\",\n          \"value\": \"Product Issue\"\n        },\n        {\n          \"id\": 7,\n          \"rank\": \"0|lcm7\",\n          \"value\": \"Switch to Competitor\"\n        }\n      ]\n    },\n    {\n      \"systemFieldId\": 3,\n      \"displayName\": \"Organization\",\n      \"name\": \"organizationId\",\n      \"level\": 2,\n      \"dataType\": \"Organization\",\n      \"required\": false,\n      \"isEditable\": true,\n      \"created\": \"2022-11-25T03:54:21.247Z\",\n      \"modified\": \"2022-11-25T03:54:21.247Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    },\n    {\n      \"systemFieldId\": 4,\n      \"displayName\": \"Owners\",\n      \"name\": \"owners\",\n      \"level\": 2,\n      \"dataType\": \"User List\",\n      \"required\": false,\n      \"isEditable\": true,\n      \"created\": \"2022-11-25T03:54:21.247Z\",\n      \"modified\": \"2022-11-25T03:54:21.247Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    },\n    {\n      \"systemFieldId\": 5,\n      \"displayName\": \"Contacts\",\n      \"name\": \"contacts\",\n      \"level\": 2,\n      \"dataType\": \"Contact List\",\n      \"required\": false,\n      \"isEditable\": true,\n      \"created\": \"2022-11-25T03:54:21.247Z\",\n      \"modified\": \"2022-11-25T03:54:21.247Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    },\n    {\n      \"systemFieldId\": 42,\n      \"displayName\": \"Churn Reason\",\n      \"name\": \"churnReason\",\n      \"level\": 2,\n      \"dataType\": \"singlePicklist\",\n      \"required\": false,\n      \"isEditable\": false,\n      \"created\": \"2023-09-15T08:22:37.401Z\",\n      \"modified\": \"2023-09-15T08:22:37.401Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1,\n      \"picklistDefinition\": [\n        {\n          \"id\": 8,\n          \"rank\": \"0|lcm8\",\n          \"value\": \"Buy over\"\n        },\n        {\n          \"id\": 1,\n          \"rank\": \"0|lcm1\",\n          \"value\": \"Failed to Achieve Outcome\"\n        },\n        {\n          \"id\": 2,\n          \"rank\": \"0|lcm2\",\n          \"value\": \"Lost Champion\"\n        },\n        {\n          \"id\": 3,\n          \"rank\": \"0|lcm3\",\n          \"value\": \"Low Adoption\"\n        },\n        {\n          \"id\": 6,\n          \"rank\": \"0|lcm6\",\n          \"value\": \"Not the ideal customer\"\n        },\n        {\n          \"id\": 999,\n          \"rank\": \"0|lcm9\",\n          \"value\": \"Other\"\n        },\n        {\n          \"id\": 4,\n          \"rank\": \"0|lcm4\",\n          \"value\": \"Poor Service\"\n        },\n        {\n          \"id\": 5,\n          \"rank\": \"0|lcm5\",\n          \"value\": \"Product Issue\"\n        },\n        {\n          \"id\": 7,\n          \"rank\": \"0|lcm7\",\n          \"value\": \"Switch to Competitor\"\n        }\n      ]\n    },\n    {\n      \"systemFieldId\": 6,\n      \"displayName\": \"Organizations\",\n      \"name\": \"organizations\",\n      \"level\": 3,\n      \"dataType\": \"Organization List\",\n      \"required\": false,\n      \"isEditable\": true,\n      \"created\": \"2022-11-25T03:54:21.247Z\",\n      \"modified\": \"2022-11-25T03:54:21.247Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    },\n    {\n      \"systemFieldId\": 7,\n      \"displayName\": \"Accounts\",\n      \"name\": \"accounts\",\n      \"level\": 3,\n      \"dataType\": \"Account List\",\n      \"required\": false,\n      \"isEditable\": true,\n      \"created\": \"2022-11-25T03:54:21.247Z\",\n      \"modified\": \"2022-11-25T03:54:21.247Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    },\n    {\n      \"systemFieldId\": 8,\n      \"displayName\": \"Contacts\",\n      \"name\": \"contacts\",\n      \"level\": 4,\n      \"dataType\": \"Contact List\",\n      \"required\": false,\n      \"isEditable\": true,\n      \"created\": \"2022-11-25T03:54:21.247Z\",\n      \"modified\": \"2022-11-25T03:54:21.247Z\",\n      \"fieldOptions\": null,\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "212560f2-243c-4916-a924-406984d32e90",
+    "name": "Velaris Public Activity Field Definitions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

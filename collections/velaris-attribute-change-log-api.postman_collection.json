@@ -1,0 +1,140 @@
+{
+  "item": [
+    {
+      "id": "913c9828-deee-45d8-8e5d-ebcb3e10429d",
+      "name": "Attribute Change Log",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ad773949-7659-4274-b5b1-d9dbbef3690e",
+          "name": "Get Attribute Changelog",
+          "request": {
+            "name": "Get Attribute Changelog",
+            "description": {
+              "content": "<p><strong>Pagination</strong></p>\n<p>Attribute changelog response is paginated using the attribute changed date. To fetch the next page last received changelog chaged date should be passed as the cursor in the next request.</p>\n<p><code>Page size : 50</code></p>\n<p><strong>Request Body</strong></p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Attribute</th>\n<th>Description</th>\n<th>Example</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>entity <em>(required)</em></td>\n<td>One of internal id or external id should be provided.  <br />  <br />Accepted values:  <br /><code>level</code>: <code>orgnization, account, contact</code>  <br /><code>internalId</code> : velaris entity id <em>(number)</em>  <br /><code>externalId</code> : velaris entity external id (<em>string)</em></td>\n<td><code>{</code>  <br /><code>\"level\": \"organization\",</code>  <br /><code>\"externalId\": \"23487-df3242\",</code>  <br /><code>\"internalId\": 1</code>  <br /><code>}</code></td>\n</tr>\n<tr>\n<td>filters <em>(optional)</em></td>\n<td>Alteast one filter should be provided. Multiple filters from the same category cannot be provided in the same request.  <br />  <br /><strong>Attribute filter</strong> (map) <em>- filter the changelog by the attribute required</em>  <br /><code>{\"name\": \"attribute\", \"operator\": \"isSetTo\", \"value\": []}</code>  <br />  <br />Accepted values:  <br /><code>name</code> : <code>attribute</code>  <br /><code>operator</code> : <code>isSetTo</code>  <br /><code>value</code>: array of custom or system attributes.  <br />system attributes: <code>lifecycle_stage, owner, email, about, churn_date, churn_reason, external_id</code>  <br />custom attributes: API name of the custom attribute should be provided</td>\n<td><code>[ { \"name\": \"attribute\", \"operator\": \"isSetTo\", \"value\": [\"lifecycle_stage\", \"about\"] } ]</code></td>\n</tr>\n<tr>\n<td>cursor <em>(optional)</em></td>\n<td>To filter the attribute changes happened before the given date time. Cursor should be in <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> format</td>\n<td><code>\"2023-04-27T05:43:55.000Z\"</code></td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "attribute-change-log"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entity\": {\n    \"level\": \"organization\",\n    \"internalId\": 10000\n  },\n  \"filters\": [\n    {\n      \"name\": \"attribute\",\n      \"operator\": \"isSetTo\",\n      \"value\": [\n        \"name\",\n        \"lifecycle_stage\"\n      ]\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5642f2e2-d824-4961-be57-3aad26a8293b",
+              "name": "200 - Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "attribute-change-log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entity\": {\n    \"level\": \"organization\",\n    \"internalId\": 10000\n  },\n  \"filters\": [\n    {\n      \"name\": \"attribute\",\n      \"operator\": \"isSetTo\",\n      \"value\": [\n        \"name\",\n        \"lifecycle_stage\"\n      ]\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"source\": \"entity_custom_data\",\n      \"organizationId\": \"1\",\n      \"customColumnId\": 1,\n      \"fieldName\": \"name\",\n      \"changedBy\": 81,\n      \"changedAt\": \"2024-02-05T11:37:37.000Z\",\n      \"previousValue\": \"Acme Inc\",\n      \"newValue\": \"Acme Inc - Updated\"\n    },\n    {\n      \"source\": \"entity_custom_data\",\n      \"organizationId\": \"1\",\n      \"customColumnId\": 1,\n      \"fieldName\": \"name\",\n      \"changedBy\": 81,\n      \"changedAt\": \"2024-02-05T11:36:34.000Z\",\n      \"previousValue\": null,\n      \"newValue\": \"Acme Inc\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "31f15d26-33cb-4e80-bd69-007bd538e605",
+    "name": "Velaris Public Activity Attribute Change Log API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

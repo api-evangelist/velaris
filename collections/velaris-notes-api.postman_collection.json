@@ -1,0 +1,418 @@
+{
+  "item": [
+    {
+      "id": "e91efdb0-e6df-47d7-aff9-6f912b2c1205",
+      "name": "Notes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "24cf122d-e2e7-4c72-bb88-4e4b283b8d74",
+          "name": "Get Notes",
+          "request": {
+            "name": "Get Notes",
+            "description": {},
+            "url": {
+              "path": [
+                "notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3c808886-07a7-4766-8b4b-b0abe19b5928",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c0c7ff48-e78a-431f-ae9c-efd82af05303",
+          "name": "Create Note",
+          "request": {
+            "name": "Create Note",
+            "description": {},
+            "url": {
+              "path": [
+                "notes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"body\": \"\\\"<p style=\\\\\\\"color:#706669;\\\\\\\">Created Date (UTC): May 24, 2023, 11:16 AM | Created By: Sheruni Fernandon</p>\\\"\",\n  \"title\": \"Test - 03\",\n  \"source\": \"HUBSPOT\",\n  \"externalId\": \"Test-3-creation\",\n  \"linkedEntities\": [\n    {\n      \"type\": \"organization\",\n      \"externalId\": \"amorg1\"\n    },\n    {\n      \"type\": \"organization\",\n      \"id\": 1\n    },\n    {\n      \"type\": \"organization\",\n      \"id\": 3\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 15\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 12\n    },\n    {\n      \"type\": \"account\",\n      \"externalId\": \"26\"\n    },\n    {\n      \"type\": \"pipeline\",\n      \"id\": 8\n    },\n    {\n      \"type\": \"pipeline\",\n      \"id\": 10\n    },\n    {\n      \"type\": \"contact\",\n      \"email\": \"test.chathudya+00002@gmail.com\"\n    },\n    {\n      \"type\": \"contact\",\n      \"email\": \"test.chathudya+00002@gmail.com\"\n    },\n    {\n      \"type\": \"contact\",\n      \"externalId\": \"4\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aad46bb0-c6d4-4576-8d12-bfe744c35a7a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"body\": \"\\\"<p style=\\\\\\\"color:#706669;\\\\\\\">Created Date (UTC): May 24, 2023, 11:16 AM | Created By: Sheruni Fernandon</p>\\\"\",\n  \"title\": \"Test - 03\",\n  \"source\": \"HUBSPOT\",\n  \"externalId\": \"Test-3-creation\",\n  \"linkedEntities\": [\n    {\n      \"type\": \"organization\",\n      \"externalId\": \"amorg1\"\n    },\n    {\n      \"type\": \"organization\",\n      \"id\": 1\n    },\n    {\n      \"type\": \"organization\",\n      \"id\": 3\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 15\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 12\n    },\n    {\n      \"type\": \"account\",\n      \"externalId\": \"26\"\n    },\n    {\n      \"type\": \"pipeline\",\n      \"id\": 8\n    },\n    {\n      \"type\": \"pipeline\",\n      \"id\": 10\n    },\n    {\n      \"type\": \"contact\",\n      \"email\": \"test.chathudya+00002@gmail.com\"\n    },\n    {\n      \"type\": \"contact\",\n      \"email\": \"test.chathudya+00002@gmail.com\"\n    },\n    {\n      \"type\": \"contact\",\n      \"externalId\": \"4\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86c3ec55-b0ce-4ada-8748-d7e31f36e4bc",
+          "name": "Get Note by External ID",
+          "request": {
+            "name": "Get Note by External ID",
+            "description": {},
+            "url": {
+              "path": [
+                "notes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "07604f9c-3fd4-4088-a893-abf227a56f35",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49b69d7a-62a4-48ec-b659-24c2e2fa8e16",
+          "name": "Update Note with External ID",
+          "request": {
+            "name": "Update Note with External ID",
+            "description": {},
+            "url": {
+              "path": [
+                "notes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"body\": \"\\\"<p style=\\\\\\\"color:#706669;\\\\\\\">Created Date (UTC): May 24, 2028, 13:18 AM | Created By: Sheruni</p>\\\"\",\n  \"linkedEntities\": [\n    {\n      \"type\": \"organization\",\n      \"id\": 3\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 16\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 12\n    },\n    {\n      \"type\": \"account\",\n      \"externalId\": \"26\"\n    },\n    {\n      \"type\": \"pipeline\",\n      \"id\": 8\n    },\n    {\n      \"type\": \"pipeline\",\n      \"id\": 12\n    },\n    {\n      \"type\": \"contact\",\n      \"email\": \"test.chathudya+00002@gmail.com\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95a1d262-d93c-4d94-93b1-e8cb90ffd435",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"body\": \"\\\"<p style=\\\\\\\"color:#706669;\\\\\\\">Created Date (UTC): May 24, 2028, 13:18 AM | Created By: Sheruni</p>\\\"\",\n  \"linkedEntities\": [\n    {\n      \"type\": \"organization\",\n      \"id\": 3\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 16\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 12\n    },\n    {\n      \"type\": \"account\",\n      \"externalId\": \"26\"\n    },\n    {\n      \"type\": \"pipeline\",\n      \"id\": 8\n    },\n    {\n      \"type\": \"pipeline\",\n      \"id\": 12\n    },\n    {\n      \"type\": \"contact\",\n      \"email\": \"test.chathudya+00002@gmail.com\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7e6ae1a3-eec9-483d-b924-fd7c9a7f7bae",
+          "name": "Delete Note with Source ID",
+          "request": {
+            "name": "Delete Note with Source ID",
+            "description": {},
+            "url": {
+              "path": [
+                "notes",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "826b8807-1325-421e-8cb8-fdce2870a48c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "notes",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "dc66e6ce-4d1f-4f85-906d-f584901d272c",
+    "name": "Velaris Public Activity Notes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

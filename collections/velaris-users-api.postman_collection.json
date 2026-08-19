@@ -1,0 +1,295 @@
+{
+  "item": [
+    {
+      "id": "03587974-40cc-4ddc-8191-ce8e10eb5146",
+      "name": "Users",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a823c53c-2420-43ee-9ef7-e7af4cc5d383",
+          "name": "Get all users",
+          "request": {
+            "name": "Get all users",
+            "description": {
+              "content": "<p>This endpoint retrieves the details of active, invited, and deactivated users.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "36f953b7-ae24-4ec3-a60d-c1070e715dad",
+              "name": "Get all users",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"activeUsers\": [\n      {\n        \"userId\": 101,\n        \"username\": \"user1@example.com\",\n        \"firstName\": null,\n        \"lastName\": null,\n        \"email\": \"user1@example.com\",\n        \"jobTitle\": null,\n        \"mobileNumber\": null,\n        \"createdBy\": 100,\n        \"modifiedBy\": 0,\n        \"archived\": 0,\n        \"isProfileComplete\": 0,\n        \"displayCurrency\": 64,\n        \"imageId\": null,\n        \"externalId\": null,\n        \"userType\": \"WORKSPACE\",\n        \"enabled\": true,\n        \"isSystemUser\": 0,\n        \"userStatus\": \"CONFIRMED\",\n        \"preferredMfaSetting\": \"Main tenant\",\n        \"emailVerified\": true,\n        \"createDate\": \"2024-02-29T05:22:33.392Z\",\n        \"modifiedDate\": \"2024-02-29T05:22:33.392Z\",\n        \"roleName\": \"Administrator\",\n        \"roleId\": 3,\n        \"permissions\": []\n      }\n    ],\n    \"deactivatedUsers\": [\n      {\n        \"userId\": 102,\n        \"username\": \"user2@example.com\",\n        \"firstName\": null,\n        \"lastName\": null,\n        \"email\": \"user2@example.com\",\n        \"jobTitle\": null,\n        \"mobileNumber\": null,\n        \"createdBy\": 100,\n        \"modifiedBy\": 0,\n        \"archived\": 0,\n        \"isProfileComplete\": 0,\n        \"displayCurrency\": 64,\n        \"imageId\": null,\n        \"externalId\": null,\n        \"userType\": \"WORKSPACE\",\n        \"enabled\": false,\n        \"isSystemUser\": 0,\n        \"userStatus\": \"CONFIRMED\",\n        \"preferredMfaSetting\": \"Main tenant\",\n        \"emailVerified\": true,\n        \"createDate\": \"2024-04-03T11:09:54.113Z\",\n        \"modifiedDate\": \"2024-04-08T08:09:55.899Z\",\n        \"roleName\": \"Normal User\",\n        \"roleId\": 1,\n        \"permissions\": []\n      }\n    ],\n    \"invitedUsers\": [\n      {\n        \"userId\": 103,\n        \"username\": \"invited.user@example.com\",\n        \"firstName\": null,\n        \"lastName\": null,\n        \"email\": \"invited.user@example.com\",\n        \"jobTitle\": null,\n        \"mobileNumber\": null,\n        \"createdBy\": 100,\n        \"modifiedBy\": 0,\n        \"archived\": 0,\n        \"isProfileComplete\": 0,\n        \"displayCurrency\": 2,\n        \"imageId\": null,\n        \"externalId\": null,\n        \"userType\": \"TENANT\",\n        \"enabled\": true,\n        \"isSystemUser\": 0,\n        \"userStatus\": \"FORCE_CHANGE_PASSWORD\",\n        \"preferredMfaSetting\": \"NOMFA\",\n        \"emailVerified\": true,\n        \"createDate\": \"2022-12-13T15:08:29.203Z\",\n        \"modifiedDate\": \"2022-12-13T15:08:29.203Z\",\n        \"sub\": \"uuid-string-here\",\n        \"custom:createdBy\": \"100\",\n        \"custom:userId\": \"103\",\n        \"roleName\": \"Administrator\",\n        \"roleId\": 3,\n        \"permissions\": []\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "61eaeb4f-3346-4f1f-bcec-34d706a17330",
+          "name": "Get users by emails",
+          "request": {
+            "name": "Get users by emails",
+            "description": {},
+            "url": {
+              "path": [
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"emails\": [\n    \"user1@example.com\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f5a092d7-bb12-4d30-b106-b70283ac8830",
+              "name": "Get users by emails",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"emails\": [\n    \"user1@example.com\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"userId\": 101,\n      \"firstName\": \"User\",\n      \"lastName\": \"1\",\n      \"email\": \"user1@example.com\",\n      \"jobTitle\": \"\",\n      \"mobileNumber\": \"\",\n      \"isProfileComplete\": 1,\n      \"displayCurrency\": 2,\n      \"imageId\": \"\",\n      \"externalId\": null,\n      \"userType\": \"TENANT\",\n      \"createDate\": \"2025-05-30T10:17:41.599Z\",\n      \"modifiedDate\": \"2025-05-30T10:19:24.646Z\",\n      \"roleName\": \"Normal User\",\n      \"roleId\": 1\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8484140a-da05-41be-9762-0eb785759416",
+          "name": "Get user by id",
+          "request": {
+            "name": "Get user by id",
+            "description": {
+              "content": "<p>This endpoint retrieves the details of a specific user by their ID.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "beb07fc0-b49b-4fab-a160-afb3f833dc7c",
+              "name": "Get user by id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"userId\": 1,\n    \"username\": \"DEFAULT_USER\",\n    \"firstName\": \"\",\n    \"lastName\": \"\",\n    \"email\": \"\",\n    \"jobTitle\": null,\n    \"mobileNumber\": null,\n    \"createdBy\": 0,\n    \"modifiedBy\": 0,\n    \"archived\": 0,\n    \"isProfileComplete\": 0,\n    \"displayCurrency\": 0,\n    \"imageId\": \"\",\n    \"externalId\": null,\n    \"userType\": \"TENANT\",\n    \"enabled\": true,\n    \"isSystemUser\": 0,\n    \"userStatus\": \"CREATING\",\n    \"createDate\": \"2022-11-25T03:54:21.247Z\",\n    \"modifiedDate\": \"2022-11-25T03:54:21.247Z\",\n    \"roleName\": \"Administrator\",\n    \"roleId\": 3,\n    \"permissions\": []\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "626aa1a8-4717-4557-a7fd-099dc0a318cd",
+    "name": "Velaris Public Activity Users API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

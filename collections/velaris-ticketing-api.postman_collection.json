@@ -1,0 +1,1129 @@
+{
+  "item": [
+    {
+      "id": "e22399f8-9335-45e8-bd7c-899e109ae356",
+      "name": "Ticketing",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f6ab8154-3f8c-4a3e-80c0-f20862b31296",
+          "name": "Get All Tickets",
+          "request": {
+            "name": "Get All Tickets",
+            "description": {
+              "content": "<p>Allowed optional parameters for filtering.</p>\n<ul>\n<li><p>entityId: linked entity</p>\n</li>\n<li><p>level: linked entity level</p>\n</li>\n<li><p>includeArchived: boolean</p>\n</li>\n<li><p>query:string</p>\n</li>\n<li><p>pageSize</p>\n</li>\n<li><p>page</p>\n</li>\n</ul>\n<p>Example</p>\n<p><code>/ticketing/tickets?level=account&amp;entityId=2</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e799fb5e-9abb-4af2-94b9-39d3be59504c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 1,\n      \"ticketId\": \"66\",\n      \"externalId\": null,\n      \"created\": \"2021-09-07T14:42:25.000Z\",\n      \"modified\": \"2021-09-07T14:42:25.000Z\",\n      \"customData\": {\n        \"key1\": \"value1\",\n        \"key2\": \"value2\"\n      },\n      \"archived\": 0,\n      \"channel\": \"api\",\n      \"origin\": \"zendesk\",\n      \"companies\": [\n        {\n          \"type\": \"organization\",\n          \"data\": \"2\"\n        },\n        {\n          \"type\": \"account\",\n          \"data\": \"1\"\n        }\n      ],\n      \"assigners\": [\n        \"ashan@staysafe.com\"\n      ],\n      \"requester\": \"1\",\n      \"description\": \"Ticketing endpoint\",\n      \"subject\": \"Ticket subject\",\n      \"type\": \"ticket\",\n      \"status\": \"new\",\n      \"priority\": \"low\"\n    },\n    {\n      \"id\": 4,\n      \"ticketId\": \"67\",\n      \"externalId\": null,\n      \"created\": \"2021-09-07T14:42:25.000Z\",\n      \"modified\": \"2021-09-07T14:42:25.000Z\",\n      \"customData\": {\n        \"key1\": \"value1 changed\",\n        \"key2\": \"value2\"\n      },\n      \"archived\": 0,\n      \"channel\": \"api\",\n      \"origin\": \"zendesk\",\n      \"companies\": [\n        {\n          \"type\": \"organization\",\n          \"data\": \"2\"\n        },\n        {\n          \"type\": \"account\",\n          \"data\": \"4\"\n        },\n        {\n          \"type\": \"account\",\n          \"data\": \"2\"\n        },\n        {\n          \"type\": \"organization\",\n          \"data\": \"3\"\n        }\n      ],\n      \"assigners\": [\n        \"ashan@staysafe.com\",\n        \"2\"\n      ],\n      \"description\": \"Ticketing endpoint\",\n      \"priority\": \"low\",\n      \"type\": \"ticket\",\n      \"status\": \"open\",\n      \"requester\": \"20\",\n      \"subject\": \"Ticket subject changed\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3e6a5608-03f5-4f08-a5a0-eb8c56446ff2",
+          "name": "Create Ticket",
+          "request": {
+            "name": "Create Ticket",
+            "description": {
+              "content": "<p>Allowed values</p>\n<ul>\n<li>requester - requester should be a contact. Email, id or external id should be presented. If requester’s email is</li>\n<li>provided and the requester is not found in Velaris, new contact will be created with email.</li>\n</ul>\n<p><code>\"requester\": {\"email\": \"</code><a href=\"mailto:johndoe@gmail.com\"><code>johndoe@gmail.com</code></a><code>\"} or {\"id\": 10} or {\"externalId\": \"isosjw-ssda-123-ssd\"}</code></p>\n<ul>\n<li>assigners - assigners should be users of velaris. Users' email, id or externalId will be accepted.</li>\n</ul>\n<p><code>\"assigners\": [{\"email\": \"</code><a href=\"mailto:john@gmail.com\"><code>john@gmail.com</code></a><code>\"}, {\"id\": 10}, {\"externalId\": \"1231-3123\"}]</code></p>\n<ul>\n<li>companies - company type is required, and id or external id should be presented.</li>\n</ul>\n<p><code>\"companies\": [{\"type\": \"organization\", \"id\": 10}, {\"type\": \"account\", \"externalId\": \"kjl-232l-323k\"}]</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"ticketId\": \"589\",\n  \"subject\": \"Ticket subject\",\n  \"description\": \"Ticketing endpoint\",\n  \"status\": 10,\n  \"type\": 600,\n  \"priority\": 100,\n  \"channel\": 200,\n  \"requester\": {\n    \"email\": \"joe.root@gmail.com\"\n  },\n  \"assigners\": [\n    {\n      \"email\": \"matt.dameon@velaris.io\"\n    }\n  ],\n  \"externalId\": \"sdfw7we-497sdee-ajuw52k-uhi23\",\n  \"createdAt\": \"2021-09-07T14:42:25Z\",\n  \"modifiedAt\": \"2021-09-07T14:42:25Z\",\n  \"origin\": 300,\n  \"companies\": [\n    {\n      \"type\": \"organization\",\n      \"id\": 6\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 2\n    }\n  ],\n  \"customData\": {\n    \"key1\": \"value1\",\n    \"key2\": \"value2\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9935f5c9-ae5c-4d2f-b97c-2506a0a2212c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"ticketId\": \"589\",\n  \"subject\": \"Ticket subject\",\n  \"description\": \"Ticketing endpoint\",\n  \"status\": 10,\n  \"type\": 600,\n  \"priority\": 100,\n  \"channel\": 200,\n  \"requester\": {\n    \"email\": \"joe.root@gmail.com\"\n  },\n  \"assigners\": [\n    {\n      \"email\": \"matt.dameon@velaris.io\"\n    }\n  ],\n  \"externalId\": \"sdfw7we-497sdee-ajuw52k-uhi23\",\n  \"createdAt\": \"2021-09-07T14:42:25Z\",\n  \"modifiedAt\": \"2021-09-07T14:42:25Z\",\n  \"origin\": 300,\n  \"companies\": [\n    {\n      \"type\": \"organization\",\n      \"id\": 6\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 2\n    }\n  ],\n  \"customData\": {\n    \"key1\": \"value1\",\n    \"key2\": \"value2\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"ticketId\": \"589\",\n    \"subject\": \"Ticket subject\",\n    \"description\": \"Ticketing endpoint\",\n    \"status\": 10,\n    \"type\": 600,\n    \"priority\": 100,\n    \"channel\": 200,\n    \"externalId\": \"sdfw7we-497sdee-ajuw52k-uhi23\",\n    \"createdAt\": \"2021-09-07T14:42:25Z\",\n    \"modifiedAt\": \"2021-09-07T14:42:25Z\",\n    \"origin\": 300,\n    \"customData\": {\n      \"key1\": \"value1\",\n      \"key2\": \"value2\"\n    },\n    \"companies\": [\n      {\n        \"type\": 400,\n        \"data\": 2\n      },\n      {\n        \"type\": 410,\n        \"data\": 6\n      }\n    ],\n    \"requester\": 81,\n    \"assigners\": [\n      \"joe.white@velaris.io\"\n    ],\n    \"activityType\": \"zendesk\",\n    \"id\": 621\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d441b546-c7e3-421f-b6da-12cace413a35",
+          "name": "Get Ticket By Id",
+          "request": {
+            "name": "Get Ticket By Id",
+            "description": {
+              "content": "<p>Example</p>\n<p><code>/ticketing/tickets/10?origin=zendesk</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56223e3f-01bd-4861-b374-59a36a29b065",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 1,\n    \"ticketId\": \"66\",\n    \"externalId\": null,\n    \"createdAt\": \"2021-09-07T14:42:25.000Z\",\n    \"modifiedAt\": \"2021-09-07T14:42:25.000Z\",\n    \"customData\": {\n      \"key1\": \"value1\",\n      \"key2\": \"value2\"\n    },\n    \"archived\": 0,\n    \"channel\": 240,\n    \"origin\": 300,\n    \"attachments\": [],\n    \"type\": 600,\n    \"status\": 10,\n    \"priority\": 100,\n    \"subject\": \"Ticket subject\",\n    \"description\": \"Ticketing endpoint\",\n    \"requester\": \"1\",\n    \"assigners\": [\n      \"ashan@staysafe.com\"\n    ],\n    \"companies\": [\n      {\n        \"type\": 400,\n        \"data\": \"1\"\n      },\n      {\n        \"type\": 410,\n        \"data\": \"2\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8d91ca00-c814-45dc-832a-34c73df2de74",
+          "name": "Update Ticket",
+          "request": {
+            "name": "Update Ticket",
+            "description": {
+              "content": "<ul>\n<li>Allowed values are same as in create ticket request body.</li>\n</ul>\n<p>Example</p>\n<p><code>/ticketing/tickets/10?origin=zendesk</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": 20,\n  \"priority\": 120,\n  \"companies\": [\n    {\n      \"type\": \"organization\",\n      \"id\": 7\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 1\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "26f92d25-d09a-4340-ad0e-3a9048bc6704",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": 20,\n  \"priority\": 120,\n  \"companies\": [\n    {\n      \"type\": \"organization\",\n      \"id\": 7\n    },\n    {\n      \"type\": \"account\",\n      \"id\": 1\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"status\": 20,\n    \"priority\": 120,\n    \"companies\": [\n      {\n        \"type\": 400,\n        \"data\": 1\n      },\n      {\n        \"type\": 410,\n        \"data\": 7\n      }\n    ],\n    \"id\": 621\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2f17188-27fd-4695-a7a5-0ca9a00ec252",
+          "name": "Delete Ticket",
+          "request": {
+            "name": "Delete Ticket",
+            "description": {
+              "content": "<p>Example</p>\n<p><code>/ticketing/tickets/10?origin=zendesk</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "468ae9ca-4e33-4641-a57b-25dc6ecaeff0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb21aa93-5087-4103-8c41-217035921fd7",
+          "name": "Restore Ticket",
+          "request": {
+            "name": "Restore Ticket",
+            "description": {
+              "content": "<p>Example<br /><code>/ticketing/tickets/10/restore?origin=zendesk</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d11c4cda-25cc-448d-84e1-b263516c8212",
+              "name": "Restore Ticket",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Ticket with ticketId 123 with origin 'zendesk' successfully restored\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "52ce2a41-8f05-4191-878d-8fd11d685b34",
+          "name": "Get All Comments",
+          "request": {
+            "name": "Get All Comments",
+            "description": {
+              "content": "<p>Example</p>\n<p><code>/ticketing/tickets/10/comments?origin=zendesk</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId",
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72d5b3a0-2cc5-46d4-b108-c74e84ac2538",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId",
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"commentId\": 9,\n      \"ticketTableId\": 32,\n      \"body\": \"A reply for the ticket\",\n      \"channel\": \"email\",\n      \"type\": \"reply\",\n      \"customData\": {\n        \"key1\": \"value\",\n        \"key2\": \"value\"\n      },\n      \"createdBy\": 12,\n      \"modifiedBy\": 12,\n      \"created\": \"2021-09-07T14:42:25.000Z\",\n      \"modified\": \"2022-02-21T10:28:29.995Z\",\n      \"author\": {\n        \"type\": \"contact\",\n        \"data\": \"31\"\n      },\n      \"attachments\": []\n    },\n    {\n      \"commentId\": 10,\n      \"ticketTableId\": 32,\n      \"body\": \"A reply for the ticket\",\n      \"channel\": \"email\",\n      \"type\": \"reply\",\n      \"customData\": {\n        \"key1\": \"value\",\n        \"key2\": \"value\"\n      },\n      \"createdBy\": 12,\n      \"modifiedBy\": 12,\n      \"created\": \"2021-09-07T14:42:25.000Z\",\n      \"modified\": \"2022-02-21T10:31:34.120Z\",\n      \"author\": {\n        \"type\": \"contact\",\n        \"data\": \"31\"\n      },\n      \"attachments\": []\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b47460be-7b2f-41e1-b085-9b8c17ae89e4",
+          "name": "Create Comment",
+          "request": {
+            "name": "Create Comment",
+            "description": {
+              "content": "<p>Allowed values</p>\n<ul>\n<li>author - author type can be contact, visitor, admin, bot. Following values will be accepted for each author type.<ul>\n<li>contact: id, externalId, email</li>\n<li>admin: id, externalId, email</li>\n<li>visitor: email</li>\n<li>bot: no ids</li>\n</ul>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"author\": {\n  \"type\": \"contact\",\n  \"externalId\": \"gsdj-j232kj-jk312\"\n}\n\n</code></pre>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId",
+                "comments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"body\": \"A reply for the ticket\",\n  \"author\": {\n    \"externalId\": \"32fd45-22fr4-yh23g-fg34-b5h6j34gd\",\n    \"type\": \"contact\"\n  },\n  \"createdAt\": \"2021-09-07T14:42:25Z\",\n  \"channel\": 200,\n  \"type\": 800,\n  \"customData\": {\n    \"key1\": \"value\",\n    \"key2\": \"value\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b977d8d-b432-412a-a257-d0af248dea8f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId",
+                    "comments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"body\": \"A reply for the ticket\",\n  \"author\": {\n    \"externalId\": \"32fd45-22fr4-yh23g-fg34-b5h6j34gd\",\n    \"type\": \"contact\"\n  },\n  \"createdAt\": \"2021-09-07T14:42:25Z\",\n  \"channel\": 200,\n  \"type\": 800,\n  \"customData\": {\n    \"key1\": \"value\",\n    \"key2\": \"value\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"body\": \"A reply for the ticket\",\n    \"author\": {\n      \"type\": 21,\n      \"data\": 261\n    },\n    \"createdAt\": \"2021-09-07T14:42:25Z\",\n    \"channel\": 11,\n    \"type\": 34,\n    \"customData\": {\n      \"key1\": \"value\",\n      \"key2\": \"value\"\n    },\n    \"ticketTableId\": 118,\n    \"origin\": 300,\n    \"id\": 317\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1f8a7035-72bd-4d97-b53f-9e32fb80adca",
+          "name": "Get Comment By Id",
+          "request": {
+            "name": "Get Comment By Id",
+            "description": {
+              "content": "<p>Example</p>\n<p><code>/ticketing/tickets/10/comments/11?origin=zendesk</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId",
+                "comments",
+                ":commentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5ec020eb-c388-42bd-819b-a10ab0e2209b",
+              "name": "Get Comment By Id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"status\": \"success\",\n    \"comment\": {\n      \"commentId\": 11,\n      \"ticketTableId\": 123,\n      \"body\": \"A reply for the ticket\",\n      \"channel\": \"web\",\n      \"type\": \"reply\",\n      \"authorType\": \"admin\",\n      \"data\": \"101\",\n      \"customData\": null,\n      \"externalId\": null,\n      \"createdBy\": 99,\n      \"modifiedBy\": 99,\n      \"created\": \"2024-01-01T10:00:00.000Z\",\n      \"modified\": \"2024-01-01T10:05:00.000Z\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "660d96b7-2dc4-415e-b084-dbb249abd8c7",
+          "name": "Update Comment",
+          "request": {
+            "name": "Update Comment",
+            "description": {
+              "content": "<ul>\n<li>Allowed values are same as in create comment request body.</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId",
+                "comments",
+                ":commentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"body\": \"Body has changed\",\n  \"channel\": 200,\n  \"type\": 800,\n  \"author\": {\n    \"externalId\": \"32fd45-22fr4-yh23g-fg34-b5h6j34gd\",\n    \"type\": \"contact\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0ce38ddc-aabb-431e-be00-6bd1edc8d709",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"body\": \"Body has changed\",\n  \"channel\": 200,\n  \"type\": 800,\n  \"author\": {\n    \"externalId\": \"32fd45-22fr4-yh23g-fg34-b5h6j34gd\",\n    \"type\": \"contact\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"ticket_comment_id\": 317,\n    \"ticket_table_id\": 118,\n    \"body\": \"Body has changed\",\n    \"channel\": \"email\",\n    \"type\": \"reply\",\n    \"custom_data\": {\n      \"key1\": \"value\",\n      \"key2\": \"value\"\n    },\n    \"created_by\": 30,\n    \"modified_by\": 30,\n    \"created\": \"2021-09-07T14:42:25.000Z\",\n    \"modified\": \"2022-07-25T12:03:53.314Z\",\n    \"archived\": 0,\n    \"author\": {\n      \"type\": \"contact\",\n      \"data\": \"261\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6437c474-31ca-4b80-8a07-51ae518d782e",
+          "name": "Delete Comment",
+          "request": {
+            "name": "Delete Comment",
+            "description": {
+              "content": "<p>Example</p>\n<p><code>/ticketing/tickets/10/comments/1?origin=zendesk</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId",
+                "comments",
+                ":commentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cc2d713f-57d5-440b-aad7-3207017d810b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId",
+                    "comments",
+                    ":commentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2fcfb86-7a52-4500-8761-e5576ae605f6",
+          "name": "Get Comment by External ID",
+          "request": {
+            "name": "Get Comment by External ID",
+            "description": {
+              "content": "<p>Example<br /><code>/ticketing/tickets/10/comments/external/abc123-def456-ghi789?origin=zendesk</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ticketing",
+                "tickets",
+                ":ticketId",
+                "comments",
+                "external",
+                ":externalId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9028b8a4-b13d-4d59-a7e4-258a6f3d78e1",
+              "name": "Get Comment by External ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ticketing",
+                    "tickets",
+                    ":ticketId",
+                    "comments",
+                    "external",
+                    ":externalId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"status\": \"success\",\n    \"comment\": {\n      \"commentId\": 11,\n      \"ticketTableId\": 10,\n      \"body\": \"A reply for the ticket\",\n      \"channel\": \"web\",\n      \"type\": \"reply\",\n      \"authorType\": \"admin\",\n      \"data\": \"101\",\n      \"customData\": null,\n      \"externalId\": \"abc123-def456-ghi789\",\n      \"createdBy\": 99,\n      \"modifiedBy\": 99,\n      \"created\": \"2024-01-01T10:00:00.000Z\",\n      \"modified\": \"2024-01-01T10:05:00.000Z\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "edcb2029-b6eb-4874-9949-b722b2d53913",
+    "name": "Velaris Public Activity Ticketing API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

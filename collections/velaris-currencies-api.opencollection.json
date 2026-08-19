@@ -1,0 +1,57 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Currencies API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Currencies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Base Currency",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/v2/currencies/base-currency"
+          },
+          "docs": "Get Base Currency"
+        },
+        {
+          "info": {
+            "name": "Get Exchange Rates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/v2/currencies/exchange-rates"
+          },
+          "docs": "Get Exchange Rates"
+        },
+        {
+          "info": {
+            "name": "Get Exchange Rate by Month",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/v2/currencies/exchange-rates/2025-01"
+          },
+          "docs": "Get Exchange Rate by Month"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

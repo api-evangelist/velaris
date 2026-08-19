@@ -1,0 +1,489 @@
+{
+  "item": [
+    {
+      "id": "3d068e43-5d05-4c0d-a0c5-43ff34133736",
+      "name": "Tasks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ebe4fd5-9982-47b2-bc1d-a5a3b2a0cfdd",
+          "name": "Tasks",
+          "request": {
+            "name": "Tasks",
+            "description": {
+              "content": "<p>This endpoint sends an HTTP GET request to retrieve a list of tasks from the project management system. The request can include query parameters to paginate the response.</p>\n<h4 id=\"request-parameters\">Request Parameters</h4>\n<ul>\n<li><p><code>page</code> (integer) - The page number for the task list. This parameter is used to navigate through the paginated results.</p>\n</li>\n<li><p><code>pageSize</code> (integer) - The number of tasks to return per page. This helps in controlling the volume of data returned in a single request.</p>\n</li>\n<li><p><code>myTasksOnly</code> (boolean) - FIlters the tasks that are assigned to the current user only if set to true.</p>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "project-mgt",
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c0d401cf-6167-48be-abdd-b4f431ecc8df",
+              "name": "Tasks",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "project-mgt",
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"tasks\": [\n      {\n        \"taskId\": 0,\n        \"activityTypeId\": 0,\n        \"name\": \"\",\n        \"status\": null,\n        \"priority\": \"\",\n        \"type\": \"\",\n        \"description\": \"\",\n        \"dueDate\": \"\",\n        \"entity\": \"\",\n        \"bookmarked\": 0,\n        \"organizationId\": null,\n        \"accountId\": 0,\n        \"assigneeId\": 0,\n        \"assigneeType\": \"\",\n        \"source\": \"\",\n        \"sourceId\": null,\n        \"playbookTaskTemplateId\": null,\n        \"scenarioId\": null,\n        \"nodeId\": null,\n        \"isRepeatable\": true,\n        \"repeatConfigId\": null,\n        \"occurrenceCount\": null,\n        \"skipCount\": null,\n        \"taskOrder\": \"\",\n        \"creatorId\": 0,\n        \"modified\": \"\",\n        \"created\": \"\",\n        \"startDate\": null,\n        \"completeDate\": null,\n        \"originalEstimate\": 0,\n        \"parentId\": null,\n        \"taskLevel\": 0,\n        \"originalDueDate\": \"\",\n        \"uncompletedChecklist\": []\n      }\n    ],\n    \"page\": 0,\n    \"pageSize\": 0,\n    \"totalItemCount\": 0,\n    \"dateBreakDown\": {\n      \"all\": 0,\n      \"today\": 0,\n      \"overDue\": 0,\n      \"thisWeek\": 0,\n      \"unscheduled\": 0\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a638cdc-f2c0-44b6-8a76-b5f74d11fdc4",
+          "name": "Archive Task",
+          "request": {
+            "name": "Archive Task",
+            "description": {
+              "content": "<p>This endpoint allows the client to archive an existing task identified by its unique ID. Archiving a task is useful for managing the task lifecycle and keeping the task list organized without permanently deleting tasks.</p>\n<h4 id=\"request-body\">Request Body</h4>\n<p>The request must be sent as a JSON object with the following parameter:</p>\n<ul>\n<li><code>taskId</code> (number): The ID of the task to be archived.</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "project-mgt",
+                "tasks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"taskId\": 123\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0b865ac5-97aa-4fb0-bbb2-c585bfb4b7df",
+              "name": "Archive Task",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "project-mgt",
+                    "tasks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"taskId\": 123\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"message\": \"Tasks successfully archived\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f8156257-9723-454d-bc9a-c0413e6e4ce7",
+          "name": "Get Task By ID",
+          "request": {
+            "name": "Get Task By ID",
+            "description": {
+              "content": "<p>This endpoint retrieves a specific task by its ID, allowing users to access detailed information about the task's attributes and status.</p>\n<h4 id=\"expected-input-parameters\">Expected Input Parameters</h4>\n<ul>\n<li><p><strong>Path Parameter:</strong></p>\n<ul>\n<li><code>srcid-1</code>: The unique identifier for the task you want to retrieve.</li>\n</ul>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "project-mgt",
+                "tasks",
+                "srcid-1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d9e5f67a-5c22-43b0-a8f5-0f4c9960adba",
+              "name": "Get Task By ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "project-mgt",
+                    "tasks",
+                    "srcid-1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"status\": \"success\",\n    \"data\": {\n      \"taskId\": 1,\n      \"activityTypeId\": 1,\n      \"name\": \"Updated Task Name\",\n      \"status\": null,\n      \"priority\": \"HIGH\",\n      \"type\": \"NORMAL\",\n      \"description\": \"\\\"<p>Updated description</p>\\\"\",\n      \"dueDate\": \"2025-12-31\",\n      \"entity\": \"ACCOUNT\",\n      \"bookmarked\": 0,\n      \"organizationId\": null,\n      \"accountId\": 4,\n      \"assigneeType\": \"USER\",\n      \"assigneeId\": 5,\n      \"parentId\": null,\n      \"taskLevel\": 1,\n      \"source\": \"VELARIS\",\n      \"sourceId\": \"null\",\n      \"playbookName\": null,\n      \"playbookInstanceId\": null,\n      \"playbookTaskTemplateId\": null,\n      \"scenarioId\": null,\n      \"nodeId\": null,\n      \"creatorId\": 4,\n      \"modified\": \"2025-06-26T12:28:46.715Z\",\n      \"created\": \"2022-11-25T14:05:28.565Z\",\n      \"isRepeatable\": false,\n      \"repeatConfigId\": null,\n      \"occurrenceCount\": null,\n      \"skipCount\": null,\n      \"taskOrder\": \"0|lcm00011\",\n      \"originalDueDate\": \"2025-12-31\",\n      \"completeDate\": null,\n      \"startDate\": null,\n      \"originalEstimate\": 0,\n      \"totalEffort\": 0,\n      \"contacts\": [],\n      \"checkList\": [],\n      \"watchers\": [],\n      \"attachments\": [],\n      \"uncompletedChecklist\": [],\n      \"workLog\": [],\n      \"links\": [],\n      \"subTasks\": []\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ff1c792-b827-468f-8960-ad941724a2a6",
+          "name": "Update Task by Task Id",
+          "request": {
+            "name": "Update Task by Task Id",
+            "description": {
+              "content": "<p>This endpoint allows you to update an existing task in the project management system. By sending a PUT request to the specified URL, you can modify the details of a task identified by its source ID.</p>\n<h2 id=\"possible-status-codes\">Possible Status Codes</h2>\n<ul>\n<li><p><strong>200 OK</strong>: The task was successfully updated.</p>\n</li>\n<li><p><strong>400 Bad Request</strong>: The request body is malformed or missing required fields.</p>\n</li>\n<li><p><strong>404 Not Found</strong>: The task with the specified source ID does not exist.</p>\n</li>\n<li><p><strong>500 Internal Server Error</strong>: An unexpected error occurred on the server.</p>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "project-mgt",
+                "tasks",
+                "srcid-1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"data\": {\n    \"taskId\": 1,\n    \"name\": \"Updated Task Name\",\n    \"activityTypeId\": 1,\n    \"priority\": \"HIGH\",\n    \"description\": \"\\\"<p>Updated description</p>\\\"\",\n    \"dueDate\": \"2025-12-31\",\n    \"assignee\": {\n      \"id\": 5,\n      \"type\": \"USER\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "95062529-be88-4d8d-aeba-064c088875d8",
+              "name": "Update Task by Task Id",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "project-mgt",
+                    "tasks",
+                    "srcid-1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"data\": {\n    \"taskId\": 1,\n    \"name\": \"Updated Task Name\",\n    \"activityTypeId\": 1,\n    \"priority\": \"HIGH\",\n    \"description\": \"\\\"<p>Updated description</p>\\\"\",\n    \"dueDate\": \"2025-12-31\",\n    \"assignee\": {\n      \"id\": 5,\n      \"type\": \"USER\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"taskId\": 1,\n    \"name\": \"Updated Task Name\",\n    \"activityTypeId\": 1,\n    \"priority\": \"HIGH\",\n    \"description\": \"\\\"<p>Updated description</p>\\\"\",\n    \"dueDate\": \"2025-12-31\",\n    \"assignee\": {\n      \"id\": 5,\n      \"type\": \"USER\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3871e7be-2b0e-4b8f-9fa0-0c1c4857c2b7",
+          "name": "Get Task by Source and Source ID",
+          "request": {
+            "name": "Get Task by Source and Source ID",
+            "description": {
+              "content": "<p>This endpoint retrieves a specific task by its external ID and source. It is designed to provide detailed information about the task, including its status, priority, and associated metadata.</p>\n<h4 id=\"expected-input-parameters\">Expected Input Parameters</h4>\n<ul>\n<li><p><strong>Path Parameter:</strong></p>\n<ul>\n<li><code>extid-srcid-5</code>: The unique identifier for the task you want to retrieve.</li>\n</ul>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "project-mgt",
+                "tasks",
+                "extid-srcid-5"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fdaa584a-b48b-40a6-bae4-7e6fbd8bd67e",
+              "name": "Get Task by Source and Source ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "project-mgt",
+                    "tasks",
+                    "extid-srcid-5"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"status\": \"success\",\n    \"data\": {\n      \"taskId\": 5,\n      \"activityTypeId\": 1,\n      \"name\": \"Updated Task Name\",\n      \"status\": \"ARCHIVED\",\n      \"priority\": \"HIGH\",\n      \"type\": \"NORMAL\",\n      \"description\": \"\\\"<p>Updated description</p>\\\"\",\n      \"dueDate\": \"2025-12-31\",\n      \"entity\": \"ACCOUNT\",\n      \"organizationId\": null,\n      \"accountId\": 4,\n      \"assigneeType\": \"USER\",\n      \"assigneeId\": 5,\n      \"source\": \"HUBSPOT\",\n      \"sourceId\": \"srcid-5\",\n      \"playbookName\": null,\n      \"playbookInstanceId\": null,\n      \"playbookTaskTemplateId\": null,\n      \"scenarioId\": null,\n      \"nodeId\": null,\n      \"creatorId\": 4,\n      \"modified\": \"2025-06-13T08:56:51.170Z\",\n      \"created\": \"2022-11-25T14:16:02.616Z\",\n      \"isRepeatable\": false,\n      \"repeatConfigId\": null,\n      \"occurrenceCount\": null,\n      \"skipCount\": null,\n      \"taskOrder\": \"0|lcm00051\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "181c877f-055a-4b4a-b362-614446f285dc",
+    "name": "Velaris Public Activity Tasks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

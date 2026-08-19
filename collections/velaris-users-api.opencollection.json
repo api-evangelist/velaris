@@ -1,0 +1,61 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Users API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/users"
+          },
+          "docs": "<p>This endpoint retrieves the details of active, invited, and deactivated users.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get users by emails",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Get users by emails"
+        },
+        {
+          "info": {
+            "name": "Get user by id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/users/:userId"
+          },
+          "docs": "<p>This endpoint retrieves the details of a specific user by their ID.</p>\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

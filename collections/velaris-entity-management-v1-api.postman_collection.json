@@ -1,0 +1,2993 @@
+{
+  "item": [
+    {
+      "id": "300ea27f-fda5-4345-8958-962733238022",
+      "name": "Entity Management V1",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b56efb41-1397-4e92-97ad-721b96034667",
+          "name": "Get All Organizations V1",
+          "request": {
+            "name": "Get All Organizations V1",
+            "description": {
+              "content": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter organizations by custom fields</p>\n<p><code>/organizations?{custom_field_name}={value}</code></p>\n<p>Example</p>\n<p><code>/organizations?zapier=true</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "organizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b566bb39-4fa8-48a8-b0f2-acf830ad5b21",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"organizationId\": 4,\n      \"imageId\": \"cd9467ce-aa16-4c5c-a9e3-81dd96131886.jpg\",\n      \"about\": null,\n      \"externalId\": null,\n      \"lastTouch\": \"2022-03-15T04:59:59.431Z\",\n      \"lifecycleStageId\": 1,\n      \"churned\": 0,\n      \"entityArchived\": 1,\n      \"pulse\": 5,\n      \"globalFields\": {\n        \"name\": \"Optimum Nutrition\"\n      },\n      \"created\": \"2021-11-17T04:30:21.698Z\",\n      \"modified\": \"2022-06-08T00:10:16.022Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 1,\n      \"contacts\": [\n        34,\n        36,\n        37,\n        52,\n        54\n      ],\n      \"health\": 7.3,\n      \"healthStatus\": \"Green\",\n      \"properties\": {\n        \"name\": \"Optimum Nutrition\",\n        \"total_saas_mrr\": {\n          \"value\": 1110,\n          \"currencyDefinitionId\": 5\n        },\n        \"total_service_mrr\": {\n          \"value\": 2220,\n          \"currencyDefinitionId\": 5\n        },\n        \"total_mrr\": {\n          \"value\": 333,\n          \"currencyDefinitionId\": 5\n        }\n      },\n      \"owners\": [\n        {\n          \"id\": 13,\n          \"ownerType\": \"primary\"\n        }\n      ]\n    },\n    {\n      \"organizationId\": 5,\n      \"imageId\": \"d66afdba-9285-434f-8762-483593b72b14.jpg\",\n      \"about\": null,\n      \"externalId\": \"d0c90641-5df6-43ad-b91d-44aeae90d359\",\n      \"lastTouch\": \"2022-09-07T14:42:25.000Z\",\n      \"lifecycleStageId\": 2,\n      \"churned\": 0,\n      \"entityArchived\": 0,\n      \"pulse\": null,\n      \"globalFields\": {\n        \"name\": \"Crossrope\"\n      },\n      \"created\": \"2021-11-17T04:30:30.170Z\",\n      \"modified\": \"2022-07-10T07:53:20.829Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 9,\n      \"contacts\": [\n        38,\n        39,\n        40\n      ],\n      \"health\": 7,\n      \"healthStatus\": \"Green\",\n      \"properties\": {\n        \"name\": \"Crossrope\",\n        \"total_saas_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        },\n        \"total_service_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        },\n        \"total_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        },\n        \"multiop\": [],\n        \"testusertype\": 14,\n        \"multi\": []\n      },\n      \"owners\": [\n        {\n          \"id\": 115,\n          \"ownerType\": \"primary\"\n        },\n        {\n          \"id\": 10,\n          \"ownerType\": \"secondary\"\n        },\n        {\n          \"id\": 30,\n          \"ownerType\": \"tertiary\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3bfe72db-1fd9-4cfa-bb5d-da82314cdeec",
+          "name": "Create Organization",
+          "request": {
+            "name": "Create Organization",
+            "description": {
+              "content": "<p>Create New Organization.</p>\n<h5 id=\"request-body-guide\">Request body guide</h5>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>externalId</td>\n<td>Use <code>externalId</code> to add the external id of the organization.</td>\n</tr>\n<tr>\n<td>properties</td>\n<td>Use <code>properties</code> to add all the custom fields.</td>\n</tr>\n<tr>\n<td>contacts</td>\n<td>Use <code>contacts</code> to link contacts to an organization. Only accepts emails. Link existing contacts. Otherwise creates a contact with the given email and link it.</td>\n</tr>\n<tr>\n<td>owners</td>\n<td>User <code>owners</code> to add organization owners. Accepts object array with user id and the owner type.</td>\n</tr>\n<tr>\n<td>links</td>\n<td>Use <code>links</code> to link custom objects with organizations.</td>\n</tr>\n</tbody>\n</table>\n</div><h5 id=\"account-linking\">Account Linking</h5>\n<p><strong>Cannot link accounts</strong> to an organization when <strong>creating</strong> an organization. There is a separate API (<strong>Change Parent Entity</strong>) in the Account section to assign accounts to an organization.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "organizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"name\": \"Optimum Nutritions\",\n    \"date_joined\": \"2021-12-13\",\n    \"deal_stage\": \"closed won\"\n  },\n  \"contacts\": [\n    \"joe.root@velaris.io\"\n  ],\n  \"owners\": [\n    {\n      \"id\": 12,\n      \"ownerType\": \"primary\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0b679951-575a-4863-8973-7b26af8a2a72",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"name\": \"Optimum Nutritions\",\n    \"date_joined\": \"2021-12-13\",\n    \"deal_stage\": \"closed won\"\n  },\n  \"contacts\": [\n    \"joe.root@velaris.io\"\n  ],\n  \"owners\": [\n    {\n      \"id\": 12,\n      \"ownerType\": \"primary\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"organizationId\": 309,\n    \"date_joined\": \"2021-12-13\",\n    \"deal_stage\": 2,\n    \"health\": {\n      \"score\": 6.4,\n      \"ragStatus\": \"Green\"\n    },\n    \"contacts\": [\n      21\n    ],\n    \"properties\": {\n      \"name\": \"Optimum Nutritions\"\n    },\n    \"links\": {\n      \"custom_link_relation1\": [\n        564,\n        3453,\n        2342\n      ],\n      \"custom_link_relation2\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "397dfe57-7ac1-41ff-ac17-30f419b1bc03",
+          "name": "Get Organizations By ID",
+          "request": {
+            "name": "Get Organizations By ID",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/organizations/extid-id</code></li>\n<li>With internal id: <code>/organizations/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "organizations",
+                ":organizationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "751a00d6-52f6-4d63-847c-bc50ba2b0579",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "organizations",
+                    ":organizationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"organizationId\": 5,\n    \"imageId\": \"e1841040ed95fac5c803dd8af03470ff32fe956f/organizations/d66afdba-9285-434f-8762-483593b72b14.jpg\",\n    \"about\": null,\n    \"externalId\": \"d0c90641-5df6-43ad-b91d-44aeae90d359\",\n    \"lastTouch\": \"2022-09-07T14:42:25.000Z\",\n    \"lifecycleStageId\": 2,\n    \"churned\": 0,\n    \"entityArchived\": 0,\n    \"pulse\": null,\n    \"globalFields\": {\n      \"name\": \"Crossrope\"\n    },\n    \"created\": \"2021-11-17T04:30:30.170Z\",\n    \"modified\": \"2022-07-10T07:53:20.829Z\",\n    \"createdBy\": 1,\n    \"modifiedBy\": 9,\n    \"contacts\": [\n      38,\n      39,\n      40,\n      41\n    ],\n    \"pipelines\": [],\n    \"accounts\": [],\n    \"health\": 7,\n    \"healthStatus\": \"Green\",\n    \"properties\": {\n      \"name\": \"Crossrope\",\n      \"total_saas_mrr\": {\n        \"value\": 1000,\n        \"currencyDefinitionId\": 5\n      },\n      \"total_service_mrr\": {\n        \"value\": 2000,\n        \"currencyDefinitionId\": 5\n      },\n      \"total_mrr\": {\n        \"value\": 0,\n        \"currencyDefinitionId\": 5\n      },\n      \"multiop\": [],\n      \"testusertype\": 14,\n      \"multi\": []\n    },\n    \"owners\": [\n      {\n        \"id\": 115,\n        \"ownerType\": \"primary\"\n      },\n      {\n        \"id\": 10,\n        \"ownerType\": \"secondary\"\n      },\n      {\n        \"id\": 30,\n        \"ownerType\": \"tertiary\"\n      }\n    ],\n    \"links\": {\n      \"custom_link_relation1\": [\n        564,\n        3453\n      ],\n      \"custom_link_relation2\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41fd38a9-a383-4218-a41e-1dfcff1755cc",
+          "name": "Update Organization",
+          "request": {
+            "name": "Update Organization",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li><p>With external id: <code>/oganizations/extid-id</code></p>\n</li>\n<li><p>With internal id: <code>/organizations/srcid-id</code></p>\n</li>\n</ul>\n<h5 id=\"reqeust-body-guide\">Reqeust body guide</h5>\n<p>Follow the organization create guide.</p>\n<p><strong>Archived Organizations</strong> cannot be updated.</p>\n<h5 id=\"account-linking\">Account Linking</h5>\n<p><strong>Cannot link accounts</strong> to organization when <strong>updating</strong> organization. There is seperate API (<strong>Change Parent Entity</strong>) to in Account section to assign accounts to an organization.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "organizations",
+                ":organizationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"name\": \"Crossrope Huston\"\n  },\n  \"externalId\": \"56dbf464-3f31-48c3-bd77-0a29e46dc124\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "27e20199-d879-46e7-ab3b-eade1e5fe7a2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "organizations",
+                    ":organizationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"name\": \"Crossrope Huston\"\n  },\n  \"externalId\": \"56dbf464-3f31-48c3-bd77-0a29e46dc124\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"externalId\": \"56dbf464-3f31-48c3-bd77-0a29e46dc124\",\n    \"health\": {\n      \"score\": 0,\n      \"ragStatus\": \"Red\"\n    },\n    \"properties\": {\n      \"name\": \"Crossrope NewYork\"\n    },\n    \"links\": {\n      \"custom_link_relation3\": [\n        57\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf7bac7a-00ab-4803-862f-b41fbc645ace",
+          "name": "Churn organization",
+          "request": {
+            "name": "Churn organization",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/organizations/extid-id/churn-status</code></li>\n<li>With internal id: <code>/organizations/srcid-id/churn-status</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "organizations",
+                ":organizationId",
+                "churn-status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a5df7928-36ef-4ae7-9c44-c32b844d2915",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "organizations",
+                    ":organizationId",
+                    "churn-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7a94e6f1-9d2a-4cd3-adad-a6ab5402b912",
+          "name": "Archive Organization",
+          "request": {
+            "name": "Archive Organization",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id:<code>/organizations/extid-id/archive</code></li>\n<li>With internal id: <code>/organizations/srcid-id/archive</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "organizations",
+                ":organizationId",
+                "archive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1e003640-c83e-476f-b66e-33b573e5fd74",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "organizations",
+                    ":organizationId",
+                    "archive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2056a256-68e1-4ea9-a76e-d3995186b48f",
+          "name": "Restore Organization",
+          "request": {
+            "name": "Restore Organization",
+            "description": {},
+            "url": {
+              "path": [
+                "core",
+                "organizations",
+                ":organizationId",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0c3bc037-02f4-4eb0-b105-e0804623d9d4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "organizations",
+                    ":organizationId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "321bf4fe-a9bb-43f0-93ea-ac8bb56e4ed3",
+          "name": "Get All Accounts V1",
+          "request": {
+            "name": "Get All Accounts V1",
+            "description": {
+              "content": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter accounts by custom fields</p>\n<p><code>/accounts?{custom_field_name}={value}</code></p>\n<p>Example</p>\n<p><code>/accounts?zapier=true</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dfe977b0-da6e-4d89-b55b-0bbce7c4b195",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"accountId\": 1,\n      \"imageId\": \"4ee7e7aa-9e36-483f-841b-977f365ca489.jpg\",\n      \"externalId\": \"rakuten-ext-id\",\n      \"lifecycleStageId\": 9,\n      \"about\": \"rakuten-ext-id\",\n      \"lastTouch\": \"2022-06-22T14:38:00.157Z\",\n      \"churned\": 0,\n      \"entityArchived\": 0,\n      \"organization\": null,\n      \"pulse\": null,\n      \"globalFields\": {\n        \"name\": \"Rakuten\",\n        \"mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        }\n      },\n      \"created\": \"2021-11-08T05:04:28.085Z\",\n      \"modified\": \"2022-06-22T14:38:00.300Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 1,\n      \"organizations\": [],\n      \"contacts\": [\n        28,\n        34,\n        36,\n        162\n      ],\n      \"health\": 5.3,\n      \"healthStatus\": \"Amber\",\n      \"properties\": {\n        \"name\": \"Rakuten\",\n        \"total_saas_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        },\n        \"total_service_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        },\n        \"total_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        },\n        \"numc\": 0,\n        \"numd\": 0,\n        \"sample_picklist\": []\n      },\n      \"owners\": [\n        {\n          \"id\": 2,\n          \"ownerType\": \"primary\"\n        }\n      ]\n    },\n    {\n      \"accountId\": 3,\n      \"imageId\": \"18a18fec-4e9a-4d45-842a-be2ec872911f.jpg\",\n      \"externalId\": \"bad_monkey\",\n      \"lifecycleStageId\": 9,\n      \"about\": \"\",\n      \"lastTouch\": \"2022-06-09T07:49:02.257Z\",\n      \"churned\": 0,\n      \"entityArchived\": 0,\n      \"organization\": null,\n      \"pulse\": 5,\n      \"globalFields\": {\n        \"name\": \"Bad Monkey\",\n        \"mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        }\n      },\n      \"created\": \"2021-11-30T06:33:52.839Z\",\n      \"modified\": \"2022-06-09T07:49:02.363Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 1,\n      \"organizations\": [],\n      \"contacts\": [\n        27,\n        38,\n        39\n      ],\n      \"health\": 10,\n      \"healthStatus\": \"Green\",\n      \"properties\": {\n        \"name\": \"Bad Monkey\",\n        \"total_saas_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        },\n        \"total_service_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        },\n        \"total_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        },\n        \"numa\": 250,\n        \"numb\": 100,\n        \"numc\": 350,\n        \"numd\": 350,\n        \"sample_picklist\": []\n      },\n      \"owners\": [\n        {\n          \"id\": 2,\n          \"ownerType\": \"primary\"\n        },\n        {\n          \"id\": 30,\n          \"ownerType\": \"secondary\"\n        },\n        {\n          \"id\": 6,\n          \"ownerType\": \"tertiary\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9b67ee03-106a-4025-8525-b1479b0961d9",
+          "name": "Create Account",
+          "request": {
+            "name": "Create Account",
+            "description": {
+              "content": "<p>Create New Account.</p>\n<h5 id=\"request-body-guide\">Request body guide</h5>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>externalId</td>\n<td>Use <code>externalId</code> to add the external id of the organization.</td>\n</tr>\n<tr>\n<td>organizationExternalId</td>\n<td>Use <code>organizationExternalId</code> to link an organization to the current account.</td>\n</tr>\n<tr>\n<td>properties</td>\n<td>Use <code>properties</code> to add all the custom fields.</td>\n</tr>\n<tr>\n<td>contacts</td>\n<td>Use <code>contacts</code> to link contacts to an organization. Only accepts emails. Link existing contacts. Otherwise creates a contact with the given email and link it.</td>\n</tr>\n<tr>\n<td>owners</td>\n<td>User <code>owners</code> to add organization owners. Accepts object array with user id and the owner type</td>\n</tr>\n<tr>\n<td>links</td>\n<td>Use <code>links</code> to link custom objects with accounts.</td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organizationExternalId\": \"d0c90641-5df6-43ad-b91d-44aeae90d359\",\n  \"properties\": {\n    \"name\": \"Vision Care\"\n  },\n  \"externalId\": \"jdi623-45s234-cv234-df23-ht223\",\n  \"contacts\": [\n    \"joe.root@velaris.io\"\n  ],\n  \"about\": \"Opticians\",\n  \"links\": {\n    \"custom_link_relation12\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_1\",\n        \"custom_object_instance_2\",\n        \"custom_object_instance_3\"\n      ]\n    },\n    \"custom_link_relation13\": {\n      \"identifier_key\": \"int_id\",\n      \"ids\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fa726051-531c-4208-9c45-24db05fba613",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationExternalId\": \"d0c90641-5df6-43ad-b91d-44aeae90d359\",\n  \"properties\": {\n    \"name\": \"Vision Care\"\n  },\n  \"externalId\": \"jdi623-45s234-cv234-df23-ht223\",\n  \"contacts\": [\n    \"joe.root@velaris.io\"\n  ],\n  \"about\": \"Opticians\",\n  \"links\": {\n    \"custom_link_relation12\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_1\",\n        \"custom_object_instance_2\",\n        \"custom_object_instance_3\"\n      ]\n    },\n    \"custom_link_relation13\": {\n      \"identifier_key\": \"int_id\",\n      \"ids\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"contacts\": [\n      \"sample.contact@somedomain.com\"\n    ],\n    \"health\": {\n      \"score\": 6.2,\n      \"ragStatus\": \"Green\"\n    },\n    \"properties\": {\n      \"name\": \"Vision Care\"\n    },\n    \"links\": {\n      \"custom_link_relation1\": [\n        564,\n        3453,\n        2342\n      ],\n      \"custom_link_relation2\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8be2c377-e01f-4190-8b3a-14ab021d56f0",
+          "name": "Get Account By ID",
+          "request": {
+            "name": "Get Account By ID",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "accounts",
+                ":accountId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "597f6365-5caa-4c2d-aa83-7eb1826dc980",
+              "name": "Get Account By ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"accountId\": 1,\n    \"imageId\": \"4ee7e7aa-9e36-483f-841b-977f365ca489.jpg\",\n    \"externalId\": \"rakuten-ext-id\",\n    \"lifecycleStageId\": 9,\n    \"about\": \"rakuten-ext-id\",\n    \"lastTouch\": \"2022-06-22T14:38:00.157Z\",\n    \"churned\": 0,\n    \"entityArchived\": 0,\n    \"organization\": null,\n    \"pulse\": null,\n    \"globalFields\": {\n      \"name\": \"Rakuten\",\n      \"mrr\": {\n        \"value\": 0,\n        \"currencyDefinitionId\": 5\n      }\n    },\n    \"created\": \"2021-11-08T05:04:28.085Z\",\n    \"modified\": \"2022-06-22T14:38:00.300Z\",\n    \"createdBy\": 1,\n    \"modifiedBy\": 1,\n    \"organizations\": [],\n    \"contacts\": [\n      28,\n      34,\n      36,\n      162\n    ],\n    \"health\": 5.3,\n    \"healthStatus\": \"Amber\",\n    \"properties\": {\n      \"name\": \"Rakuten\",\n      \"total_saas_mrr\": {\n        \"value\": 0,\n        \"currencyDefinitionId\": 5\n      },\n      \"total_service_mrr\": {\n        \"value\": 0,\n        \"currencyDefinitionId\": 5\n      },\n      \"total_mrr\": {\n        \"value\": 0,\n        \"currencyDefinitionId\": 5\n      },\n      \"numc\": 0,\n      \"numd\": 0,\n      \"sample_picklist\": []\n    },\n    \"links\": {\n      \"custom_link_relation1\": [\n        564,\n        3453\n      ],\n      \"custom_link_relation2\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    },\n    \"owners\": [\n      {\n        \"id\": 2,\n        \"ownerType\": \"primary\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03f829ab-1215-46c1-a605-a37ea5aee2ef",
+          "name": "Update Account",
+          "request": {
+            "name": "Update Account",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "accounts",
+                ":accountId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"properties\": {\n    \"name\": \"Vision Care London\",\n    \"date_joined\": \"2022-01-31\"\n  },\n  \"about\": \"Leading Sunglass provider\",\n  \"contacts\": [\n    \"trent.boult@velaris.io\",\n    \"tim.southee@velaris.io\"\n  ],\n  \"links\": {\n    \"custom_link_relation1\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_11\",\n        \"custom_object_instance_21\"\n      ]\n    },\n    \"custom_link_relation2\": {\n      \"identifier_key\": \"int_id\",\n      \"ids\": [\n        6,\n        4\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "efe7947a-f26c-4571-b84c-b99146b8314d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"properties\": {\n    \"name\": \"Vision Care London\",\n    \"date_joined\": \"2022-01-31\"\n  },\n  \"about\": \"Leading Sunglass provider\",\n  \"contacts\": [\n    \"trent.boult@velaris.io\",\n    \"tim.southee@velaris.io\"\n  ],\n  \"links\": {\n    \"custom_link_relation1\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_11\",\n        \"custom_object_instance_21\"\n      ]\n    },\n    \"custom_link_relation2\": {\n      \"identifier_key\": \"int_id\",\n      \"ids\": [\n        6,\n        4\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"about\": \"Leading Sunglass provider\",\n    \"contacts\": [\n      21,\n      47,\n      48\n    ],\n    \"health\": {\n      \"score\": 6.2,\n      \"ragStatus\": \"Green\"\n    },\n    \"properties\": {\n      \"name\": \"Vision Care London\",\n      \"date_joined\": \"2022-01-31\"\n    },\n    \"links\": {\n      \"custom_link_relation1\": [\n        57,\n        53\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3821fd4b-d553-4763-96aa-a0ba3501c2a9",
+          "name": "Churn Account",
+          "request": {
+            "name": "Churn Account",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "accounts",
+                ":accountId",
+                "churn-status"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f0cc978-e632-45e3-9134-7525cf935746",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "accounts",
+                    ":accountId",
+                    "churn-status"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9dbcd5a0-00a3-4429-b6a1-a4c40c424970",
+          "name": "Archive Account",
+          "request": {
+            "name": "Archive Account",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "accounts",
+                ":accountId",
+                "archive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e04a461d-f350-46bf-8dcb-e816b611ae7a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "accounts",
+                    ":accountId",
+                    "archive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7217d8b-5e5d-4c2e-9070-a0621f912ddf",
+          "name": "Restore Account",
+          "request": {
+            "name": "Restore Account",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/accounts/extid-id</code></li>\n<li>With internal id: <code>/accounts/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "accounts",
+                ":organizationId",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "41c849ad-5e7e-421e-b83a-5fb20338ad80",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "accounts",
+                    ":organizationId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07631efd-87ce-4e14-a7cd-78be3d759c46",
+          "name": "Change Parent Entity",
+          "request": {
+            "name": "Change Parent Entity",
+            "description": {
+              "content": "<p>Change or assign parent organization.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "accounts",
+                ":accountId",
+                "parent-entity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"organizationId\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f1a97c85-5e07-41e2-96ee-738c52e73753",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "accounts",
+                    ":accountId",
+                    "parent-entity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"organizationId\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02664921-5f83-4251-9314-d2d35723e53a",
+          "name": "Get All Contacts V1",
+          "request": {
+            "name": "Get All Contacts V1",
+            "description": {
+              "content": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter contacts by custom fields</p>\n<p><code>/contacts?{custom_field_name}={value}</code></p>\n<p>Example</p>\n<p><code>/contacts?zapier=true</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75e262e3-1d25-4451-8686-0dda56b30c9e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f3cfd358-bae2-4646-b85d-41b98d9d010d",
+          "name": "Create Contacts",
+          "request": {
+            "name": "Create Contacts",
+            "description": {
+              "content": "<p>Create new contact</p>\n<p>Create New Organiztion.</p>\n<h5 id=\"request-body-guide\">Request body guide</h5>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th><strong>Field</strong></th>\n<th><strong>Description</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>externalId</td>\n<td>Use <code>externalId</code> to add external id of the contact</td>\n</tr>\n<tr>\n<td>email</td>\n<td>Use <code>email</code> to add email id of the contact</td>\n</tr>\n<tr>\n<td>properties</td>\n<td>Use <code>properties</code> to add all the custom fields.</td>\n</tr>\n<tr>\n<td>organizationIds</td>\n<td>Use <code>organizationIds</code> to link contacts to an organization. Accepts Velaris internal Id. User either <code>organizationIds</code> or <code>organizationExternalIds</code> Example: [1, 2]</td>\n</tr>\n<tr>\n<td>organizationExternalIds</td>\n<td>Use <code>organizationExternalIds</code> to link contacts to an organization. Accepts external Id of the organization. User either <code>organizationIds</code> or <code>organizationExternalIds</code> Example: <code>[\"ajislk-1asdas-1231fg\", \"tcsd-gogk-asdm\"]</code></td>\n</tr>\n<tr>\n<td>accountIds</td>\n<td>Use <code>accountIds</code> to link contacts to an acount. Accepts Velaris internal Id. User either <code>accountIds</code> or <code>accountExternalIds</code> Example: [1, 2]</td>\n</tr>\n<tr>\n<td>accountExternalIds</td>\n<td>Use <code>accountExternalIds</code> to link contacts to an acount. Accepts external Id of the account. User either <code>accountIds</code> or <code>accountExternalIds</code> Example: <code>[\"ajislk-1asdas-1231fg\", \"tcsd-gogk-asdm\"]</code></td>\n</tr>\n<tr>\n<td>links</td>\n<td>Use <code>links</code> to link custom objects with contacts.</td>\n</tr>\n</tbody>\n</table>\n</div>",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"mattDamen@gmail.com\",\n  \"externalId\": \"32fd45-22fr4-yh23g-fg34-b5h6j34gd\",\n  \"about\": \"This is a test contact\",\n  \"organizationIds\": [\n    6,\n    7\n  ],\n  \"accountIds\": [\n    1,\n    2\n  ],\n  \"properties\": {\n    \"name\": \"Matt Damen\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1f115712-418d-4b22-8d18-cd7dbb8aa54f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"mattDamen@gmail.com\",\n  \"externalId\": \"32fd45-22fr4-yh23g-fg34-b5h6j34gd\",\n  \"about\": \"This is a test contact\",\n  \"organizationIds\": [\n    6,\n    7\n  ],\n  \"accountIds\": [\n    1,\n    2\n  ],\n  \"properties\": {\n    \"name\": \"Matt Damen\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"contactId\": 261,\n    \"name\": \"Matt Damen\",\n    \"email\": \"mattDamen@gmail.com\",\n    \"accounts\": [\n      1,\n      2\n    ],\n    \"organizations\": [\n      6,\n      7\n    ],\n    \"links\": {\n      \"custom_link_relation1\": [\n        564,\n        3453\n      ],\n      \"custom_link_relation2\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    },\n    \"properties\": {}\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b7ef4fe4-0d79-463c-9730-d626ee2d74d2",
+          "name": "Get Contacts By Id",
+          "request": {
+            "name": "Get Contacts By Id",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/contacts/extid-id</code></li>\n<li>With internal id: <code>/contacts/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "contacts",
+                ":contactId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7c474f3-a396-4cb6-b90f-bd71afd35e8d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "contacts",
+                    ":contactId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"globalFields\": {\n      \"name\": \"Joe Root\",\n      \"date_joined\": \"2022-07-08\"\n    },\n    \"pulse\": 3,\n    \"lifecycleStageId\": 44,\n    \"imageId\": null,\n    \"about\": null,\n    \"lastTouch\": \"2022-07-07T09:51:14.000Z\",\n    \"externalId\": null,\n    \"entityArchived\": 0,\n    \"contactId\": 1,\n    \"created\": \"2021-11-17T07:48:34.649Z\",\n    \"modified\": \"2022-07-10T07:37:26.463Z\",\n    \"createdBy\": 1,\n    \"modifiedBy\": 1,\n    \"email\": \"joe.root@gmail.com\",\n    \"accounts\": [\n      2\n    ],\n    \"organizations\": [\n      30,\n      38,\n      118\n    ],\n    \"pipelines\": [\n      2\n    ],\n    \"properties\": {\n      \"name\": \"Joe Root\",\n      \"contact_number\": \"+1-617-755-2327\",\n      \"date_joined\": \"2022-07-08\",\n      \"contact_owner\": 74,\n      \"job_title\": \"Tester\",\n      \"contact_multipicklist\": []\n    },\n    \"links\": {\n      \"custom_link_relation1\": [\n        564,\n        3453\n      ],\n      \"custom_link_relation2\": [\n        1,\n        2,\n        3,\n        4,\n        5\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1b0828a7-fb8f-4879-8431-6a77ec0519dd",
+          "name": "Update Contact",
+          "request": {
+            "name": "Update Contact",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/contacts/extid-id</code></li>\n<li>With internal id: <code>/contacts/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "contacts",
+                ":contactId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"about\": \"This is an updated contact\",\n  \"properties\": {\n    \"name\": \"Joe Root\"\n  },\n  \"links\": {\n    \"custom_link_relation1\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_54\",\n        \"custom_object_instance_345\"\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "041f4b02-e29b-4f3e-b714-008b9eda3376",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "contacts",
+                    ":contactId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"about\": \"This is an updated contact\",\n  \"properties\": {\n    \"name\": \"Joe Root\"\n  },\n  \"links\": {\n    \"custom_link_relation1\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_54\",\n        \"custom_object_instance_345\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"about\": \"This is an updated contact\",\n    \"health\": {\n      \"score\": 0,\n      \"ragStatus\": \"Red\"\n    },\n    \"properties\": {\n      \"name\": \"Joe Root\"\n    },\n    \"links\": {\n      \"custom_link_relation1\": [\n        54,\n        345\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e6c411c-9a3e-457a-ad13-74c7228af9f8",
+          "name": "Archive Contact",
+          "request": {
+            "name": "Archive Contact",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/contacts/extid-id</code></li>\n<li>With internal id: <code>/contacts/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "contacts",
+                ":contactId",
+                "archive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5e3e7f24-4541-4aac-8117-2b310912c8a1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "contacts",
+                    ":contactId",
+                    "archive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d0f4b666-60e0-4567-96b7-a397bfaa1a51",
+          "name": "Restore Contact",
+          "request": {
+            "name": "Restore Contact",
+            "description": {
+              "content": "<p>Example:</p>\n<ul>\n<li>With external id: <code>/contacts/extid-id</code></li>\n<li>With internal id: <code>/contacts/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "contacts",
+                ":contactId",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "83365409-a4ae-4d85-8fcc-195464ee9b9b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "contacts",
+                    ":contactId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a372c5ce-0daf-4111-8c47-e3a6c8158961",
+          "name": "Get All Opportunities V1",
+          "request": {
+            "name": "Get All Opportunities V1",
+            "description": {
+              "content": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter opportunities by custom fields</p>\n<p><code>/opportunities?{custom_field_name}={value}</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "opportunities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5dca9bc3-9750-4497-8a2d-628801cc278b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"pipelineId\": 1,\n      \"externalId\": null,\n      \"entityArchived\": 0,\n      \"data\": {\n        \"title\": \"Package upgrade to Silver\",\n        \"saas_mrr\": {\n          \"currencyDefinitionId\": 5,\n          \"value\": 2500\n        },\n        \"total_mrr\": {\n          \"value\": 2500,\n          \"currencyDefinitionId\": 5\n        }\n      },\n      \"pipelineType\": 1,\n      \"pipelineStatus\": 2,\n      \"pulse\": null,\n      \"globalFields\": {\n        \"name\": \"Package upgrade to Silver\",\n        \"mrr\": {\n          \"value\": 2500,\n          \"currencyDefinitionId\": 5\n        }\n      },\n      \"created\": \"2021-12-02T02:53:11.469Z\",\n      \"modified\": \"2022-06-08T00:09:59.937Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 1,\n      \"organization\": {\n        \"id\": 1,\n        \"name\": \"Successfully 10\"\n      },\n      \"contacts\": []\n    },\n    {\n      \"pipelineId\": 2,\n      \"externalId\": \"56dbf464-3f31-48c3-bd77-0a29e46dc124\",\n      \"entityArchived\": 0,\n      \"data\": {\n        \"title\": \"Package Upgrade: Watford FC\",\n        \"total_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        }\n      },\n      \"pipelineType\": 1,\n      \"pipelineStatus\": 3,\n      \"pulse\": null,\n      \"globalFields\": {\n        \"name\": \"Package Upgrade: Watford FC\",\n        \"mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        }\n      },\n      \"created\": \"2021-12-10T13:34:10.995Z\",\n      \"modified\": \"2022-06-08T00:09:59.877Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 1,\n      \"organization\": {\n        \"id\": 3,\n        \"name\": \"Successfully 10\"\n      },\n      \"contacts\": [\n        1\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a2ee896-6b31-4224-a3c5-600b75bba1d3",
+          "name": "Create Opportunity",
+          "request": {
+            "name": "Create Opportunity",
+            "description": {
+              "content": "<ul>\n<li><p>parentEntity types - organization, account</p>\n</li>\n<li><p>parent entity id or external id can be used</p>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"parentEntity\": {\n  \"type\": \"account\",\n  \"externalId\": \"account-external-id\"\n}\n\n</code></pre><ul>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n<li><p>links: Use <code>links</code> to link custom objects with opportunities.</p>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "opportunities"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contacts\": [\n    \"joe.root@gmail.com\"\n  ],\n  \"externalId\": \"46jiyt-64jhgi-52gew-26aw-987amlk\",\n  \"status\": 1,\n  \"parentEntity\": {\n    \"type\": \"organization\",\n    \"id\": 6\n  },\n  \"properties\": {\n    \"title\": \"Sales Pipeline\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1d77146e-c104-4b45-9132-d194affb0ea1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "opportunities"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contacts\": [\n    \"joe.root@gmail.com\"\n  ],\n  \"externalId\": \"46jiyt-64jhgi-52gew-26aw-987amlk\",\n  \"status\": 1,\n  \"parentEntity\": {\n    \"type\": \"organization\",\n    \"id\": 6\n  },\n  \"properties\": {\n    \"title\": \"Sales Pipeline\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"_pipelineName\": \"Sales Pipeline\",\n    \"pipelineId\": 235,\n    \"pipelineType\": 1,\n    \"pipelineStatus\": 1,\n    \"title\": \"Sales Pipeline\",\n    \"contacts\": [\n      86\n    ],\n    \"organization\": {\n      \"organizationId\": 6,\n      \"name\": \"LIGA MX-2\"\n    },\n    \"links\": {\n      \"custom_link_relation1\": [\n        43\n      ],\n      \"custom_link_relation2\": [\n        764,\n        345\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "565a8a03-2c0c-42cf-a18c-4dd88cf939d9",
+          "name": "Get Opportunities By Id",
+          "request": {
+            "name": "Get Opportunities By Id",
+            "description": {
+              "content": "<p>Example</p>\n<ul>\n<li>With external id: <code>/opportunities/extid-id</code></li>\n<li>With internal id: <code>/opportunities/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "opportunities",
+                ":pipelineId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6d5b51b2-8321-45bc-98e3-14a317da8135",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "opportunities",
+                    ":pipelineId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"pipelineId\": 1,\n    \"externalId\": \"48efw78-46de-19wr-bd77-0a29e46dc\",\n    \"entityArchived\": 0,\n    \"data\": {\n      \"title\": \"Package upgrade to Silver\",\n      \"saas_mrr\": {\n        \"currencyDefinitionId\": 5,\n        \"value\": 2500\n      },\n      \"total_mrr\": {\n        \"value\": 2500,\n        \"currencyDefinitionId\": 5\n      },\n      \"original_source_type\": []\n    },\n    \"pipelineType\": 1,\n    \"pipelineStatus\": 2,\n    \"pulse\": null,\n    \"globalFields\": {\n      \"name\": \"Package upgrade to Silver\",\n      \"mrr\": {\n        \"value\": 2500,\n        \"currencyDefinitionId\": 5\n      }\n    },\n    \"created\": \"2021-12-02T02:53:11.469Z\",\n    \"modified\": \"2022-07-25T11:14:31.539Z\",\n    \"createdBy\": 1,\n    \"modifiedBy\": 30,\n    \"organization\": {\n      \"id\": 1,\n      \"name\": \"Successfully 10\"\n    },\n    \"contacts\": [],\n    \"links\": {\n      \"custom_link_relation1\": [\n        456\n      ],\n      \"custom_link_relation2\": [\n        764,\n        345\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "19e1de72-c1d1-4141-80b9-dbca09191199",
+          "name": "Update Opportunity",
+          "request": {
+            "name": "Update Opportunity",
+            "description": {
+              "content": "<ul>\n<li><p>With external id: <code>/opportunities/extid-id</code></p>\n</li>\n<li><p>With internal id: <code>/opportunities/srcid-id</code></p>\n</li>\n<li><p>parent entity cannot be changed after creation.</p>\n</li>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "opportunities",
+                ":opportunityId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contacts\": [\n    \"joe.root@gmail.com\"\n  ],\n  \"status\": 2,\n  \"properties\": {\n    \"title\": \"Expansion Pipeline\"\n  },\n  \"links\": {\n    \"custom_link_relation4\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_43\"\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1c3095aa-7989-4dc7-a6cb-638ac37a84e0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "opportunities",
+                    ":opportunityId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contacts\": [\n    \"joe.root@gmail.com\"\n  ],\n  \"status\": 2,\n  \"properties\": {\n    \"title\": \"Expansion Pipeline\"\n  },\n  \"links\": {\n    \"custom_link_relation4\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_43\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"contacts\": [\n        86\n      ],\n      \"pipelineStatus\": 2,\n      \"data\": {\n        \"title\": \"Expansion Pipeline\"\n      }\n    },\n    [\n      {\n        \"fieldId\": 26,\n        \"field\": \"title\",\n        \"value\": \"Expansion Pipeline\",\n        \"dataType\": \"string\"\n      }\n    ]\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e0dab1d3-6bd4-450e-a509-33c3330e0545",
+          "name": "Archive Opportunity",
+          "request": {
+            "name": "Archive Opportunity",
+            "description": {
+              "content": "<p>Example</p>\n<ul>\n<li>With external id: <code>/opportunities/extid-id</code></li>\n<li>With internal id: <code>/opportunities/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "opportunities",
+                ":id",
+                "archive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a70e79f8-fdef-4fce-9396-c239d0ae9ee2",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "opportunities",
+                    ":id",
+                    "archive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bc6a7229-070b-4a4c-9504-4b60930b5000",
+          "name": "Restore Opportunity",
+          "request": {
+            "name": "Restore Opportunity",
+            "description": {
+              "content": "<p>Example</p>\n<ul>\n<li>With external id: <code>/opportunities/extid-id</code></li>\n<li>With internal id: <code>/opportunities/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "opportunities",
+                ":opportunityId",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "94f51d56-1da5-466a-92ae-fc0e6ff5ce35",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "opportunities",
+                    ":opportunityId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "352a2b28-d096-47bd-b7e5-96724812d2a6",
+          "name": "Get All Risks V1",
+          "request": {
+            "name": "Get All Risks V1",
+            "description": {
+              "content": "<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>\n<p>To filter risks by custom fields</p>\n<p><code>/risks?{custom_field_name}={value}</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "risks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "05bf7353-f045-4ba1-ae79-52c0122dd1c5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "risks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"pipelineId\": 69,\n      \"externalId\": \"123123-dsads-34542323344\",\n      \"entityArchived\": 0,\n      \"data\": {\n        \"title\": \"Test Pipeline Title\",\n        \"total_mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        }\n      },\n      \"pipelineType\": 2,\n      \"pipelineStatus\": 5,\n      \"pulse\": null,\n      \"globalFields\": {\n        \"name\": \"Test Pipeline Title\",\n        \"mrr\": {\n          \"value\": 0,\n          \"currencyDefinitionId\": 5\n        }\n      },\n      \"created\": \"2022-06-08T05:41:05.169Z\",\n      \"modified\": \"2022-06-08T05:47:50.924Z\",\n      \"createdBy\": 12,\n      \"modifiedBy\": 12,\n      \"account\": {\n        \"id\": 9,\n        \"name\": \"Amy's Account\"\n      },\n      \"contacts\": [\n        81,\n        86\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "06eb535a-95a0-437c-b0ca-cfda8bc27cca",
+          "name": "Create Risk",
+          "request": {
+            "name": "Create Risk",
+            "description": {
+              "content": "<ul>\n<li><p>parentEntity types - organization, account</p>\n</li>\n<li><p>parent entity id or external id can be used</p>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"parentEntity\": {\n  \"type\": \"account\",\n  \"externalId\": \"account-external-id\"\n}\n\n</code></pre><ul>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n<li><p>links: Use <code>links</code> to link custom objects with risks.</p>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "risks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contacts\": [\n    \"joe.root@gmail.com\"\n  ],\n  \"externalId\": \"446ew3-sf45wy-34sdg23\",\n  \"status\": 4,\n  \"parentEntity\": {\n    \"type\": \"account\",\n    \"id\": 7\n  },\n  \"properties\": {\n    \"title\": \"Risk Pipeline\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8e747309-d6c3-4e87-ace6-7b40e75ab35a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "risks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contacts\": [\n    \"joe.root@gmail.com\"\n  ],\n  \"externalId\": \"446ew3-sf45wy-34sdg23\",\n  \"status\": 4,\n  \"parentEntity\": {\n    \"type\": \"account\",\n    \"id\": 7\n  },\n  \"properties\": {\n    \"title\": \"Risk Pipeline\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"_pipelineName\": \"Test Risk Pipeline\",\n    \"pipelineId\": 236,\n    \"pipelineType\": 2,\n    \"pipelineStatus\": 4,\n    \"title\": \"Test Risk Pipeline\",\n    \"contacts\": [\n      86\n    ],\n    \"account\": {\n      \"accountId\": 7,\n      \"name\": \"Amy's Account\"\n    },\n    \"links\": {\n      \"custom_link_relation1\": [\n        47\n      ],\n      \"custom_link_relation2\": [\n        465,\n        344\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7160acbe-939e-4661-923f-16a2a387c463",
+          "name": "Get Risk By Id",
+          "request": {
+            "name": "Get Risk By Id",
+            "description": {
+              "content": "<p>Example</p>\n<ul>\n<li>With external id: <code>/risks/extid-id</code></li>\n<li>With internal id: <code>/risks/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "risks",
+                ":riskId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec599f65-182a-4cc2-a38f-2ad1b81a7b8e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "risks",
+                    ":riskId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"pipelineId\": 69,\n    \"externalId\": \"123123-dsads-34542323344\",\n    \"entityArchived\": 0,\n    \"data\": {\n      \"title\": \"Test Pipeline Title\",\n      \"total_mrr\": {\n        \"value\": 0,\n        \"currencyDefinitionId\": 5\n      }\n    },\n    \"pipelineType\": 2,\n    \"pipelineStatus\": 5,\n    \"pulse\": null,\n    \"globalFields\": {\n      \"name\": \"Test Pipeline Title\",\n      \"mrr\": {\n        \"value\": 0,\n        \"currencyDefinitionId\": 5\n      }\n    },\n    \"created\": \"2022-06-08T05:41:05.169Z\",\n    \"modified\": \"2022-06-08T05:47:50.924Z\",\n    \"createdBy\": 12,\n    \"modifiedBy\": 12,\n    \"account\": {\n      \"id\": 9,\n      \"name\": \"Amy's Account\"\n    },\n    \"contacts\": [\n      81,\n      86\n    ],\n    \"links\": {\n      \"custom_link_relation1\": [\n        54\n      ],\n      \"custom_link_relation2\": [\n        35,\n        24\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf6e0c11-27f4-4b84-a1da-bac7834f0e88",
+          "name": "Update Risk",
+          "request": {
+            "name": "Update Risk",
+            "description": {
+              "content": "<ul>\n<li>With external id:<code>/risks/extid-id</code></li>\n<li>With internal id: <code>/risks/srcid-id</code></li>\n<li>parent entity cannot be changed after creation.</li>\n<li>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "risks",
+                ":riskId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contacts\": [\n    \"joe.root@gmail.com\"\n  ],\n  \"status\": 5,\n  \"properties\": {\n    \"title\": \"Pipeline Title v2\"\n  },\n  \"links\": {\n    \"custom_link_relation5\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_453\"\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9677a58d-d829-4beb-97ba-c05cec09b317",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "risks",
+                    ":riskId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contacts\": [\n    \"joe.root@gmail.com\"\n  ],\n  \"status\": 5,\n  \"properties\": {\n    \"title\": \"Pipeline Title v2\"\n  },\n  \"links\": {\n    \"custom_link_relation5\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"custom_object_instance_453\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"contacts\": [\n        86,\n        81\n      ],\n      \"pipelineStatus\": 5,\n      \"data\": {\n        \"title\": \"Test Pipeline Title Updated\"\n      }\n    },\n    [\n      {\n        \"fieldId\": 26,\n        \"field\": \"title\",\n        \"value\": \"Test Pipeline Title Updated\",\n        \"dataType\": \"string\"\n      }\n    ]\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e50a0043-6501-4cb2-9818-d2df01bb927e",
+          "name": "Archive Risk",
+          "request": {
+            "name": "Archive Risk",
+            "description": {
+              "content": "<ul>\n<li>With external id:<code>/risks/extid-id</code></li>\n<li>With internal id: <code>/risks/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "risks",
+                ":riskId",
+                "archive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f15af287-7899-4471-9458-a5e25bd0cb88",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "risks",
+                    ":riskId",
+                    "archive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e7d8b1bb-3dac-4a3e-a743-c4ea773258fb",
+          "name": "Restore Risks",
+          "request": {
+            "name": "Restore Risks",
+            "description": {
+              "content": "<ul>\n<li>With external id:<code>/risks/extid-id</code></li>\n<li>With internal id: <code>/risks/srcid-id</code></li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                "risks",
+                ":riskId",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4870d689-11e9-41a0-801c-737007df9250",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    "risks",
+                    ":riskId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "203d0f38-0df7-409d-b8cd-748128c8dd7f",
+    "name": "Velaris Public Activity Entity Management V1 API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

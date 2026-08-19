@@ -1,0 +1,254 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Custom Objects API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Custom Objects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Entity Custom Links By ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/:level/:id/links"
+          },
+          "docs": "<p>This endpoint retrieves the links associated with a specific entity at the given level and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>level</code></td>\n<td>(string): Entity Level  <br />- Organization: 'organizations'  <br />- Account: 'accounts'  <br />- Contact: 'contacts'  <br />- Opportunity: 'opportunities'  <br />- Risk: 'risks'</td>\n</tr>\n<tr>\n<"
+        },
+        {
+          "info": {
+            "name": "Add Custom Links for System Entities",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/core/:level/:id/links",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This endpoint creates links for a specific system entity by passing its level and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>apiName</code></td>\n<td>(string): Custom Link API Name</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Entity ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passi"
+        },
+        {
+          "info": {
+            "name": "Get Custom Object Instance Custom Links by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/custom-objects/:coApiName/:id/links"
+          },
+          "docs": "<p>This endpoint retrieves the links associated with a specific custom object by its API name and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>coApiName</code></td>\n<td>(string): Custom Object API Name</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Custom Object Instance ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID "
+        },
+        {
+          "info": {
+            "name": "Add Custom Links for Custom Object Instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/custom-objects/:coApiName/:id/links",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This endpoint creates links for a specific custom object instance by its API name and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>coApiName</code></td>\n<td>(string): Custom Object API Name.</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Custom Object Instance ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"exti"
+        },
+        {
+          "info": {
+            "name": "Get Entity Custom Links By Link Api Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/core/:level/:id/links/:apiName"
+          },
+          "docs": "<p>This endpoint retrieves the links associated with a specific entity by its level, ID, and custom link API name.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>apiName</code></td>\n<td>(string): Custom Link API Name</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Entity ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"ext"
+        },
+        {
+          "info": {
+            "name": "Get Custom Links for Custom Objects By Link Api Name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/custom-objects/:coApiName/:id/links/:apiName"
+          },
+          "docs": "<p>This endpoint retrieves the links associated with a specific custom object by its API name, ID, and custom link API name.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>coApiName</code></td>\n<td>(string): Custom Object API Name</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Custom Object Instance ID  <br />Should be in the format \"srcid-{velarisId}\" wh"
+        },
+        {
+          "info": {
+            "name": "Archive Custom Links for System Entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/core/:level/:id/links/archive",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This endpoint archives existing links of a specific system entity by passing its level and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>id</code></td>\n<td>(string): Entity ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passing external ID.</td>\n</tr>\n<tr>\n<td><code>level</code></td>\n<td>(string)"
+        },
+        {
+          "info": {
+            "name": "Archive Custom Links for Custom Object Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/custom-objects/:coApiName/:id/links/archive",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>This endpoint archives existing links of a specific custom object instance by passing its API name and instance ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>coApiName</code></td>\n<td>(string): Custom Object API Name.</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Custom Object Instance ID  <br />Should be in the format \"srcid-{velarisId}\" when pa"
+        },
+        {
+          "info": {
+            "name": "Get Custom Object Definitions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/custom-object-schemas"
+          },
+          "docs": "<p>Returns list of custom object schemas. This includes information like custom object names, API names, and more.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get CO instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/custom-objects/:co_api_name"
+          },
+          "docs": "<p>Returns list of custom object instances. This includes information like custom object id, system attributes, and custom attributes</p>\n"
+        },
+        {
+          "info": {
+            "name": "Create CO instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/custom-objects/:co_api_name",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Creates a custom object instance. External id, and custom attributes of the instance should be provided</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get CO instances V2",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/v2/custom-objects/:co_api_name"
+          },
+          "docs": "<p>Returns list of custom object instances. This includes information like custom object id, system attributes, and custom attributes.</p>\n"
+        },
+        {
+          "info": {
+            "name": "Get CO Instance by Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.euw1.velaris.io/custom-objects/:co_api_name/:instanceId"
+          },
+          "docs": "<p>Returns the custom object instance with the given instance id. This includes the system attributes and the custom attributes of the instance.</p>\n<p>Custom object instance id should be in the following format.</p>\n<ul>\n<li><p>internal id → <code>srcid-(internal id)</code></p>\n</li>\n<li><p>external id → <code>extid-(external id)</code></p>\n</li>\n</ul>\n<p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Archive CO instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/custom-objects/:co_api_name/:instanceId/archive"
+          },
+          "docs": "<p>Archives the custom object instance with the given instance id.  </p>\n<p>Custom object instance id should be in the following format.</p>\n<ul>\n<li><p>internal id → <code>srcid-(internal id)</code></p>\n</li>\n<li><p>external id → <code>extid-(external id)</code></p>\n</li>\n</ul>\n<p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Restore CO Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/custom-objects/:co_api_name/:instanceId/restore"
+          },
+          "docs": "<p>Restore the custom object instance with the given instance id.</p>\n<p>Custom object instance id should be in the following format.</p>\n<ul>\n<li>internal id → <code>srcid-(internal id)</code></li>\n<li>external id → <code>extid-(external id)</code></li>\n</ul>\n<p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Update CO instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.euw1.velaris.io/custom-objects/:apiName/:instanceId",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Updates custom object instance with the given instance id. External id, and custom attributes of the instance should be provided.</p>\n<p>Custom object instance id should be in the following format.</p>\n<ul>\n<li><p>internal id → <code>srcid-(internal id)</code></p>\n</li>\n<li><p>external id → <code>extid-(external id)</code></p>\n</li>\n</ul>\n<p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>\n"
+        },
+        {
+          "info": {
+            "name": "Search Custom Objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/custom-objects/:coApiName/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Search custom object instances using custom attributes</p>\n<p>The request body should contain a list of filters up to 3 filters</p>\n<ul>\n<li><p>filters - list of filters</p>\n<ul>\n<li><p>filter - object</p>\n<ul>\n<li><p>fieldName: API name of the custom attribute</p>\n</li>\n<li><p>operator: operator which should be used in the filter</p>\n</li>\n<li><p>value: filtered value</p>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Supported Operators</strong></p>\n<div class=\"click-to-expand-wrapper is-ta"
+        },
+        {
+          "info": {
+            "name": "Search Custom Objects V2",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/v2/custom-objects/:coApiName/search",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p>Search custom object instances using custom attributes</p>\n<p>The request body should contain a list of filters up to 3 filters</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Query Params</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>limit</td>\n<td>Number of records to fetch</td>\n</tr>\n<tr>\n<td>after</td>\n<td>Last fetched instanceId</td>\n</tr>\n<tr>\n<td>archived</td>\n<td>Archived state(true/false)</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=\"request-body\">Req"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,280 @@
+{
+  "item": [
+    {
+      "id": "a0f3fc3e-1c8c-49c4-be49-1fda226d4577",
+      "name": "Currencies",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2c3a3d2f-7792-4b46-b1f6-93ff96dbd98a",
+          "name": "Get Base Currency",
+          "request": {
+            "name": "Get Base Currency",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "currencies",
+                "base-currency"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "df7fc8e5-2e28-479b-90c8-aa1c5eaa3578",
+              "name": "Get Base Currency",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "currencies",
+                    "base-currency"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"currencyTypeId\": 1,\n    \"currencyDefinitionId\": 5,\n    \"isBase\": true,\n    \"isDefault\": false,\n    \"archived\": 0,\n    \"createdBy\": 1,\n    \"modifiedBy\": 4,\n    \"createdOn\": \"2022-11-25T03:54:21.000Z\",\n    \"modifiedOn\": \"2023-03-06T12:15:25.000Z\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7ec672e2-0100-4806-9890-d666934a5712",
+          "name": "Get Exchange Rates",
+          "request": {
+            "name": "Get Exchange Rates",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "currencies",
+                "exchange-rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "522c82a2-f853-411e-b5e0-c1a61ccde763",
+              "name": "Get Exchange Rates",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "currencies",
+                    "exchange-rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"2023-04-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-04-01\",\n        \"effectiveTo\": \"2023-04-30\",\n        \"conversionRate\": \"0.948700000000000\",\n        \"createdOn\": \"2023-03-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-03-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-04-01\",\n        \"effectiveTo\": \"2023-04-30\",\n        \"conversionRate\": \"0.837500000000000\",\n        \"createdOn\": \"2023-03-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-03-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2022-12-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2022-12-01\",\n        \"effectiveTo\": \"2022-12-31\",\n        \"conversionRate\": \"0.960000000000000\",\n        \"createdOn\": \"2022-11-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2022-11-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2022-12-01\",\n        \"effectiveTo\": \"2022-12-31\",\n        \"conversionRate\": \"0.830000000000000\",\n        \"createdOn\": \"2022-11-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2022-11-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2023-05-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-05-01\",\n        \"effectiveTo\": \"2023-05-31\",\n        \"conversionRate\": \"0.927600000000000\",\n        \"createdOn\": \"2023-05-24T18:00:00.000Z\",\n        \"modifiedOn\": \"2023-05-24T18:00:00.000Z\",\n        \"createdBy\": 106,\n        \"modifiedBy\": 106\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-05-01\",\n        \"effectiveTo\": \"2023-05-31\",\n        \"conversionRate\": \"0.803500000000000\",\n        \"createdOn\": \"2023-05-24T18:00:00.000Z\",\n        \"modifiedOn\": \"2023-05-24T18:00:00.000Z\",\n        \"createdBy\": 106,\n        \"modifiedBy\": 106\n      }\n    ],\n    \"2023-09-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-09-01\",\n        \"effectiveTo\": \"2023-09-30\",\n        \"conversionRate\": \"0.915500000000000\",\n        \"createdOn\": \"2023-08-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-08-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-09-01\",\n        \"effectiveTo\": \"2023-09-30\",\n        \"conversionRate\": \"0.786300000000000\",\n        \"createdOn\": \"2023-08-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-08-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2023-06-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-06-01\",\n        \"effectiveTo\": \"2023-06-30\",\n        \"conversionRate\": \"0.915500000000000\",\n        \"createdOn\": \"2023-06-30T14:15:50.000Z\",\n        \"modifiedOn\": \"2023-06-30T14:15:50.000Z\",\n        \"createdBy\": 106,\n        \"modifiedBy\": 106\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-06-01\",\n        \"effectiveTo\": \"2023-06-30\",\n        \"conversionRate\": \"0.786300000000000\",\n        \"createdOn\": \"2023-06-30T14:15:50.000Z\",\n        \"modifiedOn\": \"2023-06-30T14:15:50.000Z\",\n        \"createdBy\": 106,\n        \"modifiedBy\": 106\n      }\n    ],\n    \"2023-01-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-01-01\",\n        \"effectiveTo\": \"2023-01-31\",\n        \"conversionRate\": \"0.928100000000000\",\n        \"createdOn\": \"2023-02-27T21:01:46.000Z\",\n        \"modifiedOn\": \"2023-02-27T21:01:46.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-01-01\",\n        \"effectiveTo\": \"2023-01-31\",\n        \"conversionRate\": \"0.817600000000000\",\n        \"createdOn\": \"2023-02-27T21:01:46.000Z\",\n        \"modifiedOn\": \"2023-02-27T21:01:46.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      }\n    ],\n    \"2023-02-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-02-01\",\n        \"effectiveTo\": \"2023-02-28\",\n        \"conversionRate\": \"0.948700000000000\",\n        \"createdOn\": \"2023-02-27T21:02:32.000Z\",\n        \"modifiedOn\": \"2023-02-27T21:02:32.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-02-01\",\n        \"effectiveTo\": \"2023-02-28\",\n        \"conversionRate\": \"0.837500000000000\",\n        \"createdOn\": \"2023-02-27T21:02:32.000Z\",\n        \"modifiedOn\": \"2023-02-27T21:02:32.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      }\n    ],\n    \"2023-03-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-03-01\",\n        \"effectiveTo\": \"2023-03-31\",\n        \"conversionRate\": \"0.948700000000000\",\n        \"createdOn\": \"2023-02-28T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-02-28T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-03-01\",\n        \"effectiveTo\": \"2023-03-31\",\n        \"conversionRate\": \"0.837500000000000\",\n        \"createdOn\": \"2023-02-28T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-02-28T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2022-11-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2022-11-01\",\n        \"effectiveTo\": \"2022-11-30\",\n        \"conversionRate\": \"0.960000000000000\",\n        \"createdOn\": \"2022-11-29T13:28:06.000Z\",\n        \"modifiedOn\": \"2022-11-29T13:28:06.000Z\",\n        \"createdBy\": 5,\n        \"modifiedBy\": 5\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2022-11-01\",\n        \"effectiveTo\": \"2022-11-30\",\n        \"conversionRate\": \"0.830000000000000\",\n        \"createdOn\": \"2022-11-29T13:28:06.000Z\",\n        \"modifiedOn\": \"2022-11-29T13:28:06.000Z\",\n        \"createdBy\": 5,\n        \"modifiedBy\": 5\n      }\n    ],\n    \"2023-10-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-10-01\",\n        \"effectiveTo\": \"2023-10-31\",\n        \"conversionRate\": \"0.915500000000000\",\n        \"createdOn\": \"2023-09-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-09-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-10-01\",\n        \"effectiveTo\": \"2023-10-31\",\n        \"conversionRate\": \"0.786300000000000\",\n        \"createdOn\": \"2023-09-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-09-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2023-07-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-07-01\",\n        \"effectiveTo\": \"2023-07-31\",\n        \"conversionRate\": \"0.915500000000000\",\n        \"createdOn\": \"2023-06-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-06-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-07-01\",\n        \"effectiveTo\": \"2023-07-31\",\n        \"conversionRate\": \"0.786300000000000\",\n        \"createdOn\": \"2023-06-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-06-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2023-08-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-08-01\",\n        \"effectiveTo\": \"2023-08-31\",\n        \"conversionRate\": \"0.915500000000000\",\n        \"createdOn\": \"2023-07-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-07-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-08-01\",\n        \"effectiveTo\": \"2023-08-31\",\n        \"conversionRate\": \"0.786300000000000\",\n        \"createdOn\": \"2023-07-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-07-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2023-11-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-11-01\",\n        \"effectiveTo\": \"2023-11-30\",\n        \"conversionRate\": \"0.915500000000000\",\n        \"createdOn\": \"2023-10-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-10-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-11-01\",\n        \"effectiveTo\": \"2023-11-30\",\n        \"conversionRate\": \"0.786300000000000\",\n        \"createdOn\": \"2023-10-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2023-10-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2023-12-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2023-12-01\",\n        \"effectiveTo\": \"2023-12-31\",\n        \"conversionRate\": \"0.915500000000000\",\n        \"createdOn\": \"2023-12-01T05:26:34.000Z\",\n        \"modifiedOn\": \"2023-12-01T05:26:34.000Z\",\n        \"createdBy\": 142,\n        \"modifiedBy\": 142\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2023-12-01\",\n        \"effectiveTo\": \"2023-12-31\",\n        \"conversionRate\": \"0.786300000000000\",\n        \"createdOn\": \"2023-12-01T05:26:34.000Z\",\n        \"modifiedOn\": \"2023-12-01T05:26:34.000Z\",\n        \"createdBy\": 142,\n        \"modifiedBy\": 142\n      }\n    ],\n    \"2024-03-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-03-01\",\n        \"effectiveTo\": \"2024-03-31\",\n        \"conversionRate\": \"0.916186000000000\",\n        \"createdOn\": \"2024-02-29T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-02-29T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-03-01\",\n        \"effectiveTo\": \"2024-03-31\",\n        \"conversionRate\": \"0.793941000000000\",\n        \"createdOn\": \"2024-02-29T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-02-29T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2024-01-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-01-01\",\n        \"effectiveTo\": \"2024-01-31\",\n        \"conversionRate\": \"0.915500000000000\",\n        \"createdOn\": \"2024-01-01T05:19:01.000Z\",\n        \"modifiedOn\": \"2024-01-01T05:19:01.000Z\",\n        \"createdBy\": 142,\n        \"modifiedBy\": 142\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-01-01\",\n        \"effectiveTo\": \"2024-01-31\",\n        \"conversionRate\": \"0.786300000000000\",\n        \"createdOn\": \"2024-01-01T05:19:01.000Z\",\n        \"modifiedOn\": \"2024-01-01T05:19:01.000Z\",\n        \"createdBy\": 142,\n        \"modifiedBy\": 142\n      }\n    ],\n    \"2024-05-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-05-01\",\n        \"effectiveTo\": \"2024-05-31\",\n        \"conversionRate\": \"0.919976000000000\",\n        \"createdOn\": \"2024-04-30T23:55:29.000Z\",\n        \"modifiedOn\": \"2024-04-30T23:55:29.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-05-01\",\n        \"effectiveTo\": \"2024-05-31\",\n        \"conversionRate\": \"0.797180000000000\",\n        \"createdOn\": \"2024-04-30T23:55:29.000Z\",\n        \"modifiedOn\": \"2024-04-30T23:55:29.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2024-02-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-02-01\",\n        \"effectiveTo\": \"2024-02-29\",\n        \"conversionRate\": \"0.916186000000000\",\n        \"createdOn\": \"2024-02-01T08:18:09.000Z\",\n        \"modifiedOn\": \"2024-02-01T08:18:09.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-02-01\",\n        \"effectiveTo\": \"2024-02-29\",\n        \"conversionRate\": \"0.793941000000000\",\n        \"createdOn\": \"2024-02-01T08:17:32.000Z\",\n        \"modifiedOn\": \"2024-02-01T08:17:32.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      }\n    ],\n    \"2024-04-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-04-01\",\n        \"effectiveTo\": \"2024-04-30\",\n        \"conversionRate\": \"0.919976000000000\",\n        \"createdOn\": \"2024-04-02T11:37:28.000Z\",\n        \"modifiedOn\": \"2024-04-02T11:37:28.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-04-01\",\n        \"effectiveTo\": \"2024-04-30\",\n        \"conversionRate\": \"0.797180000000000\",\n        \"createdOn\": \"2024-04-02T11:37:00.000Z\",\n        \"modifiedOn\": \"2024-04-02T11:37:00.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      }\n    ],\n    \"2024-06-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-06-01\",\n        \"effectiveTo\": \"2024-06-30\",\n        \"conversionRate\": \"0.919976000000000\",\n        \"createdOn\": \"2024-06-01T06:44:59.000Z\",\n        \"modifiedOn\": \"2024-06-01T06:44:59.000Z\",\n        \"createdBy\": 73,\n        \"modifiedBy\": 73\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-06-01\",\n        \"effectiveTo\": \"2024-06-30\",\n        \"conversionRate\": \"0.797180000000000\",\n        \"createdOn\": \"2024-06-01T06:44:59.000Z\",\n        \"modifiedOn\": \"2024-06-01T06:44:59.000Z\",\n        \"createdBy\": 73,\n        \"modifiedBy\": 73\n      }\n    ],\n    \"2024-09-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-09-01\",\n        \"effectiveTo\": \"2024-09-30\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2024-08-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-08-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-09-01\",\n        \"effectiveTo\": \"2024-09-30\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2024-08-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-08-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2024-07-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-07-01\",\n        \"effectiveTo\": \"2024-07-31\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2024-07-08T14:50:07.000Z\",\n        \"modifiedOn\": \"2024-07-08T14:50:07.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-07-01\",\n        \"effectiveTo\": \"2024-07-31\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2024-07-08T14:50:07.000Z\",\n        \"modifiedOn\": \"2024-07-08T14:50:07.000Z\",\n        \"createdBy\": 4,\n        \"modifiedBy\": 4\n      }\n    ],\n    \"2024-08-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-08-01\",\n        \"effectiveTo\": \"2024-08-31\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2024-07-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-07-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-08-01\",\n        \"effectiveTo\": \"2024-08-31\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2024-07-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-07-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2024-10-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-10-01\",\n        \"effectiveTo\": \"2024-10-31\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2024-09-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-09-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-10-01\",\n        \"effectiveTo\": \"2024-10-31\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2024-09-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-09-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2024-11-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-11-01\",\n        \"effectiveTo\": \"2024-11-30\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2024-10-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2024-10-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-11-01\",\n        \"effectiveTo\": \"2024-11-30\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2024-10-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2024-10-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2024-12-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2024-12-01\",\n        \"effectiveTo\": \"2024-12-31\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2024-11-30T23:55:31.000Z\",\n        \"modifiedOn\": \"2024-11-30T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2024-12-01\",\n        \"effectiveTo\": \"2024-12-31\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2024-11-30T23:55:31.000Z\",\n        \"modifiedOn\": \"2024-11-30T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2025-01-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2025-01-01\",\n        \"effectiveTo\": \"2025-01-31\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2024-12-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-12-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2025-01-01\",\n        \"effectiveTo\": \"2025-01-31\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2024-12-31T23:55:30.000Z\",\n        \"modifiedOn\": \"2024-12-31T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2025-02-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2025-02-01\",\n        \"effectiveTo\": \"2025-02-28\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2025-01-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-01-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2025-02-01\",\n        \"effectiveTo\": \"2025-02-28\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2025-01-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-01-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2025-03-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2025-03-01\",\n        \"effectiveTo\": \"2025-03-31\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2025-02-28T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-02-28T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2025-03-01\",\n        \"effectiveTo\": \"2025-03-31\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2025-02-28T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-02-28T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2025-04-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2025-04-01\",\n        \"effectiveTo\": \"2025-04-30\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2025-03-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-03-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2025-04-01\",\n        \"effectiveTo\": \"2025-04-30\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2025-03-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-03-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2025-05-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2025-05-01\",\n        \"effectiveTo\": \"2025-05-31\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2025-04-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2025-04-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2025-05-01\",\n        \"effectiveTo\": \"2025-05-31\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2025-04-30T23:55:30.000Z\",\n        \"modifiedOn\": \"2025-04-30T23:55:30.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2025-06-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2025-06-01\",\n        \"effectiveTo\": \"2025-06-30\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2025-05-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-05-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2025-06-01\",\n        \"effectiveTo\": \"2025-06-30\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2025-05-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-05-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2025-07-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2025-07-01\",\n        \"effectiveTo\": \"2025-07-31\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2025-06-30T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-06-30T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2025-07-01\",\n        \"effectiveTo\": \"2025-07-31\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2025-06-30T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-06-30T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ],\n    \"2025-08-01\": [\n      {\n        \"currencyDefinitionId\": 2,\n        \"currencyCode\": \"EUR\",\n        \"effectiveFrom\": \"2025-08-01\",\n        \"effectiveTo\": \"2025-08-31\",\n        \"conversionRate\": \"0.929190000000000\",\n        \"createdOn\": \"2025-07-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-07-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      },\n      {\n        \"currencyDefinitionId\": 64,\n        \"currencyCode\": \"GBP\",\n        \"effectiveFrom\": \"2025-08-01\",\n        \"effectiveTo\": \"2025-08-31\",\n        \"conversionRate\": \"0.787213000000000\",\n        \"createdOn\": \"2025-07-31T23:55:31.000Z\",\n        \"modifiedOn\": \"2025-07-31T23:55:31.000Z\",\n        \"createdBy\": 1,\n        \"modifiedBy\": 1\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8b2a30a9-9b2a-48de-aa15-3c5551e633e3",
+          "name": "Get Exchange Rate by Month",
+          "request": {
+            "name": "Get Exchange Rate by Month",
+            "description": {},
+            "url": {
+              "path": [
+                "v2",
+                "currencies",
+                "exchange-rates",
+                "2025-01"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "444dd067-4922-4b7a-8211-b47489242d91",
+              "name": "Get Exchange Rate by Month",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "currencies",
+                    "exchange-rates",
+                    "2025-01"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"currencyDefinitionId\": 2,\n      \"currencyCode\": \"EUR\",\n      \"effectiveFrom\": \"2025-01-01\",\n      \"effectiveTo\": \"2025-01-31\",\n      \"conversionRate\": \"0.929190000000000\",\n      \"createdOn\": \"2024-12-31T23:55:30.000Z\",\n      \"modifiedOn\": \"2024-12-31T23:55:30.000Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    },\n    {\n      \"currencyDefinitionId\": 64,\n      \"currencyCode\": \"GBP\",\n      \"effectiveFrom\": \"2025-01-01\",\n      \"effectiveTo\": \"2025-01-31\",\n      \"conversionRate\": \"0.787213000000000\",\n      \"createdOn\": \"2024-12-31T23:55:30.000Z\",\n      \"modifiedOn\": \"2024-12-31T23:55:30.000Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 1\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "28906834-2876-4f6c-aac1-22793c05cfc7",
+    "name": "Velaris Public Activity Currencies API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

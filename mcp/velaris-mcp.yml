@@ -2,10 +2,10 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: openapi/velaris-openapi.yml
-note: No published/hosted Velaris MCP server was found (docs, npm, MCP registries searched 2026-07-21). Velaris'
-  own llms.txt states the platform "supports MCP for AI agent access to Velaris data", but no public server URL
-  or install doc is published — access appears to be in-product. This is a candidate tool surface derived from the
-  public OpenAPI, one tool per operation.
+note: No published/hosted Velaris MCP server was found (docs, npm, MCP registries searched 2026-07-21).
+  Velaris' own llms.txt states the platform "supports MCP for AI agent access to Velaris data", but no
+  public server URL or install doc is published — access appears to be in-product. This is a candidate
+  tool surface derived from the public OpenAPI, one tool per operation.
 server:
   name: velaris
   transport: http
@@ -320,3 +320,9 @@ tools:
 - name: get_user_integrations
   description: Get User Integrations
   source_operation: openapi/velaris-openapi.yml#getUserIntegrations
+deployment:
+  mode: none
+  verified: derived
+  tools: 103
+  checked: '2026-08-12'
+  source: catalog MCP census

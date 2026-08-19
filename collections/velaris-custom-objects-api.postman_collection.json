@@ -1,0 +1,1882 @@
+{
+  "item": [
+    {
+      "id": "e8aa270f-3b70-4fa2-bdab-2f6b81a308af",
+      "name": "Custom Objects",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "00833286-35bb-4671-9450-6e8ced589b97",
+          "name": "Get Entity Custom Links By ID",
+          "request": {
+            "name": "Get Entity Custom Links By ID",
+            "description": {
+              "content": "<p>This endpoint retrieves the links associated with a specific entity at the given level and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>level</code></td>\n<td>(string): Entity Level  <br />- Organization: 'organizations'  <br />- Account: 'accounts'  <br />- Contact: 'contacts'  <br />- Opportunity: 'opportunities'  <br />- Risk: 'risks'</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Entity ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passing external ID.</td>\n</tr>\n</tbody>\n</table>\n</div><p>Example:</p>\n<ul>\n<li><p>With external id: <code>/organizations/extid-id/links</code></p>\n</li>\n<li><p>With internal id: <code>/organizations/srcid-id/links</code></p>\n</li>\n</ul>\n<h3 id=\"response\">Response</h3>\n<p>The response will include the list of links associated with the specified entity.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                ":level",
+                ":id",
+                "links"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e265b6bf-1c5e-4664-90db-8c1d41e1011f",
+              "name": "Get Entity Custom Links By ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    ":level",
+                    ":id",
+                    "links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"custom_link_api1\": [],\n    \"custom_link_api2\": [\n      2470\n    ],\n    \"custom_link_api3\": [],\n    \"custom_link_api4\": [\n      2984\n    ],\n    \"custom_link_api5\": []\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "757502a0-9827-4625-bda9-3275de3732a1",
+          "name": "Add Custom Links for System Entities",
+          "request": {
+            "name": "Add Custom Links for System Entities",
+            "description": {
+              "content": "<p>This endpoint creates links for a specific system entity by passing its level and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>apiName</code></td>\n<td>(string): Custom Link API Name</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Entity ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passing external ID.</td>\n</tr>\n<tr>\n<td><code>level</code></td>\n<td>(string): Entity Level  <br />- Organization: 'organizations'  <br />- Account: 'accounts'  <br />- Contact: 'contacts'  <br />- Opportunity: 'opportunities'  <br />- Risk: 'risks'</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Request Body</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>identifier_key</code></td>\n<td>External IDs - \"ext_id\"  <br />Internal IDs - \"int_id\"</td>\n</tr>\n</tbody>\n</table>\n</div><p>Example:</p>\n<ul>\n<li><p>With external id: <code>/core/contacts/extid-id/links</code></p>\n</li>\n<li><p>With internal id: <code>/core/contacts/srcid-id/links</code></p>\n</li>\n</ul>\n<h3 id=\"response\">Response</h3>\n<p>The response will include the list of links successfully created for the specified system entity.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                ":level",
+                ":id",
+                "links"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"links\": {\n    \"invoice_contacts\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"inv_343\",\n        \"inv_5342\"\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6148e2b0-4d41-4490-9d0b-2e1bad8783c9",
+              "name": "Add Custom Links for System Entities",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    ":level",
+                    ":id",
+                    "links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"links\": {\n    \"invoice_contacts\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"inv_343\",\n        \"inv_5342\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"invoice_contacts\": [\n      243,\n      543\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2687c4e2-64ba-4aaa-b996-6746daed360e",
+          "name": "Get Custom Object Instance Custom Links by ID",
+          "request": {
+            "name": "Get Custom Object Instance Custom Links by ID",
+            "description": {
+              "content": "<p>This endpoint retrieves the links associated with a specific custom object by its API name and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>coApiName</code></td>\n<td>(string): Custom Object API Name</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Custom Object Instance ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passing external ID.</td>\n</tr>\n</tbody>\n</table>\n</div><p>Example:</p>\n<ul>\n<li><p>With external id: <code>/custom-objects/invoices/extid-id/links</code></p>\n</li>\n<li><p>With internal id: <code>/custom-objects/invoices/srcid-id/links</code></p>\n</li>\n</ul>\n<h3 id=\"response\">Response</h3>\n<p>The response will include the list of links associated with the specified custom object instance.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":coApiName",
+                ":id",
+                "links"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "98b860ae-b46c-48c2-9923-404df3ecc6fd",
+              "name": "Get Custom Object Instance Custom Links by ID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":coApiName",
+                    ":id",
+                    "links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"custom_link_api1\": [\n      343\n    ],\n    \"custom_link_api2\": [\n      6324\n    ],\n    \"custom_link_api3\": [],\n    \"custom_link_api4\": [\n      845\n    ],\n    \"custom_link_api5\": []\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5df0f785-6a34-4843-9c53-a4c3eb0d21e5",
+          "name": "Add Custom Links for Custom Object Instances",
+          "request": {
+            "name": "Add Custom Links for Custom Object Instances",
+            "description": {
+              "content": "<p>This endpoint creates links for a specific custom object instance by its API name and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>coApiName</code></td>\n<td>(string): Custom Object API Name.</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Custom Object Instance ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passing external ID.</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Request Body</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>identifier_key</code></td>\n<td>External IDs - \"ext_id\"  <br />Internal IDs - \"int_id\"  <br />Emails (For Contacts) - \"email\"</td>\n</tr>\n</tbody>\n</table>\n</div><p>Example:</p>\n<ul>\n<li><p>With external id: <code>/custom-object/invoice/extid-id/links</code></p>\n</li>\n<li><p>With internal id: <code>/custom-object/invoice/srcid-id/links</code></p>\n</li>\n</ul>\n<h3 id=\"response\">Response</h3>\n<p>The response will include the list of links successfully created for the specified custom object instance.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":coApiName",
+                ":id",
+                "links"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"links\": {\n    \"invoice_contacts\": {\n      \"identifier_key\": \"email\",\n      \"ids\": [\n        \"mehani@gmail.com\"\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d4fe12a4-5a0a-4819-9e64-c9edad4fcc01",
+              "name": "Add Custom Links for Custom Object Instances",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":coApiName",
+                    ":id",
+                    "links"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"links\": {\n    \"invoice_contacts\": {\n      \"identifier_key\": \"email\",\n      \"ids\": [\n        \"mehani@gmail.com\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"invoice_contacts\": [\n      343\n    ],\n    \"invoice_accounts\": [\n      1,\n      2,\n      3,\n      4,\n      5\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c2338331-f292-414d-9ea8-f5fa7cba4ce3",
+          "name": "Get Entity Custom Links By Link Api Name",
+          "request": {
+            "name": "Get Entity Custom Links By Link Api Name",
+            "description": {
+              "content": "<p>This endpoint retrieves the links associated with a specific entity by its level, ID, and custom link API name.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>apiName</code></td>\n<td>(string): Custom Link API Name</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Entity ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passing external ID.</td>\n</tr>\n<tr>\n<td><code>level</code></td>\n<td>(string): Entity Level  <br />- Organization: 'organizations'  <br />- Account: 'accounts'  <br />- Contact: 'contacts'  <br />- Opportunity: 'opportunities'  <br />- Risk: 'risks'</td>\n</tr>\n</tbody>\n</table>\n</div><p>Example:</p>\n<ul>\n<li><p>With external id: <code>/core/opportunities/extid-id/links/custom_link__api3534</code></p>\n</li>\n<li><p>With internal id: <code>/core/opportunities/srcid-id/links/custom_link__api3534</code></p>\n</li>\n</ul>\n<h3 id=\"response\">Response</h3>\n<p>The response will include the list of links associated with the specified system entity.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                ":level",
+                ":id",
+                "links",
+                ":apiName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f2906d6e-f1f9-4647-b40c-d75317b12808",
+              "name": "Get Entity Custom Links By Link Api Name",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    ":level",
+                    ":id",
+                    "links",
+                    ":apiName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"custom_link_4563\": [\n      343,\n      453\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7fecbe0-0882-4aac-9a2d-f93ba6551e8b",
+          "name": "Get Custom Links for Custom Objects By Link Api Name",
+          "request": {
+            "name": "Get Custom Links for Custom Objects By Link Api Name",
+            "description": {
+              "content": "<p>This endpoint retrieves the links associated with a specific custom object by its API name, ID, and custom link API name.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>coApiName</code></td>\n<td>(string): Custom Object API Name</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Custom Object Instance ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passing external ID.</td>\n</tr>\n<tr>\n<td><code>apiName</code></td>\n<td>(string): Custom Link Api Name</td>\n</tr>\n</tbody>\n</table>\n</div><p>Example:</p>\n<ul>\n<li><p>With external id: <code>/custom-object/invoice/extid-id/links/custom_link_api3534</code></p>\n</li>\n<li><p>With internal id: <code>/custom-object/invoice/srcid-id/links/custom_link_api3534</code></p>\n</li>\n</ul>\n<h3 id=\"response\">Response</h3>\n<p>The response will include the list of links associated with the specified custom object instance.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":coApiName",
+                ":id",
+                "links",
+                ":apiName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ab1acb92-fc15-4f80-89f2-2f66cb847622",
+              "name": "Get Custom Links for Custom Objects By Link Api Name",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":coApiName",
+                    ":id",
+                    "links",
+                    ":apiName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"custom_link_api5\": [\n      745,\n      345,\n      243,\n      14\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6072abe-d085-46e0-8477-6f43d3690f4f",
+          "name": "Archive Custom Links for System Entity",
+          "request": {
+            "name": "Archive Custom Links for System Entity",
+            "description": {
+              "content": "<p>This endpoint archives existing links of a specific system entity by passing its level and ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>id</code></td>\n<td>(string): Entity ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passing external ID.</td>\n</tr>\n<tr>\n<td><code>level</code></td>\n<td>(string): Entity Level  <br />- Organization: 'organizations'  <br />- Account: 'accounts'  <br />- Contact: 'contacts'  <br />- Opportunity: 'opportunities'  <br />- Risk: 'risks'</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Request Body</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>identifier_key</code></td>\n<td>External IDs - \"ext_id\"  <br />Internal IDs - \"int_id\"</td>\n</tr>\n</tbody>\n</table>\n</div><p>Example:</p>\n<ul>\n<li><p>With external id: <code>/core/contacts/extid-id/archive</code></p>\n</li>\n<li><p>With internal id: <code>/core/contacts/srcid-id/archive</code></p>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "core",
+                ":level",
+                ":id",
+                "links",
+                "archive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"links\": {\n    \"invoice_accounts\": {\n      \"identifier_key\": \"int_id\",\n      \"ids\": [\n        4654\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7b0368ba-2dfb-428e-96ef-d7592cc37e5e",
+              "name": "Archive Custom Links for System Entity",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "core",
+                    ":level",
+                    ":id",
+                    "links",
+                    "archive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"links\": {\n    \"invoice_accounts\": {\n      \"identifier_key\": \"int_id\",\n      \"ids\": [\n        4654\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"invoice_accounts\": []\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "225f3e3e-0771-4fb6-a758-5c14442bc15a",
+          "name": "Archive Custom Links for Custom Object Instance",
+          "request": {
+            "name": "Archive Custom Links for Custom Object Instance",
+            "description": {
+              "content": "<p>This endpoint archives existing links of a specific custom object instance by passing its API name and instance ID.</p>\n<h3 id=\"request\">Request</h3>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Path Parameters</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>coApiName</code></td>\n<td>(string): Custom Object API Name.</td>\n</tr>\n<tr>\n<td><code>id</code></td>\n<td>(string): Custom Object Instance ID  <br />Should be in the format \"srcid-{velarisId}\" when passing internal ID or \"extid-{externalId} when passing external ID.</td>\n</tr>\n</tbody>\n</table>\n</div><div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Request Body</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td><code>identifier_key</code></td>\n<td>External IDs - \"ext_id\"  <br />Internal IDs - \"int_id\"  <br />Emails (For Contacts) - \"email\"</td>\n</tr>\n</tbody>\n</table>\n</div><p>Example:</p>\n<ul>\n<li><p>With external id: <code>/custom-objects/invoice/extid-id/archive</code></p>\n</li>\n<li><p>With internal id: <code>/custom-objects/invoice/srcid-id/archive</code></p>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":coApiName",
+                ":id",
+                "links",
+                "archive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"links\": {\n    \"invoice_accounts\": {\n      \"identifier_key\": \"int_id\",\n      \"ids\": [\n        876,\n        453\n      ]\n    },\n    \"invoice_opportuniy\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"opp434\",\n        \"opp435\"\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bd53ea4b-ea2b-4322-856b-e9a1e1d0f3f2",
+              "name": "Archive Custom Links for Custom Object Instance",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":coApiName",
+                    ":id",
+                    "links",
+                    "archive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"links\": {\n    \"invoice_accounts\": {\n      \"identifier_key\": \"int_id\",\n      \"ids\": [\n        876,\n        453\n      ]\n    },\n    \"invoice_opportuniy\": {\n      \"identifier_key\": \"ext_id\",\n      \"ids\": [\n        \"opp434\",\n        \"opp435\"\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"invoice_accounts\": [],\n    \"invoice_opportuniy\": []\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fa9766dc-c4ac-4287-9840-9af771bb6bf8",
+          "name": "Get Custom Object Definitions",
+          "request": {
+            "name": "Get Custom Object Definitions",
+            "description": {
+              "content": "<p>Returns list of custom object schemas. This includes information like custom object names, API names, and more.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-object-schemas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75ea0577-67b7-44d2-8cd1-4f9eddae0f49",
+              "name": "Sucess - 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-object-schemas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"customObjectId\": 1,\n      \"singularObjectName\": \"invoice\",\n      \"pluralObjectName\": \"invoices\",\n      \"icon\": \"invoice-icon\",\n      \"apiName\": \"invoice\",\n      \"externalId\": \"invoice-object\",\n      \"primaryColor\": \"#9575FF\",\n      \"isSystem\": false,\n      \"description\": \"invoice object\",\n      \"pinnedUserId\": null,\n      \"isPinned\": false\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "06d4d237-a773-4b98-a7ff-61edca36544e",
+          "name": "Get CO instances",
+          "request": {
+            "name": "Get CO instances",
+            "description": {
+              "content": "<p>Returns list of custom object instances. This includes information like custom object id, system attributes, and custom attributes</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":co_api_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4c46ba9a-7579-41e6-a40c-c6ea8414e452",
+              "name": "Success - 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":co_api_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"customObjectInstanceId\": 1,\n      \"imageId\": 1,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1001\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 1,\n      \"globalFields\": {\n        \"name\": \"Invoice 1001\"\n      },\n      \"created\": \"2024-03-12T11:33:45.000Z\",\n      \"modified\": \"2024-03-13T13:28:44.000Z\",\n      \"createdBy\": 13,\n      \"modifiedBy\": 1,\n      \"properties\": {\n        \"name\": \"Invoice 1001\",\n        \"subscription_id\": \"subscription-002\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43c533b1-a03d-4474-865a-0f1161e761da",
+              "name": "Not Found - 404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":co_api_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07dac423-e5e6-4551-9f72-a1b432593fff",
+          "name": "Create CO instance",
+          "request": {
+            "name": "Create CO instance",
+            "description": {
+              "content": "<p>Creates a custom object instance. External id, and custom attributes of the instance should be provided</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":co_api_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b314b968-d0a7-4253-a868-e8a5cfaf3508",
+              "name": "Success - 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":co_api_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fc9a4e7a-237d-499d-ac0a-b747edab99f8",
+          "name": "Get CO instances V2",
+          "request": {
+            "name": "Get CO instances V2",
+            "description": {
+              "content": "<p>Returns list of custom object instances. This includes information like custom object id, system attributes, and custom attributes.</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "custom-objects",
+                ":co_api_name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cb3dcf13-77dd-448b-b21d-deb25de21537",
+              "name": "Success - 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "custom-objects",
+                    ":co_api_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"customObjectInstanceId\": 11,\n      \"imageId\": 1,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1001\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 1,\n      \"globalFields\": {\n        \"name\": \"Invoice 1001\"\n      },\n      \"created\": \"2024-03-12T11:33:45.000Z\",\n      \"modified\": \"2024-03-13T13:28:44.000Z\",\n      \"createdBy\": 13,\n      \"modifiedBy\": 1,\n      \"properties\": {\n        \"name\": \"Invoice 1001\",\n        \"subscription_id\": \"subscription-002\"\n      }\n    },\n    {\n      \"customObjectInstanceId\": 12,\n      \"imageId\": 2,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1002\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Invoice 1002\"\n      },\n      \"created\": \"2024-04-01T09:20:00.000Z\",\n      \"modified\": \"2024-04-01T10:00:00.000Z\",\n      \"createdBy\": 14,\n      \"modifiedBy\": 2,\n      \"properties\": {\n        \"name\": \"Invoice 1002\",\n        \"subscription_id\": \"subscription-003\"\n      }\n    },\n    {\n      \"customObjectInstanceId\": 13,\n      \"imageId\": 3,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1003\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Invoice 1003\"\n      },\n      \"created\": \"2024-04-05T15:30:00.000Z\",\n      \"modified\": \"2024-04-05T16:00:00.000Z\",\n      \"createdBy\": 15,\n      \"modifiedBy\": 3,\n      \"properties\": {\n        \"name\": \"Invoice 1003\",\n        \"subscription_id\": \"subscription-004\"\n      }\n    },\n    {\n      \"customObjectInstanceId\": 14,\n      \"imageId\": 4,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1004\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Invoice 1004\"\n      },\n      \"created\": \"2024-04-10T12:45:00.000Z\",\n      \"modified\": \"2024-04-10T13:15:00.000Z\",\n      \"createdBy\": 16,\n      \"modifiedBy\": 4,\n      \"properties\": {\n        \"name\": \"Invoice 1004\",\n        \"subscription_id\": \"subscription-005\"\n      }\n    },\n    {\n      \"customObjectInstanceId\": 15,\n      \"imageId\": 5,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1005\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Invoice 1005\"\n      },\n      \"created\": \"2024-04-15T14:00:00.000Z\",\n      \"modified\": \"2024-04-15T14:30:00.000Z\",\n      \"createdBy\": 17,\n      \"modifiedBy\": 5,\n      \"properties\": {\n        \"name\": \"Invoice 1005\",\n        \"subscription_id\": \"subscription-006\"\n      }\n    },\n    {\n      \"customObjectInstanceId\": 16,\n      \"imageId\": 6,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1006\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Invoice 1006\"\n      },\n      \"created\": \"2024-04-20T10:30:00.000Z\",\n      \"modified\": \"2024-04-20T11:00:00.000Z\",\n      \"createdBy\": 18,\n      \"modifiedBy\": 6,\n      \"properties\": {\n        \"name\": \"Invoice 1006\",\n        \"subscription_id\": \"subscription-007\"\n      }\n    },\n    {\n      \"customObjectInstanceId\": 17,\n      \"imageId\": 7,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1007\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Invoice 1007\"\n      },\n      \"created\": \"2024-04-25T08:15:00.000Z\",\n      \"modified\": \"2024-04-25T08:45:00.000Z\",\n      \"createdBy\": 19,\n      \"modifiedBy\": 7,\n      \"properties\": {\n        \"name\": \"Invoice 1007\",\n        \"subscription_id\": \"subscription-008\"\n      }\n    },\n    {\n      \"customObjectInstanceId\": 18,\n      \"imageId\": 8,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1008\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Invoice 1008\"\n      },\n      \"created\": \"2024-04-30T09:45:00.000Z\",\n      \"modified\": \"2024-04-30T10:15:00.000Z\",\n      \"createdBy\": 20,\n      \"modifiedBy\": 8,\n      \"properties\": {\n        \"name\": \"Invoice 1008\",\n        \"subscription_id\": \"subscription-009\"\n      }\n    },\n    {\n      \"customObjectInstanceId\": 19,\n      \"imageId\": 9,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1009\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Invoice 1009\"\n      },\n      \"created\": \"2024-05-05T11:30:00.000Z\",\n      \"modified\": \"2024-05-05T12:00:00.000Z\",\n      \"createdBy\": 21,\n      \"modifiedBy\": 9,\n      \"properties\": {\n        \"name\": \"Invoice 1009\",\n        \"subscription_id\": \"subscription-010\"\n      }\n    },\n    {\n      \"customObjectInstanceId\": 20,\n      \"imageId\": 10,\n      \"about\": \"about\",\n      \"externalId\": \"invoice-1010\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Invoice 1010\"\n      },\n      \"created\": \"2024-05-10T07:50:00.000Z\",\n      \"modified\": \"2024-05-10T08:20:00.000Z\",\n      \"createdBy\": 22,\n      \"modifiedBy\": 10,\n      \"properties\": {\n        \"name\": \"Invoice 1010\",\n        \"subscription_id\": \"subscription-011\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4821d503-a623-4571-8f2b-f6c283858e80",
+              "name": "Not Found - 404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "custom-objects",
+                    ":co_api_name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2bc97b6a-302d-4102-b62d-631ffcd07d46",
+          "name": "Get CO Instance by Id",
+          "request": {
+            "name": "Get CO Instance by Id",
+            "description": {
+              "content": "<p>Returns the custom object instance with the given instance id. This includes the system attributes and the custom attributes of the instance.</p>\n<p>Custom object instance id should be in the following format.</p>\n<ul>\n<li><p>internal id → <code>srcid-(internal id)</code></p>\n</li>\n<li><p>external id → <code>extid-(external id)</code></p>\n</li>\n</ul>\n<p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":co_api_name",
+                ":instanceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8d7c218d-9071-4740-a4b9-d6210a41c107",
+              "name": "Success - 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":co_api_name",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8b826d7b-d808-4f80-8688-c7e95c2b2bf4",
+              "name": "Not Found 404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":co_api_name",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5085ec1-1d49-42aa-b03e-53b5e4394ae3",
+          "name": "Archive CO instance",
+          "request": {
+            "name": "Archive CO instance",
+            "description": {
+              "content": "<p>Archives the custom object instance with the given instance id.  </p>\n<p>Custom object instance id should be in the following format.</p>\n<ul>\n<li><p>internal id → <code>srcid-(internal id)</code></p>\n</li>\n<li><p>external id → <code>extid-(external id)</code></p>\n</li>\n</ul>\n<p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":co_api_name",
+                ":instanceId",
+                "archive"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e80ff1a0-f40b-499c-9dde-b3352683c422",
+              "name": "Success - 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":co_api_name",
+                    ":instanceId",
+                    "archive"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "446b83f2-9941-425e-9bf0-4e0ec5e16b44",
+          "name": "Restore CO Instance",
+          "request": {
+            "name": "Restore CO Instance",
+            "description": {
+              "content": "<p>Restore the custom object instance with the given instance id.</p>\n<p>Custom object instance id should be in the following format.</p>\n<ul>\n<li>internal id → <code>srcid-(internal id)</code></li>\n<li>external id → <code>extid-(external id)</code></li>\n</ul>\n<p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":co_api_name",
+                ":instanceId",
+                "restore"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8d67ee5a-8aec-4e41-8c31-a38a9f5eea77",
+              "name": "Success - 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":co_api_name",
+                    ":instanceId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c15d401a-1d04-463f-9103-1be473400b1d",
+              "name": "Not Acceptable - 406",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":co_api_name",
+                    ":instanceId",
+                    "restore"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Acceptable",
+              "code": 406,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b745b933-9663-4e89-8cac-211df9ca31f0",
+          "name": "Update CO instance",
+          "request": {
+            "name": "Update CO instance",
+            "description": {
+              "content": "<p>Updates custom object instance with the given instance id. External id, and custom attributes of the instance should be provided.</p>\n<p>Custom object instance id should be in the following format.</p>\n<ul>\n<li><p>internal id → <code>srcid-(internal id)</code></p>\n</li>\n<li><p>external id → <code>extid-(external id)</code></p>\n</li>\n</ul>\n<p>example: <code>srcid-1</code> , <code>extid-abc-123</code></p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":apiName",
+                ":instanceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "09ac80ed-2d7c-4e7e-b5c3-ed4bba7846fc",
+              "name": "Success 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":apiName",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": {\n    \"externalId\": \"invoice-0001\",\n    \"properties\": {\n      \"name\": \"Invoice 0001\"\n    },\n    \"links\": {\n      \"custom_link_relation6\": [\n        76\n      ]\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "baaf77bb-32a7-475a-8e50-ef8b44001546",
+              "name": "Not Found - 404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":apiName",
+                    ":instanceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f3839bc-0532-499d-99e9-8fd8e20a6622",
+          "name": "Search Custom Objects",
+          "request": {
+            "name": "Search Custom Objects",
+            "description": {
+              "content": "<p>Search custom object instances using custom attributes</p>\n<p>The request body should contain a list of filters up to 3 filters</p>\n<ul>\n<li><p>filters - list of filters</p>\n<ul>\n<li><p>filter - object</p>\n<ul>\n<li><p>fieldName: API name of the custom attribute</p>\n</li>\n<li><p>operator: operator which should be used in the filter</p>\n</li>\n<li><p>value: filtered value</p>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Supported Operators</strong></p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th><strong>Data type</strong></th>\n<th><strong>Operators</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>String</td>\n<td>equals, contains</td>\n</tr>\n<tr>\n<td>Number</td>\n<td>equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo</td>\n</tr>\n<tr>\n<td>Date</td>\n<td>equals, after, before, onOrAfter, onOrBefore</td>\n</tr>\n<tr>\n<td>Boolean</td>\n<td>equals</td>\n</tr>\n<tr>\n<td>Single Picklist</td>\n<td>equals</td>\n</tr>\n<tr>\n<td>Multi Picklist</td>\n<td>includes</td>\n</tr>\n<tr>\n<td>Organization / Account / Contact / User</td>\n<td>equals</td>\n</tr>\n<tr>\n<td>Organization / Account / Contact / User Picklist</td>\n<td>includes</td>\n</tr>\n</tbody>\n</table>\n</div><p><strong>Valid Format of the value</strong></p>\n<ul>\n<li><p>String: Value must be a non-empty string.</p>\n</li>\n<li><p>Number: Value must be a valid number (can be provided as a string).</p>\n</li>\n<li><p>Date: Value must be a date string in the format \"YYYY-MM-DD\".</p>\n</li>\n<li><p>Boolean: Value must be a boolean string ('true' or 'false').</p>\n</li>\n<li><p>Single Picklist, Organization, Account, Contact, User: Value must be a number.</p>\n</li>\n<li><p>Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.</p>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "custom-objects",
+                ":coApiName",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d218f8ef-9960-4eeb-a60e-649d5e8f42f4",
+              "name": "Success - 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "custom-objects",
+                    ":coApiName",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"customObjectInstanceId\": 179,\n      \"imageId\": null,\n      \"about\": null,\n      \"externalId\": \"test-externalid-2024-4\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Hat 9\"\n      },\n      \"created\": \"2024-03-13T13:29:59.000Z\",\n      \"modified\": \"2024-03-13T13:29:59.000Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 1,\n      \"properties\": {\n        \"name\": \"Hat 9\",\n        \"about\": \"this is about 2\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e765f067-0242-4546-9237-d46d946a4189",
+          "name": "Search Custom Objects V2",
+          "request": {
+            "name": "Search Custom Objects V2",
+            "description": {
+              "content": "<p>Search custom object instances using custom attributes</p>\n<p>The request body should contain a list of filters up to 3 filters</p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Query Params</th>\n<th></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>limit</td>\n<td>Number of records to fetch</td>\n</tr>\n<tr>\n<td>after</td>\n<td>Last fetched instanceId</td>\n</tr>\n<tr>\n<td>archived</td>\n<td>Archived state(true/false)</td>\n</tr>\n</tbody>\n</table>\n</div><h4 id=\"request-body\">Request Body</h4>\n<ul>\n<li><p>filters - list of filters</p>\n<ul>\n<li><p>filter - object</p>\n<ul>\n<li><p>fieldName: API name of the custom attribute</p>\n</li>\n<li><p>operator: operator which should be used in the filter</p>\n</li>\n<li><p>value: filtered value</p>\n</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<p><strong>Supported Operators</strong></p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th><strong>Data type</strong></th>\n<th><strong>Operators</strong></th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>String</td>\n<td>equals, contains</td>\n</tr>\n<tr>\n<td>Number</td>\n<td>equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo</td>\n</tr>\n<tr>\n<td>Date</td>\n<td>equals, after, before, onOrAfter, onOrBefore</td>\n</tr>\n<tr>\n<td>Boolean</td>\n<td>equals</td>\n</tr>\n<tr>\n<td>Single Picklist</td>\n<td>equals</td>\n</tr>\n<tr>\n<td>Multi Picklist</td>\n<td>includes</td>\n</tr>\n<tr>\n<td>Organization / Account / Contact / User</td>\n<td>equals</td>\n</tr>\n<tr>\n<td>Organization / Account / Contact / User Picklist</td>\n<td>includes</td>\n</tr>\n</tbody>\n</table>\n</div><p><strong>Valid Format of the value</strong></p>\n<ul>\n<li><p>String: Value must be a non-empty string.</p>\n</li>\n<li><p>Number: Value must be a valid number (can be provided as a string).</p>\n</li>\n<li><p>Date: Value must be a date string in the format \"YYYY-MM-DD\".</p>\n</li>\n<li><p>Boolean: Value must be a boolean string ('true' or 'false').</p>\n</li>\n<li><p>Single Picklist, Organization, Account, Contact, User: Value must be a number.</p>\n</li>\n<li><p>Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.</p>\n</li>\n</ul>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v2",
+                "custom-objects",
+                ":coApiName",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "199ce9e1-0339-4b18-8b6f-70844e8ed602",
+              "name": "Success - 200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v2",
+                    "custom-objects",
+                    ":coApiName",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"customObjectInstanceId\": 179,\n      \"imageId\": null,\n      \"about\": null,\n      \"externalId\": \"test-externalid-2024-4\",\n      \"lifecycleStageId\": null,\n      \"entityArchived\": 0,\n      \"globalFields\": {\n        \"name\": \"Hat 9\"\n      },\n      \"created\": \"2024-03-13T13:29:59.000Z\",\n      \"modified\": \"2024-03-13T13:29:59.000Z\",\n      \"createdBy\": 1,\n      \"modifiedBy\": 1,\n      \"properties\": {\n        \"name\": \"Hat 9\",\n        \"about\": \"this is about 2\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "598c077e-cc9b-4c54-9ecd-ae63992b74f0",
+    "name": "Velaris Public Activity Custom Objects API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}

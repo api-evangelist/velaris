@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Velaris Public Activity Attribute Change Log API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Attribute Change Log",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Attribute Changelog",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.euw1.velaris.io/attribute-change-log",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "<p><strong>Pagination</strong></p>\n<p>Attribute changelog response is paginated using the attribute changed date. To fetch the next page last received changelog chaged date should be passed as the cursor in the next request.</p>\n<p><code>Page size : 50</code></p>\n<p><strong>Request Body</strong></p>\n<div class=\"click-to-expand-wrapper is-table-wrapper\"><table>\n<thead>\n<tr>\n<th>Attribute</th>\n<th>Description</th>\n<th>Example</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>entity <em>(required)</em></td>\n<td"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

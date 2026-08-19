@@ -1,0 +1,119 @@
+{
+  "item": [
+    {
+      "id": "d293f03f-47f7-45d4-92a7-32f0fccd3b1e",
+      "name": "Lifecycles",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c5f40be5-50b6-4bfd-a013-b0a648b0df9d",
+          "name": "Get Lifecycle Stages",
+          "request": {
+            "name": "Get Lifecycle Stages",
+            "description": {
+              "content": "<p>Get active lifecycle stages in each level</p>\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "lifecycles"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9a28cb15-6eb1-4ec4-9376-7b450b065b5f",
+              "name": "200 - Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "lifecycles"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"success\",\n  \"data\": [\n    {\n      \"lifecycleStageId\": 1,\n      \"displayName\": \"Stage 1\",\n      \"isDefault\": true,\n      \"isSystem\": false,\n      \"isBoardVisible\": false,\n      \"colorCode\": null,\n      \"description\": null,\n      \"createdOn\": \"2022-08-28T20:37:41.000Z\",\n      \"createdBy\": 7,\n      \"modifiedOn\": \"2023-12-31T16:43:56.000Z\",\n      \"modifiedBy\": 7,\n      \"systemLabel\": null,\n      \"entityLevel\": 1,\n      \"archived\": 0,\n      \"order\": \"1|j\",\n      \"usage\": 5\n    },\n    {\n      \"lifecycleStageId\": 2,\n      \"displayName\": \"Stage 2\",\n      \"isDefault\": true,\n      \"isSystem\": false,\n      \"isBoardVisible\": false,\n      \"colorCode\": null,\n      \"description\": null,\n      \"createdOn\": \"2021-12-06T16:31:20.000Z\",\n      \"createdBy\": 0,\n      \"modifiedOn\": \"2022-08-09T10:31:54.000Z\",\n      \"modifiedBy\": 81,\n      \"systemLabel\": null,\n      \"entityLevel\": 1,\n      \"archived\": 0,\n      \"order\": \"1|k\",\n      \"usage\": 4773\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.euw1.velaris.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4d22e55b-328e-4f2b-ad0a-0cf5fc41e22a",
+    "name": "Velaris Public Activity Lifecycles API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).\n\nContact Support:\n Name: Velaris",
+      "type": "text/plain"
+    }
+  }
+}
