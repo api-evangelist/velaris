@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Velaris Public Activity Ticketing API
+  title: Velaris Public Ticketing API
   version: 1.0.0
   description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
   contact:
@@ -21,41 +21,31 @@ paths:
       summary: Get All Tickets
       tags:
       - Ticketing
-      description: '<p>Allowed optional parameters for filtering.</p>
+      description: 'Allowed optional parameters for filtering.
 
-        <ul>
 
-        <li><p>entityId: linked entity</p>
+        entityId: linked entity
 
-        </li>
 
-        <li><p>level: linked entity level</p>
+        level: linked entity level
 
-        </li>
 
-        <li><p>includeArchived: boolean</p>
+        includeArchived: boolean
 
-        </li>
 
-        <li><p>query:string</p>
+        query:string
 
-        </li>
 
-        <li><p>pageSize</p>
+        pageSize
 
-        </li>
 
-        <li><p>page</p>
+        page
 
-        </li>
 
-        </ul>
+        Example
 
-        <p>Example</p>
 
-        <p><code>/ticketing/tickets?level=account&amp;entityId=2</code></p>
-
-        '
+        /ticketing/tickets?level=account&entityId=2'
       responses:
         '200':
           description: OK
@@ -121,35 +111,28 @@ paths:
       summary: Create Ticket
       tags:
       - Ticketing
-      description: '<p>Allowed values</p>
+      description: 'Allowed values
 
-        <ul>
 
-        <li>requester - requester should be a contact. Email, id or external id should be presented. If requester’s email is</li>
+        requester - requester should be a contact. Email, id or external id should be presented. If requester’s email is
 
-        <li>provided and the requester is not found in Velaris, new contact will be created with email.</li>
 
-        </ul>
+        provided and the requester is not found in Velaris, new contact will be created with email.
 
-        <p><code>"requester": {"email": "</code><a href="mailto:johndoe@gmail.com"><code>johndoe@gmail.com</code></a><code>"} or {"id": 10} or {"externalId": "isosjw-ssda-123-ssd"}</code></p>
 
-        <ul>
+        "requester": {"email": "johndoe@gmail.com"} or {"id": 10} or {"externalId": "isosjw-ssda-123-ssd"}
 
-        <li>assigners - assigners should be users of velaris. Users'' email, id or externalId will be accepted.</li>
 
-        </ul>
+        assigners - assigners should be users of velaris. Users'' email, id or externalId will be accepted.
 
-        <p><code>"assigners": [{"email": "</code><a href="mailto:john@gmail.com"><code>john@gmail.com</code></a><code>"}, {"id": 10}, {"externalId": "1231-3123"}]</code></p>
 
-        <ul>
+        "assigners": [{"email": "john@gmail.com"}, {"id": 10}, {"externalId": "1231-3123"}]
 
-        <li>companies - company type is required, and id or external id should be presented.</li>
 
-        </ul>
+        companies - company type is required, and id or external id should be presented.
 
-        <p><code>"companies": [{"type": "organization", "id": 10}, {"type": "account", "externalId": "kjl-232l-323k"}]</code></p>
 
-        '
+        "companies": [{"type": "organization", "id": 10}, {"type": "account", "externalId": "kjl-232l-323k"}]'
       requestBody:
         content:
           application/json:
@@ -214,11 +197,10 @@ paths:
       summary: Get Ticket By Id
       tags:
       - Ticketing
-      description: '<p>Example</p>
+      description: 'Example
 
-        <p><code>/ticketing/tickets/10?origin=zendesk</code></p>
 
-        '
+        /ticketing/tickets/10?origin=zendesk'
       responses:
         '200':
           description: OK
@@ -256,17 +238,13 @@ paths:
       summary: Update Ticket
       tags:
       - Ticketing
-      description: '<ul>
+      description: 'Allowed values are same as in create ticket request body.
 
-        <li>Allowed values are same as in create ticket request body.</li>
 
-        </ul>
+        Example
 
-        <p>Example</p>
 
-        <p><code>/ticketing/tickets/10?origin=zendesk</code></p>
-
-        '
+        /ticketing/tickets/10?origin=zendesk'
       requestBody:
         content:
           application/json:
@@ -298,11 +276,10 @@ paths:
       summary: Delete Ticket
       tags:
       - Ticketing
-      description: '<p>Example</p>
+      description: 'Example
 
-        <p><code>/ticketing/tickets/10?origin=zendesk</code></p>
 
-        '
+        /ticketing/tickets/10?origin=zendesk'
       responses:
         '200':
           description: OK
@@ -316,9 +293,9 @@ paths:
       summary: Restore Ticket
       tags:
       - Ticketing
-      description: '<p>Example<br /><code>/ticketing/tickets/10/restore?origin=zendesk</code></p>
+      description: 'Example
 
-        '
+        /ticketing/tickets/10/restore?origin=zendesk'
       responses:
         '200':
           description: Restore Ticket
@@ -333,11 +310,10 @@ paths:
       summary: Get All Comments
       tags:
       - Ticketing
-      description: '<p>Example</p>
+      description: 'Example
 
-        <p><code>/ticketing/tickets/10/comments?origin=zendesk</code></p>
 
-        '
+        /ticketing/tickets/10/comments?origin=zendesk'
       responses:
         '200':
           description: OK
@@ -382,7 +358,31 @@ paths:
       summary: Create Comment
       tags:
       - Ticketing
-      description: "<p>Allowed values</p>\n<ul>\n<li>author - author type can be contact, visitor, admin, bot. Following values will be accepted for each author type.<ul>\n<li>contact: id, externalId, email</li>\n<li>admin: id, externalId, email</li>\n<li>visitor: email</li>\n<li>bot: no ids</li>\n</ul>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"author\": {\n  \"type\": \"contact\",\n  \"externalId\": \"gsdj-j232kj-jk312\"\n}\n\n</code></pre>"
+      description: 'Allowed values
+
+
+        author - author type can be contact, visitor, admin, bot. Following values will be accepted for each author type.
+
+
+        contact: id, externalId, email
+
+
+        admin: id, externalId, email
+
+
+        visitor: email
+
+
+        bot: no ids
+
+
+        "author": {
+
+        "type": "contact",
+
+        "externalId": "gsdj-j232kj-jk312"
+
+        }'
       requestBody:
         content:
           application/json:
@@ -423,11 +423,10 @@ paths:
       summary: Get Comment By Id
       tags:
       - Ticketing
-      description: '<p>Example</p>
+      description: 'Example
 
-        <p><code>/ticketing/tickets/10/comments/11?origin=zendesk</code></p>
 
-        '
+        /ticketing/tickets/10/comments/11?origin=zendesk'
       responses:
         '200':
           description: Get Comment By Id
@@ -455,13 +454,7 @@ paths:
       summary: Update Comment
       tags:
       - Ticketing
-      description: '<ul>
-
-        <li>Allowed values are same as in create comment request body.</li>
-
-        </ul>
-
-        '
+      description: Allowed values are same as in create comment request body.
       requestBody:
         content:
           application/json:
@@ -500,11 +493,10 @@ paths:
       summary: Delete Comment
       tags:
       - Ticketing
-      description: '<p>Example</p>
+      description: 'Example
 
-        <p><code>/ticketing/tickets/10/comments/1?origin=zendesk</code></p>
 
-        '
+        /ticketing/tickets/10/comments/1?origin=zendesk'
       responses:
         '200':
           description: OK
@@ -518,9 +510,9 @@ paths:
       summary: Get Comment by External ID
       tags:
       - Ticketing
-      description: '<p>Example<br /><code>/ticketing/tickets/10/comments/external/abc123-def456-ghi789?origin=zendesk</code></p>
+      description: 'Example
 
-        '
+        /ticketing/tickets/10/comments/external/abc123-def456-ghi789?origin=zendesk'
       responses:
         '200':
           description: Get Comment by External ID

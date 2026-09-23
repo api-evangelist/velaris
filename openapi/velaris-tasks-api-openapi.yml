@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Velaris Public Activity Tasks API
+  title: Velaris Public Tasks API
   version: 1.0.0
   description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
   contact:
@@ -21,27 +21,19 @@ paths:
       summary: Tasks
       tags:
       - Tasks
-      description: '<p>This endpoint sends an HTTP GET request to retrieve a list of tasks from the project management system. The request can include query parameters to paginate the response.</p>
+      description: 'This endpoint sends an HTTP GET request to retrieve a list of tasks from the project management system. The request can include query parameters to paginate the response.
 
-        <h4 id="request-parameters">Request Parameters</h4>
 
-        <ul>
+        Request Parameters
 
-        <li><p><code>page</code> (integer) - The page number for the task list. This parameter is used to navigate through the paginated results.</p>
 
-        </li>
+        page (integer) - The page number for the task list. This parameter is used to navigate through the paginated results.
 
-        <li><p><code>pageSize</code> (integer) - The number of tasks to return per page. This helps in controlling the volume of data returned in a single request.</p>
 
-        </li>
+        pageSize (integer) - The number of tasks to return per page. This helps in controlling the volume of data returned in a single request.
 
-        <li><p><code>myTasksOnly</code> (boolean) - FIlters the tasks that are assigned to the current user only if set to true.</p>
 
-        </li>
-
-        </ul>
-
-        '
+        myTasksOnly (boolean) - FIlters the tasks that are assigned to the current user only if set to true.'
       responses:
         '200':
           description: Tasks
@@ -98,19 +90,16 @@ paths:
       summary: Archive Task
       tags:
       - Tasks
-      description: '<p>This endpoint allows the client to archive an existing task identified by its unique ID. Archiving a task is useful for managing the task lifecycle and keeping the task list organized without permanently deleting tasks.</p>
+      description: 'This endpoint allows the client to archive an existing task identified by its unique ID. Archiving a task is useful for managing the task lifecycle and keeping the task list organized without permanently deleting tasks.
 
-        <h4 id="request-body">Request Body</h4>
 
-        <p>The request must be sent as a JSON object with the following parameter:</p>
+        Request Body
 
-        <ul>
 
-        <li><code>taskId</code> (number): The ID of the task to be archived.</li>
+        The request must be sent as a JSON object with the following parameter:
 
-        </ul>
 
-        '
+        taskId (number): The ID of the task to be archived.'
       requestBody:
         content:
           application/json:
@@ -130,25 +119,16 @@ paths:
       summary: Get Task By ID
       tags:
       - Tasks
-      description: '<p>This endpoint retrieves a specific task by its ID, allowing users to access detailed information about the task''s attributes and status.</p>
+      description: 'This endpoint retrieves a specific task by its ID, allowing users to access detailed information about the task''s attributes and status.
 
-        <h4 id="expected-input-parameters">Expected Input Parameters</h4>
 
-        <ul>
+        Expected Input Parameters
 
-        <li><p><strong>Path Parameter:</strong></p>
 
-        <ul>
+        Path Parameter:
 
-        <li><code>srcid-1</code>: The unique identifier for the task you want to retrieve.</li>
 
-        </ul>
-
-        </li>
-
-        </ul>
-
-        '
+        srcid-1: The unique identifier for the task you want to retrieve.'
       responses:
         '200':
           description: Get Task By ID
@@ -207,31 +187,22 @@ paths:
       summary: Update Task by Task Id
       tags:
       - Tasks
-      description: '<p>This endpoint allows you to update an existing task in the project management system. By sending a PUT request to the specified URL, you can modify the details of a task identified by its source ID.</p>
+      description: 'This endpoint allows you to update an existing task in the project management system. By sending a PUT request to the specified URL, you can modify the details of a task identified by its source ID.
 
-        <h2 id="possible-status-codes">Possible Status Codes</h2>
 
-        <ul>
+        Possible Status Codes
 
-        <li><p><strong>200 OK</strong>: The task was successfully updated.</p>
 
-        </li>
+        200 OK: The task was successfully updated.
 
-        <li><p><strong>400 Bad Request</strong>: The request body is malformed or missing required fields.</p>
 
-        </li>
+        400 Bad Request: The request body is malformed or missing required fields.
 
-        <li><p><strong>404 Not Found</strong>: The task with the specified source ID does not exist.</p>
 
-        </li>
+        404 Not Found: The task with the specified source ID does not exist.
 
-        <li><p><strong>500 Internal Server Error</strong>: An unexpected error occurred on the server.</p>
 
-        </li>
-
-        </ul>
-
-        '
+        500 Internal Server Error: An unexpected error occurred on the server.'
       requestBody:
         content:
           application/json:
@@ -268,25 +239,16 @@ paths:
       summary: Get Task by Source and Source ID
       tags:
       - Tasks
-      description: '<p>This endpoint retrieves a specific task by its external ID and source. It is designed to provide detailed information about the task, including its status, priority, and associated metadata.</p>
+      description: 'This endpoint retrieves a specific task by its external ID and source. It is designed to provide detailed information about the task, including its status, priority, and associated metadata.
 
-        <h4 id="expected-input-parameters">Expected Input Parameters</h4>
 
-        <ul>
+        Expected Input Parameters
 
-        <li><p><strong>Path Parameter:</strong></p>
 
-        <ul>
+        Path Parameter:
 
-        <li><code>extid-srcid-5</code>: The unique identifier for the task you want to retrieve.</li>
 
-        </ul>
-
-        </li>
-
-        </ul>
-
-        '
+        extid-srcid-5: The unique identifier for the task you want to retrieve.'
       responses:
         '200':
           description: Get Task by Source and Source ID

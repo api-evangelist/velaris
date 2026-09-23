@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Velaris Public Activity Attribute Change Log API
+  title: Velaris Public Attribute Change Log API
   version: 1.0.0
   description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
   contact:
@@ -21,67 +21,79 @@ paths:
       summary: Get Attribute Changelog
       tags:
       - Attribute Change Log
-      description: '<p><strong>Pagination</strong></p>
+      description: 'Pagination
 
-        <p>Attribute changelog response is paginated using the attribute changed date. To fetch the next page last received changelog chaged date should be passed as the cursor in the next request.</p>
 
-        <p><code>Page size : 50</code></p>
+        Attribute changelog response is paginated using the attribute changed date. To fetch the next page last received changelog chaged date should be passed as the cursor in the next request.
 
-        <p><strong>Request Body</strong></p>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Page size : 50
 
-        <thead>
 
-        <tr>
+        Request Body
 
-        <th>Attribute</th>
 
-        <th>Description</th>
+        Attribute
 
-        <th>Example</th>
+        Description
 
-        </tr>
+        Example
 
-        </thead>
 
-        <tbody>
+        entity (required)
 
-        <tr>
+        One of internal id or external id should be provided.
 
-        <td>entity <em>(required)</em></td>
 
-        <td>One of internal id or external id should be provided.  <br />  <br />Accepted values:  <br /><code>level</code>: <code>orgnization, account, contact</code>  <br /><code>internalId</code> : velaris entity id <em>(number)</em>  <br /><code>externalId</code> : velaris entity external id (<em>string)</em></td>
+        Accepted values:
 
-        <td><code>{</code>  <br /><code>"level": "organization",</code>  <br /><code>"externalId": "23487-df3242",</code>  <br /><code>"internalId": 1</code>  <br /><code>}</code></td>
+        level: orgnization, account, contact
 
-        </tr>
+        internalId : velaris entity id (number)
 
-        <tr>
+        externalId : velaris entity external id (string)
 
-        <td>filters <em>(optional)</em></td>
+        {
 
-        <td>Alteast one filter should be provided. Multiple filters from the same category cannot be provided in the same request.  <br />  <br /><strong>Attribute filter</strong> (map) <em>- filter the changelog by the attribute required</em>  <br /><code>{"name": "attribute", "operator": "isSetTo", "value": []}</code>  <br />  <br />Accepted values:  <br /><code>name</code> : <code>attribute</code>  <br /><code>operator</code> : <code>isSetTo</code>  <br /><code>value</code>: array of custom or system attributes.  <br />system attributes: <code>lifecycle_stage, owner, email, about, churn_date, churn_reason, external_id</code>  <br />custom attributes: API name of the custom attribute should be provided</td>
+        "level": "organization",
 
-        <td><code>[ { "name": "attribute", "operator": "isSetTo", "value": ["lifecycle_stage", "about"] } ]</code></td>
+        "externalId": "23487-df3242",
 
-        </tr>
+        "internalId": 1
 
-        <tr>
+        }
 
-        <td>cursor <em>(optional)</em></td>
 
-        <td>To filter the attribute changes happened before the given date time. Cursor should be in <code>yyyy-MM-dd''T''HH:mm:ss.SSSZ</code> format</td>
+        filters (optional)
 
-        <td><code>"2023-04-27T05:43:55.000Z"</code></td>
+        Alteast one filter should be provided. Multiple filters from the same category cannot be provided in the same request.
 
-        </tr>
 
-        </tbody>
+        Attribute filter (map) - filter the changelog by the attribute required
 
-        </table>
+        {"name": "attribute", "operator": "isSetTo", "value": []}
 
-        </div>'
+
+        Accepted values:
+
+        name : attribute
+
+        operator : isSetTo
+
+        value: array of custom or system attributes.
+
+        system attributes: lifecycle_stage, owner, email, about, churn_date, churn_reason, external_id
+
+        custom attributes: API name of the custom attribute should be provided
+
+        [ { "name": "attribute", "operator": "isSetTo", "value": ["lifecycle_stage", "about"] } ]
+
+
+        cursor (optional)
+
+        To filter the attribute changes happened before the given date time. Cursor should be in yyyy-MM-dd''T''HH:mm:ss.SSSZ format
+
+        "2023-04-27T05:43:55.000Z"'
       requestBody:
         content:
           application/json:

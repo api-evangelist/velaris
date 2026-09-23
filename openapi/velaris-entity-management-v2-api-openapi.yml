@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Velaris Public Activity Entity Management V2 API
+  title: Velaris Public Entity Management V2 API
   version: 1.0.0
   description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
   contact:
@@ -21,161 +21,117 @@ paths:
       summary: Get All Organizations
       tags:
       - Entity Management V2
-      description: '<p>Supported query params</p>
+      description: 'Supported query params
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        Parameter
 
-        <tr>
+        Type
 
-        <th>Parameter</th>
+        Description
 
-        <th>Type</th>
+        Default
 
-        <th>Description</th>
+        Max Value
 
-        <th>Default</th>
 
-        <th>Max Value</th>
+        after
 
-        </tr>
+        integer
 
-        </thead>
+        Use an integer to specify the starting point for pagination.
 
-        <tbody>
+        N/A
 
-        <tr>
+        N/A
 
-        <td>after</td>
 
-        <td>integer</td>
+        limit
 
-        <td>Use an integer to specify the starting point for pagination.</td>
+        integer
 
-        <td>N/A</td>
+        The number of records to return. Default is 10, and the maximum is 100.
 
-        <td>N/A</td>
+        10
 
-        </tr>
+        100
 
-        <tr>
 
-        <td>limit</td>
+        fields
 
-        <td>integer</td>
+        string
 
-        <td>The number of records to return. Default is 10, and the maximum is 100.</td>
+        Comma-separated field names to specify the fields to be included in the response. If both fields and fieldIds are provided, fieldIds takes priority.
 
-        <td>10</td>
+        N/A
 
-        <td>100</td>
+        N/A
 
-        </tr>
 
-        <tr>
+        fieldIds
 
-        <td>fields</td>
+        string
 
-        <td>string</td>
+        Comma-separated field IDs to specify the fields to be included in the response.
 
-        <td>Comma-separated field names to specify the fields to be included in the response. If both <code>fields</code> and <code>fieldIds</code> are provided, <code>fieldIds</code> takes priority.</td>
+        N/A
 
-        <td>N/A</td>
+        N/A
 
-        <td>N/A</td>
 
-        </tr>
+        archived
 
-        <tr>
+        boolean
 
-        <td>fieldIds</td>
+        Use true or false to filter the results based on their archived status.
 
-        <td>string</td>
+        N/A
 
-        <td>Comma-separated field IDs to specify the fields to be included in the response.</td>
+        N/A
 
-        <td>N/A</td>
 
-        <td>N/A</td>
+        churned
 
-        </tr>
+        boolean
 
-        <tr>
+        Use true or false to filter the results based on their churned status.
 
-        <td>archived</td>
+        N/A
 
-        <td>boolean</td>
+        N/A
 
-        <td>Use <code>true</code> or <code>false</code> to filter the results based on their archived status.</td>
 
-        <td>N/A</td>
+        externalId
 
-        <td>N/A</td>
+        string
 
-        </tr>
+        Use a string to filter results based on the external ID.
 
-        <tr>
+        N/A
 
-        <td>churned</td>
+        N/A
 
-        <td>boolean</td>
 
-        <td>Use <code>true</code> or <code>false</code> to filter the results based on their churned status.</td>
+        ownerId
 
-        <td>N/A</td>
+        integer
 
-        <td>N/A</td>
+        Use an integer to filter results based on the owner ID.
 
-        </tr>
+        N/A
 
-        <tr>
+        N/A
 
-        <td>externalId</td>
 
-        <td>string</td>
+        lifecycleStageId
 
-        <td>Use a string to filter results based on the external ID.</td>
+        integer
 
-        <td>N/A</td>
+        Use an integer to filter results based on the lifecycle stage ID.
 
-        <td>N/A</td>
+        N/A
 
-        </tr>
-
-        <tr>
-
-        <td>ownerId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the owner ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        <tr>
-
-        <td>lifecycleStageId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the lifecycle stage ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        N/A'
       responses:
         '200':
           description: OK
@@ -9889,147 +9845,86 @@ paths:
       summary: Search Organization
       tags:
       - Entity Management V2
-      description: '<p>Search organizations using custom attributes</p>
+      description: 'Search organizations using custom attributes
 
-        <p>The request body should contain a list of filters up to 5 filters</p>
 
-        <ul>
+        The request body should contain a list of filters up to 5 filters
 
-        <li><p>filters - list of filters</p>
 
-        <ul>
+        filters - list of filters
 
-        <li><p>filter - object</p>
 
-        <ul>
+        filter - object
 
-        <li><p>fieldName: API name of the custom attribute</p>
 
-        </li>
+        fieldName: API name of the custom attribute
 
-        <li><p>operator: operator which should be used in the filter</p>
 
-        </li>
+        operator: operator which should be used in the filter
 
-        <li><p>value: filtered value</p>
 
-        </li>
+        value: filtered value
 
-        </ul>
 
-        </li>
+        Supported Operators
 
-        </ul>
 
-        </li>
+        Data type
 
-        </ul>
+        Operators
 
-        <p><strong>Supported Operators</strong></p>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        String
 
-        <thead>
+        equals, contains
 
-        <tr>
 
-        <th><strong>Data type</strong></th>
+        Number
 
-        <th><strong>Operators</strong></th>
+        equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo
 
-        </tr>
 
-        </thead>
+        Date
 
-        <tbody>
+        equals, after, before, onOrAfter, onOrBefore
 
-        <tr>
 
-        <td>String</td>
+        Boolean
 
-        <td>equals, contains</td>
+        equals
 
-        </tr>
 
-        <tr>
+        Single Picklist
 
-        <td>Number</td>
+        equals
 
-        <td>equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo</td>
 
-        </tr>
+        Multi Picklist
 
-        <tr>
+        includes
 
-        <td>Date</td>
 
-        <td>equals, after, before, onOrAfter, onOrBefore</td>
+        Organization / Account / Contact / User Picklist
 
-        </tr>
+        includes
 
-        <tr>
 
-        <td>Boolean</td>
+        Valid Format of the value
 
-        <td>equals</td>
 
-        </tr>
+        String: Value must be a non-empty string.
 
-        <tr>
 
-        <td>Single Picklist</td>
+        Number: Value must be a valid number (can be provided as a string).
 
-        <td>equals</td>
 
-        </tr>
+        Date: Value must be a date string in the format "YYYY-MM-DD".
 
-        <tr>
 
-        <td>Multi Picklist</td>
+        Boolean: Value must be a boolean string (''true'' or ''false'').
 
-        <td>includes</td>
 
-        </tr>
-
-        <tr>
-
-        <td>Organization / Account / Contact / User Picklist</td>
-
-        <td>includes</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div><p><strong>Valid Format of the value</strong></p>
-
-        <ul>
-
-        <li><p>String: Value must be a non-empty string.</p>
-
-        </li>
-
-        <li><p>Number: Value must be a valid number (can be provided as a string).</p>
-
-        </li>
-
-        <li><p>Date: Value must be a date string in the format "YYYY-MM-DD".</p>
-
-        </li>
-
-        <li><p>Boolean: Value must be a boolean string (''true'' or ''false'').</p>
-
-        </li>
-
-        <li><p>Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.</p>
-
-        </li>
-
-        </ul>
-
-        '
+        Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.'
       requestBody:
         content:
           application/json:
@@ -11083,161 +10978,117 @@ paths:
       summary: Get All Accounts
       tags:
       - Entity Management V2
-      description: '<p>Supported query params</p>
+      description: 'Supported query params
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        Parameter
 
-        <tr>
+        Type
 
-        <th>Parameter</th>
+        Description
 
-        <th>Type</th>
+        Default
 
-        <th>Description</th>
+        Max Value
 
-        <th>Default</th>
 
-        <th>Max Value</th>
+        after
 
-        </tr>
+        integer
 
-        </thead>
+        Use an integer to specify the starting point for pagination.
 
-        <tbody>
+        N/A
 
-        <tr>
+        N/A
 
-        <td>after</td>
 
-        <td>integer</td>
+        limit
 
-        <td>Use an integer to specify the starting point for pagination.</td>
+        integer
 
-        <td>N/A</td>
+        The number of records to return. Default is 10, and the maximum is 100.
 
-        <td>N/A</td>
+        10
 
-        </tr>
+        100
 
-        <tr>
 
-        <td>limit</td>
+        fields
 
-        <td>integer</td>
+        string
 
-        <td>The number of records to return. Default is 10, and the maximum is 100.</td>
+        Comma-separated field names to specify the fields to be included in the response. If both fields and fieldIds are provided, fieldIds takes priority.
 
-        <td>10</td>
+        N/A
 
-        <td>100</td>
+        N/A
 
-        </tr>
 
-        <tr>
+        fieldIds
 
-        <td>fields</td>
+        string
 
-        <td>string</td>
+        Comma-separated field IDs to specify the fields to be included in the response.
 
-        <td>Comma-separated field names to specify the fields to be included in the response. If both <code>fields</code> and <code>fieldIds</code> are provided, <code>fieldIds</code> takes priority.</td>
+        N/A
 
-        <td>N/A</td>
+        N/A
 
-        <td>N/A</td>
 
-        </tr>
+        archived
 
-        <tr>
+        boolean
 
-        <td>fieldIds</td>
+        Use true or false to filter the results based on their archived status.
 
-        <td>string</td>
+        N/A
 
-        <td>Comma-separated field IDs to specify the fields to be included in the response.</td>
+        N/A
 
-        <td>N/A</td>
 
-        <td>N/A</td>
+        churned
 
-        </tr>
+        boolean
 
-        <tr>
+        Use true or false to filter the results based on their churned status.
 
-        <td>archived</td>
+        N/A
 
-        <td>boolean</td>
+        N/A
 
-        <td>Use <code>true</code> or <code>false</code> to filter the results based on their archived status.</td>
 
-        <td>N/A</td>
+        externalId
 
-        <td>N/A</td>
+        string
 
-        </tr>
+        Use a string to filter results based on the external ID.
 
-        <tr>
+        N/A
 
-        <td>churned</td>
+        N/A
 
-        <td>boolean</td>
 
-        <td>Use <code>true</code> or <code>false</code> to filter the results based on their churned status.</td>
+        ownerId
 
-        <td>N/A</td>
+        integer
 
-        <td>N/A</td>
+        Use an integer to filter results based on the owner ID.
 
-        </tr>
+        N/A
 
-        <tr>
+        N/A
 
-        <td>externalId</td>
 
-        <td>string</td>
+        lifecycleStageId
 
-        <td>Use a string to filter results based on the external ID.</td>
+        integer
 
-        <td>N/A</td>
+        Use an integer to filter results based on the lifecycle stage ID.
 
-        <td>N/A</td>
+        N/A
 
-        </tr>
-
-        <tr>
-
-        <td>ownerId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the owner ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        <tr>
-
-        <td>lifecycleStageId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the lifecycle stage ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        N/A'
       responses:
         '200':
           description: OK
@@ -17560,147 +17411,86 @@ paths:
       summary: Search Accounts
       tags:
       - Entity Management V2
-      description: '<p>Search accounts using custom attributes</p>
+      description: 'Search accounts using custom attributes
 
-        <p>The request body should contain a list of filters up to 5 filters</p>
 
-        <ul>
+        The request body should contain a list of filters up to 5 filters
 
-        <li><p>filters - list of filters</p>
 
-        <ul>
+        filters - list of filters
 
-        <li><p>filter - object</p>
 
-        <ul>
+        filter - object
 
-        <li><p>fieldName: API name of the custom attribute</p>
 
-        </li>
+        fieldName: API name of the custom attribute
 
-        <li><p>operator: operator which should be used in the filter</p>
 
-        </li>
+        operator: operator which should be used in the filter
 
-        <li><p>value: filtered value</p>
 
-        </li>
+        value: filtered value
 
-        </ul>
 
-        </li>
+        Supported Operators
 
-        </ul>
 
-        </li>
+        Data type
 
-        </ul>
+        Operators
 
-        <p><strong>Supported Operators</strong></p>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        String
 
-        <thead>
+        equals, contains
 
-        <tr>
 
-        <th><strong>Data type</strong></th>
+        Number
 
-        <th><strong>Operators</strong></th>
+        equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo
 
-        </tr>
 
-        </thead>
+        Date
 
-        <tbody>
+        equals, after, before, onOrAfter, onOrBefore
 
-        <tr>
 
-        <td>String</td>
+        Boolean
 
-        <td>equals, contains</td>
+        equals
 
-        </tr>
 
-        <tr>
+        Single Picklist
 
-        <td>Number</td>
+        equals
 
-        <td>equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo</td>
 
-        </tr>
+        Multi Picklist
 
-        <tr>
+        includes
 
-        <td>Date</td>
 
-        <td>equals, after, before, onOrAfter, onOrBefore</td>
+        Organization / Account / Contact / User Picklist
 
-        </tr>
+        includes
 
-        <tr>
 
-        <td>Boolean</td>
+        Valid Format of the value
 
-        <td>equals</td>
 
-        </tr>
+        String: Value must be a non-empty string.
 
-        <tr>
 
-        <td>Single Picklist</td>
+        Number: Value must be a valid number (can be provided as a string).
 
-        <td>equals</td>
 
-        </tr>
+        Date: Value must be a date string in the format "YYYY-MM-DD".
 
-        <tr>
 
-        <td>Multi Picklist</td>
+        Boolean: Value must be a boolean string (''true'' or ''false'').
 
-        <td>includes</td>
 
-        </tr>
-
-        <tr>
-
-        <td>Organization / Account / Contact / User Picklist</td>
-
-        <td>includes</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div><p><strong>Valid Format of the value</strong></p>
-
-        <ul>
-
-        <li><p>String: Value must be a non-empty string.</p>
-
-        </li>
-
-        <li><p>Number: Value must be a valid number (can be provided as a string).</p>
-
-        </li>
-
-        <li><p>Date: Value must be a date string in the format "YYYY-MM-DD".</p>
-
-        </li>
-
-        <li><p>Boolean: Value must be a boolean string (''true'' or ''false'').</p>
-
-        </li>
-
-        <li><p>Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.</p>
-
-        </li>
-
-        </ul>
-
-        '
+        Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.'
       requestBody:
         content:
           application/json:
@@ -18621,147 +18411,106 @@ paths:
       summary: Get All Contacts
       tags:
       - Entity Management V2
-      description: '<p>Supported query params</p>
+      description: 'Supported query params
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        Parameter
 
-        <tr>
+        Type
 
-        <th>Parameter</th>
+        Description
 
-        <th>Type</th>
+        Default
 
-        <th>Description</th>
+        Max Value
 
-        <th>Default</th>
 
-        <th>Max Value</th>
+        after
 
-        </tr>
+        integer
 
-        </thead>
+        Use an integer to specify the starting point for pagination.
 
-        <tbody>
+        N/A
 
-        <tr>
+        N/A
 
-        <td>after</td>
 
-        <td>integer</td>
+        limit
 
-        <td>Use an integer to specify the starting point for pagination.</td>
+        integer
 
-        <td>N/A</td>
+        The number of records to return. Default is 10, and the maximum is 100.
 
-        <td>N/A</td>
+        10
 
-        </tr>
+        100
 
-        <tr>
 
-        <td>limit</td>
+        fields
 
-        <td>integer</td>
+        string
 
-        <td>The number of records to return. Default is 10, and the maximum is 100.</td>
+        Comma-separated field names to specify the fields to be included in the response. If both fields and fieldIds are provided, fieldIds takes priority.
 
-        <td>10</td>
+        N/A
 
-        <td>100</td>
+        N/A
 
-        </tr>
 
-        <tr>
+        fieldIds
 
-        <td>fields</td>
+        string
 
-        <td>string</td>
+        Comma-separated field IDs to specify the fields to be included in the response.
 
-        <td>Comma-separated field names to specify the fields to be included in the response. If both <code>fields</code> and <code>fieldIds</code> are provided, <code>fieldIds</code> takes priority.</td>
+        N/A
 
-        <td>N/A</td>
+        N/A
 
-        <td>N/A</td>
 
-        </tr>
+        archived
 
-        <tr>
+        boolean
 
-        <td>fieldIds</td>
+        Use true or false to filter the results based on their archived status.
 
-        <td>string</td>
+        N/A
 
-        <td>Comma-separated field IDs to specify the fields to be included in the response.</td>
+        N/A
 
-        <td>N/A</td>
 
-        <td>N/A</td>
+        externalId
 
-        </tr>
+        string
 
-        <tr>
+        Use a string to filter results based on the external ID.
 
-        <td>archived</td>
+        N/A
 
-        <td>boolean</td>
+        N/A
 
-        <td>Use <code>true</code> or <code>false</code> to filter the results based on their archived status.</td>
 
-        <td>N/A</td>
+        ownerId
 
-        <td>N/A</td>
+        integer
 
-        </tr>
+        Use an integer to filter results based on the owner ID.
 
-        <tr>
+        N/A
 
-        <td>externalId</td>
+        N/A
 
-        <td>string</td>
 
-        <td>Use a string to filter results based on the external ID.</td>
+        lifecycleStageId
 
-        <td>N/A</td>
+        integer
 
-        <td>N/A</td>
+        Use an integer to filter results based on the lifecycle stage ID.
 
-        </tr>
+        N/A
 
-        <tr>
-
-        <td>ownerId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the owner ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        <tr>
-
-        <td>lifecycleStageId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the lifecycle stage ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        N/A'
       responses:
         '200':
           description: OK
@@ -22503,9 +22252,7 @@ paths:
       summary: Get Contacts by Emails
       tags:
       - Entity Management V2
-      description: '<p>Contacts can be retrieved using an array of emails using this endpoint</p>
-
-        '
+      description: Contacts can be retrieved using an array of emails using this endpoint
       requestBody:
         content:
           application/json:
@@ -22575,147 +22322,86 @@ paths:
       summary: Search Contacts
       tags:
       - Entity Management V2
-      description: '<p>Search contacts using custom attributes</p>
+      description: 'Search contacts using custom attributes
 
-        <p>The request body should contain a list of filters up to 5 filters</p>
 
-        <ul>
+        The request body should contain a list of filters up to 5 filters
 
-        <li><p>filters - list of filters</p>
 
-        <ul>
+        filters - list of filters
 
-        <li><p>filter - object</p>
 
-        <ul>
+        filter - object
 
-        <li><p>fieldName: API name of the custom attribute</p>
 
-        </li>
+        fieldName: API name of the custom attribute
 
-        <li><p>operator: operator which should be used in the filter</p>
 
-        </li>
+        operator: operator which should be used in the filter
 
-        <li><p>value: filtered value</p>
 
-        </li>
+        value: filtered value
 
-        </ul>
 
-        </li>
+        Supported Operators
 
-        </ul>
 
-        </li>
+        Data type
 
-        </ul>
+        Operators
 
-        <p><strong>Supported Operators</strong></p>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        String
 
-        <thead>
+        equals, contains
 
-        <tr>
 
-        <th><strong>Data type</strong></th>
+        Number
 
-        <th><strong>Operators</strong></th>
+        equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo
 
-        </tr>
 
-        </thead>
+        Date
 
-        <tbody>
+        equals, after, before, onOrAfter, onOrBefore
 
-        <tr>
 
-        <td>String</td>
+        Boolean
 
-        <td>equals, contains</td>
+        equals
 
-        </tr>
 
-        <tr>
+        Single Picklist
 
-        <td>Number</td>
+        equals
 
-        <td>equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo</td>
 
-        </tr>
+        Multi Picklist
 
-        <tr>
+        includes
 
-        <td>Date</td>
 
-        <td>equals, after, before, onOrAfter, onOrBefore</td>
+        Organization / Account / Contact / User Picklist
 
-        </tr>
+        includes
 
-        <tr>
 
-        <td>Boolean</td>
+        Valid Format of the value
 
-        <td>equals</td>
 
-        </tr>
+        String: Value must be a non-empty string.
 
-        <tr>
 
-        <td>Single Picklist</td>
+        Number: Value must be a valid number (can be provided as a string).
 
-        <td>equals</td>
 
-        </tr>
+        Date: Value must be a date string in the format "YYYY-MM-DD".
 
-        <tr>
 
-        <td>Multi Picklist</td>
+        Boolean: Value must be a boolean string (''true'' or ''false'').
 
-        <td>includes</td>
 
-        </tr>
-
-        <tr>
-
-        <td>Organization / Account / Contact / User Picklist</td>
-
-        <td>includes</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div><p><strong>Valid Format of the value</strong></p>
-
-        <ul>
-
-        <li><p>String: Value must be a non-empty string.</p>
-
-        </li>
-
-        <li><p>Number: Value must be a valid number (can be provided as a string).</p>
-
-        </li>
-
-        <li><p>Date: Value must be a date string in the format "YYYY-MM-DD".</p>
-
-        </li>
-
-        <li><p>Boolean: Value must be a boolean string (''true'' or ''false'').</p>
-
-        </li>
-
-        <li><p>Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.</p>
-
-        </li>
-
-        </ul>
-
-        '
+        Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.'
       requestBody:
         content:
           application/json:
@@ -22870,147 +22556,106 @@ paths:
       summary: Get All Opportunities
       tags:
       - Entity Management V2
-      description: '<p>Supported query params</p>
+      description: 'Supported query params
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        Parameter
 
-        <tr>
+        Type
 
-        <th>Parameter</th>
+        Description
 
-        <th>Type</th>
+        Default
 
-        <th>Description</th>
+        Max Value
 
-        <th>Default</th>
 
-        <th>Max Value</th>
+        after
 
-        </tr>
+        integer
 
-        </thead>
+        Use an integer to specify the starting point for pagination.
 
-        <tbody>
+        N/A
 
-        <tr>
+        N/A
 
-        <td>after</td>
 
-        <td>integer</td>
+        limit
 
-        <td>Use an integer to specify the starting point for pagination.</td>
+        integer
 
-        <td>N/A</td>
+        The number of records to return. Default is 10, and the maximum is 100.
 
-        <td>N/A</td>
+        10
 
-        </tr>
+        100
 
-        <tr>
 
-        <td>limit</td>
+        fields
 
-        <td>integer</td>
+        string
 
-        <td>The number of records to return. Default is 10, and the maximum is 100.</td>
+        Comma-separated field names to specify the fields to be included in the response. If both fields and fieldIds are provided, fieldIds takes priority.
 
-        <td>10</td>
+        N/A
 
-        <td>100</td>
+        N/A
 
-        </tr>
 
-        <tr>
+        fieldIds
 
-        <td>fields</td>
+        string
 
-        <td>string</td>
+        Comma-separated field IDs to specify the fields to be included in the response.
 
-        <td>Comma-separated field names to specify the fields to be included in the response. If both <code>fields</code> and <code>fieldIds</code> are provided, <code>fieldIds</code> takes priority.</td>
+        N/A
 
-        <td>N/A</td>
+        N/A
 
-        <td>N/A</td>
 
-        </tr>
+        archived
 
-        <tr>
+        boolean
 
-        <td>fieldIds</td>
+        Use true or false to filter the results based on their archived status.
 
-        <td>string</td>
+        N/A
 
-        <td>Comma-separated field IDs to specify the fields to be included in the response.</td>
+        N/A
 
-        <td>N/A</td>
 
-        <td>N/A</td>
+        externalId
 
-        </tr>
+        string
 
-        <tr>
+        Use a string to filter results based on the external ID.
 
-        <td>archived</td>
+        N/A
 
-        <td>boolean</td>
+        N/A
 
-        <td>Use <code>true</code> or <code>false</code> to filter the results based on their archived status.</td>
 
-        <td>N/A</td>
+        ownerId
 
-        <td>N/A</td>
+        integer
 
-        </tr>
+        Use an integer to filter results based on the owner ID.
 
-        <tr>
+        N/A
 
-        <td>externalId</td>
+        N/A
 
-        <td>string</td>
 
-        <td>Use a string to filter results based on the external ID.</td>
+        lifecycleStageId
 
-        <td>N/A</td>
+        integer
 
-        <td>N/A</td>
+        Use an integer to filter results based on the lifecycle stage ID.
 
-        </tr>
+        N/A
 
-        <tr>
-
-        <td>ownerId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the owner ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        <tr>
-
-        <td>lifecycleStageId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the lifecycle stage ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        N/A'
       responses:
         '200':
           description: OK
@@ -25736,147 +25381,86 @@ paths:
       summary: Search Opportunities
       tags:
       - Entity Management V2
-      description: '<p>Search organizations using custom attributes</p>
+      description: 'Search organizations using custom attributes
 
-        <p>The request body should contain a list of filters up to 5 filters</p>
 
-        <ul>
+        The request body should contain a list of filters up to 5 filters
 
-        <li><p>filters - list of filters</p>
 
-        <ul>
+        filters - list of filters
 
-        <li><p>filter - object</p>
 
-        <ul>
+        filter - object
 
-        <li><p>fieldName: API name of the custom attribute</p>
 
-        </li>
+        fieldName: API name of the custom attribute
 
-        <li><p>operator: operator which should be used in the filter</p>
 
-        </li>
+        operator: operator which should be used in the filter
 
-        <li><p>value: filtered value</p>
 
-        </li>
+        value: filtered value
 
-        </ul>
 
-        </li>
+        Supported Operators
 
-        </ul>
 
-        </li>
+        Data type
 
-        </ul>
+        Operators
 
-        <p><strong>Supported Operators</strong></p>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        String
 
-        <thead>
+        equals, contains
 
-        <tr>
 
-        <th><strong>Data type</strong></th>
+        Number
 
-        <th><strong>Operators</strong></th>
+        equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo
 
-        </tr>
 
-        </thead>
+        Date
 
-        <tbody>
+        equals, after, before, onOrAfter, onOrBefore
 
-        <tr>
 
-        <td>String</td>
+        Boolean
 
-        <td>equals, contains</td>
+        equals
 
-        </tr>
 
-        <tr>
+        Single Picklist
 
-        <td>Number</td>
+        equals
 
-        <td>equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo</td>
 
-        </tr>
+        Multi Picklist
 
-        <tr>
+        includes
 
-        <td>Date</td>
 
-        <td>equals, after, before, onOrAfter, onOrBefore</td>
+        Organization / Account / Contact / User Picklist
 
-        </tr>
+        includes
 
-        <tr>
 
-        <td>Boolean</td>
+        Valid Format of the value
 
-        <td>equals</td>
 
-        </tr>
+        String: Value must be a non-empty string.
 
-        <tr>
 
-        <td>Single Picklist</td>
+        Number: Value must be a valid number (can be provided as a string).
 
-        <td>equals</td>
 
-        </tr>
+        Date: Value must be a date string in the format "YYYY-MM-DD".
 
-        <tr>
 
-        <td>Multi Picklist</td>
+        Boolean: Value must be a boolean string (''true'' or ''false'').
 
-        <td>includes</td>
 
-        </tr>
-
-        <tr>
-
-        <td>Organization / Account / Contact / User Picklist</td>
-
-        <td>includes</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div><p><strong>Valid Format of the value</strong></p>
-
-        <ul>
-
-        <li><p>String: Value must be a non-empty string.</p>
-
-        </li>
-
-        <li><p>Number: Value must be a valid number (can be provided as a string).</p>
-
-        </li>
-
-        <li><p>Date: Value must be a date string in the format "YYYY-MM-DD".</p>
-
-        </li>
-
-        <li><p>Boolean: Value must be a boolean string (''true'' or ''false'').</p>
-
-        </li>
-
-        <li><p>Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.</p>
-
-        </li>
-
-        </ul>
-
-        '
+        Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.'
       requestBody:
         content:
           application/json:
@@ -25980,147 +25564,106 @@ paths:
       summary: Get All Risks
       tags:
       - Entity Management V2
-      description: '<p>Supported query params</p>
+      description: 'Supported query params
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        Parameter
 
-        <tr>
+        Type
 
-        <th>Parameter</th>
+        Description
 
-        <th>Type</th>
+        Default
 
-        <th>Description</th>
+        Max Value
 
-        <th>Default</th>
 
-        <th>Max Value</th>
+        after
 
-        </tr>
+        integer
 
-        </thead>
+        Use an integer to specify the starting point for pagination.
 
-        <tbody>
+        N/A
 
-        <tr>
+        N/A
 
-        <td>after</td>
 
-        <td>integer</td>
+        limit
 
-        <td>Use an integer to specify the starting point for pagination.</td>
+        integer
 
-        <td>N/A</td>
+        The number of records to return. Default is 10, and the maximum is 100.
 
-        <td>N/A</td>
+        10
 
-        </tr>
+        100
 
-        <tr>
 
-        <td>limit</td>
+        fields
 
-        <td>integer</td>
+        string
 
-        <td>The number of records to return. Default is 10, and the maximum is 100.</td>
+        Comma-separated field names to specify the fields to be included in the response. If both fields and fieldIds are provided, fieldIds takes priority.
 
-        <td>10</td>
+        N/A
 
-        <td>100</td>
+        N/A
 
-        </tr>
 
-        <tr>
+        fieldIds
 
-        <td>fields</td>
+        string
 
-        <td>string</td>
+        Comma-separated field IDs to specify the fields to be included in the response.
 
-        <td>Comma-separated field names to specify the fields to be included in the response. If both <code>fields</code> and <code>fieldIds</code> are provided, <code>fieldIds</code> takes priority.</td>
+        N/A
 
-        <td>N/A</td>
+        N/A
 
-        <td>N/A</td>
 
-        </tr>
+        archived
 
-        <tr>
+        boolean
 
-        <td>fieldIds</td>
+        Use true or false to filter the results based on their archived status.
 
-        <td>string</td>
+        N/A
 
-        <td>Comma-separated field IDs to specify the fields to be included in the response.</td>
+        N/A
 
-        <td>N/A</td>
 
-        <td>N/A</td>
+        externalId
 
-        </tr>
+        string
 
-        <tr>
+        Use a string to filter results based on the external ID.
 
-        <td>archived</td>
+        N/A
 
-        <td>boolean</td>
+        N/A
 
-        <td>Use <code>true</code> or <code>false</code> to filter the results based on their archived status.</td>
 
-        <td>N/A</td>
+        ownerId
 
-        <td>N/A</td>
+        integer
 
-        </tr>
+        Use an integer to filter results based on the owner ID.
 
-        <tr>
+        N/A
 
-        <td>externalId</td>
+        N/A
 
-        <td>string</td>
 
-        <td>Use a string to filter results based on the external ID.</td>
+        lifecycleStageId
 
-        <td>N/A</td>
+        integer
 
-        <td>N/A</td>
+        Use an integer to filter results based on the lifecycle stage ID.
 
-        </tr>
+        N/A
 
-        <tr>
-
-        <td>ownerId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the owner ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        <tr>
-
-        <td>lifecycleStageId</td>
-
-        <td>integer</td>
-
-        <td>Use an integer to filter results based on the lifecycle stage ID.</td>
-
-        <td>N/A</td>
-
-        <td>N/A</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        N/A'
       responses:
         '200':
           description: OK
@@ -27369,147 +26912,86 @@ paths:
       summary: Search Risks
       tags:
       - Entity Management V2
-      description: '<p>Search organizations using custom attributes</p>
+      description: 'Search organizations using custom attributes
 
-        <p>The request body should contain a list of filters up to 5 filters</p>
 
-        <ul>
+        The request body should contain a list of filters up to 5 filters
 
-        <li><p>filters - list of filters</p>
 
-        <ul>
+        filters - list of filters
 
-        <li><p>filter - object</p>
 
-        <ul>
+        filter - object
 
-        <li><p>fieldName: API name of the custom attribute</p>
 
-        </li>
+        fieldName: API name of the custom attribute
 
-        <li><p>operator: operator which should be used in the filter</p>
 
-        </li>
+        operator: operator which should be used in the filter
 
-        <li><p>value: filtered value</p>
 
-        </li>
+        value: filtered value
 
-        </ul>
 
-        </li>
+        Supported Operators
 
-        </ul>
 
-        </li>
+        Data type
 
-        </ul>
+        Operators
 
-        <p><strong>Supported Operators</strong></p>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        String
 
-        <thead>
+        equals, contains
 
-        <tr>
 
-        <th><strong>Data type</strong></th>
+        Number
 
-        <th><strong>Operators</strong></th>
+        equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo
 
-        </tr>
 
-        </thead>
+        Date
 
-        <tbody>
+        equals, after, before, onOrAfter, onOrBefore
 
-        <tr>
 
-        <td>String</td>
+        Boolean
 
-        <td>equals, contains</td>
+        equals
 
-        </tr>
 
-        <tr>
+        Single Picklist
 
-        <td>Number</td>
+        equals
 
-        <td>equals, greaterThan, lessThan, greaterThanOrEqualTo, lessThanOrEqualTo</td>
 
-        </tr>
+        Multi Picklist
 
-        <tr>
+        includes
 
-        <td>Date</td>
 
-        <td>equals, after, before, onOrAfter, onOrBefore</td>
+        Organization / Account / Contact / User Picklist
 
-        </tr>
+        includes
 
-        <tr>
 
-        <td>Boolean</td>
+        Valid Format of the value
 
-        <td>equals</td>
 
-        </tr>
+        String: Value must be a non-empty string.
 
-        <tr>
 
-        <td>Single Picklist</td>
+        Number: Value must be a valid number (can be provided as a string).
 
-        <td>equals</td>
 
-        </tr>
+        Date: Value must be a date string in the format "YYYY-MM-DD".
 
-        <tr>
 
-        <td>Multi Picklist</td>
+        Boolean: Value must be a boolean string (''true'' or ''false'').
 
-        <td>includes</td>
 
-        </tr>
-
-        <tr>
-
-        <td>Organization / Account / Contact / User Picklist</td>
-
-        <td>includes</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div><p><strong>Valid Format of the value</strong></p>
-
-        <ul>
-
-        <li><p>String: Value must be a non-empty string.</p>
-
-        </li>
-
-        <li><p>Number: Value must be a valid number (can be provided as a string).</p>
-
-        </li>
-
-        <li><p>Date: Value must be a date string in the format "YYYY-MM-DD".</p>
-
-        </li>
-
-        <li><p>Boolean: Value must be a boolean string (''true'' or ''false'').</p>
-
-        </li>
-
-        <li><p>Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.</p>
-
-        </li>
-
-        </ul>
-
-        '
+        Multi Picklist, Organization Picklist, Account Picklist, Contact Picklist, User Picklist: Value must be a non-empty array of numbers.'
       requestBody:
         content:
           application/json:

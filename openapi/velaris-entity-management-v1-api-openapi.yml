@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Velaris Public Activity Entity Management V1 API
+  title: Velaris Public Entity Management V1 API
   version: 1.0.0
   description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
   contact:
@@ -21,17 +21,19 @@ paths:
       summary: Get All Organizations V1
       tags:
       - Entity Management V1
-      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+      description: 'Note: Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.
 
-        <p>To filter organizations by custom fields</p>
 
-        <p><code>/organizations?{custom_field_name}={value}</code></p>
+        To filter organizations by custom fields
 
-        <p>Example</p>
 
-        <p><code>/organizations?zapier=true</code></p>
+        /organizations?{custom_field_name}={value}
 
-        '
+
+        Example
+
+
+        /organizations?zapier=true'
       responses:
         '200':
           description: OK
@@ -123,75 +125,46 @@ paths:
       summary: Create Organization
       tags:
       - Entity Management V1
-      description: '<p>Create New Organization.</p>
+      description: 'Create New Organization.
 
-        <h5 id="request-body-guide">Request body guide</h5>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Request body guide
 
-        <thead>
 
-        <tr>
+        Field
 
-        <th><strong>Field</strong></th>
+        Description
 
-        <th><strong>Description</strong></th>
 
-        </tr>
+        externalId
 
-        </thead>
+        Use externalId to add the external id of the organization.
 
-        <tbody>
 
-        <tr>
+        properties
 
-        <td>externalId</td>
+        Use properties to add all the custom fields.
 
-        <td>Use <code>externalId</code> to add the external id of the organization.</td>
 
-        </tr>
+        contacts
 
-        <tr>
+        Use contacts to link contacts to an organization. Only accepts emails. Link existing contacts. Otherwise creates a contact with the given email and link it.
 
-        <td>properties</td>
 
-        <td>Use <code>properties</code> to add all the custom fields.</td>
+        owners
 
-        </tr>
+        User owners to add organization owners. Accepts object array with user id and the owner type.
 
-        <tr>
 
-        <td>contacts</td>
+        links
 
-        <td>Use <code>contacts</code> to link contacts to an organization. Only accepts emails. Link existing contacts. Otherwise creates a contact with the given email and link it.</td>
+        Use links to link custom objects with organizations.
 
-        </tr>
 
-        <tr>
+        Account Linking
 
-        <td>owners</td>
 
-        <td>User <code>owners</code> to add organization owners. Accepts object array with user id and the owner type.</td>
-
-        </tr>
-
-        <tr>
-
-        <td>links</td>
-
-        <td>Use <code>links</code> to link custom objects with organizations.</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div><h5 id="account-linking">Account Linking</h5>
-
-        <p><strong>Cannot link accounts</strong> to an organization when <strong>creating</strong> an organization. There is a separate API (<strong>Change Parent Entity</strong>) in the Account section to assign accounts to an organization.</p>
-
-        '
+        Cannot link accounts to an organization when creating an organization. There is a separate API (Change Parent Entity) in the Account section to assign accounts to an organization.'
       requestBody:
         content:
           application/json:
@@ -239,17 +212,13 @@ paths:
       summary: Get Organizations By ID
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/organizations/extid-id</code></li>
+        With external id: /organizations/extid-id
 
-        <li>With internal id: <code>/organizations/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /organizations/srcid-id'
       responses:
         '200':
           description: OK
@@ -317,31 +286,28 @@ paths:
       summary: Update Organization
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li><p>With external id: <code>/oganizations/extid-id</code></p>
+        With external id: /oganizations/extid-id
 
-        </li>
 
-        <li><p>With internal id: <code>/organizations/srcid-id</code></p>
+        With internal id: /organizations/srcid-id
 
-        </li>
 
-        </ul>
+        Reqeust body guide
 
-        <h5 id="reqeust-body-guide">Reqeust body guide</h5>
 
-        <p>Follow the organization create guide.</p>
+        Follow the organization create guide.
 
-        <p><strong>Archived Organizations</strong> cannot be updated.</p>
 
-        <h5 id="account-linking">Account Linking</h5>
+        Archived Organizations cannot be updated.
 
-        <p><strong>Cannot link accounts</strong> to organization when <strong>updating</strong> organization. There is seperate API (<strong>Change Parent Entity</strong>) to in Account section to assign accounts to an organization.</p>
 
-        '
+        Account Linking
+
+
+        Cannot link accounts to organization when updating organization. There is seperate API (Change Parent Entity) to in Account section to assign accounts to an organization.'
       requestBody:
         content:
           application/json:
@@ -371,17 +337,13 @@ paths:
       summary: Churn organization
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/organizations/extid-id/churn-status</code></li>
+        With external id: /organizations/extid-id/churn-status
 
-        <li>With internal id: <code>/organizations/srcid-id/churn-status</code></li>
 
-        </ul>
-
-        '
+        With internal id: /organizations/srcid-id/churn-status'
       requestBody:
         content:
           application/json: {}
@@ -397,17 +359,13 @@ paths:
       summary: Archive Organization
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id:<code>/organizations/extid-id/archive</code></li>
+        With external id:/organizations/extid-id/archive
 
-        <li>With internal id: <code>/organizations/srcid-id/archive</code></li>
 
-        </ul>
-
-        '
+        With internal id: /organizations/srcid-id/archive'
       responses:
         '200':
           description: OK
@@ -432,17 +390,19 @@ paths:
       summary: Get All Accounts V1
       tags:
       - Entity Management V1
-      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+      description: 'Note: Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.
 
-        <p>To filter accounts by custom fields</p>
 
-        <p><code>/accounts?{custom_field_name}={value}</code></p>
+        To filter accounts by custom fields
 
-        <p>Example</p>
 
-        <p><code>/accounts?zapier=true</code></p>
+        /accounts?{custom_field_name}={value}
 
-        '
+
+        Example
+
+
+        /accounts?zapier=true'
       responses:
         '200':
           description: OK
@@ -548,79 +508,45 @@ paths:
       summary: Create Account
       tags:
       - Entity Management V1
-      description: '<p>Create New Account.</p>
+      description: 'Create New Account.
 
-        <h5 id="request-body-guide">Request body guide</h5>
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
+        Request body guide
 
-        <thead>
 
-        <tr>
+        Field
 
-        <th><strong>Field</strong></th>
+        Description
 
-        <th><strong>Description</strong></th>
 
-        </tr>
+        externalId
 
-        </thead>
+        Use externalId to add the external id of the organization.
 
-        <tbody>
 
-        <tr>
+        organizationExternalId
 
-        <td>externalId</td>
+        Use organizationExternalId to link an organization to the current account.
 
-        <td>Use <code>externalId</code> to add the external id of the organization.</td>
 
-        </tr>
+        properties
 
-        <tr>
+        Use properties to add all the custom fields.
 
-        <td>organizationExternalId</td>
 
-        <td>Use <code>organizationExternalId</code> to link an organization to the current account.</td>
+        contacts
 
-        </tr>
+        Use contacts to link contacts to an organization. Only accepts emails. Link existing contacts. Otherwise creates a contact with the given email and link it.
 
-        <tr>
 
-        <td>properties</td>
+        owners
 
-        <td>Use <code>properties</code> to add all the custom fields.</td>
+        User owners to add organization owners. Accepts object array with user id and the owner type
 
-        </tr>
 
-        <tr>
+        links
 
-        <td>contacts</td>
-
-        <td>Use <code>contacts</code> to link contacts to an organization. Only accepts emails. Link existing contacts. Otherwise creates a contact with the given email and link it.</td>
-
-        </tr>
-
-        <tr>
-
-        <td>owners</td>
-
-        <td>User <code>owners</code> to add organization owners. Accepts object array with user id and the owner type</td>
-
-        </tr>
-
-        <tr>
-
-        <td>links</td>
-
-        <td>Use <code>links</code> to link custom objects with accounts.</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        Use links to link custom objects with accounts.'
       requestBody:
         content:
           application/json:
@@ -678,17 +604,13 @@ paths:
       summary: Get Account By ID
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/accounts/extid-id</code></li>
+        With external id: /accounts/extid-id
 
-        <li>With internal id: <code>/accounts/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /accounts/srcid-id'
       responses:
         '200':
           description: Get Account By ID
@@ -755,17 +677,13 @@ paths:
       summary: Update Account
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/accounts/extid-id</code></li>
+        With external id: /accounts/extid-id
 
-        <li>With internal id: <code>/accounts/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /accounts/srcid-id'
       requestBody:
         content:
           application/json:
@@ -816,17 +734,13 @@ paths:
       summary: Churn Account
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/accounts/extid-id</code></li>
+        With external id: /accounts/extid-id
 
-        <li>With internal id: <code>/accounts/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /accounts/srcid-id'
       requestBody:
         content:
           application/json: {}
@@ -842,17 +756,13 @@ paths:
       summary: Archive Account
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/accounts/extid-id</code></li>
+        With external id: /accounts/extid-id
 
-        <li>With internal id: <code>/accounts/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /accounts/srcid-id'
       responses:
         '200':
           description: OK
@@ -865,17 +775,13 @@ paths:
       summary: Restore Account
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/accounts/extid-id</code></li>
+        With external id: /accounts/extid-id
 
-        <li>With internal id: <code>/accounts/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /accounts/srcid-id'
       responses:
         '200':
           description: OK
@@ -888,9 +794,7 @@ paths:
       summary: Change Parent Entity
       tags:
       - Entity Management V1
-      description: '<p>Change or assign parent organization.</p>
-
-        '
+      description: Change or assign parent organization.
       requestBody:
         content:
           application/json:
@@ -908,17 +812,19 @@ paths:
       summary: Get All Contacts V1
       tags:
       - Entity Management V1
-      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+      description: 'Note: Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.
 
-        <p>To filter contacts by custom fields</p>
 
-        <p><code>/contacts?{custom_field_name}={value}</code></p>
+        To filter contacts by custom fields
 
-        <p>Example</p>
 
-        <p><code>/contacts?zapier=true</code></p>
+        /contacts?{custom_field_name}={value}
 
-        '
+
+        Example
+
+
+        /contacts?zapier=true'
       responses:
         '200':
           description: OK
@@ -927,97 +833,58 @@ paths:
       summary: Create Contacts
       tags:
       - Entity Management V1
-      description: '<p>Create new contact</p>
+      description: 'Create new contact
 
-        <p>Create New Organiztion.</p>
 
-        <h5 id="request-body-guide">Request body guide</h5>
+        Create New Organiztion.
 
-        <div class="click-to-expand-wrapper is-table-wrapper"><table>
 
-        <thead>
+        Request body guide
 
-        <tr>
 
-        <th><strong>Field</strong></th>
+        Field
 
-        <th><strong>Description</strong></th>
+        Description
 
-        </tr>
 
-        </thead>
+        externalId
 
-        <tbody>
+        Use externalId to add external id of the contact
 
-        <tr>
 
-        <td>externalId</td>
+        email
 
-        <td>Use <code>externalId</code> to add external id of the contact</td>
+        Use email to add email id of the contact
 
-        </tr>
 
-        <tr>
+        properties
 
-        <td>email</td>
+        Use properties to add all the custom fields.
 
-        <td>Use <code>email</code> to add email id of the contact</td>
 
-        </tr>
+        organizationIds
 
-        <tr>
+        Use organizationIds to link contacts to an organization. Accepts Velaris internal Id. User either organizationIds or organizationExternalIds Example: [1, 2]
 
-        <td>properties</td>
 
-        <td>Use <code>properties</code> to add all the custom fields.</td>
+        organizationExternalIds
 
-        </tr>
+        Use organizationExternalIds to link contacts to an organization. Accepts external Id of the organization. User either organizationIds or organizationExternalIds Example: ["ajislk-1asdas-1231fg", "tcsd-gogk-asdm"]
 
-        <tr>
 
-        <td>organizationIds</td>
+        accountIds
 
-        <td>Use <code>organizationIds</code> to link contacts to an organization. Accepts Velaris internal Id. User either <code>organizationIds</code> or <code>organizationExternalIds</code> Example: [1, 2]</td>
+        Use accountIds to link contacts to an acount. Accepts Velaris internal Id. User either accountIds or accountExternalIds Example: [1, 2]
 
-        </tr>
 
-        <tr>
+        accountExternalIds
 
-        <td>organizationExternalIds</td>
+        Use accountExternalIds to link contacts to an acount. Accepts external Id of the account. User either accountIds or accountExternalIds Example: ["ajislk-1asdas-1231fg", "tcsd-gogk-asdm"]
 
-        <td>Use <code>organizationExternalIds</code> to link contacts to an organization. Accepts external Id of the organization. User either <code>organizationIds</code> or <code>organizationExternalIds</code> Example: <code>["ajislk-1asdas-1231fg", "tcsd-gogk-asdm"]</code></td>
 
-        </tr>
+        links
 
-        <tr>
-
-        <td>accountIds</td>
-
-        <td>Use <code>accountIds</code> to link contacts to an acount. Accepts Velaris internal Id. User either <code>accountIds</code> or <code>accountExternalIds</code> Example: [1, 2]</td>
-
-        </tr>
-
-        <tr>
-
-        <td>accountExternalIds</td>
-
-        <td>Use <code>accountExternalIds</code> to link contacts to an acount. Accepts external Id of the account. User either <code>accountIds</code> or <code>accountExternalIds</code> Example: <code>["ajislk-1asdas-1231fg", "tcsd-gogk-asdm"]</code></td>
-
-        </tr>
-
-        <tr>
-
-        <td>links</td>
-
-        <td>Use <code>links</code> to link custom objects with contacts.</td>
-
-        </tr>
-
-        </tbody>
-
-        </table>
-
-        </div>'
+        Use links to link custom objects with contacts.'
       requestBody:
         content:
           application/json:
@@ -1066,17 +933,13 @@ paths:
       summary: Get Contacts By Id
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/contacts/extid-id</code></li>
+        With external id: /contacts/extid-id
 
-        <li>With internal id: <code>/contacts/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /contacts/srcid-id'
       responses:
         '200':
           description: OK
@@ -1130,17 +993,13 @@ paths:
       summary: Update Contact
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/contacts/extid-id</code></li>
+        With external id: /contacts/extid-id
 
-        <li>With internal id: <code>/contacts/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /contacts/srcid-id'
       requestBody:
         content:
           application/json:
@@ -1177,17 +1036,13 @@ paths:
       summary: Archive Contact
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/contacts/extid-id</code></li>
+        With external id: /contacts/extid-id
 
-        <li>With internal id: <code>/contacts/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /contacts/srcid-id'
       responses:
         '200':
           description: OK
@@ -1200,17 +1055,13 @@ paths:
       summary: Restore Contact
       tags:
       - Entity Management V1
-      description: '<p>Example:</p>
+      description: 'Example:
 
-        <ul>
 
-        <li>With external id: <code>/contacts/extid-id</code></li>
+        With external id: /contacts/extid-id
 
-        <li>With internal id: <code>/contacts/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /contacts/srcid-id'
       responses:
         '200':
           description: OK
@@ -1223,13 +1074,13 @@ paths:
       summary: Get All Opportunities V1
       tags:
       - Entity Management V1
-      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+      description: 'Note: Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.
 
-        <p>To filter opportunities by custom fields</p>
 
-        <p><code>/opportunities?{custom_field_name}={value}</code></p>
+        To filter opportunities by custom fields
 
-        '
+
+        /opportunities?{custom_field_name}={value}'
       responses:
         '200':
           description: OK
@@ -1294,7 +1145,25 @@ paths:
       summary: Create Opportunity
       tags:
       - Entity Management V1
-      description: "<ul>\n<li><p>parentEntity types - organization, account</p>\n</li>\n<li><p>parent entity id or external id can be used</p>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"parentEntity\": {\n  \"type\": \"account\",\n  \"externalId\": \"account-external-id\"\n}\n\n</code></pre><ul>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n<li><p>links: Use <code>links</code> to link custom objects with opportunities.</p>\n</li>\n</ul>\n"
+      description: 'parentEntity types - organization, account
+
+
+        parent entity id or external id can be used
+
+
+        "parentEntity": {
+
+        "type": "account",
+
+        "externalId": "account-external-id"
+
+        }
+
+
+        contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.
+
+
+        links: Use links to link custom objects with opportunities.'
       requestBody:
         content:
           application/json:
@@ -1337,17 +1206,13 @@ paths:
       summary: Get Opportunities By Id
       tags:
       - Entity Management V1
-      description: '<p>Example</p>
+      description: 'Example
 
-        <ul>
 
-        <li>With external id: <code>/opportunities/extid-id</code></li>
+        With external id: /opportunities/extid-id
 
-        <li>With internal id: <code>/opportunities/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /opportunities/srcid-id'
       responses:
         '200':
           description: OK
@@ -1395,27 +1260,16 @@ paths:
       summary: Update Opportunity
       tags:
       - Entity Management V1
-      description: '<ul>
+      description: 'With external id: /opportunities/extid-id
 
-        <li><p>With external id: <code>/opportunities/extid-id</code></p>
 
-        </li>
+        With internal id: /opportunities/srcid-id
 
-        <li><p>With internal id: <code>/opportunities/srcid-id</code></p>
 
-        </li>
+        parent entity cannot be changed after creation.
 
-        <li><p>parent entity cannot be changed after creation.</p>
 
-        </li>
-
-        <li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>
-
-        </li>
-
-        </ul>
-
-        '
+        contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.'
       requestBody:
         content:
           application/json:
@@ -1452,17 +1306,13 @@ paths:
       summary: Archive Opportunity
       tags:
       - Entity Management V1
-      description: '<p>Example</p>
+      description: 'Example
 
-        <ul>
 
-        <li>With external id: <code>/opportunities/extid-id</code></li>
+        With external id: /opportunities/extid-id
 
-        <li>With internal id: <code>/opportunities/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /opportunities/srcid-id'
       responses:
         '204':
           description: No Content
@@ -1472,17 +1322,13 @@ paths:
       summary: Restore Opportunity
       tags:
       - Entity Management V1
-      description: '<p>Example</p>
+      description: 'Example
 
-        <ul>
 
-        <li>With external id: <code>/opportunities/extid-id</code></li>
+        With external id: /opportunities/extid-id
 
-        <li>With internal id: <code>/opportunities/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /opportunities/srcid-id'
       responses:
         '204':
           description: No Content
@@ -1492,13 +1338,13 @@ paths:
       summary: Get All Risks V1
       tags:
       - Entity Management V1
-      description: '<p><strong>Note:</strong> Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.</p>
+      description: 'Note: Please use the V2 API for fetching data, as the V1 API is restricted to returning only a limited number of responses. The V2 API does not have this limitation and provides more efficient data retrieval.
 
-        <p>To filter risks by custom fields</p>
 
-        <p><code>/risks?{custom_field_name}={value}</code></p>
+        To filter risks by custom fields
 
-        '
+
+        /risks?{custom_field_name}={value}'
       responses:
         '200':
           description: OK
@@ -1537,7 +1383,25 @@ paths:
       summary: Create Risk
       tags:
       - Entity Management V1
-      description: "<ul>\n<li><p>parentEntity types - organization, account</p>\n</li>\n<li><p>parent entity id or external id can be used</p>\n</li>\n</ul>\n<pre class=\"click-to-expand-wrapper is-snippet-wrapper\"><code>\"parentEntity\": {\n  \"type\": \"account\",\n  \"externalId\": \"account-external-id\"\n}\n\n</code></pre><ul>\n<li><p>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</p>\n</li>\n<li><p>links: Use <code>links</code> to link custom objects with risks.</p>\n</li>\n</ul>\n"
+      description: 'parentEntity types - organization, account
+
+
+        parent entity id or external id can be used
+
+
+        "parentEntity": {
+
+        "type": "account",
+
+        "externalId": "account-external-id"
+
+        }
+
+
+        contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.
+
+
+        links: Use links to link custom objects with risks.'
       requestBody:
         content:
           application/json:
@@ -1580,17 +1444,13 @@ paths:
       summary: Get Risk By Id
       tags:
       - Entity Management V1
-      description: '<p>Example</p>
+      description: 'Example
 
-        <ul>
 
-        <li>With external id: <code>/risks/extid-id</code></li>
+        With external id: /risks/extid-id
 
-        <li>With internal id: <code>/risks/srcid-id</code></li>
 
-        </ul>
-
-        '
+        With internal id: /risks/srcid-id'
       responses:
         '200':
           description: OK
@@ -1635,19 +1495,16 @@ paths:
       summary: Update Risk
       tags:
       - Entity Management V1
-      description: '<ul>
+      description: 'With external id:/risks/extid-id
 
-        <li>With external id:<code>/risks/extid-id</code></li>
 
-        <li>With internal id: <code>/risks/srcid-id</code></li>
+        With internal id: /risks/srcid-id
 
-        <li>parent entity cannot be changed after creation.</li>
 
-        <li>contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.</li>
+        parent entity cannot be changed after creation.
 
-        </ul>
 
-        '
+        contact email addresses should be provided. if a contact does not exist with the given email, new contact will be created.'
       requestBody:
         content:
           application/json:
@@ -1685,15 +1542,10 @@ paths:
       summary: Archive Risk
       tags:
       - Entity Management V1
-      description: '<ul>
+      description: 'With external id:/risks/extid-id
 
-        <li>With external id:<code>/risks/extid-id</code></li>
 
-        <li>With internal id: <code>/risks/srcid-id</code></li>
-
-        </ul>
-
-        '
+        With internal id: /risks/srcid-id'
       responses:
         '200':
           description: OK
@@ -1706,15 +1558,10 @@ paths:
       summary: Restore Risks
       tags:
       - Entity Management V1
-      description: '<ul>
+      description: 'With external id:/risks/extid-id
 
-        <li>With external id:<code>/risks/extid-id</code></li>
 
-        <li>With internal id: <code>/risks/srcid-id</code></li>
-
-        </ul>
-
-        '
+        With internal id: /risks/srcid-id'
       responses:
         '200':
           description: OK

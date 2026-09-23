@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Velaris Public Activity Lifecycles API
+  title: Velaris Public Lifecycles API
   version: 1.0.0
   description: The Velaris Public API for the AI Customer Success Platform. Manage organizations, accounts, contacts, opportunities, risks, custom objects, activities, notes, tickets, tasks, users, surveys and more. Base URL https://api.euw1.velaris.io. Converted by API Evangelist from the provider-published public Postman collection (https://developers.velaris.io/).
   contact:
@@ -21,9 +21,7 @@ paths:
       summary: Get Lifecycle Stages
       tags:
       - Lifecycles
-      description: '<p>Get active lifecycle stages in each level</p>
-
-        '
+      description: Get active lifecycle stages in each level
       responses:
         '200':
           description: 200 - Success
