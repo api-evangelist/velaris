@@ -1,0 +1,56 @@
+slug: velaris
+provider: Velaris
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Entity Management V1
+  spec_file: velaris-entity-management-v1-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.8
+  evidence: POST /core/accounts createAccount Create Account; PUT /core/organizations/:organizationId/churn-status
+    churnOrganization
+  reason: CRUD lifecycle over organizations, accounts and contacts is maintenance of the customer master
+    record in a customer-success platform, i.e. Customer Data Management.
+- tag: Entity Management V2
+  spec_file: velaris-entity-management-v2-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.75
+  evidence: GET /v2/accounts getAllAccounts; GET /v2/contacts getAllContacts; POST /v2/contacts/batch/read
+    Get Contacts by Emails
+  reason: Read/search surface over organization, account and contact records — customer master data retrieval
+    and identity lookup by email. Inclusion of opportunities and risks adds some ambiguity, hence not
+    higher.
+- tag: Ticketing
+  spec_file: velaris-ticketing-api-openapi.yml
+  capability_id: BC-430.10
+  capability_id_l1: BC-430
+  capability_name: Customer Inquiry Management
+  confidence: 0.72
+  evidence: POST /ticketing/tickets createTicket Create Ticket; POST /ticketing/tickets/:ticketId/comments
+    createComment
+  reason: Ticket lifecycle with threaded comments in a customer-facing platform is support-case handling.
+    Sub-capability choice between inquiry handling and complaint management is not fully determined by
+    the evidence.
+- tag: Surveys
+  spec_file: velaris-surveys-api-openapi.yml
+  capability_id: BC-430.50
+  capability_id_l1: BC-430
+  capability_name: Customer Feedback Management
+  confidence: 0.7
+  evidence: POST /survey-management/surveys/:surveyId/responses postResponses
+  reason: Submission of survey responses is voice-of-customer / feedback capture. Some ambiguity between
+    generic Customer Feedback Management and the SaaS-specific sentiment measurement sub-capability.
