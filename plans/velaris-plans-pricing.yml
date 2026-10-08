@@ -1,0 +1,26 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://www.velaris.io/pricing
+sources:
+- https://www.velaris.io/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T104522
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: false
+note: No numeric price is published on the pricing page; Pricing page lists feature bundles and a single
+  license covering 5 users with unlimited viewers, but shows no numeric prices; directs visitors to request
+  a custom estimate/demo.
+plan_count: 1
+plans:
+- name: All the tools you need in one license
+  price_text: Want a custom estimate for your organization’s needs?
+  period: none
+  included_quota: 5 users. Unlimited viewers. Add-ons available.
